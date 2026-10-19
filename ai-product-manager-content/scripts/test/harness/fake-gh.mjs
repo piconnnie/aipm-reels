@@ -111,8 +111,20 @@ if (group === 'release') {
   }
 }
 if (group === 'issue' && cmd === 'create') {
-  state.issues.push({title: flag('title')});
-  done('https://github.com/fake/repo/issues/1');
+  const number = state.issues.length + 1;
+  state.issues.push({number, state: 'open', title: flag('title'), labels: (flag('label') ?? '').split(',').filter(Boolean), comments: []});
+  done(`https://github.com/fake/repo/issues/${number}`);
+}
+if (group === 'issue' && cmd === 'list') {
+  let issues = state.issues.filter((i) => (i.state ?? 'open') === (flag('state') ?? 'open'));
+  if (flag('label')) issues = issues.filter((i) => (i.labels ?? []).includes(flag('label')));
+  done(jq(issues.map((i) => ({number: i.number})), flag('jq')));
+}
+if (group === 'issue' && cmd === 'comment') {
+  const issue = state.issues.find((i) => i.number === Number(positional()[0]));
+  if (!issue) done(`fake gh: no issue ${positional()[0]}`, 1);
+  issue.comments.push(flag('body'));
+  done();
 }
 if (group === 'secret' && cmd === 'set') {
   state.secrets[positional()[0]] = fs.readFileSync(0, 'utf8').length;

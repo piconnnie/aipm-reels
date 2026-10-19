@@ -1,0 +1,302 @@
+{
+  "brief": {
+    "topic": "Should this feature use AI at all?",
+    "audience": "PMs and product leaders prioritising AI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "targetDurationSec": 23,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t004"
+  },
+  "coreInsight": "Use AI only when a fixed rule can't do the job, occasional errors are acceptable or catchable, and you have data to test it; otherwise ship the rule first.",
+  "hooks": [
+    {
+      "text": "Not every feature needs AI.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Simple, credible, and immediately relevant to roadmap debates."
+    },
+    {
+      "text": "The cheapest AI feature is the one you replace with a rule.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Clever but takes a moment to parse."
+    },
+    {
+      "text": "4 questions before you add AI to anything.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Useful but generic."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): plain-spoken and directly useful in roadmap reviews; the reel delivers a 4-question test with examples.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Not every feature needs AI. / 4 questions decide it.",
+      "voiceover": "Not every feature needs AI. Four questions decide it.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "Not every"
+        },
+        {
+          "text": "feature"
+        },
+        {
+          "text": "needs AI.",
+          "highlight": true
+        }
+      ],
+      "sub": "4 questions decide it.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "durationInFrames": 288,
+      "purpose": "Give the decision test.",
+      "onScreen": "THE 4 QUESTIONS / Use AI only if… / A fixed rule can’t do the job well · Occasional errors are acceptable · A wrong answer can be caught or undone · You have real data to test it on / Fail two? Ship the rule-based version first.",
+      "voiceover": "Use AI only if a fixed rule can't do the job, occasional errors are acceptable, a wrong answer can be caught or undone, and you have real data to test it. Fail two? Ship the rule first.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE 4 QUESTIONS",
+      "headline": [
+        {
+          "text": "Use AI only"
+        },
+        {
+          "text": "if…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "A fixed rule can’t do the job well",
+        "Occasional errors are acceptable",
+        "A wrong answer can be caught or undone",
+        "You have real data to test it on"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Fail two? Ship the rule-based version first.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "examples",
+      "type": "cards",
+      "durationInFrames": 156,
+      "purpose": "Make the test concrete.",
+      "onScreen": "EXAMPLES / AI or a rule? / USE A RULE Check an invoice total adds up · USE AI Summarise a messy complaint · CAREFUL Approve refunds automatically",
+      "voiceover": "An invoice total: use a rule. Summarising a messy complaint: AI. Approving refunds automatically: be careful.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 28 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLES",
+      "headline": [
+        {
+          "text": "AI or"
+        },
+        {
+          "text": "a rule?",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 28,
+      "cards": [
+        {
+          "text": "Check an invoice total adds up",
+          "status": "pass",
+          "tag": "USE A RULE"
+        },
+        {
+          "text": "Summarise a messy complaint",
+          "status": "pass",
+          "tag": "USE AI"
+        },
+        {
+          "text": "Approve refunds automatically",
+          "status": "warn",
+          "tag": "CAREFUL"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 72,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Rule first. AI where it earns it. / Save this for your next roadmap review",
+      "voiceover": "Rule first. AI where it earns it. Save this for your next roadmap review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Rule first."
+        },
+        {
+          "text": "AI where",
+          "highlight": true
+        },
+        {
+          "text": "it earns it.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next roadmap review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "BEFORE YOU BUILD",
+    "headline": [
+      {
+        "text": "Does it"
+      },
+      {
+        "text": "need"
+      },
+      {
+        "text": "AI at all?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Some of the best AI product decisions are “no AI here”.",
+    "body": [
+      "Use AI only if:\n→ a fixed rule can’t do the job well\n→ occasional errors are acceptable\n→ a wrong answer can be caught or undone\n→ you have real data to test it on",
+      "Fail two of the four? Ship the rule-based version first and revisit with data."
+    ],
+    "cta": "Save this for your next roadmap review.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductStrategy",
+      "#GenAI",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next roadmap review"
+  },
+  "claims": [
+    {
+      "text": "AI is justified when rules are insufficient, errors are tolerable or recoverable, and test data exists.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Not every feature needs AI",
+      "2–5/ One question per slide",
+      "6/ Examples",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Format 3: rule vs model vs model-with-rules for the same feature.",
+    "linkedin": "Post with the four questions and a request for examples where 'no AI' was the right call."
+  }
+}

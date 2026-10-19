@@ -1,0 +1,323 @@
+{
+  "brief": {
+    "topic": "How tool calling actually works, in 30 seconds",
+    "audience": "PMs and leaders reviewing agent designs",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "architecture",
+    "targetDurationSec": 25,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t022"
+  },
+  "coreInsight": "In tool calling the model only proposes a call; your code decides whether and how to run it, so permissions, approvals and logging belong in your code, not the prompt.",
+  "hooks": [
+    {
+      "text": "The model doesn’t run your tools. Your code does.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Corrects a common mental model that hides where control actually sits."
+    },
+    {
+      "text": "Tool calling in 30 seconds.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Clear but no tension."
+    },
+    {
+      "text": "Who’s really in control of your AI agent?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Good curiosity, but vague until later."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): the reframe is accurate and has a direct product consequence — where you put permissions and approvals.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "The model doesn’t run your tools. / Your code does.",
+      "voiceover": "The model doesn't run your tools. Your code does.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "The model"
+        },
+        {
+          "text": "doesn’t run"
+        },
+        {
+          "text": "your tools.",
+          "highlight": true
+        }
+      ],
+      "sub": "Your code does.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show the control flow and where control sits.",
+      "onScreen": "TOOL CALLING IN 30S / Who does what? / User request → Model proposes → Your code runs it → Result to model → Final answer / Permissions live in your code, not the prompt.",
+      "voiceover": "The user asks. The model proposes a tool and arguments. Your code decides whether to run it. The result goes back to the model, which writes the answer. Permissions live in your code, not in the prompt.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 3.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "TOOL CALLING IN 30S",
+      "headline": [
+        {
+          "text": "Who does"
+        },
+        {
+          "text": "what?",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "User request",
+          "detail": "input"
+        },
+        {
+          "label": "Model proposes",
+          "detail": "tool + args"
+        },
+        {
+          "label": "Your code runs it",
+          "detail": "permissions",
+          "tone": "warning"
+        },
+        {
+          "label": "Result to model",
+          "detail": "context"
+        },
+        {
+          "label": "Final answer",
+          "detail": "to user",
+          "tone": "success"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 2,
+        "text": "Permissions live in your code, not the prompt.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "durationInFrames": 288,
+      "purpose": "Turn the architecture into review questions.",
+      "onScreen": "PM QUESTIONS / Ask before you ship. / Which tools can it call, and with what scope? · Which actions need human approval? · What happens when a call fails? · Is every tool call logged for audit? / If you can’t answer one, it’s not ready.",
+      "voiceover": "Before you ship, ask: which tools, with what scope? Which actions need approval? What happens when a call fails? Is every call logged?",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "PM QUESTIONS",
+      "headline": [
+        {
+          "text": "Ask before"
+        },
+        {
+          "text": "you ship.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Which tools can it call, and with what scope?",
+        "Which actions need human approval?",
+        "What happens when a call fails?",
+        "Is every tool call logged for audit?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "If you can’t answer one, it’s not ready.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "The model suggests. Your code acts. / Save this for your next agent review",
+      "voiceover": "The model suggests. Your code acts. Save this for your next agent review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "The model"
+        },
+        {
+          "text": "suggests."
+        },
+        {
+          "text": "Your code acts.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next agent review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "TOOL CALLING",
+    "headline": [
+      {
+        "text": "Who runs"
+      },
+      {
+        "text": "the tools?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "In tool calling, the model never presses the button. It asks your code to.",
+    "body": [
+      "The loop:\n1. User asks\n2. Model proposes a tool + arguments\n3. Your code decides whether to run it\n4. Result goes back to the model\n5. Model writes the answer",
+      "That’s why permissions, approval gates and audit logs belong in your code. A prompt that says “don’t delete anything” is a request, not a control.",
+      "Review questions: which tools and scope? Which actions need a human? What happens on failure? Is every call logged?"
+    ],
+    "cta": "Save this for your next agent review.",
+    "hashtags": [
+      "#AIAgents",
+      "#AgenticAI",
+      "#AIProductManagement",
+      "#LLM"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next agent review"
+  },
+  "claims": [
+    {
+      "text": "In tool-calling systems the model proposes calls and application code executes them, so access control belongs in application code rather than prompts.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ The model doesn’t run your tools",
+      "2/ The 5-step loop",
+      "3/ Where permissions live",
+      "4/ Four review questions",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 2: where to put human approval gates in an agent.",
+    "linkedin": "Post explaining the tool-calling loop for non-engineers with the four review questions."
+  }
+}

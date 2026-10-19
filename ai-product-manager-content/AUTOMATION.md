@@ -1,16 +1,19 @@
 # Daily automation
 
-Every morning a GitHub Actions workflow writes a new reel, renders it with Remotion, runs every quality gate, and opens a **review pull request** with the cover, a frame contact sheet and the MP4. **Merging the PR approves it.** The approved reel is posted to Instagram at the daily slot (default 19:00 IST). Closing the PR rejects it; nothing is posted.
+**It runs completely free by default:** a public GitHub repo (free Actions minutes), reels from a pre-written content queue (no AI model at run time), and Instagram's free Graph API. Paid writers are off unless you opt in.
+
+Every morning a GitHub Actions workflow takes a new reel, renders it with Remotion, runs every quality gate, and opens a **review pull request** with the cover, a frame contact sheet and the MP4. **Merging the PR approves it.** The approved reel is posted to Instagram at the daily slot (default 19:00 IST). Closing the PR rejects it; nothing is posted.
 
 ```
 06:00 IST  AIPM · Daily reel
-           plan topic (pillar mix, format rotation, no repeats, performance-weighted)
-           → writer (first available):
-               1. Claude Code on your Claude subscription   (CLAUDE_CODE_OAUTH_TOKEN, no API bill)
-               2. Claude API                                 (ANTHROPIC_API_KEY, pay per token)
-               3. Content queue: next pre-written draft      (data/queue, no model, free)
-             the writer checks its draft against the copy limits + safe-zone layout,
-             self-reviews as a demanding editor and revises; if it fails, the queue is used
+           plan topic (pillar mix, format rotation, no repeats, performance-weighted; used by opt-in writers)
+           → writer:
+               default   content queue: next pre-written draft  (data/queue, no model, free)
+               opt-in    Claude Code on a Claude subscription   (AIPM_WRITER=subscription)
+               opt-in    Claude API, pay per token               (AIPM_WRITER=api)
+             every draft is checked against the copy limits + safe-zone layout;
+             if an opt-in writer fails, that day falls back to the queue
+           → when 5 or fewer drafts are left: a "queue-low" issue reminds you to refill
            → render (Remotion) → Instagram spec conform → full QA → previews to a pre-release
            → review PR  [daily-reel]  (+ [needs-attention] if the editor wasn't satisfied)
 
@@ -23,8 +26,8 @@ you        merge = approve · edit the JSON in the PR = auto re-render · close 
            → comments the permalink on the PR
 
 Sunday     AIPM · Weekly topics & insights
-           Claude (subscription or API) web-scans for timely topics (with sources) → backlog
            Instagram insights → data/performance → planner weighting
+           (opt-in only) Claude web-scans for timely topics (with sources) → backlog
 ```
 
 Nothing is ever posted without a merged PR. If 3 reels are already waiting for review, the daily run skips generation instead of piling up drafts.
@@ -43,25 +46,26 @@ Repo → **Settings → Actions → General → Workflow permissions**:
 - select **Read and write permissions**
 - tick **Allow GitHub Actions to create and approve pull requests**
 
-### 3. Choose how reels get written
+### 3. How reels get written (free by default)
 
-Pick one (you can change any time — the workflow uses the first one it finds):
+**Default — the content queue, free.** Each day takes the next pre-written draft from `data/queue/`. Drafts are written ahead of time and pass the same copy, layout and claim checks as any reel. Nothing to set up.
 
-**A. Your Claude subscription — recommended, no API bill.** Needs a Claude Pro, Max, Team or Enterprise plan.
-1. On your computer, install Claude Code (`npm install -g @anthropic-ai/claude-code`) and run `claude setup-token`. Sign in with your Claude account; it prints a long-lived token.
-2. Repo → **Settings → Secrets and variables → Actions → New repository secret**: name `CLAUDE_CODE_OAUTH_TOKEN`, value = that token.
-3. Make sure the Claude GitHub App is installed on the repo (you did this already).
+- `node scripts/daily/dequeue.mjs --status` lists what's left (`--count` prints just the number).
+- When 5 or fewer drafts remain, the daily run opens (or comments on) an issue labelled **queue-low**. Turn on GitHub notifications to see it.
+- **To refill for free:** in a Claude chat, ask: *"write the next batch of queue drafts for aipm-reels"*. Claude writes and validates them; commit them to `data/queue/` or let Claude push them. Ten drafts = ten days.
+- Drafts are never deleted; a draft counts as used once a reel carries its `queueId`. A draft that has become too similar to a newer reel is skipped automatically.
 
-Each day's run uses Claude Code inside the workflow: it reads the brief, writes the reel, runs the validator itself and fixes what fails, then reviews its own draft as the editor. It counts toward your plan's normal usage limits (one reel a day is a small share). If a run fails — for example you've hit your plan's limit — that day's reel comes from the queue instead.
+**Optional, paid — a model writes each reel at run time.** Off unless you set the repo variable `AIPM_WRITER`. Adding a secret alone never turns these on.
 
-**B. Claude API key — pay per token.** Secret `ANTHROPIC_API_KEY` from the Claude Console. Costs are under "Costs" below.
+- `AIPM_WRITER=subscription` + secret `CLAUDE_CODE_OAUTH_TOKEN`: Claude Code on a Claude Pro, Max, Team or Enterprise plan (no API bill; counts toward the plan's usage limits). Create the token with `claude setup-token` on your computer; the Claude GitHub App must be installed on the repo.
+- `AIPM_WRITER=api` + secret `ANTHROPIC_API_KEY`: Claude API, pay per token (see Costs).
 
-**C. Nothing — the content queue.** With no token or key, each day takes the next pre-written draft from `data/queue/`. The repo starts with 4 drafts; when they run out, ask Claude in a chat to "write the next batch of queue drafts for aipm-reels" and commit them (or let Claude push them). `node scripts/daily/dequeue.mjs --status` shows how many are left.
+Either one also enables the weekly topic scan. If the run fails (plan limit, auth error), that day's reel comes from the queue. If the variable is set but the secret is missing, the run warns and uses the queue.
 
 ### 4. Try it
 
 Actions → **AIPM · Daily reel** → **Run workflow**.
-- Leave everything blank to make today's reel with whichever writer you set up (with nothing set up, it takes the next queue draft), or
+- Leave everything blank to make today's reel (it takes the next queue draft, or uses the writer you opted into), or
 - put `aipm-001-demo-prompts-not-evals` (or `aipm-002-spec-how-your-ai-feature-fails`) in **reel_id** to send an existing reel through review.
 
 A PR appears in ~10–15 minutes. Turn on GitHub mobile notifications for the repo to get it on your phone.
@@ -112,8 +116,9 @@ Then run **AIPM · Check Instagram setup**. It lists anything missing (token, pe
 | `AIPM_TZ` | `Asia/Kolkata` | Time zone for the slot and the daily cap |
 | `AIPM_MAX_PER_DAY` | `1` | Posts per day |
 | `AIPM_MAX_OPEN_REVIEWS` | `3` | Skip generation when this many PRs await review |
-| `AIPM_WRITER` | auto | Force a writer: `subscription`, `api` or `queue` |
-| `AIPM_MODEL` | `claude-opus-5-5` | Writer/editor model (`claude-sonnet-5-5` is cheaper; `claude-fable-5-1` is stronger and pricier) |
+| `AIPM_WRITER` | `queue` | `queue` (free), or opt into a paid writer: `subscription` or `api` |
+| `AIPM_QUEUE_LOW` | `5` | Open a queue-low issue when this many drafts or fewer are left |
+| `AIPM_MODEL` | `claude-opus-5-5` | Paid writers only: writer/editor model (`claude-sonnet-5-5` is cheaper; `claude-fable-5-1` is stronger and pricier) |
 | `IG_LOGIN` | `instagram` | `instagram` or `facebook` |
 | `IG_API_VERSION` | `v26.0` | Graph API version |
 | `IG_UPLOAD_MODE` | `url` (IG login) / `resumable` (FB login) | How the video reaches Meta |
@@ -124,10 +129,13 @@ The daily generation time is the cron in `aipm-daily-reel.yml` (`30 0 * * *` = 0
 
 ## Costs
 
-- **GitHub Actions:** free for public repositories.
-- **Claude subscription (option A):** no extra charge; runs count toward your plan's usage limits.
-- **Content queue (option C):** free.
-- **Claude API (option B):** each PR shows the estimated cost of writing that reel. With `claude-opus-5-5` ($4 / $20 per million input/output tokens) expect very roughly **$0.40–$1.20 per reel**, depending on revision rounds. The weekly topic scan adds web searches ($10 per 1,000) plus tokens, typically well under $1.
+**Default setup: $0.**
+
+- **GitHub Actions:** free for public repositories. (Private repos get a monthly free allowance; a daily render fits in it, but keep the repo public to stay at $0 with headroom.)
+- **Content queue (default):** free. Refilling it happens in a normal Claude chat, with no API key or GitHub secret involved.
+- **Instagram Graph API:** free.
+- **Claude subscription (opt-in):** no extra charge on a paid plan; runs count toward its usage limits.
+- **Claude API (opt-in):** each PR shows the estimated cost of writing that reel. With `claude-opus-5-5` ($4 / $20 per million input/output tokens) expect very roughly **$0.40–$1.20 per reel**, depending on revision rounds. The weekly topic scan adds web searches ($10 per 1,000) plus tokens, typically well under $1.
 - **Remotion:** free for individuals and very small companies; larger companies need a Remotion company license (see remotion.dev/license).
 
 ## What the automation can't do
@@ -141,7 +149,8 @@ The daily generation time is the cron in `aipm-daily-reel.yml` (`30 0 * * *` = 0
 
 | Symptom | Fix |
 |---|---|
-| Daily run fails at "Finalize today's reel" with "queue is empty" | No writer is configured and the queue ran out. Add `CLAUDE_CODE_OAUTH_TOKEN` (option A) or new drafts to `data/queue/`. |
+| Daily run fails at "Finalize today's reel" with "queue is empty" | The queue ran out. Ask Claude in chat for the next batch of queue drafts and commit them to `data/queue/`. Nothing is posted on days without a reel. |
+| A paid secret is set but reels still come from the queue | Expected: paid writers need the `AIPM_WRITER` variable too. |
 | The Claude Code step fails with an "actor is a bot" or permission message | Scheduled runs are attributed to whoever last edited the cron line. Edit that line once yourself (e.g. change the minute) and commit, or run the workflow manually. Make sure the Claude GitHub App is installed on the repo. |
 | Claude Code step fails with an authentication error | Re-run `claude setup-token` and update the `CLAUDE_CODE_OAUTH_TOKEN` secret. That day's reel still comes from the queue. |
 | `gh pr create` fails with a permissions error | Step 2 above (allow Actions to create PRs). |

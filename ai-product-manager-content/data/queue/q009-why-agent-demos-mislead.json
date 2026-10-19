@@ -1,0 +1,319 @@
+{
+  "brief": {
+    "topic": "Your agent demo succeeded 9 times. Why it still fails in production",
+    "audience": "PMs and engineers building multi-step agents",
+    "pillar": "C: Agentic AI",
+    "objective": "shares",
+    "format": "poc-to-production",
+    "targetDurationSec": 18,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t025"
+  },
+  "coreInsight": "Per-step reliability multiplies across long tasks, so evaluate end-to-end task success over many runs instead of trusting a few successful demos.",
+  "hooks": [
+    {
+      "text": "9 perfect demos. Still not ready.",
+      "angle": "Concrete before-and-after",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Specific and surprising; the reel shows the arithmetic."
+    },
+    {
+      "text": "Agents don’t fail at a step. They fail at the sum.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "notes": "Elegant but abstract for two seconds."
+    },
+    {
+      "text": "The math that breaks long agent tasks.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Weaker promise."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): concrete, intriguing, and the reel backs it with a labelled illustrative calculation.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "9 perfect demos. Still not ready. / Here’s the math.",
+      "voiceover": "Nine perfect demos. Still not ready. Here's the math.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "9 perfect"
+        },
+        {
+          "text": "demos."
+        },
+        {
+          "text": "Still not",
+          "highlight": true
+        },
+        {
+          "text": "ready.",
+          "highlight": true
+        }
+      ],
+      "sub": "Here’s the math.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "demo",
+      "type": "cards",
+      "durationInFrames": 127,
+      "purpose": "Show a demo where each step works.",
+      "onScreen": "THE DEMO / Every step worked. / STEP 1 Read the request · STEP 2 Find the record · STEP 3 Update the system · STEP 4 Send the reply",
+      "voiceover": "In the demo, every step worked: read the request, find the record, update the system, send the reply.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 14 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE DEMO",
+      "headline": [
+        {
+          "text": "Every step"
+        },
+        {
+          "text": "worked."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Read the request",
+          "status": "pass",
+          "tag": "STEP 1"
+        },
+        {
+          "text": "Find the record",
+          "status": "pass",
+          "tag": "STEP 2"
+        },
+        {
+          "text": "Update the system",
+          "status": "pass",
+          "tag": "STEP 3"
+        },
+        {
+          "text": "Send the reply",
+          "status": "pass",
+          "tag": "STEP 4"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 58,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "math",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show how per-step reliability compounds (labelled illustrative).",
+      "onScreen": "WHY IT BREAKS [ILLUSTRATIVE] / ONE STEP 95% / 10 STEPS IN A ROW 60% / Errors compound.",
+      "voiceover": "Illustrative math: if each step succeeds ninety-five percent of the time, ten steps in a row succeed about sixty percent of the time. Errors compound.",
+      "storyboard": {
+        "visual": "Badge; two metric cards with bars; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHY IT BREAKS",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "ONE STEP",
+        "value": "95%",
+        "ratio": 0.95,
+        "tone": "success",
+        "caption": "Reliable on its own"
+      },
+      "right": {
+        "label": "10 STEPS IN A ROW",
+        "value": "60%",
+        "ratio": 0.6,
+        "tone": "warning",
+        "caption": "0.95^10 ≈ 0.60"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Errors"
+        },
+        {
+          "text": "compound.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Test the whole task, not one step. / Share this with your agent team",
+      "voiceover": "Test the whole task, not one step. Share this with your agent team.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Test the"
+        },
+        {
+          "text": "whole task,"
+        },
+        {
+          "text": "not one step.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your agent team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT RELIABILITY",
+    "headline": [
+      {
+        "text": "Why agents"
+      },
+      {
+        "text": "fail at scale",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A step that works 95% of the time sounds solid. Chain ten of them and it’s closer to a coin flip with good odds.",
+    "body": [
+      "Illustrative math (assuming independent steps): 0.95 × 0.95 … ten times ≈ 0.60. Real systems differ, but the direction holds: long tasks amplify small error rates.",
+      "So evaluate the whole task, many times:\n→ end-to-end success rate over dozens of runs\n→ where in the chain failures cluster\n→ which steps need a check or a human approval",
+      "(Numbers in the reel are illustrative, not measurements of a real system.)"
+    ],
+    "cta": "Share this with your agent team.",
+    "hashtags": [
+      "#AIAgents",
+      "#AgenticAI",
+      "#AIProductManagement",
+      "#LLM"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your agent team"
+  },
+  "claims": [
+    {
+      "text": "95% per-step success over 10 independent steps ≈ 60% end-to-end (0.95^10 ≈ 0.599).",
+      "kind": "illustrative",
+      "sources": []
+    },
+    {
+      "text": "Agent reliability should be evaluated end to end over many runs rather than inferred from successful demos.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ 9 perfect demos, still not ready",
+      "2/ The steps",
+      "3/ The math (illustrative)",
+      "4/ What to measure",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 2: where to put human approval gates in an agent.",
+    "linkedin": "Post with the compounding-error math and a question about how teams test long agent tasks."
+  }
+}

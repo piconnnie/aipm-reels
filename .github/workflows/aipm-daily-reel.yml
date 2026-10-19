@@ -1,7 +1,8 @@
 name: "AIPM · Daily reel"
 # Writes, renders and QA-checks one new reel every morning and opens a review
-# PR with previews. Writer: Claude Code on your Claude subscription, the Claude
-# API, or the pre-written queue in data/queue (see AUTOMATION.md). Merging the PR approves it for posting (see aipm-publish.yml).
+# PR with previews. Writer: the free pre-written queue in data/queue by default;
+# Claude Code (subscription) or the Claude API only if AIPM_WRITER opts in.
+# Merging the PR approves it for posting (see aipm-publish.yml).
 
 on:
   schedule:
@@ -24,6 +25,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
   id-token: write # Claude Code GitHub Action authentication
 
 concurrency:
@@ -81,18 +83,21 @@ jobs:
         if: steps.gate.outputs.skip != 'true'
         id: mode
         env:
+          WRITER: ${{ vars.AIPM_WRITER || 'queue' }}
           HAS_OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
-          FORCE_MODE: ${{ vars.AIPM_WRITER }}
-        # existing  → re-review a content file already in the repo (reel_id input)
-        # subscription → Claude Code GitHub Action on your Claude plan (CLAUDE_CODE_OAUTH_TOKEN)
-        # api       → Claude API (ANTHROPIC_API_KEY, billed per token)
-        # queue     → next pre-written draft in data/queue (no model, no cost)
+        # Free by default: reels come from the pre-written queue in data/queue.
+        # A paid writer runs ONLY if the repository variable AIPM_WRITER is set to
+        # "subscription" (Claude Code on a Claude plan) or "api" (Claude API) —
+        # having a token or key in secrets is not enough on its own.
         run: |
           if [ -n "$INPUT_REEL_ID" ]; then mode=existing
-          elif [ -n "$FORCE_MODE" ]; then mode="$FORCE_MODE"
-          elif [ "$HAS_OAUTH" = "true" ]; then mode=subscription
-          elif [ -n "$ANTHROPIC_API_KEY" ]; then mode=api
-          else mode=queue; fi
+          else
+            case "$WRITER" in
+              subscription) [ "$HAS_OAUTH" = "true" ] && mode=subscription || { echo "::warning::AIPM_WRITER=subscription but CLAUDE_CODE_OAUTH_TOKEN is missing; using the free queue."; mode=queue; } ;;
+              api) [ -n "$ANTHROPIC_API_KEY" ] && mode=api || { echo "::warning::AIPM_WRITER=api but ANTHROPIC_API_KEY is missing; using the free queue."; mode=queue; } ;;
+              *) mode=queue ;;
+            esac
+          fi
           echo "Writer: $mode"; echo "mode=$mode" >> "$GITHUB_OUTPUT"
           node scripts/daily/dequeue.mjs --status || true
 
@@ -172,6 +177,20 @@ jobs:
           # Remove planner-only copies of other branches' reels before committing.
           xargs -r rm -f < /tmp/planner-copies.txt
           scripts/daily/open-review-pr.sh "$ID"
+
+      - name: Warn when the content queue is running low
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          LOW: ${{ vars.AIPM_QUEUE_LOW || '5' }}
+        run: |
+          left=$(node scripts/daily/dequeue.mjs --count)
+          echo "Queue drafts left: $left"
+          if [ "$left" -le "$LOW" ]; then
+            gh label create queue-low --color FFC66D --description "Content queue needs a refill" --force > /dev/null
+            existing=$(gh issue list --label queue-low --state open --json number --jq '.[0].number // empty')
+            body="Only $left pre-written reel draft(s) left in ai-product-manager-content/data/queue (about $left day(s) of posts). To refill for free, ask Claude in chat: \"write the next batch of queue drafts for aipm-reels\" and commit them (or let Claude push them)."
+            if [ -n "$existing" ]; then gh issue comment "$existing" --body "$body"; else gh issue create --title "Content queue running low ($left left)" --body "$body" --label queue-low; fi
+          fi
 
       - name: Summary
         if: steps.gate.outputs.skip != 'true'

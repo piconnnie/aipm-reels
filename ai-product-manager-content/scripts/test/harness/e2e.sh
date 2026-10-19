@@ -32,6 +32,8 @@ export PATH="$E2E/bin:$PATH"
 # --- "GitHub": bare remote seeded from the working tree (tracked + new files)
 mkdir "$E2E/seed"
 ( cd "$SRC" && git ls-files -co --exclude-standard -z | grep -zv '^ai-product-manager-content/output/' | xargs -0 -I{} cp --parents "{}" "$E2E/seed/" )
+# Tests use the four fixture drafts q001–q004 so numbering stays deterministic.
+find "$E2E/seed/ai-product-manager-content/data/queue" -name '*.json' ! -name 'q00[1-4]-*' -delete
 ( cd "$E2E/seed" && git init -q -b main && git add -A && git -c user.name=seed -c user.email=s@x commit -qm seed )
 git clone -q --bare "$E2E/seed" "$E2E/remote.git"
 git clone -q "$E2E/remote.git" "$E2E/work"
@@ -55,8 +57,8 @@ check "Review branch pushed with archive/state.json" "git -C '$W' ls-remote --ex
 check "PR body has preview images, MP4 link and QA" "ghq 's.prs[0].body' | grep -q 'Watch the reel' && ghq 's.prs[0].body' | grep -q 'Automated QA'"
 git -C "$W" checkout -q main
 
-echo "== 2. Scheduled daily run writes a NEW reel (mock writer)"
-AIPM_MOCK_DRAFT="$DRAFT" $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"ANTHROPIC_API_KEY":"test"}'
+echo "== 2. Scheduled daily run writes a NEW reel (API writer opted in, mock model)"
+AIPM_MOCK_DRAFT="$DRAFT" $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"ANTHROPIC_API_KEY":"test"}' --vars '{"AIPM_WRITER":"api"}'
 NEWID=$(ghq 's.prs[1]?.headRefName?.replace("reel/","") ?? ""')
 check "PR #2 opened for a new reel ($NEWID)" "[ -n '$NEWID' ] && [[ '$NEWID' == aipm-003-* ]]"
 check "Planner skipped topics already used (backlogId t019, not t001/t002)" "git -C '$W' show origin/reel/$NEWID:ai-product-manager-content/src/content/reels/$NEWID.json | grep -q '\"backlogId\": \"t019\"'"
@@ -64,21 +66,22 @@ check "Only the new reel's files are on its branch" "[ \"\$(git -C '$W' diff --n
 git -C "$W" checkout -q main
 
 echo "== 3. Review backlog gate"
-$RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"ANTHROPIC_API_KEY":"test"}' --vars '{"AIPM_MAX_OPEN_REVIEWS":"2"}'
+$RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"ANTHROPIC_API_KEY":"test"}' --vars '{"AIPM_MAX_OPEN_REVIEWS":"2","AIPM_WRITER":"api"}'
 check "No third PR when 2 reviews are open and the limit is 2" "[ \"\$(ghq 's.prs.length')\" = 2 ]"
 
 MOCKCC="$HERE/mock-claude-code.sh"
 Q="$W/ai-product-manager-content/data/queue"
 OPEN10='{"AIPM_MAX_OPEN_REVIEWS":"10"}'
+SUB10='{"AIPM_MAX_OPEN_REVIEWS":"10","AIPM_WRITER":"subscription"}'
 reel_of_pr() { ghq "s.prs[$1]?.headRefName?.replace('reel/','') ?? ''"; }
 reel_json() { git -C "$W" show "origin/reel/$1:ai-product-manager-content/src/content/reels/$1.json"; }
 
-echo "== 3b. Writer = Claude subscription (Claude Code action), draft passes"
+echo "== 3b. Writer = Claude subscription (opted in via AIPM_WRITER) (Claude Code action), draft passes"
 git -C "$W" checkout -q main
 HARNESS_CLAUDE_ACTION="$MOCKCC" HARNESS_DRAFT="$Q/q003-licenses-are-not-adoption.json" \
-  $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"CLAUDE_CODE_OAUTH_TOKEN":"oauth-test"}' --vars "$OPEN10" | tee "$E2E/s3b.log" > /dev/null
+  $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"CLAUDE_CODE_OAUTH_TOKEN":"oauth-test"}' --vars "$SUB10" | tee "$E2E/s3b.log" > /dev/null
 git -C "$W" fetch -q origin; SUBID=$(reel_of_pr 2)
-check "Subscription mode chosen when CLAUDE_CODE_OAUTH_TOKEN is set" "grep -q 'Writer: subscription' '$E2E/s3b.log' || grep -q \"Claude Code writes today's reel\" '$E2E/s3b.log'"
+check "Subscription mode chosen when AIPM_WRITER=subscription and the token is set" "grep -q 'Writer: subscription' '$E2E/s3b.log' || grep -q \"Claude Code writes today's reel\" '$E2E/s3b.log'"
 check "PR #3 opened for the Claude Code reel ($SUBID)" "[[ '$SUBID' == aipm-004-* ]]"
 check "Reel records writer = claude-code and the planner's topic" "reel_json '$SUBID' | grep -q '\"writer\": \"claude-code:' && reel_json '$SUBID' | grep -q '\"backlogId\": \"t'"
 check "Editor verdict from review.json shown in the PR" "ghq 's.prs[2].body' | grep -q 'Verdict: \*\*pass\*\*'"
@@ -86,18 +89,20 @@ git -C "$W" checkout -q main
 
 echo "== 3c. Claude Code fails (e.g. plan limit) → falls back to the queue"
 HARNESS_CLAUDE_ACTION="$MOCKCC" HARNESS_CLAUDE_FAIL=1 \
-  $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"CLAUDE_CODE_OAUTH_TOKEN":"oauth-test"}' --vars "$OPEN10" | tee "$E2E/s3c.log" > /dev/null
+  $RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"CLAUDE_CODE_OAUTH_TOKEN":"oauth-test"}' --vars "$SUB10" | tee "$E2E/s3c.log" > /dev/null
 git -C "$W" fetch -q origin; FBID=$(reel_of_pr 3)
 check "Fallback produced PR #4 ($FBID)" "[[ '$FBID' == aipm-005-* ]]"
 check "Queue skipped q001 (too similar to reel 003) and used q002" "reel_json '$FBID' | grep -q '\"queueId\": \"q002-rag-or-fine-tuning\"'"
 check "Reel records writer = queue" "reel_json '$FBID' | grep -q '\"writer\": \"queue\"'"
 git -C "$W" checkout -q main
 
-echo "== 3d. No Claude at all → queue mode"
-$RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --vars "$OPEN10" | tee "$E2E/s3d.log" > /dev/null
+echo "== 3d. Default (no AIPM_WRITER) → free queue, even with paid secrets present"
+$RUN "$WF/aipm-daily-reel.yml" --repo "$W" --event schedule --secrets '{"ANTHROPIC_API_KEY":"test","CLAUDE_CODE_OAUTH_TOKEN":"oauth-test"}' --vars "$OPEN10" | tee "$E2E/s3d.log" > /dev/null
 git -C "$W" fetch -q origin; QID=$(reel_of_pr 4)
 check "Queue mode produced PR #5 ($QID) without any secrets" "[[ '$QID' == aipm-006-* ]]"
 check "Used q004 (q003 already covered by the Claude Code reel)" "reel_json '$QID' | grep -q '\"queueId\": \"q004-interview-chatbot-hallucinates\"'"
+check "Paid writers stayed off without the opt-in" "reel_json '$QID' | grep -q '\"writer\": \"queue\"' && ! grep -q 'mock: wrote draft.json' '$E2E/s3d.log'"
+check "One open queue-low issue, updated by later runs" "[ \"\$(ghq 's.issues.filter(i=>i.labels?.includes(\"queue-low\")).length')\" = 1 ] && [ \"\$(ghq 's.issues.find(i=>i.labels?.includes(\"queue-low\")).comments.length')\" -ge 1 ]"
 git -C "$W" checkout -q main
 
 echo "== 3e. Queue empty and no writer → clear failure, no PR"
@@ -160,8 +165,8 @@ echo "== 8. A merged PR without the daily-reel label is ignored"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event pull_request --event-json '{"pull_request":{"number":9,"merged":true,"labels":[{"name":"docs"}],"head":{"ref":"feature/x"}}}' --secrets "$IGSECRETS" | tee "$E2E/s8.log" > /dev/null
 check "Publish job skipped" "grep -q 'skipped by if' '$E2E/s8.log'"
 
-echo "== 9. Weekly: topic scan via Claude subscription + insights import + report"
-HARNESS_CLAUDE_ACTION="$MOCKCC" $RUN "$WF/aipm-weekly.yml" --repo "$W" --event schedule --secrets "{\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\",\"CLAUDE_CODE_OAUTH_TOKEN\":\"oauth-test\"}"
+echo "== 9. Weekly: topic scan via Claude subscription (opted in) + insights import + report"
+HARNESS_CLAUDE_ACTION="$MOCKCC" $RUN "$WF/aipm-weekly.yml" --repo "$W" --event schedule --secrets "{\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\",\"CLAUDE_CODE_OAUTH_TOKEN\":\"oauth-test\"}" --vars '{"AIPM_WRITER":"subscription"}'
 git -C "$W" fetch -q origin
 check "Insights row written for the posted reel" "git -C '$W' show origin/main:ai-product-manager-content/data/performance/performance.csv | grep -q '^$NEWID,'"
 check "Unsupported metrics skipped, not invented" "git -C '$W' show origin/main:ai-product-manager-content/data/performance/performance.csv | grep '^$NEWID,' | grep -q ',1840,'"
@@ -169,13 +174,17 @@ check "Planner index file committed" "git -C '$W' show origin/main:ai-product-ma
 check "Scanned topic with a source added to the backlog" "git -C '$W' show origin/main:ai-product-manager-content/data/topics/backlog.json | grep -q 'Eval sets go stale'"
 check "Scanned topic without sources rejected" "! git -C '$W' show origin/main:ai-product-manager-content/data/topics/backlog.json | grep -q 'No source topic'"
 
+echo "== 9b. Weekly in default free mode → no topic scan, insights still run"
+HARNESS_CLAUDE_ACTION="$MOCKCC" $RUN "$WF/aipm-weekly.yml" --repo "$W" --event schedule --secrets "{\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\",\"CLAUDE_CODE_OAUTH_TOKEN\":\"oauth-test\"}" | tee "$E2E/s9b.log" > /dev/null
+check "Scan skipped without the opt-in" "grep -q 'Free mode: topic scan skipped' '$E2E/s9b.log' && ! grep -q 'mock: wrote scan.json' '$E2E/s9b.log'"
+
 echo "== 10. Setup check and token refresh"
 $RUN "$WF/aipm-check-instagram.yml" --repo "$W" --event workflow_dispatch --secrets "{\"ANTHROPIC_API_KEY\":\"x\",\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\"}" | tee "$E2E/s10.log" > /dev/null
 check "Instagram check passes against the mock" "grep -q '\[job check\] success' '$E2E/s10.log'"
 $RUN "$WF/aipm-token-refresh.yml" --repo "$W" --event schedule --secrets '{"IG_ACCESS_TOKEN":"SECRET_TEST_TOKEN","GH_SECRETS_PAT":"pat"}' > /dev/null
 check "Refreshed token stored via gh secret set" "[ \"\$(ghq 's.secrets.IG_ACCESS_TOKEN ?? 0')\" -gt 0 ]"
 $RUN "$WF/aipm-token-refresh.yml" --repo "$W" --event schedule --secrets '{"IG_ACCESS_TOKEN":"SECRET_TEST_TOKEN"}' > /dev/null
-check "Without a PAT a reminder issue is opened" "[ \"\$(ghq 's.issues.length')\" -ge 1 ]"
+check "Without a PAT a reminder issue is opened" "ghq 's.issues.map(i=>i.title).join(\"|\")' | grep -q 'Instagram token needs renewing'"
 
 echo
 echo "E2E: $PASS passed, $FAIL failed  (workspace: $E2E)"

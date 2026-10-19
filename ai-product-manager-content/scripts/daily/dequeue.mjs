@@ -4,7 +4,8 @@
 // any reel (merged or awaiting review) carries its queueId, so parallel review
 // PRs never pick the same one. Drafts are never deleted — they're the record.
 //   node scripts/daily/dequeue.mjs            → prints the new reel id (last line)
-//   node scripts/daily/dequeue.mjs --status   → how many drafts are left
+//   node scripts/daily/dequeue.mjs --status   → how many drafts are left (with names)
+//   node scripts/daily/dequeue.mjs --count    → just the number
 import {spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -16,12 +17,16 @@ const drafts = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith
 const used = new Set(listReels().map((id) => loadReel(id).brief?.queueId).filter(Boolean));
 const remaining = drafts.filter((f) => !used.has(f.replace(/\.json$/, '')));
 
+if (process.argv.includes('--count')) {
+  console.log(remaining.length);
+  process.exit(0);
+}
 if (process.argv.includes('--status')) {
   console.log(`${remaining.length} unused draft(s) in data/queue: ${remaining.join(', ') || '(none)'}`);
   process.exit(0);
 }
 if (!remaining.length) {
-  console.error('The content queue is empty. Add drafts to data/queue/ (ask Claude in chat to write the next batch), or set CLAUDE_CODE_OAUTH_TOKEN / ANTHROPIC_API_KEY so a writer can generate reels.');
+  console.error('The content queue is empty. Refill it for free: ask Claude in chat to "write the next batch of queue drafts for aipm-reels" and commit the files to data/queue/. (Paid writers stay off unless the AIPM_WRITER variable opts in.)');
   process.exit(1);
 }
 

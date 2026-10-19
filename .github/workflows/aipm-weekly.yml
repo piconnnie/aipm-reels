@@ -28,7 +28,9 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      HAS_OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+      # Topic scans use a paid writer, so they run only when AIPM_WRITER opts in.
+      HAS_OAUTH: ${{ vars.AIPM_WRITER == 'subscription' && secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+      USE_API: ${{ vars.AIPM_WRITER == 'api' }}
       AIPM_MODEL: ${{ vars.AIPM_MODEL || 'claude-opus-5-5' }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
@@ -62,7 +64,7 @@ jobs:
         if: env.HAS_OAUTH != 'true'
         continue-on-error: true
         run: |
-          if [ -n "$ANTHROPIC_API_KEY" ]; then node scripts/daily/scan-trends.mjs --count 4; else echo "No Claude subscription token or API key; skipping the topic scan (the backlog still has seed topics)."; fi
+          if [ "$USE_API" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then node scripts/daily/scan-trends.mjs --count 4; else echo "Free mode: topic scan skipped (it needs a paid writer)."; fi
       - name: Import Instagram insights
         continue-on-error: true
         run: node scripts/daily/fetch-insights.mjs
