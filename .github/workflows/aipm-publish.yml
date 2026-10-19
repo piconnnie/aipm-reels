@@ -65,6 +65,16 @@ jobs:
         with:
           node-version: 22
 
+      # Opt-in (AIPM_AUTO_APPROVE=true): after the posting time, merge the oldest
+      # waiting review PR unless it's closed, on hold or needs attention.
+      - name: Auto-approve the next reel (if turned on)
+        if: github.event_name != 'pull_request'
+        env:
+          AIPM_AUTO_APPROVE: ${{ vars.AIPM_AUTO_APPROVE || 'false' }}
+        run: |
+          pr=$(node scripts/daily/auto-approve.mjs)
+          if [ -n "$pr" ]; then git pull --quiet --ff-only origin "$DEFAULT_BRANCH"; fi
+
       # Every run (merge, hourly, manual) records approvals for all merged reel PRs,
       # so an approval survives even if the run started by the merge was cancelled.
       - name: Record approvals from merged PRs

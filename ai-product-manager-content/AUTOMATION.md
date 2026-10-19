@@ -20,6 +20,8 @@ Every morning a GitHub Actions workflow takes a new reel, renders it with Remoti
 you        merge = approve · edit the JSON in the PR = auto re-render · close = reject
 
 hourly     AIPM · Approve & publish   (also runs the moment you merge)
+           (auto-approve on) after AIPM_POST_TIME: merge the oldest waiting review PR,
+             one at a time, skipping PRs on `hold` or flagged needs-attention
            records approval for every merged reel PR (so none is lost)
            oldest approved reel, max 1/day, once the local time passes AIPM_POST_TIME
            → verifies the file hashes match what passed QA and what you approved
@@ -119,6 +121,17 @@ A Streamlit app that runs entirely in your browser and controls the pipeline thr
 
 Every irreversible button asks for confirmation. The first load takes ~20 seconds while Python starts in the browser.
 
+## Auto-approve
+
+With `AIPM_AUTO_APPROVE=true` (control panel → Settings → Auto-approve), you don't have to merge anything. Each morning's reel still opens a review PR, and the time until `AIPM_POST_TIME` is your veto window:
+
+- do nothing → at the posting time the oldest waiting reel is approved and posted;
+- **Reject** (close the PR) → it's never posted;
+- **Hold** (the `hold` label, or the Hold button in the panel) → it waits for you; you can still approve it by hand;
+- reels the editor flagged **needs-attention** always wait for you (only possible with a paid writer).
+
+Only one reel is approved at a time and the daily cap still applies, so a backlog posts one per day rather than all at once. Every automated QA gate still runs before a review PR exists; a reel that fails QA never gets a PR.
+
 ## Day to day
 
 - **Morning:** open the PR. Watch the MP4 (the "Watch the reel" link), skim the script table, the editor scores and the claims/sources.
@@ -137,6 +150,7 @@ Every irreversible button asks for confirmation. The first load takes ~20 second
 | `AIPM_TZ` | `Asia/Kolkata` | Time zone for the slot and the daily cap |
 | `AIPM_MAX_PER_DAY` | `1` | Posts per day |
 | `AIPM_MAX_OPEN_REVIEWS` | `3` | Skip generation when this many PRs await review |
+| `AIPM_AUTO_APPROVE` | `false` | `true` = each reel approves itself at the posting time unless you close its PR or label it `hold` before then |
 | `AIPM_WRITER` | `queue` | `queue` (free), or opt into a paid writer: `subscription` or `api` |
 | `AIPM_QUEUE_LOW` | `5` | Open a queue-low issue when this many drafts or fewer are left |
 | `AIPM_MODEL` | `claude-opus-5-5` | Paid writers only: writer/editor model (`claude-sonnet-5-5` is cheaper; `claude-fable-5-1` is stronger and pricier) |

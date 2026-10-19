@@ -247,6 +247,19 @@ class AppTests(unittest.TestCase):
         self.run_app(press={"↻ Refresh"})
         self.assertTrue(any("ANTHROPIC_API_KEY" in w for w in ST.texts("warning")))
 
+    def test_auto_approve_setting_and_hold(self):
+        self.connect()
+        self.run_app(press={"Save settings"}, **{"Auto-approve": "true"})
+        self.assertEqual(self.state.variables.get("AIPM_AUTO_APPROVE"), "true")
+        self.run_app(press={"↻ Refresh"})
+        self.assertTrue(any("Auto-approve is on" in t for t in ST.texts("info")))
+        self.run_app(press={"hold-5"})
+        self.assertIn("hold", self.state.prs[0]["labels"])
+        self.run_app(press={"hold-5"})
+        self.assertNotIn("hold", self.state.prs[0]["labels"])
+        self.run_app(press={"Save settings"}, **{"Auto-approve": "false"})
+        self.assertNotIn("AIPM_AUTO_APPROVE", self.state.variables)  # back to default removes it
+
     def test_pause_resume(self):
         self.connect()
         self.run_app(press={"toggle-daily"})

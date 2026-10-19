@@ -124,6 +124,19 @@ def make_handler(state: State):
                 if method == "PATCH":
                     pr["state"] = body.get("state", pr["state"])
                     return self._send(200, {})
+            if rest == "/labels" and method == "POST":
+                return self._send(201, {})
+            ml = re.match(r"^/issues/(\d+)/labels(?:/([\w-]+))?$", rest)
+            if ml:
+                pr = next((p for p in state.prs if p["number"] == int(ml.group(1))), None)
+                if not pr:
+                    return self._send(404, {"message": "Not Found"})
+                if method == "POST":
+                    pr["labels"] = list(dict.fromkeys(pr["labels"] + body["labels"]))
+                    return self._send(200, [])
+                if method == "DELETE":
+                    pr["labels"] = [l for l in pr["labels"] if l != ml.group(2)]
+                    return self._send(200, [])
             mc = re.match(r"^/issues/(\d+)/comments$", rest)
             if mc and method == "POST":
                 state.comments.append((int(mc.group(1)), body["body"]))

@@ -13,7 +13,7 @@ const TZ = process.env.AIPM_TZ || 'Asia/Kolkata';
 const POST_TIME = process.env.AIPM_POST_TIME || '19:00';
 const MAX_PER_DAY = Number(process.env.AIPM_MAX_PER_DAY || 1);
 
-const localParts = (d) => {
+export const localParts = (d) => {
   const f = new Intl.DateTimeFormat('en-CA', {timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false});
   const p = Object.fromEntries(f.formatToParts(d).map((x) => [x.type, x.value]));
   return {date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour === '24' ? '00' : p.hour}:${p.minute}`};

@@ -2,6 +2,7 @@
 // Minimal stand-in for the GitHub CLI used by the workflow tests. Supports only
 // the gh sub-commands the AIPM workflows call. State lives in $GH_FAKE_STATE
 // (JSON); release assets are copied into $GH_FAKE_RELEASES/<tag>/.
+import {execSync} from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -62,6 +63,14 @@ if (group === 'pr') {
     const pr = state.prs.find((p) => p.number === Number(positional()[0]));
     pr.body = fs.readFileSync(flag('body-file'), 'utf8');
     pr.edits = (pr.edits ?? 0) + 1;
+    done();
+  }
+  if (cmd === 'merge') {
+    // Like GitHub: merge the head branch into main on the remote, then mark the PR merged.
+    const pr = state.prs.find((p) => p.number === Number(positional()[0]));
+    if (!pr || pr.state !== 'open') done(`fake gh: PR not open`, 1);
+    execSync(`git fetch -q origin && git checkout -q main && git pull -q origin main && git merge -q --no-ff origin/${pr.headRefName} -m "Merge PR #${pr.number}" && git push -q origin HEAD:main`, {stdio: 'pipe'});
+    Object.assign(pr, {state: 'merged', mergedBy: {login: 'github-actions[bot]'}, mergedAt: new Date().toISOString()});
     done();
   }
   if (cmd === 'comment') {

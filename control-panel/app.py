@@ -151,7 +151,7 @@ def overview(snap):
     c[1].metric("Waiting for your review", len(snap["prs"]))
     c[2].metric("Approved, not yet posted", len(snap["byStatus"]["approved"]) + len(snap["byStatus"]["failed"]))
     c[3].metric("Posted", len(snap["byStatus"]["published"]))
-    st.caption(f"New reel every day at 06:00 IST · posts after **{v['AIPM_POST_TIME']} {v['AIPM_TZ']}**, max {v['AIPM_MAX_PER_DAY']}/day · writer: **{v['AIPM_WRITER']}**")
+    st.caption(f"New reel every day at 06:00 IST · posts after **{v['AIPM_POST_TIME']} {v['AIPM_TZ']}**, max {v['AIPM_MAX_PER_DAY']}/day · writer: **{v['AIPM_WRITER']}** · auto-approve: **{'on' if v['AIPM_AUTO_APPROVE'] == 'true' else 'off'}**")
 
     left, right = st.columns(2)
     with left:
@@ -190,6 +190,9 @@ def review(snap):
         st.info("No reels waiting for review. A new one is made every morning, or start one in **Make a reel**.")
         return
     repo = snap["repo"]["fullName"]
+    if snap["variables"]["AIPM_AUTO_APPROVE"] == "true":
+        st.info(f"Auto-approve is on: the oldest reel here approves itself at {snap['variables']['AIPM_POST_TIME']} unless you reject it or put it on hold. "
+                "Reels flagged ⚠️ needs attention always wait for you.")
     for pr in prs:
         rid, state, reel = pr["id"], pr.get("state") or {}, pr.get("reel") or {}
         with st.container(border=True):
@@ -222,7 +225,12 @@ def review(snap):
                 if critic.get("scores"):
                     st.caption("Editor scores: " + ", ".join(f"{k} {v}" for k, v in critic["scores"].items()))
                 st.link_button("Open the PR (full script, captions, sources)", pr["url"])
-            a, r = st.columns(2)
+            a, h, r = st.columns(3)
+            with h:
+                held = "hold" in pr["labels"]
+                if st.button("▶ Release hold" if held else "⏸ Hold", key=f"hold-{pr['number']}", width="stretch",
+                             help="A reel on hold is never auto-approved. You can still approve it yourself."):
+                    do(ss.client.set_hold, pr["number"], not held)
             with a:
                 confirm_button("✅ Approve", f"approve-{pr['number']}",
                                f"Approve **{rid}**? It will be posted at the next slot ({snap['variables']['AIPM_POST_TIME']}).",
@@ -355,6 +363,9 @@ def settings(snap):
         writer = v["AIPM_WRITER"] if v["AIPM_WRITER"] in gh.WRITERS else "queue"
         new["AIPM_WRITER"] = c1.selectbox("Writer", gh.WRITERS, gh.WRITERS.index(writer),
                                           format_func=lambda w: {"queue": "queue (free)", "subscription": "Claude subscription (paid plan)", "api": "Claude API (pay per token)"}[w])
+        auto = c1.selectbox("Auto-approve", ["false", "true"], ["false", "true"].index(v["AIPM_AUTO_APPROVE"] if v["AIPM_AUTO_APPROVE"] in ("true", "false") else "false"),
+                            format_func=lambda x: {"false": "off — I approve every reel", "true": "on — approve at posting time unless I stop it"}[x])
+        new["AIPM_AUTO_APPROVE"] = auto
         login = v["IG_LOGIN"] if v["IG_LOGIN"] in ("instagram", "facebook") else "instagram"
         new["IG_LOGIN"] = c2.selectbox("Instagram login type", ["instagram", "facebook"], ["instagram", "facebook"].index(login))
         saved = st.form_submit_button("Save settings", type="primary")

@@ -172,6 +172,21 @@ check "Approval for $SUBREEL recorded without its merge run" "git -C '$W' show o
 check "PR #3 told it is scheduled" "ghq 's.prs[2].comments.join(\"|\")' | grep -q 'Approved by @faraz'"
 check "Already-recorded approvals are not re-commented" "[ \"\$(ghq 's.prs[1].comments.filter(c=>c.includes(\"Approved by\")).length')\" = 1 ]"
 
+echo "== 7c. Auto-approve: one reel at a time after the posting time; 'hold' is respected"
+AUTOVARS="{\"AIPM_AUTO_APPROVE\":\"true\",\"AIPM_POST_TIME\":\"00:00\",\"AIPM_MAX_PER_DAY\":\"5\",\"AIPM_PUBLIC_BASE_URL\":\"$IG/assets\"}"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "{\"AIPM_AUTO_APPROVE\":\"true\",\"AIPM_POST_TIME\":\"23:59\"}" > /dev/null
+check "Nothing auto-approved before the posting time (veto window)" "[ \"\$(ghq 's.prs[3].state')\" = open ]"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
+check "Already-approved reel posts first; no new PR merged meanwhile" "[ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 2 ] && [ \"\$(ghq 's.prs[3].state')\" = open ]"
+node -e "const f='$GH_FAKE_STATE',fs=require('fs');const s=JSON.parse(fs.readFileSync(f));s.prs[4].labels.push('hold');fs.writeFileSync(f,JSON.stringify(s,null,2))"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
+git -C "$W" fetch -q origin
+AUTOID=$(reel_of_pr 3)
+check "Oldest waiting PR #4 auto-approved and posted" "[ \"\$(ghq 's.prs[3].state')\" = merged ] && git -C '$W' show origin/main:ai-product-manager-content/archive/$AUTOID/state.json | grep -q '\"status\": \"published\"'"
+check "PR told it was auto-approved" "ghq 's.prs[3].comments.join(\"|\")' | grep -q 'Auto-approved'"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
+check "PR on hold is never auto-approved" "[ \"\$(ghq 's.prs[4].state')\" = open ] && [ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 3 ]"
+
 echo "== 8. A merged PR without the daily-reel label is ignored"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event pull_request --event-json '{"pull_request":{"number":9,"merged":true,"labels":[{"name":"docs"}],"head":{"ref":"feature/x"}}}' --secrets "$IGSECRETS" | tee "$E2E/s8.log" > /dev/null
 check "Publish job skipped" "grep -q 'skipped by if' '$E2E/s8.log'"

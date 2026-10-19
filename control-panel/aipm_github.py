@@ -47,6 +47,7 @@ VARIABLES = {
     "AIPM_MAX_OPEN_REVIEWS": ("3", "Skip making a new reel while this many wait for review."),
     "AIPM_QUEUE_LOW": ("5", "Open a 'queue-low' issue at this many drafts left."),
     "AIPM_WRITER": ("queue", "queue = free. subscription / api = paid writers (need their secret)."),
+    "AIPM_AUTO_APPROVE": ("false", "true = reels approve themselves at the posting time unless closed or on hold."),
     "IG_LOGIN": ("instagram", "instagram or facebook (which Instagram API login you set up)."),
 }
 WRITERS = ["queue", "subscription", "api"]
@@ -328,6 +329,14 @@ class GitHubClient:
         self._req("PATCH", f"/repos/{self.repo}/pulls/{number}", "close", json={"state": "closed"})
         return f"Rejected: PR #{number} closed. Nothing will be posted."
 
+    def set_hold(self, number: int, hold: bool):
+        if hold:
+            self._req("POST", f"/repos/{self.repo}/labels", "close", ok=(201, 422), json={"name": "hold", "color": "8B95A7", "description": "Never auto-approve this reel"})
+            self._req("POST", f"/repos/{self.repo}/issues/{number}/labels", "close", json={"labels": ["hold"]})
+            return f"PR #{number} is on hold: it won't be auto-approved."
+        self._req("DELETE", f"/repos/{self.repo}/issues/{number}/labels/hold", "close", ok=(200, 204, 404))
+        return f"PR #{number} released: it can be auto-approved again."
+
     def set_variable(self, name: str, value: str, exists: bool):
         if exists:
             self._req("PATCH", f"/repos/{self.repo}/actions/variables/{name}", "variables", json={"name": name, "value": value})
@@ -422,6 +431,9 @@ class DemoClient:
 
     def reject(self, number, note=""):
         return self._note(f"close PR #{number}")
+
+    def set_hold(self, number, hold):
+        return self._note(f"{'hold' if hold else 'release'} PR #{number}")
 
     def set_variable(self, name, value, exists):
         return self._note(f"set {name}={value}")
