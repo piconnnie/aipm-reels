@@ -184,12 +184,14 @@ check "Already-approved reel posts first; no new PR merged meanwhile" "[ \"\$(gr
 node -e "const f='$GH_FAKE_STATE',fs=require('fs');const s=JSON.parse(fs.readFileSync(f));s.prs[4].labels.push('hold');fs.writeFileSync(f,JSON.stringify(s,null,2))"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
 git -C "$W" fetch -q origin
-AUTOID=$(reel_of_pr 3)
-check "Oldest waiting PR #4 auto-approved and posted" "[ \"\$(ghq 's.prs[3].state')\" = merged ] && git -C '$W' show origin/main:ai-product-manager-content/archive/$AUTOID/state.json | grep -q '\"status\": \"published\"'"
-check "An unmergeable older PR (#1) is flagged needs-attention, not a blocker" "ghq 's.prs[0].labels.join()' | grep -q needs-attention && [ \"\$(ghq 's.prs[0].state')\" = open ]"
-check "PR told it was auto-approved" "ghq 's.prs[3].comments.join(\"|\")' | grep -q 'Auto-approved'"
+check "Oldest waiting PR (#1) auto-approved and posted" "[ \"\$(ghq 's.prs[0].state')\" = merged ] && git -C '$W' show origin/main:ai-product-manager-content/archive/aipm-001-demo-prompts-not-evals/state.json | grep -q '\"status\": \"published\"' && [ \"\$(ghq 's.prs[3].state')\" = open ]"
+check "PR told it was auto-approved" "ghq 's.prs[0].comments.join(\"|\")' | grep -q 'Auto-approved'"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
-check "PR on hold is never auto-approved" "[ \"\$(ghq 's.prs[4].state')\" = open ] && [ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 3 ]"
+git -C "$W" fetch -q origin
+AUTOID=$(reel_of_pr 3)
+check "Next run approves the next one (#4) and posts it" "[ \"\$(ghq 's.prs[3].state')\" = merged ] && git -C '$W' show origin/main:ai-product-manager-content/archive/$AUTOID/state.json | grep -q '\"status\": \"published\"'"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
+check "PR on hold is never auto-approved" "[ \"\$(ghq 's.prs[4].state')\" = open ] && [ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 4 ]"
 
 echo "== 8. A merged PR without the daily-reel label is ignored"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event pull_request --event-json '{"pull_request":{"number":9,"merged":true,"labels":[{"name":"docs"}],"head":{"ref":"feature/x"}}}' --secrets "$IGSECRETS" | tee "$E2E/s8.log" > /dev/null

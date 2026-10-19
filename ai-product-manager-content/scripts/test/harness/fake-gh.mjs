@@ -74,9 +74,12 @@ if (group === 'pr') {
     const pr = state.prs.find((p) => p.number === Number(positional()[0]));
     if (!pr || pr.state !== 'open') done(`fake gh: PR not open`, 1);
     try {
-      execSync(`git fetch -q origin && git checkout -q main && git pull -q origin main && git merge -q --no-ff origin/${pr.headRefName} -m "Merge PR #${pr.number}" && git push -q origin HEAD:main`, {stdio: 'pipe'});
+      // Server-side merge: use a full clone of the remote, never the job's (shallow) checkout.
+      const remote = execSync('git remote get-url origin', {encoding: 'utf8'}).trim();
+      const tmp = fs.mkdtempSync(path.join(path.dirname(statePath), 'merge-'));
+      execSync(`git clone -q "${remote}" "${tmp}" && cd "${tmp}" && git -c user.name=github -c user.email=g@x merge -q --no-ff origin/${pr.headRefName} -m "Merge PR #${pr.number}" && git push -q origin HEAD:main`, {stdio: 'pipe', shell: '/bin/bash'});
+      fs.rmSync(tmp, {recursive: true, force: true});
     } catch (e) {
-      try { execSync('git merge --abort', {stdio: 'pipe'}); } catch {}
       done(`Pull request is not mergeable: ${String(e.stderr).trim().split('\n').pop()}`, 1);
     }
     Object.assign(pr, {state: 'merged', mergedBy: {login: 'github-actions[bot]'}, mergedAt: new Date().toISOString()});
