@@ -1,0 +1,36 @@
+{
+  "id": "aipm-005-licenses-arent-adoption",
+  "createdAt": "2026-10-19T18:22:46.655Z",
+  "release": {
+    "tag": "reel-aipm-005-licenses-arent-adoption",
+    "video": "aipm-005-licenses-arent-adoption.mp4",
+    "cover": "aipm-005-licenses-arent-adoption.jpg",
+    "contactSheet": "aipm-005-licenses-arent-adoption-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "3d16ffe4132d53abffc6fc85de85dd0935319c52d7b1962a350686260c9fc427",
+    "cover": "716093b5e834d64abb56d2497c0961e2a824385d630e31c7badb1b827049b17a"
+  },
+  "durationSec": 23,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

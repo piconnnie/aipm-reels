@@ -1,0 +1,400 @@
+{
+  "id": "aipm-005-licenses-arent-adoption",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Measuring AI adoption by licenses issued",
+    "audience": "Leaders and PMs running enterprise AI rollouts",
+    "pillar": "D: Enterprise AI",
+    "objective": "shares",
+    "format": "mistake",
+    "targetDurationSec": 23,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t028",
+    "queueId": "q003-licenses-are-not-adoption",
+    "writer": "queue"
+  },
+  "coreInsight": "Licences, logins and prompt counts measure access, not adoption; report weekly use on real work, measurable task impact and repeat use instead.",
+  "hooks": [
+    {
+      "text": "Licenses issued is not AI adoption.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Names the exact number on most rollout dashboards; clear in under two seconds."
+    },
+    {
+      "text": "Your AI rollout dashboard is measuring the wrong thing.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Intriguing but vague until the reel explains which thing."
+    },
+    {
+      "text": "5,000 seats. How many people actually changed how they work?",
+      "angle": "Concrete before-and-after",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Strong question, but the number would have to be labelled illustrative in the hook itself."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25). It challenges a metric leaders actually report, which makes it shareable inside rollout teams, and the reel replaces it with three better measures.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Challenge the most common rollout metric.",
+      "onScreen": "Licenses issued is not adoption. / Measure this instead.",
+      "voiceover": "Licenses issued is not AI adoption.",
+      "storyboard": {
+        "visual": "Three-line headline, 'adoption.' highlighted; sub-line.",
+        "animation": "Readable on frame 0; underline sweep; sub at 18."
+      },
+      "kicker": "ENTERPRISE AI",
+      "lines": [
+        {
+          "text": "Licenses"
+        },
+        {
+          "text": "issued is not"
+        },
+        {
+          "text": "adoption.",
+          "highlight": true
+        }
+      ],
+      "sub": "Measure this instead.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "vanity",
+      "type": "cards",
+      "durationInFrames": 105,
+      "purpose": "Show the numbers that usually get reported.",
+      "onScreen": "WHAT GETS REPORTED / Easy to count. Says little. / Licenses assigned · Logins this month · Prompts sent",
+      "voiceover": "Licenses assigned, logins, prompts sent. Easy to count. They say little.",
+      "storyboard": {
+        "visual": "Three slate 'VANITY' cards.",
+        "animation": "Cards pop every 10 frames from 8."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT GETS REPORTED",
+      "headline": [
+        {
+          "text": "Easy to count."
+        },
+        {
+          "text": "Says little."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 8,
+      "popStagger": 10,
+      "cards": [
+        {
+          "text": "Licenses assigned",
+          "status": "unknown",
+          "tag": "VANITY"
+        },
+        {
+          "text": "Logins this month",
+          "status": "unknown",
+          "tag": "VANITY"
+        },
+        {
+          "text": "Prompts sent",
+          "status": "unknown",
+          "tag": "VANITY"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 14,
+          "kind": "tick"
+        },
+        {
+          "at": 24,
+          "kind": "tick"
+        },
+        {
+          "at": 34,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "value",
+      "type": "cards",
+      "durationInFrames": 180,
+      "purpose": "Replace each vanity metric with one that shows real use and value.",
+      "onScreen": "WHAT SHOWS VALUE / Count use on real work. / ADOPTION weekly users on a real task · IMPACT tasks done faster or better · RETENTION repeat use after week 4",
+      "voiceover": "Instead, count weekly users on a real task, tasks done faster or better, and people still using it after week four.",
+      "storyboard": {
+        "visual": "Same stack (hard cut); each card flips to a green metric.",
+        "animation": "Flips at 24/54/84; ~2.7s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "WHAT SHOWS VALUE",
+      "headline": [
+        {
+          "text": "Count use on"
+        },
+        {
+          "text": "real work.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "Licenses assigned",
+          "status": "unknown",
+          "tag": "VANITY",
+          "swap": {
+            "text": "Weekly users on a real task",
+            "tag": "ADOPTION",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Logins this month",
+          "status": "unknown",
+          "tag": "VANITY",
+          "swap": {
+            "text": "Tasks done faster or better",
+            "tag": "IMPACT",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Prompts sent",
+          "status": "unknown",
+          "tag": "VANITY",
+          "swap": {
+            "text": "Repeat use after week 4",
+            "tag": "RETENTION",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "the-gap",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Make the difference tangible with a clearly labelled illustration.",
+      "onScreen": "SAME ROLLOUT [ILLUSTRATIVE] / Seats with a license 100% / Weekly use on real work 18% / Report the second number.",
+      "voiceover": "In this illustrative example, every seat has a license, but only eighteen percent use it weekly on real work. Report the second number.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; neutral 100% bar vs amber 18% bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME ROLLOUT",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "SEATS WITH A LICENSE",
+        "value": "100%",
+        "ratio": 1,
+        "tone": "neutral",
+        "caption": "What the dashboard shows"
+      },
+      "right": {
+        "label": "WEEKLY USE ON REAL WORK",
+        "value": "18%",
+        "ratio": 0.18,
+        "tone": "warning",
+        "caption": "What changed at work"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Report the"
+        },
+        {
+          "text": "second number.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + share CTA aimed at rollout teams.",
+      "onScreen": "Count use, not licenses. / Share this with your AI rollout team",
+      "voiceover": "Count use, not licenses. Share this with your AI rollout team.",
+      "storyboard": {
+        "visual": "Two-line takeaway; arrow CTA; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Count use,"
+        },
+        {
+          "text": "not licenses.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your AI rollout team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI ROLLOUTS",
+    "headline": [
+      {
+        "text": "Licenses"
+      },
+      {
+        "text": "aren’t"
+      },
+      {
+        "text": "adoption",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A licence tells you someone can use the tool. It doesn’t tell you they do — or that it helps.",
+    "body": [
+      "Common rollout metrics measure access:\n→ licences assigned\n→ logins this month\n→ prompts sent",
+      "Better signals of adoption and value:\n→ weekly users on a real, named task\n→ tasks done faster or better (pick one task, measure before and after)\n→ people still using it after week four",
+      "(The 100% vs 18% in the reel is an illustrative example, not data from a real organisation.)"
+    ],
+    "cta": "Share this with your AI rollout team.",
+    "hashtags": [
+      "#EnterpriseAI",
+      "#AIAdoption",
+      "#AIProductManagement",
+      "#ChangeManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI rollout team"
+  },
+  "claims": [
+    {
+      "text": "Licence counts, logins and prompt volumes measure access rather than adoption or value.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "100% of seats licensed vs 18% weekly use on real work.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "2026-10-22",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Licences issued is not adoption",
+      "2/ What usually gets reported",
+      "3/ Adoption: weekly use on a real task",
+      "4/ Impact: before/after on one task",
+      "5/ Retention: still using it after week 4",
+      "6/ Illustrative gap",
+      "7/ Share with your rollout team"
+    ],
+    "followUpReel": "Format 2 (Framework): how to measure task impact in a two-week before/after test.",
+    "linkedin": "Post for rollout leads: replace three vanity metrics with three adoption metrics; ask which one their dashboard shows today."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "paper",
+    "music": "lofi",
+    "motion": "zoom"
+  },
+  "audio": {
+    "bed": "audio/aipm-005-licenses-arent-adoption-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

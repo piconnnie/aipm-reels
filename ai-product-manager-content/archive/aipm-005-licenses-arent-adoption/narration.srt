@@ -1,0 +1,19 @@
+1
+00:00:00,130 --> 00:00:02,930
+Licenses issued is not AI adoption.
+
+2
+00:00:03,130 --> 00:00:06,430
+Licenses assigned, logins, prompts sent. Easy to count. They say little.
+
+3
+00:00:06,630 --> 00:00:12,430
+Instead, count weekly users on a real task, tasks done faster or better, and people still using it after week four.
+
+4
+00:00:12,630 --> 00:00:17,930
+In this illustrative example, every seat has a license, but only eighteen percent use it weekly on real work. Report the second number.
+
+5
+00:00:18,130 --> 00:00:22,930
+Count use, not licenses. Share this with your AI rollout team.
