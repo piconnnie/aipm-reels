@@ -1,7 +1,8 @@
 import React from 'react';
 import * as Remotion from 'remotion';
 import {AbsoluteFill, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {colors, fonts, safe, safeBox} from '../brand/tokens';
+import {alpha, fonts, safe, safeBox} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 
 // Remotion renamed the HTML5 <Audio> component to <Html5Audio>; support both so
 // the project works across 4.x releases. Volume is a plain number (the bed is
@@ -33,6 +34,7 @@ export interface SubtitleCue {
 // on-screen copy already carries the message.
 export const SubtitleTrack: React.FC<{cues: SubtitleCue[]}> = ({cues}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const cue = cues.find((c) => frame >= c.from && frame < c.to);
   if (!cue) return null;
   const local = frame - cue.from;
@@ -57,7 +59,7 @@ export const SubtitleTrack: React.FC<{cues: SubtitleCue[]}> = ({cues}) => {
             fontSize: 40,
             lineHeight: 1.25,
             color: colors.offWhite,
-            background: 'rgba(11,16,32,0.82)',
+            background: alpha(colors.navy, 0.82),
             padding: '10px 20px',
             borderRadius: 12,
             textAlign: 'center',

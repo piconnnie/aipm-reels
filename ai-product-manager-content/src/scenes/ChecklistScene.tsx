@@ -1,6 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, radius, type} from '../brand/tokens';
+import {fonts, radius, type} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, pop, riseStyle} from '../components/motion';
 import type {ChecklistScene as ChecklistSceneConfig} from '../content/schema';
@@ -10,6 +11,7 @@ import {SceneShell} from './SceneShell';
 // "Decision Checklist" and "Framework" formats; designed to be screenshot-worthy.
 export const ChecklistScene: React.FC<{scene: ChecklistSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const {fps} = useVideoConfig();
   const ruleAt = scene.itemStart + scene.items.length * scene.itemStagger + 6;
   const rule = enter(frame, fps, ruleAt);

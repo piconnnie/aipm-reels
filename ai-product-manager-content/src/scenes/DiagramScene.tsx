@@ -1,6 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, radius, toneColor, type} from '../brand/tokens';
+import {fonts, radius, type} from '../brand/tokens';
+import {useColors, useToneColor} from '../brand/theme';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, progress, riseStyle} from '../components/motion';
 import type {DiagramScene as DiagramSceneConfig} from '../content/schema';
@@ -12,6 +13,8 @@ import {SceneShell} from './SceneShell';
 export const DiagramScene: React.FC<{scene: DiagramSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const colors = useColors();
+  const toneColor = useToneColor();
   const n = scene.nodes.length;
   const flowStart = scene.nodeStart + n * scene.nodeStagger;
   const flowLen = 36;

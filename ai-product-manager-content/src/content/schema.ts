@@ -194,6 +194,8 @@ export interface ReelConfig {
   cover: {kicker: string; headline: HeadlineLine[]};
   caption: {opening: string; body: string[]; cta: string; hashtags: string[]};
   primaryCta: {type: 'save' | 'share' | 'follow' | 'question'; text: string};
+  /** Look and sound of this reel; omitted fields rotate by reel number (src/brand/theme.tsx). */
+  style?: {theme?: import('../brand/tokens').ThemeId; music?: import('../brand/theme').MusicId; motion?: import('../brand/theme').MotionId};
   audio: {bed: string | null; bedVolume: number; voiceover: string | null; voiceoverVolume: number};
   claims: {text: string; kind: 'verified-fact' | 'practitioner-opinion' | 'illustrative'; sources: {url: string; accessed: string}[]}[];
   publish: {suggestedDate: string; notes: string};

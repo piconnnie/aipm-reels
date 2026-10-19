@@ -132,6 +132,18 @@ With `AIPM_AUTO_APPROVE=true` (control panel → Settings → Auto-approve), you
 
 Only one reel is approved at a time and the daily cap still applies, so a backlog posts one per day rather than all at once. Every automated QA gate still runs before a review PR exists; a reel that fails QA never gets a PR.
 
+## Look and sound (variety)
+
+Every reel gets a `style` with three parts, chosen automatically so consecutive reels always differ:
+
+| Part | Options |
+|---|---|
+| `theme` | `midnight` (navy + cyan), `ember` (charcoal + orange/amber), `mint` (green + lime), `grape` (violet + pink), `ocean` (teal + aqua), `paper` (light: cream + indigo/tomato) — each with its own background texture |
+| `music` | `glow` (warm pad, soft pulse), `drive` (122 bpm four-on-the-floor), `lofi` (84 bpm swung beat, electric piano), `arcade` (bright arpeggios), `cinematic` (drones, big drums) |
+| `motion` | `rise`, `slide`, `zoom` scene transitions; every reel also gets an accent sweep at scene changes and a background that pulses on the beat |
+
+The rotation follows the reel number (theme n mod 6, music (n+2) mod 5, motion n mod 3), so the same combination only comes back after 30 reels. To choose yourself, edit `"style": {"theme": "paper", "music": "lofi", "motion": "zoom"}` in the reel's JSON in its review PR; it re-renders automatically and the validator rejects unknown names. All music is synthesized from scratch in the pipeline (no stock tracks, no licensing).
+
 ## Day to day
 
 - **Morning:** open the PR. Watch the MP4 (the "Watch the reel" link), skim the script table, the editor scores and the claims/sources.

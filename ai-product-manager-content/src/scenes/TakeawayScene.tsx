@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, radius, type} from '../brand/tokens';
+import {alpha, fonts, radius, type} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {EndCard} from '../components/EndCard';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, riseStyle} from '../components/motion';
@@ -11,6 +12,7 @@ import {SceneShell} from './SceneShell';
 export const TakeawayScene: React.FC<{scene: TakeawaySceneConfig; ctaType?: 'save' | 'share' | 'follow' | 'question'}> = ({scene, ctaType = 'save'}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const colors = useColors();
   const cta = enter(frame, fps, scene.ctaAt);
   return (
     <SceneShell justify="space-between">
@@ -25,7 +27,7 @@ export const TakeawayScene: React.FC<{scene: TakeawaySceneConfig; ctaType?: 'sav
             alignItems: 'center',
             gap: 18,
             border: `2px solid ${colors.indigo}`,
-            background: 'rgba(91,92,240,0.14)',
+            background: alpha(colors.indigo, 0.14),
             borderRadius: radius.pill,
             padding: '18px 32px',
           }}
@@ -41,14 +43,20 @@ export const TakeawayScene: React.FC<{scene: TakeawaySceneConfig; ctaType?: 'sav
   );
 };
 
-const BookmarkIcon = () => (
-  <svg width="34" height="40" viewBox="0 0 34 40">
-    <path d="M4 3 H30 V37 L17 28 L4 37 Z" fill="none" stroke={colors.cyan} strokeWidth="4" strokeLinejoin="round" />
-  </svg>
-);
+const BookmarkIcon = () => {
+  const colors = useColors();
+  return (
+    <svg width="34" height="40" viewBox="0 0 34 40">
+      <path d="M4 3 H30 V37 L17 28 L4 37 Z" fill="none" stroke={colors.cyan} strokeWidth="4" strokeLinejoin="round" />
+    </svg>
+  );
+};
 
-const ArrowIcon = () => (
-  <svg width="36" height="36" viewBox="0 0 36 36">
-    <path d="M6 18 H28 M19 9 L28 18 L19 27" fill="none" stroke={colors.cyan} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
+const ArrowIcon = () => {
+  const colors = useColors();
+  return (
+    <svg width="36" height="36" viewBox="0 0 36 36">
+      <path d="M6 18 H28 M19 9 L28 18 L19 27" fill="none" stroke={colors.cyan} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};

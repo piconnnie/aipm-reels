@@ -1,12 +1,14 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts} from '../brand/tokens';
+import {fonts} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {Monogram} from './BrandSignature';
 import {enter, riseStyle} from './motion';
 
 // Subtle end-card branding: monogram + name + promise. Short, never a long logo sting.
 export const EndCard: React.FC<{start: number}> = ({start}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const {fps} = useVideoConfig();
   const p = enter(frame, fps, start);
   return (

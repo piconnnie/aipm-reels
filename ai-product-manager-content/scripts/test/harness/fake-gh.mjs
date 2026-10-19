@@ -32,7 +32,7 @@ const positional = () => {
 };
 const done = (out = '', code = 0) => {
   save();
-  if (out) process.stdout.write(out + '\n');
+  if (out) (code ? process.stderr : process.stdout).write(out + '\n');
   process.exit(code);
 };
 
@@ -61,6 +61,10 @@ if (group === 'pr') {
   }
   if (cmd === 'edit') {
     const pr = state.prs.find((p) => p.number === Number(positional()[0]));
+    if (flag('add-label')) {
+      pr.labels = [...new Set([...pr.labels, ...flag('add-label').split(',')])];
+      done();
+    }
     pr.body = fs.readFileSync(flag('body-file'), 'utf8');
     pr.edits = (pr.edits ?? 0) + 1;
     done();
@@ -69,7 +73,12 @@ if (group === 'pr') {
     // Like GitHub: merge the head branch into main on the remote, then mark the PR merged.
     const pr = state.prs.find((p) => p.number === Number(positional()[0]));
     if (!pr || pr.state !== 'open') done(`fake gh: PR not open`, 1);
-    execSync(`git fetch -q origin && git checkout -q main && git pull -q origin main && git merge -q --no-ff origin/${pr.headRefName} -m "Merge PR #${pr.number}" && git push -q origin HEAD:main`, {stdio: 'pipe'});
+    try {
+      execSync(`git fetch -q origin && git checkout -q main && git pull -q origin main && git merge -q --no-ff origin/${pr.headRefName} -m "Merge PR #${pr.number}" && git push -q origin HEAD:main`, {stdio: 'pipe'});
+    } catch (e) {
+      try { execSync('git merge --abort', {stdio: 'pipe'}); } catch {}
+      done(`Pull request is not mergeable: ${String(e.stderr).trim().split('\n').pop()}`, 1);
+    }
     Object.assign(pr, {state: 'merged', mergedBy: {login: 'github-actions[bot]'}, mergedAt: new Date().toISOString()});
     done();
   }

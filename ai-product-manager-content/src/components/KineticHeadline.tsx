@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts} from '../brand/tokens';
+import {fonts} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import type {HeadlineLine} from '../content/schema';
 import {enter, progress, riseStyle} from './motion';
 
@@ -18,7 +19,9 @@ export const KineticHeadline: React.FC<{
   lineHeight?: number;
   /** Show the highlight underline fully drawn (for stills such as covers). */
   staticUnderline?: boolean;
-}> = ({lines, size, start = 0, stagger = 5, instant = false, align = 'left', color = colors.offWhite, lineHeight = 1.06, staticUnderline = false}) => {
+}> = ({lines, size, start = 0, stagger = 5, instant = false, align = 'left', color, lineHeight = 1.06, staticUnderline = false}) => {
+  const colors = useColors();
+  color = color ?? colors.offWhite;
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   return (
@@ -66,7 +69,10 @@ export const KineticHeadline: React.FC<{
   );
 };
 
-export const Kicker: React.FC<{text: string; tone?: string; opacity?: number}> = ({text, tone = colors.cyan, opacity = 1}) => (
+export const Kicker: React.FC<{text: string; tone?: string; opacity?: number}> = ({text, tone, opacity = 1}) => {
+  const colors = useColors();
+  tone = tone ?? colors.cyan;
+  return (
   <div
     style={{
       fontFamily: fonts.mono,
@@ -80,4 +86,5 @@ export const Kicker: React.FC<{text: string; tone?: string; opacity?: number}> =
   >
     {text}
   </div>
-);
+  );
+};

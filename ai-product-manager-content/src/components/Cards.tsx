@@ -1,16 +1,17 @@
 import React from 'react';
-import {colors, fonts, radius, toneColor, type Tone} from '../brand/tokens';
+import {alpha, fonts, radius, type Palette, type Tone} from '../brand/tokens';
+import {useColors, useToneColor} from '../brand/theme';
 
 export type Status = 'pass' | 'warn' | 'unknown';
 
-const statusTone: Record<Status, string> = {
+const statusTone = (colors: Palette): Record<Status, string> => ({
   pass: colors.success,
   warn: colors.warning,
   unknown: colors.slate,
-};
+});
 
 export const StatusIcon: React.FC<{status: Status; size?: number; scale?: number}> = ({status, size = 44, scale = 1}) => {
-  const c = statusTone[status];
+  const c = statusTone(useColors())[status];
   return (
     <svg width={size} height={size} viewBox="0 0 44 44" style={{transform: `scale(${scale})`, flexShrink: 0}}>
       <circle cx="22" cy="22" r="20" fill="none" stroke={c} strokeWidth="3" />
@@ -38,7 +39,9 @@ export const PromptCard: React.FC<{
   iconScale?: number;
   height?: number;
   style?: React.CSSProperties;
-}> = ({text, status, tag, iconScale = 1, height = 112, style}) => (
+}> = ({text, status, tag, iconScale = 1, height = 112, style}) => {
+  const colors = useColors();
+  return (
   <div
     style={{
       height,
@@ -48,7 +51,7 @@ export const PromptCard: React.FC<{
       gap: 26,
       padding: '0 30px',
       background: colors.navyRaised,
-      border: `2px solid ${status === 'warn' ? 'rgba(255,198,109,0.45)' : colors.navyLine}`,
+      border: `2px solid ${status === 'warn' ? alpha(colors.warning, 0.45) : colors.navyLine}`,
       borderRadius: radius.card,
       ...style,
     }}
@@ -56,7 +59,7 @@ export const PromptCard: React.FC<{
     <StatusIcon status={status} scale={iconScale} />
     <div style={{display: 'flex', flexDirection: 'column', gap: 6, minWidth: 0}}>
       {tag ? (
-        <span style={{fontFamily: fonts.mono, fontSize: 24, fontWeight: 700, letterSpacing: 3, color: statusTone[status]}}>
+        <span style={{fontFamily: fonts.mono, fontSize: 24, fontWeight: 700, letterSpacing: 3, color: statusTone(colors)[status]}}>
           {tag}
         </span>
       ) : null}
@@ -75,7 +78,8 @@ export const PromptCard: React.FC<{
       </span>
     </div>
   </div>
-);
+  );
+};
 
 export const MetricCard: React.FC<{
   label: string;
@@ -87,7 +91,8 @@ export const MetricCard: React.FC<{
   width?: number | string;
   style?: React.CSSProperties;
 }> = ({label, value, tone, caption, ratio, barProgress = 1, width = '100%', style}) => {
-  const c = toneColor[tone];
+  const colors = useColors();
+  const c = useToneColor()[tone];
   return (
     <div
       style={{

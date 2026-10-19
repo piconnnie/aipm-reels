@@ -1,6 +1,7 @@
 import React from 'react';
 import {interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, type} from '../brand/tokens';
+import {fonts, type} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {MetricCard} from '../components/Cards';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, progress, riseStyle} from '../components/motion';
@@ -11,6 +12,7 @@ import {SceneShell} from './SceneShell';
 // Illustrative numbers must carry the illustrative label (enforced by validate).
 export const ComparisonScene: React.FC<{scene: ComparisonSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const {fps} = useVideoConfig();
   const l = enter(frame, fps, 4);
   const r = enter(frame, fps, scene.rightAt);

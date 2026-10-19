@@ -1,10 +1,12 @@
 import React from 'react';
 import {useCurrentFrame} from 'remotion';
-import {colors, safe, safeBox} from '../brand/tokens';
+import {safe, safeBox} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 
 // Segmented progress bar: one segment per scene, filled as the reel advances.
 export const ProgressIndicator: React.FC<{sceneDurations: number[]}> = ({sceneDurations}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const gap = 8;
   const total = sceneDurations.reduce((a, b) => a + b, 0);
   let cursor = 0;

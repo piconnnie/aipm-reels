@@ -2,7 +2,8 @@ import React from 'react';
 import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
 import {loadBrandFonts} from '../brand/fonts';
 import {SoundDesignTrack, SubtitleTrack, VoiceoverTrack, type SubtitleCue} from '../components/AudioTracks';
-import {BrandBackground} from '../components/BrandBackground';
+import {BrandBackground, SceneSweep} from '../components/BrandBackground';
+import {pickStyle, ThemeProvider, useColors, useReelStyle} from '../brand/theme';
 import {BrandSignature} from '../components/BrandSignature';
 import {easeOut} from '../components/motion';
 import {ProgressIndicator} from '../components/ProgressIndicator';
@@ -52,8 +53,9 @@ const renderScene = (scene: Scene, config: ReelConfig) => {
   }
 };
 
-// One transition vocabulary for the whole brand: a short rise-and-fade in and
-// a quick fade out. "cut" scenes enter instantly (used for visual continuity).
+// Scene transitions vary per reel (style.motion): "rise" (rise-and-fade),
+// "slide" (swipe in from the right, out to the left) or "zoom" (scale punch).
+// "cut" scenes enter instantly (used for visual continuity).
 const SceneFrame: React.FC<{
   scene: Scene;
   next?: Scene;
@@ -67,8 +69,15 @@ const SceneFrame: React.FC<{
   const cutOut = isLast || next?.transitionIn === 'cut';
   const inP = cutIn ? 1 : interpolate(frame, [0, ENTER], [0, 1], {easing: easeOut, extrapolateRight: 'clamp'});
   const outP = cutOut ? 1 : interpolate(frame, [d - EXIT, d], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const {motion} = useReelStyle();
+  const transform =
+    motion === 'slide'
+      ? `translateX(${(1 - inP) * 90 - (1 - outP) * 70}px)`
+      : motion === 'zoom'
+        ? `scale(${(0.9 + 0.1 * inP) * (1 + 0.05 * (1 - outP))})`
+        : `translateY(${(1 - inP) * 28}px)`;
   return (
-    <AbsoluteFill style={{opacity: Math.min(inP, outP), transform: `translateY(${(1 - inP) * 28}px)`}}>
+    <AbsoluteFill style={{opacity: Math.min(inP, outP), transform}}>
       {children}
     </AbsoluteFill>
   );
@@ -82,12 +91,20 @@ export const buildSubtitleCues = (config: ReelConfig): SubtitleCue[] => {
     .filter((c) => c.text.length > 0);
 };
 
-export const ReelTemplate: React.FC<{config: ReelConfig}> = ({config}) => {
+export const ReelTemplate: React.FC<{config: ReelConfig}> = ({config}) => (
+  <ThemeProvider style={pickStyle(config.id, config.style)}>
+    <ReelBody config={config} />
+  </ThemeProvider>
+);
+
+const ReelBody: React.FC<{config: ReelConfig}> = ({config}) => {
   const {starts} = sceneStarts(config.scenes);
   const durations = config.scenes.map((s) => s.durationInFrames);
+  const colors = useColors();
   return (
-    <AbsoluteFill style={{backgroundColor: '#0B1020'}}>
+    <AbsoluteFill style={{backgroundColor: colors.navy}}>
       <BrandBackground />
+      <SceneSweep starts={starts} />
       {config.scenes.map((scene, i) => (
         <Sequence key={scene.id} from={starts[i]} durationInFrames={scene.durationInFrames} name={`${i + 1}-${scene.id}`}>
           <SceneFrame scene={scene} next={config.scenes[i + 1]} isFirst={i === 0} isLast={i === config.scenes.length - 1}>

@@ -1,0 +1,12 @@
+{
+  "_comment": "Per-reel visual + sound variety. A reel's `style` field picks one of each; without it, the reel number rotates through them (theme n%6, music (n+2)%5, motion n%3), so consecutive reels always differ. Read by src/brand/style.ts, scripts/style.mjs and scripts/synth-audio.py.",
+  "themes": ["midnight", "ember", "mint", "grape", "ocean", "paper"],
+  "music": {
+    "glow": {"bpm": 100, "label": "Glow — warm pad, soft pulse"},
+    "drive": {"bpm": 122, "label": "Drive — four-on-the-floor, rolling bass"},
+    "lofi": {"bpm": 84, "label": "Lo-fi — swung beat, electric piano"},
+    "arcade": {"bpm": 112, "label": "Arcade — bright arpeggios"},
+    "cinematic": {"bpm": 90, "label": "Cinematic — drones, big drums"}
+  },
+  "motion": ["rise", "slide", "zoom"]
+}

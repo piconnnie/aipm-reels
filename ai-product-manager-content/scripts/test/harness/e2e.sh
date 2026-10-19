@@ -183,6 +183,7 @@ $RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" 
 git -C "$W" fetch -q origin
 AUTOID=$(reel_of_pr 3)
 check "Oldest waiting PR #4 auto-approved and posted" "[ \"\$(ghq 's.prs[3].state')\" = merged ] && git -C '$W' show origin/main:ai-product-manager-content/archive/$AUTOID/state.json | grep -q '\"status\": \"published\"'"
+check "An unmergeable older PR (#1) is flagged needs-attention, not a blocker" "ghq 's.prs[0].labels.join()' | grep -q needs-attention && [ \"\$(ghq 's.prs[0].state')\" = open ]"
 check "PR told it was auto-approved" "ghq 's.prs[3].comments.join(\"|\")' | grep -q 'Auto-approved'"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars "$AUTOVARS" > /dev/null
 check "PR on hold is never auto-approved" "[ \"\$(ghq 's.prs[4].state')\" = open ] && [ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 3 ]"

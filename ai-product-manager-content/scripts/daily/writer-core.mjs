@@ -9,6 +9,7 @@ import path from 'node:path';
 import {ROOT, ensureDir, reelPath} from '../lib.mjs';
 import {limitsForPrompt} from '../content-limits.mjs';
 import {syncRegistry} from '../sync-registry.mjs';
+import {pickStyle} from '../style.mjs';
 import {PILLARS, history, nextReelNumber, planNext} from './plan.mjs';
 
 export const isoDate = (d = new Date()) => d.toISOString().slice(0, 10);
@@ -147,6 +148,7 @@ export function normalizeDraft(draft, plan, {reelId = null, source = 'unknown', 
     fps: 30,
     width: 1080,
     height: 1920,
+    style: pickStyle(id, draft.style),
     audio: {bed: `audio/${id}-bed.wav`, bedVolume: 1, voiceover: null, voiceoverVolume: 1},
     claims: draft.claims ?? [],
     publish: {suggestedDate: draft.publish?.suggestedDate ?? date, notes: draft.publish?.notes ?? ''},

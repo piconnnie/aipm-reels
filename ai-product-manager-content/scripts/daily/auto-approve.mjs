@@ -48,23 +48,36 @@ if (!prs.length) {
   log('no review PRs eligible (none open, or all on hold / needs-attention)');
   process.exit(0);
 }
-const pr = prs[0];
-let merged = false;
-for (const method of ['--merge', '--squash', '--rebase']) {
-  try {
-    gh('pr', 'merge', String(pr.number), method);
-    merged = true;
-    break;
-  } catch (e) {
-    const msg = String(e.stderr || e.message);
-    if (!/not allowed|merge method/i.test(msg)) {
-      log(`couldn't merge PR #${pr.number}: ${msg.trim().split('\n').pop()}`);
-      process.exit(0); // e.g. a conflict: leave it for a human, don't fail the publish run
+// Oldest first. A PR that can't be merged (e.g. a conflict) is flagged
+// needs-attention for a human and skipped, so it never blocks later reels.
+const tryMerge = (number) => {
+  for (const method of ['--merge', '--squash', '--rebase']) {
+    try {
+      gh('pr', 'merge', String(number), method);
+      return {ok: true};
+    } catch (e) {
+      const msg = String(e.stderr || e.message).trim();
+      if (!/not allowed|merge method/i.test(msg)) return {ok: false, why: msg.split('\n').filter(Boolean).pop() || 'merge failed'};
     }
   }
+  return {ok: false, why: 'no merge method is allowed on this repository'};
+};
+let pr = null;
+for (const p of prs) {
+  const res = tryMerge(p.number);
+  if (res.ok) {
+    pr = p;
+    break;
+  }
+  log(`couldn't merge PR #${p.number}: ${res.why}`);
+  try {
+    gh('label', 'create', 'needs-attention', '--color', 'FFC66D', '--description', 'Editor pass flagged issues', '--force');
+    gh('pr', 'edit', String(p.number), '--add-label', 'needs-attention');
+    gh('pr', 'comment', String(p.number), '--body', `⚠️ Auto-approve couldn't merge this PR (${res.why}). It now waits for you; the next reel is approved instead.`);
+  } catch {}
 }
-if (!merged) {
-  log(`no merge method allowed for PR #${pr.number}`);
+if (!pr) {
+  log('no PR could be merged');
   process.exit(0);
 }
 try {

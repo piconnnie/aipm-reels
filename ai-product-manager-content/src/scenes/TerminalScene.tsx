@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, radius, toneColor, type} from '../brand/tokens';
+import {fonts, radius, type} from '../brand/tokens';
+import {useColors, useToneColor} from '../brand/theme';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, riseStyle} from '../components/motion';
 import type {TerminalScene as TerminalSceneConfig} from '../content/schema';
@@ -11,6 +12,8 @@ import {SceneShell} from './SceneShell';
 export const TerminalScene: React.FC<{scene: TerminalSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const colors = useColors();
+  const toneColor = useToneColor();
   const win = enter(frame, fps, 4);
   const blink = Math.floor(frame / 15) % 2 === 0;
   return (
@@ -23,7 +26,7 @@ export const TerminalScene: React.FC<{scene: TerminalSceneConfig}> = ({scene}) =
         style={{
           ...riseStyle(win, 30),
           marginTop: 44,
-          background: '#070B16',
+          background: colors.deep,
           border: `2px solid ${colors.navyLine}`,
           borderRadius: radius.card,
           overflow: 'hidden',

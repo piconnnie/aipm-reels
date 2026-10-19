@@ -10,6 +10,7 @@ import path from 'node:path';
 import {OUT, ROOT, ensureDir, loadReel, readJsonIfExists, reelIdArg, saveReel, sceneTimings, totalFrames} from './lib.mjs';
 import {syncRegistry} from './sync-registry.mjs';
 import {checkLimits} from './content-limits.mjs';
+import {STYLE_OPTIONS} from './style.mjs';
 
 syncRegistry();
 
@@ -43,6 +44,15 @@ const shortScenes = reel.scenes.filter((s) => s.durationInFrames < reel.fps * 1.
 add('content', 'No scene shorter than 1.5s', shortScenes.length === 0, shortScenes.map((s) => s.id).join(', '));
 
 const takeaway = reel.scenes.find((s) => s.type === 'takeaway');
+{
+  const st = reel.style ?? {};
+  const bad = [
+    st.theme && !STYLE_OPTIONS.themes.includes(st.theme) && `theme "${st.theme}" (use ${STYLE_OPTIONS.themes.join('/')})`,
+    st.music && !STYLE_OPTIONS.music.includes(st.music) && `music "${st.music}" (use ${STYLE_OPTIONS.music.join('/')})`,
+    st.motion && !STYLE_OPTIONS.motion.includes(st.motion) && `motion "${st.motion}" (use ${STYLE_OPTIONS.motion.join('/')})`,
+  ].filter(Boolean);
+  add('content', 'Style names are valid', bad.length === 0, bad.join('; '));
+}
 add('content', 'Exactly one on-screen CTA, matching primaryCta', takeaway && takeaway.cta === reel.primaryCta.text, takeaway?.cta ?? 'no takeaway scene');
 const ctaVerbs = ['save', 'share', 'follow', 'comment'];
 const ctaHits = ctaVerbs.filter((v) => new RegExp(`\\b${v}\\b`, 'i').test(reel.caption.cta));

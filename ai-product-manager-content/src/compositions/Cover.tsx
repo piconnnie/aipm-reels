@@ -1,7 +1,8 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {loadBrandFonts} from '../brand/fonts';
-import {colors, coverSafe, fonts} from '../brand/tokens';
+import {coverSafe, fonts} from '../brand/tokens';
+import {pickStyle, ThemeProvider, useColors} from '../brand/theme';
 import {BrandBackground} from '../components/BrandBackground';
 import {Monogram} from '../components/BrandSignature';
 import {KineticHeadline} from '../components/KineticHeadline';
@@ -12,6 +13,14 @@ loadBrandFonts();
 // 1080×1920 cover. Everything essential sits inside the centred 1080×1350
 // feed-grid crop, with side margins, so the grid thumbnail stays readable.
 export const Cover: React.FC<{config: ReelConfig}> = ({config}) => (
+  <ThemeProvider style={pickStyle(config.id, config.style)}>
+    <CoverInner config={config} />
+  </ThemeProvider>
+);
+
+const CoverInner: React.FC<{config: ReelConfig}> = ({config}) => {
+  const colors = useColors();
+  return (
   <AbsoluteFill>
     <BrandBackground />
     <div
@@ -40,4 +49,5 @@ export const Cover: React.FC<{config: ReelConfig}> = ({config}) => (
       </div>
     </div>
   </AbsoluteFill>
-);
+  );
+};

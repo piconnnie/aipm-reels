@@ -1,8 +1,11 @@
 import React from 'react';
-import {colors, fonts, safe} from '../brand/tokens';
+import {fonts, safe} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 
 // Proposed AIPM monogram (vector). Not a registered or approved trademark.
-export const Monogram: React.FC<{size?: number}> = ({size = 56}) => (
+export const Monogram: React.FC<{size?: number}> = ({size = 56}) => {
+  const colors = useColors();
+  return (
   <svg width={size} height={size} viewBox="0 0 120 120">
     <rect x="4" y="4" width="112" height="112" rx="26" fill={colors.navy} stroke={colors.indigo} strokeWidth="5" />
     <text
@@ -19,10 +22,13 @@ export const Monogram: React.FC<{size?: number}> = ({size = 56}) => (
     </text>
     <circle cx="92" cy="30" r="7" fill={colors.cyan} />
   </svg>
-);
+  );
+};
 
 // Small persistent brand label inside the top of the safe area.
-export const BrandSignature: React.FC<{opacity?: number}> = ({opacity = 1}) => (
+export const BrandSignature: React.FC<{opacity?: number}> = ({opacity = 1}) => {
+  const colors = useColors();
+  return (
   <div
     style={{
       position: 'absolute',
@@ -47,4 +53,5 @@ export const BrandSignature: React.FC<{opacity?: number}> = ({opacity = 1}) => (
       AI PRODUCT MANAGER
     </span>
   </div>
-);
+  );
+};

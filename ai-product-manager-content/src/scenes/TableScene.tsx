@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, radius, type} from '../brand/tokens';
+import {fonts, radius, type} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, riseStyle} from '../components/motion';
 import type {TableScene as TableSceneConfig} from '../content/schema';
@@ -11,6 +12,7 @@ import {SceneShell} from './SceneShell';
 export const TableScene: React.FC<{scene: TableSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
+  const colors = useColors();
   const legend = enter(frame, fps, scene.rowStart - 6);
   return (
     <SceneShell>

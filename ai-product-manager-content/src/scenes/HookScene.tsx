@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCurrentFrame, useVideoConfig} from 'remotion';
-import {colors, fonts, type} from '../brand/tokens';
+import {fonts, type} from '../brand/tokens';
+import {useColors} from '../brand/theme';
 import {Kicker, KineticHeadline} from '../components/KineticHeadline';
 import {enter, riseStyle} from '../components/motion';
 import type {HookScene as HookSceneConfig} from '../content/schema';
@@ -11,6 +12,7 @@ import {SceneShell} from './SceneShell';
 // sweep and the supporting line.
 export const HookScene: React.FC<{scene: HookSceneConfig}> = ({scene}) => {
   const frame = useCurrentFrame();
+  const colors = useColors();
   const {fps} = useVideoConfig();
   const sub = enter(frame, fps, 18);
   return (
