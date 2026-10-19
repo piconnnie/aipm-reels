@@ -1,0 +1,15 @@
+If you can draw the steps on a whiteboard, you probably don’t need an agent.
+
+Workflow: you define the steps; an LLM handles the parts that need judgment. Predictable, testable, cheaper to run.
+
+Agent: the model decides the next step. More flexible, but cost varies per request and you have to evaluate the whole path it took, not just the final answer.
+
+Use an agent only when:
+→ the steps can’t be known in advance
+→ wrong actions are reversible or need approval
+→ the flexibility is worth variable cost
+→ you can evaluate the trajectory
+
+Share this with your AI product team.
+
+#AIProductManagement #AIAgents #GenAI #ProductManagement #LLM

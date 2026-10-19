@@ -1,0 +1,19 @@
+1
+00:00:00,130 --> 00:00:02,930
+Your AI agent might just be a workflow in disguise. One question decides it.
+
+2
+00:00:03,130 --> 00:00:06,930
+In a workflow, you draw the steps. They're fixed in code, cost and latency are predictable, and it's easy to test.
+
+3
+00:00:07,130 --> 00:00:12,930
+In an agent, the model picks the steps. That buys flexibility, but cost varies per request and you have to evaluate the whole path, not just the answer.
+
+4
+00:00:13,130 --> 00:00:21,930
+Use an agent only when the steps can't be known in advance, wrong actions are reversible or gated, the flexibility is worth variable cost, and you can evaluate the whole trajectory. Otherwise, build the workflow and add AI at the steps that need judgment.
+
+5
+00:00:22,130 --> 00:00:26,930
+Draw it first. If you can, skip the agent. Share this with your AI product team.

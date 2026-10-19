@@ -1,0 +1,219 @@
+{
+  "contentId": "aipm-003-do-you-need-an-agent",
+  "version": 1,
+  "generatedAt": "2026-10-19T17:41:50.024Z",
+  "pillar": "C: Agentic AI",
+  "format": "a-vs-b",
+  "objective": "shares",
+  "targetAudience": "PMs and engineers deciding how to build an LLM feature; product leaders reviewing 'agentic' proposals",
+  "topic": "Agent vs workflow: the question that decides it",
+  "coreInsight": "If you can draw the steps in advance, build a workflow and add AI only where judgment is needed; reserve agents for tasks whose steps can’t be known up front.",
+  "hookVariants": [
+    {
+      "text": "Your AI agent might just be a workflow in disguise.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Stop calling every LLM feature an agent.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 21
+    },
+    {
+      "text": "One question decides: agent or workflow?",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Your AI agent might just be a workflow in disguise.",
+  "selectionRationale": "Highest total (23/25). It reframes a hyped label in plain words, sparks recognition in teams building ‘agents’, and the reel resolves it with a decision rule viewers can share with their team.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Your AI agent might just be a workflow in disguise. / One question decides it.",
+      "voiceover": "Your AI agent might just be a workflow in disguise. One question decides it."
+    },
+    {
+      "scene": "workflow",
+      "onScreen": "WORKFLOW / You draw the steps. / Fixed steps, written in code · Predictable cost and latency · Easy to test and audit",
+      "voiceover": "In a workflow, you draw the steps. They're fixed in code, cost and latency are predictable, and it's easy to test."
+    },
+    {
+      "scene": "agent",
+      "onScreen": "AGENT / The model picks the steps. / Model chooses the next step · Cost varies per request · Needs trajectory evals",
+      "voiceover": "In an agent, the model picks the steps. That buys flexibility, but cost varies per request and you have to evaluate the whole path, not just the answer."
+    },
+    {
+      "scene": "decision-rule",
+      "onScreen": "THE DECISION RULE / Use an agent only when… / steps unknowable · actions reversible or gated · flexibility worth variable cost · trajectory can be evaluated / Otherwise: build the workflow, add AI where judgment is needed.",
+      "voiceover": "Use an agent only when the steps can't be known in advance, wrong actions are reversible or gated, the flexibility is worth variable cost, and you can evaluate the whole trajectory. Otherwise, build the workflow and add AI at the steps that need judgment."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Draw it first. If you can, skip the agent. / Share this with your AI product team",
+      "voiceover": "Draw it first. If you can, skip the agent. Share this with your AI product team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "workflow",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 210,
+      "startSec": 3,
+      "endSec": 7
+    },
+    {
+      "id": "agent",
+      "type": "cards",
+      "startFrame": 210,
+      "endFrame": 390,
+      "startSec": 7,
+      "endSec": 13
+    },
+    {
+      "id": "decision-rule",
+      "type": "checklist",
+      "startFrame": 390,
+      "endFrame": 660,
+      "startSec": 13,
+      "endSec": 22
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 660,
+      "endFrame": 810,
+      "startSec": 22,
+      "endSec": 27
+    }
+  ],
+  "caption": "If you can draw the steps on a whiteboard, you probably don’t need an agent.\n\nWorkflow: you define the steps; an LLM handles the parts that need judgment. Predictable, testable, cheaper to run.\n\nAgent: the model decides the next step. More flexible, but cost varies per request and you have to evaluate the whole path it took, not just the final answer.\n\nUse an agent only when:\n→ the steps can’t be known in advance\n→ wrong actions are reversible or need approval\n→ the flexibility is worth variable cost\n→ you can evaluate the trajectory\n\nShare this with your AI product team.\n\n#AIProductManagement #AIAgents #GenAI #ProductManagement #LLM",
+  "hashtags": [
+    "#AIProductManagement",
+    "#AIAgents",
+    "#GenAI",
+    "#ProductManagement",
+    "#LLM"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI product team"
+  },
+  "coverHeadline": "Do you need an agent?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "If the steps of a task can be specified in advance, a workflow with LLM steps is usually more predictable and easier to test than an agent.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 27,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-003-do-you-need-an-agent-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-003-do-you-need-an-agent.mp4",
+    "cover": "output/covers/aipm-003-do-you-need-an-agent.png",
+    "caption": "output/captions/aipm-003-do-you-need-an-agent.txt",
+    "storyboard": "output/storyboards/aipm-003-do-you-need-an-agent.md",
+    "subtitles": "output/storyboards/aipm-003-do-you-need-an-agent.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-19T17:41:57.010Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-003-do-you-need-an-agent/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "2026-10-20",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI agent might be a workflow in disguise",
+      "2/ Workflow: you draw the steps",
+      "3/ Agent: the model picks the steps",
+      "4/ The trade-offs",
+      "5/ Decision rule (4 conditions)",
+      "6/ 'Draw it first' + share CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture in 30 seconds): how tool calling works and where the human approval gate goes.",
+    "linkedin": "Post: 'We renamed three of our agents to workflows' style reflection framed as a hypothetical, with the four-condition rule and a question about how teams decide."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

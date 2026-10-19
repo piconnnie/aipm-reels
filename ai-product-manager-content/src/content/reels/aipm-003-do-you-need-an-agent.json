@@ -1,0 +1,389 @@
+{
+  "id": "aipm-003-do-you-need-an-agent",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Agent vs workflow: the question that decides it",
+    "audience": "PMs and engineers deciding how to build an LLM feature; product leaders reviewing 'agentic' proposals",
+    "pillar": "C: Agentic AI",
+    "objective": "shares",
+    "format": "a-vs-b",
+    "targetDurationSec": 27,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t019",
+    "queueId": "q001-agent-vs-workflow",
+    "writer": "queue"
+  },
+  "coreInsight": "If you can draw the steps in advance, build a workflow and add AI only where judgment is needed; reserve agents for tasks whose steps can’t be known up front.",
+  "hooks": [
+    {
+      "text": "Your AI agent might just be a workflow in disguise.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Challenges a popular label without dismissing agents; the reel pays it off with a concrete decision rule."
+    },
+    {
+      "text": "Stop calling every LLM feature an agent.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear but scolding; doesn't promise a takeaway."
+    },
+    {
+      "text": "One question decides: agent or workflow?",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Useful, but less scroll-stopping than the reframe."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25). It reframes a hyped label in plain words, sparks recognition in teams building ‘agents’, and the reel resolves it with a decision rule viewers can share with their team.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Create recognition: many 'agents' are fixed sequences with an LLM inside.",
+      "onScreen": "Your AI agent might just be a workflow in disguise. / One question decides it.",
+      "voiceover": "Your AI agent might just be a workflow in disguise. One question decides it.",
+      "storyboard": {
+        "visual": "Four-line headline; 'in disguise.' highlighted; sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "Your AI agent"
+        },
+        {
+          "text": "might just be"
+        },
+        {
+          "text": "a workflow"
+        },
+        {
+          "text": "in disguise.",
+          "highlight": true
+        }
+      ],
+      "sub": "One question decides it.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "workflow",
+      "type": "cards",
+      "durationInFrames": 120,
+      "purpose": "Define a workflow by its properties so the contrast lands.",
+      "onScreen": "WORKFLOW / You draw the steps. / Fixed steps, written in code · Predictable cost and latency · Easy to test and audit",
+      "voiceover": "In a workflow, you draw the steps. They're fixed in code, cost and latency are predictable, and it's easy to test.",
+      "storyboard": {
+        "visual": "Kicker + headline; three green cards tagged WORKFLOW.",
+        "animation": "Cards pop every 14 frames from 10; ~2.4s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WORKFLOW",
+      "headline": [
+        {
+          "text": "You draw"
+        },
+        {
+          "text": "the steps."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Fixed steps, written in code",
+          "status": "pass",
+          "tag": "WORKFLOW"
+        },
+        {
+          "text": "Predictable cost and latency",
+          "status": "pass",
+          "tag": "WORKFLOW"
+        },
+        {
+          "text": "Easy to test and audit",
+          "status": "pass",
+          "tag": "WORKFLOW"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "agent",
+      "type": "cards",
+      "durationInFrames": 180,
+      "purpose": "Show what changes with an agent: flexibility bought with variability and harder evaluation.",
+      "onScreen": "AGENT / The model picks the steps. / Model chooses the next step · Cost varies per request · Needs trajectory evals",
+      "voiceover": "In an agent, the model picks the steps. That buys flexibility, but cost varies per request and you have to evaluate the whole path, not just the answer.",
+      "storyboard": {
+        "visual": "Same stack (hard cut), new headline; each card flips to its agent counterpart with an amber or slate state.",
+        "animation": "Flips at 24/54/84; ~2.7s hold after the last flip."
+      },
+      "transitionIn": "cut",
+      "kicker": "AGENT",
+      "headline": [
+        {
+          "text": "The model picks"
+        },
+        {
+          "text": "the steps."
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "Fixed steps, written in code",
+          "status": "pass",
+          "tag": "WORKFLOW",
+          "swap": {
+            "text": "Model chooses the next step",
+            "tag": "AGENT",
+            "status": "unknown"
+          }
+        },
+        {
+          "text": "Predictable cost and latency",
+          "status": "pass",
+          "tag": "WORKFLOW",
+          "swap": {
+            "text": "Cost varies per request",
+            "tag": "AGENT",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Easy to test and audit",
+          "status": "pass",
+          "tag": "WORKFLOW",
+          "swap": {
+            "text": "Needs trajectory evals",
+            "tag": "AGENT",
+            "status": "warn"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "low"
+        },
+        {
+          "at": 91,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "decision-rule",
+      "type": "checklist",
+      "durationInFrames": 270,
+      "purpose": "Give the shareable decision rule.",
+      "onScreen": "THE DECISION RULE / Use an agent only when… / steps unknowable · actions reversible or gated · flexibility worth variable cost · trajectory can be evaluated / Otherwise: build the workflow, add AI where judgment is needed.",
+      "voiceover": "Use an agent only when the steps can't be known in advance, wrong actions are reversible or gated, the flexibility is worth variable cost, and you can evaluate the whole trajectory. Otherwise, build the workflow and add AI at the steps that need judgment.",
+      "storyboard": {
+        "visual": "Four numbered criteria; cyan rule box.",
+        "animation": "Items every 40 frames from 24; rule at ~190; ~2.7s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE DECISION RULE",
+      "headline": [
+        {
+          "text": "Use an agent"
+        },
+        {
+          "text": "only when…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "The steps can’t be known in advance",
+        "Wrong actions are reversible or gated",
+        "Flexibility is worth a variable cost",
+        "You can evaluate the whole trajectory"
+      ],
+      "itemStart": 24,
+      "itemStagger": 40,
+      "rule": "Otherwise: build the workflow, add AI where judgment is needed.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 67,
+          "kind": "tick"
+        },
+        {
+          "at": 107,
+          "kind": "tick"
+        },
+        {
+          "at": 147,
+          "kind": "tick"
+        },
+        {
+          "at": 192,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + share CTA.",
+      "onScreen": "Draw it first. If you can, skip the agent. / Share this with your AI product team",
+      "voiceover": "Draw it first. If you can, skip the agent. Share this with your AI product team.",
+      "storyboard": {
+        "visual": "Three-line takeaway, last line highlighted; arrow CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Draw it first."
+        },
+        {
+          "text": "If you can,"
+        },
+        {
+          "text": "skip the agent.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your AI product team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT VS WORKFLOW",
+    "headline": [
+      {
+        "text": "Do you need"
+      },
+      {
+        "text": "an agent?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If you can draw the steps on a whiteboard, you probably don’t need an agent.",
+    "body": [
+      "Workflow: you define the steps; an LLM handles the parts that need judgment. Predictable, testable, cheaper to run.",
+      "Agent: the model decides the next step. More flexible, but cost varies per request and you have to evaluate the whole path it took, not just the final answer.",
+      "Use an agent only when:\n→ the steps can’t be known in advance\n→ wrong actions are reversible or need approval\n→ the flexibility is worth variable cost\n→ you can evaluate the trajectory"
+    ],
+    "cta": "Share this with your AI product team.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#AIAgents",
+      "#GenAI",
+      "#ProductManagement",
+      "#LLM"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI product team"
+  },
+  "claims": [
+    {
+      "text": "If the steps of a task can be specified in advance, a workflow with LLM steps is usually more predictable and easier to test than an agent.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "2026-10-20",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI agent might be a workflow in disguise",
+      "2/ Workflow: you draw the steps",
+      "3/ Agent: the model picks the steps",
+      "4/ The trade-offs",
+      "5/ Decision rule (4 conditions)",
+      "6/ 'Draw it first' + share CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture in 30 seconds): how tool calling works and where the human approval gate goes.",
+    "linkedin": "Post: 'We renamed three of our agents to workflows' style reflection framed as a hypothetical, with the four-condition rule and a question about how teams decide."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": {
+    "bed": "audio/aipm-003-do-you-need-an-agent-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}
