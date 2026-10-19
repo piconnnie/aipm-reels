@@ -1,0 +1,336 @@
+{
+  "id": "aipm-002-spec-how-your-ai-feature-fails",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "How to write acceptance criteria for an AI feature that will sometimes be wrong",
+    "audience": "PMs moving into AI product management and product leaders writing PRDs for GenAI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "framework",
+    "targetDurationSec": 26,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t002"
+  },
+  "coreInsight": "Acceptance criteria for an AI feature must define how often it may fail, which failures are never acceptable, what users see when it’s unsure, and its cost and latency ceiling.",
+  "hooks": [
+    {
+      "text": "Your AI feature will be wrong. Spec for it.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Reframes failure as a design requirement; immediately clear; the framework delivers on it."
+    },
+    {
+      "text": "“It works” is not an acceptance criterion for AI.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Strong, but sounds like a scolding and doesn't hint at the fix."
+    },
+    {
+      "text": "Four numbers every AI PRD needs before launch.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Useful but generic; 'numbers' undersells the failure-budget idea."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25). It states an uncomfortable truth every AI PM recognises and turns it into a concrete instruction the reel then delivers as a four-part framework.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Make the viewer accept that failure is certain, so specifying it feels necessary rather than pessimistic.",
+      "onScreen": "Your AI feature will be wrong. Spec for it. / 4 acceptance criteria that do.",
+      "voiceover": "Your AI feature will be wrong sometimes. So write that into the spec.",
+      "storyboard": {
+        "visual": "Four-line display headline, 'Spec for it.' in cyan with indigo underline; slate sub-line.",
+        "animation": "Headline readable on frame 0; underline sweeps from frame 6; sub-line rises at 18."
+      },
+      "kicker": "AI PRODUCT LESSON",
+      "lines": [
+        {
+          "text": "Your AI"
+        },
+        {
+          "text": "feature will"
+        },
+        {
+          "text": "be wrong."
+        },
+        {
+          "text": "Spec for it.",
+          "highlight": true
+        }
+      ],
+      "sub": "4 acceptance criteria that do.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "framework",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "Deliver the framework: the four criteria a probabilistic feature needs, plus the decision rule.",
+      "onScreen": "THE FRAMEWORK / Acceptance criteria for AI features / 1 Quality bar 2 Failure budget 3 Fallback 4 Cost & latency ceiling / Ship only when all four have a number and an owner.",
+      "voiceover": "Four criteria. A quality bar on a fixed eval set. A failure budget: which errors are never acceptable. A fallback: what users see when the model is unsure. And a cost and latency ceiling. Ship only when each has a number and an owner.",
+      "storyboard": {
+        "visual": "Kicker + two-line headline. Four numbered rows with indigo number badges. Cyan-outlined decision rule box below.",
+        "animation": "Items rise every 42 frames from frame 24 with badge pop; rule rises at 198; ~3.4s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE FRAMEWORK",
+      "headline": [
+        {
+          "text": "Acceptance criteria"
+        },
+        {
+          "text": "for AI features",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Quality bar: ≥ X% pass on a fixed eval set",
+        "Failure budget: errors that are never OK",
+        "Fallback: what users see when it’s unsure",
+        "Ceiling: max cost and latency per request"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Ship only when all four have a number and an owner.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 240,
+      "purpose": "Make the framework concrete with a labelled illustrative example the viewer can copy.",
+      "onScreen": "EXAMPLE · ILLUSTRATIVE / Invoice-extraction assistant / QUALITY BAR ≥95% correct on 200 test docs / NEVER OK Wrong bank account number / FALLBACK Unsure? Flag for human review / CEILING Under 4 s, $0.02 per invoice",
+      "voiceover": "For example, an invoice-extraction assistant: ninety-five percent correct on two hundred test documents. Never a wrong bank account number. When unsure, flag for human review. Under four seconds and two cents per invoice. These numbers are illustrative.",
+      "storyboard": {
+        "visual": "Kicker carries the ILLUSTRATIVE label. Four tagged cards: three green (quality, fallback, ceiling), one amber 'NEVER OK' card.",
+        "animation": "Cards rise every 30 frames from frame 10 with icon pop; ~4.5s hold for reading/screenshots."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE · ILLUSTRATIVE",
+      "headline": [
+        {
+          "text": "Invoice-extraction"
+        },
+        {
+          "text": "assistant"
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 30,
+      "cards": [
+        {
+          "text": "≥95% correct on 200 test docs",
+          "status": "pass",
+          "tag": "QUALITY BAR"
+        },
+        {
+          "text": "Wrong bank account number",
+          "status": "warn",
+          "tag": "NEVER OK"
+        },
+        {
+          "text": "Unsure? Flag for human review",
+          "status": "pass",
+          "tag": "FALLBACK"
+        },
+        {
+          "text": "Under 4 s, $0.02 per invoice",
+          "status": "pass",
+          "tag": "CEILING"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 46,
+          "kind": "low"
+        },
+        {
+          "at": 76,
+          "kind": "tick"
+        },
+        {
+          "at": 106,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Resolve the hook with a memorable rule and a save CTA.",
+      "onScreen": "Write down how it fails, before launch. / Save this for your next AI PRD",
+      "voiceover": "Write down how it fails, before launch. Save this for your next AI PRD.",
+      "storyboard": {
+        "visual": "Three-line takeaway with 'before launch.' highlighted; bookmark CTA pill; end card.",
+        "animation": "Lines rise with 6-frame stagger; CTA at 40; end card at 70; static final frame."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Write down"
+        },
+        {
+          "text": "how it fails,"
+        },
+        {
+          "text": "before launch.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next AI PRD",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PRD TEMPLATE",
+    "headline": [
+      {
+        "text": "Spec how your"
+      },
+      {
+        "text": "AI feature"
+      },
+      {
+        "text": "fails",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“It works” is not an acceptance criterion for a feature that is right most of the time.",
+    "body": [
+      "For an AI feature, acceptance criteria need four parts:\n→ Quality bar: a pass rate on a fixed eval set\n→ Failure budget: the errors that are never acceptable\n→ Fallback: what users see when the model is unsure\n→ Ceiling: maximum cost and latency per request",
+      "If any of the four is missing a number or an owner, the launch decision becomes a debate about vibes.",
+      "(The invoice example numbers in the reel are illustrative, not from a real product.)"
+    ],
+    "cta": "Save this for your next AI PRD.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductManagement",
+      "#GenAI",
+      "#PRD",
+      "#AIProducts"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next AI PRD"
+  },
+  "claims": [
+    {
+      "text": "Acceptance criteria for probabilistic features should specify a quality bar, a failure budget, fallback behaviour and cost/latency ceilings.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Invoice example: ≥95% on 200 docs, never a wrong bank account, flag when unsure, <4 s and <$0.02 per invoice.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "2026-10-20",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI feature will be wrong. Spec for it.",
+      "2/ Quality bar",
+      "3/ Failure budget",
+      "4/ Fallback",
+      "5/ Cost & latency ceiling",
+      "6/ Worked example (illustrative)",
+      "7/ Copy-paste PRD block + save CTA"
+    ],
+    "followUpReel": "Format 10 (Decision Checklist): 'Is your AI feature ready to launch?' using the four criteria as gates.",
+    "linkedin": "Post sharing a copy-paste acceptance-criteria block for AI PRDs and asking peers how they set failure budgets."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "audio": {
+    "bed": "audio/aipm-002-spec-how-your-ai-feature-fails-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

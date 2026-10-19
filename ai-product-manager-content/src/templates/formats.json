@@ -1,0 +1,277 @@
+[
+  {
+    "id": "mistake",
+    "name": "The Mistake",
+    "arc": "Hook → common mistake → why it fails → better approach",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "Name the mistake in one line",
+        "seconds": 2.5
+      },
+      {
+        "type": "cards",
+        "purpose": "Show the mistake as people actually make it",
+        "seconds": 3.5
+      },
+      {
+        "type": "cards",
+        "purpose": "Show why it fails in reality",
+        "seconds": 7
+      },
+      {
+        "type": "table",
+        "purpose": "The better approach, concretely",
+        "seconds": 9
+      },
+      {
+        "type": "comparison",
+        "purpose": "What changes (illustrative if not real data)",
+        "seconds": 5
+      },
+      {
+        "type": "takeaway",
+        "purpose": "One-line rule + one CTA",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "framework",
+    "name": "The Framework",
+    "arc": "Problem → named framework → practical steps → example → takeaway",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The problem the framework solves",
+        "seconds": 2.5
+      },
+      {
+        "type": "checklist",
+        "purpose": "The framework steps",
+        "seconds": 10
+      },
+      {
+        "type": "cards",
+        "purpose": "Worked example",
+        "seconds": 8
+      },
+      {
+        "type": "takeaway",
+        "purpose": "How to apply it tomorrow",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "a-vs-b",
+    "name": "A vs. B",
+    "arc": "Decision context → comparison → trade-offs → when to choose each",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The decision people get wrong",
+        "seconds": 2.5
+      },
+      {
+        "type": "comparison",
+        "purpose": "Side-by-side on the criteria that matter",
+        "seconds": 9
+      },
+      {
+        "type": "checklist",
+        "purpose": "Choose A when… / choose B when…",
+        "seconds": 9
+      },
+      {
+        "type": "takeaway",
+        "purpose": "Decision rule",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "architecture",
+    "name": "Architecture in 30 Seconds",
+    "arc": "Problem → simplified architecture → data/control flow → key limitation",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "What the architecture is for",
+        "seconds": 2.5
+      },
+      {
+        "type": "diagram",
+        "purpose": "Components + flow + limitation callout",
+        "seconds": 15
+      },
+      {
+        "type": "takeaway",
+        "purpose": "What a PM should ask about it",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "poc-to-production",
+    "name": "From PoC to Production",
+    "arc": "Promising demo → hidden failure point → production requirement → lesson",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The demo that looked done",
+        "seconds": 2.5
+      },
+      {
+        "type": "diagram",
+        "purpose": "Where it breaks at scale",
+        "seconds": 9
+      },
+      {
+        "type": "checklist",
+        "purpose": "Production requirements",
+        "seconds": 9
+      },
+      {
+        "type": "takeaway",
+        "purpose": "Lesson",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "interview",
+    "name": "AI PM Interview",
+    "arc": "Interview question → structured answer → example → evaluation criteria",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The interview question",
+        "seconds": 3
+      },
+      {
+        "type": "checklist",
+        "purpose": "Structured answer",
+        "seconds": 10
+      },
+      {
+        "type": "cards",
+        "purpose": "What interviewers listen for",
+        "seconds": 8
+      },
+      {
+        "type": "takeaway",
+        "purpose": "One-line answer frame",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "build-with-me",
+    "name": "Build With Me",
+    "arc": "Problem → implementation → live demonstration → result → limitations",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "What we are building and why",
+        "seconds": 2.5
+      },
+      {
+        "type": "terminal",
+        "purpose": "Implementation / run",
+        "seconds": 10
+      },
+      {
+        "type": "comparison",
+        "purpose": "Result (real output only)",
+        "seconds": 6
+      },
+      {
+        "type": "takeaway",
+        "purpose": "Limitations + next step",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "myth-vs-reality",
+    "name": "Myth vs. Reality",
+    "arc": "Common claim → reality → evidence or reasoning → implication",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The myth, stated plainly",
+        "seconds": 2.5
+      },
+      {
+        "type": "cards",
+        "purpose": "Myth flips to reality",
+        "seconds": 9
+      },
+      {
+        "type": "checklist",
+        "purpose": "Reasoning / evidence",
+        "seconds": 8
+      },
+      {
+        "type": "takeaway",
+        "purpose": "Implication for product decisions",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "teardown",
+    "name": "The Product Teardown",
+    "arc": "Product → target user → job to be done → AI design choices → risks and metrics",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The product and the interesting choice",
+        "seconds": 2.5
+      },
+      {
+        "type": "cards",
+        "purpose": "User + job to be done",
+        "seconds": 6
+      },
+      {
+        "type": "diagram",
+        "purpose": "AI design choices",
+        "seconds": 9
+      },
+      {
+        "type": "checklist",
+        "purpose": "Risks and metrics",
+        "seconds": 7
+      },
+      {
+        "type": "takeaway",
+        "purpose": "What to copy",
+        "seconds": 5
+      }
+    ]
+  },
+  {
+    "id": "decision-checklist",
+    "name": "The Decision Checklist",
+    "arc": "A specific decision → essential questions → decision rule → saveable summary",
+    "scenes": [
+      {
+        "type": "hook",
+        "purpose": "The decision",
+        "seconds": 2.5
+      },
+      {
+        "type": "checklist",
+        "purpose": "Questions + decision rule",
+        "seconds": 14
+      },
+      {
+        "type": "takeaway",
+        "purpose": "Saveable summary + save CTA",
+        "seconds": 5
+      }
+    ]
+  }
+]

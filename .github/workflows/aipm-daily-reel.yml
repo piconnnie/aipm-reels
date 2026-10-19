@@ -1,0 +1,134 @@
+name: "AIPM · Daily reel"
+# Writes, renders and QA-checks one new reel every morning and opens a review
+# PR with previews. Merging the PR approves it for posting (see aipm-publish.yml).
+
+on:
+  schedule:
+    - cron: "30 0 * * *" # 06:00 IST (GitHub may start scheduled runs late)
+  workflow_dispatch:
+    inputs:
+      reel_id:
+        description: "Build an existing content file for review instead of writing a new one (e.g. aipm-001-demo-prompts-not-evals)"
+        required: false
+      topic:
+        description: "Optional topic override"
+        required: false
+      format:
+        description: "Optional format id (mistake, framework, a-vs-b, architecture, poc-to-production, interview, build-with-me, myth-vs-reality, teardown, decision-checklist)"
+        required: false
+      pillar:
+        description: "Optional pillar letter A–F"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: aipm-daily-reel
+  cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: ai-product-manager-content
+
+jobs:
+  reel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      AIPM_MODEL: ${{ vars.AIPM_MODEL || 'claude-opus-5-5' }}
+      AIPM_MAX_OPEN_REVIEWS: ${{ vars.AIPM_MAX_OPEN_REVIEWS || '3' }}
+      INPUT_REEL_ID: ${{ inputs.reel_id }}
+      INPUT_TOPIC: ${{ inputs.topic }}
+      INPUT_FORMAT: ${{ inputs.format }}
+      INPUT_PILLAR: ${{ inputs.pillar }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pause if reviews are piling up
+        id: gate
+        run: |
+          open=$(gh pr list --label daily-reel --state open --json number --jq 'length')
+          echo "Open reel reviews: $open (limit $AIPM_MAX_OPEN_REVIEWS)"
+          if [ -z "$INPUT_REEL_ID" ] && [ "$open" -ge "$AIPM_MAX_OPEN_REVIEWS" ]; then
+            echo "::notice::$open reels are already waiting for review — skipping today's generation."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: ./.github/actions/aipm-setup
+        if: steps.gate.outputs.skip != 'true'
+
+      - name: Make reels awaiting review visible to the planner
+        if: steps.gate.outputs.skip != 'true'
+        # Copies content files from open review branches into the working tree
+        # (not committed) so numbering and topic de-duplication see them.
+        run: |
+          : > /tmp/planner-copies.txt
+          for b in $(gh pr list --label daily-reel --state open --json headRefName --jq '.[].headRefName'); do
+            git fetch --quiet --depth 1 origin "$b"
+            for f in $(git diff --name-only --relative HEAD FETCH_HEAD -- src/content/reels/); do
+              if [ ! -e "$f" ]; then git show "FETCH_HEAD:./$f" > "$f" && echo "$f" >> /tmp/planner-copies.txt; fi
+            done
+          done
+          echo "Reels visible to the planner:"; ls src/content/reels
+
+      - name: Write today's reel with Claude
+        if: steps.gate.outputs.skip != 'true'
+        id: write
+        run: |
+          if [ -n "$INPUT_REEL_ID" ]; then
+            if ! [[ "$INPUT_REEL_ID" =~ ^aipm-[a-z0-9-]+$ ]] || [ ! -f "src/content/reels/$INPUT_REEL_ID.json" ]; then
+              echo "::error::No content file src/content/reels/$INPUT_REEL_ID.json"; exit 1
+            fi
+            echo "id=$INPUT_REEL_ID" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Add the ANTHROPIC_API_KEY repository secret (see ai-product-manager-content/AUTOMATION.md)."
+            exit 1
+          fi
+          args=()
+          [ -n "$INPUT_TOPIC" ] && args+=(--topic "$INPUT_TOPIC")
+          [ -n "$INPUT_FORMAT" ] && args+=(--format "$INPUT_FORMAT")
+          [ -n "$INPUT_PILLAR" ] && args+=(--pillar "$INPUT_PILLAR")
+          node scripts/daily/write-reel.mjs "${args[@]}" | tee /tmp/writer.log
+          echo "id=$(tail -n1 /tmp/writer.log)" >> "$GITHUB_OUTPUT"
+
+      - name: Render, check and upload previews
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          ID: ${{ steps.write.outputs.id }}
+        run: scripts/daily/build-for-review.sh "$ID"
+
+      - name: Open review PR
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          ID: ${{ steps.write.outputs.id }}
+        run: |
+          # Remove planner-only copies of other branches' reels before committing.
+          xargs -r rm -f < /tmp/planner-copies.txt
+          scripts/daily/open-review-pr.sh "$ID"
+
+      - name: Summary
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          ID: ${{ steps.write.outputs.id }}
+        run: |
+          {
+            echo "### Reel ready for review: $ID"
+            echo
+            head -20 "output/daily/$ID.pr.md"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep debugging output
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aipm-daily-failure
+          path: |
+            ai-product-manager-content/output/daily
+            ai-product-manager-content/output/qa
+          retention-days: 7

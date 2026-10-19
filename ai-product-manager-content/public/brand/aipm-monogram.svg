@@ -1,0 +1,6 @@
+<!-- Proposed AIPM monogram for the AI Product Manager page. Not a registered or approved trademark. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect x="4" y="4" width="112" height="112" rx="26" fill="#0B1020" stroke="#5B5CF0" stroke-width="4"/>
+  <text x="60" y="72" text-anchor="middle" font-family="Inter Display, Space Grotesk, sans-serif" font-weight="700" font-size="34" letter-spacing="-1" fill="#F5F7FB">AIPM</text>
+  <circle cx="92" cy="30" r="7" fill="#55D6FF"/>
+</svg>

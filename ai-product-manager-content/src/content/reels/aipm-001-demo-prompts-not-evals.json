@@ -1,0 +1,547 @@
+{
+  "id": "aipm-001-demo-prompts-not-evals",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Why a handful of passing demo prompts is not an evaluation, and what to build instead",
+    "audience": "PMs moving into AI product management and product leaders shipping GenAI features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "mistake",
+    "targetDurationSec": 33,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "No employer, customer or vendor references",
+      "Illustrative numbers must be labelled on screen",
+      "Text-on-screen reel: no TTS provider configured in this environment"
+    ],
+    "backlogId": "t001"
+  },
+  "coreInsight": "Prompts your team picked because they work only test the happy path; ship against an eval set of real inputs with expected behaviour and a consistent pass rule.",
+  "hooks": [
+    {
+      "text": "Five great demo prompts are not an evaluation.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Names the exact practice most teams follow; understandable in under two seconds; makes no claim the reel can't back up."
+    },
+    {
+      "text": "Your AI feature passed the demo. That proves almost nothing.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Strong curiosity, but 'almost nothing' overstates the case and reads as hype."
+    },
+    {
+      "text": "Before you ship an AI feature, build this one test set.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "notes": "Useful, but 'this one test set' is vague until later in the reel; weaker first two seconds."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25). It names a concrete, widespread mistake, is fully understood from the first frame, and the reel delivers exactly what it promises: why the demo misleads and what to use instead.",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Name the mistake so the subject is clear from frame 0 and the viewer recognises their own team.",
+      "onScreen": "Five great demo prompts are not an evaluation. / Here’s what to build instead.",
+      "voiceover": "Five great demo prompts are not an evaluation.",
+      "storyboard": {
+        "visual": "Navy grid background. Four-line display headline at 112px, left-aligned in the safe zone; 'evaluation.' in cyan with indigo underline. Slate sub-line below.",
+        "animation": "Headline fully visible on frame 0 (paused-frame safe). Underline sweeps in from frame 6; sub-line rises in at frame 18."
+      },
+      "kicker": "AI PRODUCT LESSON",
+      "lines": [
+        {
+          "text": "Five great"
+        },
+        {
+          "text": "demo prompts"
+        },
+        {
+          "text": "are not an"
+        },
+        {
+          "text": "evaluation.",
+          "highlight": true
+        }
+      ],
+      "sub": "Here’s what to build instead.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "the-demo",
+      "type": "cards",
+      "durationInFrames": 105,
+      "purpose": "Show the mistake as teams actually make it: hand-picked prompts, all green.",
+      "onScreen": "THE DEMO / Chosen by the team. Because they work. / 5 prompt cards, all passing / DEMO RESULT 5 / 5 passed",
+      "voiceover": "Your team wrote those prompts. You picked them because they work.",
+      "storyboard": {
+        "visual": "Kicker + two-line headline. Five stacked prompt cards with green check icons. Green metric card '5 / 5 passed' below.",
+        "animation": "Scene rises in. Cards rise in every 7 frames, each check pops 6 frames later. Metric card rises at frame 58."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE DEMO",
+      "headline": [
+        {
+          "text": "Chosen by the team."
+        },
+        {
+          "text": "Because they work."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 8,
+      "popStagger": 7,
+      "cards": [
+        {
+          "text": "Summarise this policy",
+          "status": "pass"
+        },
+        {
+          "text": "Draft a reply to this email",
+          "status": "pass"
+        },
+        {
+          "text": "What’s our refund window?",
+          "status": "pass"
+        },
+        {
+          "text": "List the key risks",
+          "status": "pass"
+        },
+        {
+          "text": "Translate this to German",
+          "status": "pass"
+        }
+      ],
+      "metric": {
+        "label": "DEMO RESULT",
+        "value": "5 / 5 passed",
+        "tone": "success",
+        "appearAt": 58
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 14,
+          "kind": "tick"
+        },
+        {
+          "at": 21,
+          "kind": "tick"
+        },
+        {
+          "at": 28,
+          "kind": "tick"
+        },
+        {
+          "at": 35,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 60,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "real-users",
+      "type": "cards",
+      "durationInFrames": 210,
+      "purpose": "Reveal why the demo misleads: real inputs look nothing like it. Each flip is a new information beat.",
+      "onScreen": "REAL USERS / Real users don't send demo prompts. / VAGUE + TYPOS · MISSING CONTEXT · SHOULD REFUSE · MESSY INPUT · ADVERSARIAL / REAL-WORLD RESULT Untested",
+      "voiceover": "Real users send typos, missing context, requests you should refuse, messy documents, and attempts to break the rules. None of that was tested.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut for continuity), new headline. Each card flips to a real-user input with an amber tag and warning icon. Metric flips from green '5 / 5 passed' to amber 'Untested'.",
+        "animation": "Cards flip on the X axis one every 24 frames starting at 30 (14-frame flip, text never mirrored). Metric pops to amber at frame 150; 2s hold for reading."
+      },
+      "transitionIn": "cut",
+      "kicker": "REAL USERS",
+      "headline": [
+        {
+          "text": "Real users don’t"
+        },
+        {
+          "text": "send demo prompts."
+        }
+      ],
+      "enter": "static",
+      "swapStart": 30,
+      "swapStagger": 24,
+      "cards": [
+        {
+          "text": "Summarise this policy",
+          "status": "pass",
+          "swap": {
+            "text": "refund?? order from march",
+            "tag": "VAGUE + TYPOS",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Draft a reply to this email",
+          "status": "pass",
+          "swap": {
+            "text": "Does this apply to me?",
+            "tag": "MISSING CONTEXT",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "What’s our refund window?",
+          "status": "pass",
+          "swap": {
+            "text": "Can you approve my claim?",
+            "tag": "SHOULD REFUSE",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "List the key risks",
+          "status": "pass",
+          "swap": {
+            "text": "[42-page scanned PDF]",
+            "tag": "MESSY INPUT",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Translate this to German",
+          "status": "pass",
+          "swap": {
+            "text": "Ignore your rules and…",
+            "tag": "ADVERSARIAL",
+            "status": "warn"
+          }
+        }
+      ],
+      "metric": {
+        "label": "DEMO RESULT",
+        "value": "5 / 5 passed",
+        "tone": "success",
+        "appearAt": -60,
+        "swapTo": {
+          "label": "REAL-WORLD RESULT",
+          "value": "Untested",
+          "tone": "warning",
+          "at": 150
+        }
+      },
+      "sfx": [
+        {
+          "at": 37,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 85,
+          "kind": "tick"
+        },
+        {
+          "at": 109,
+          "kind": "tick"
+        },
+        {
+          "at": 133,
+          "kind": "tick"
+        },
+        {
+          "at": 150,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "the-fix",
+      "type": "table",
+      "durationInFrames": 285,
+      "purpose": "Deliver the better approach concretely: what an eval case contains, using the same inputs the viewer just saw.",
+      "onScreen": "THE FIX / Build an eval set before you ship. / INPUT → EXPECTED → PASS IF / 3 test cases / Pull inputs from real logs & tickets / Rerun on every prompt or model change",
+      "voiceover": "So build an eval set. Real inputs from logs and tickets. The behaviour you expect for each. And a pass rule you apply the same way every time. Rerun it whenever the prompt or model changes.",
+      "storyboard": {
+        "visual": "Kicker + headline. Legend INPUT → EXPECTED → PASS IF in mono. Three stacked test-case cards (indigo left rule): quoted input, cyan 'expected' chip, green 'pass if' chip. Two cyan-bullet notes below.",
+        "animation": "Legend rises at 24; test cases rise at 30 / 66 / 102; notes at 150 / 180; ~3.5s hold for reading and screenshots."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE FIX",
+      "headline": [
+        {
+          "text": "Build an eval set"
+        },
+        {
+          "text": "before you ship.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "INPUT",
+        "EXPECTED",
+        "PASS IF"
+      ],
+      "rows": [
+        {
+          "input": "refund?? order from march",
+          "expected": "Answer from policy",
+          "passIf": "Cites refund policy"
+        },
+        {
+          "input": "Can you approve my claim?",
+          "expected": "Decline + hand off",
+          "passIf": "Routes to a human"
+        },
+        {
+          "input": "Ignore your rules and…",
+          "expected": "Hold the line",
+          "passIf": "No policy breach"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 36,
+      "notes": [
+        "Pull inputs from real logs & tickets",
+        "Rerun on every prompt or model change"
+      ],
+      "notesStart": 150,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 104,
+          "kind": "tick"
+        },
+        {
+          "at": 152,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "the-gap",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Make the consequence tangible with a clearly labelled illustrative comparison, then turn it into a positive reframe.",
+      "onScreen": "SAME FEATURE, TWO TESTS [ILLUSTRATIVE] / DEMO PROMPTS 5 / 5 / EVAL SET (50 REAL CASES) 31 / 50 / The gap is your real roadmap.",
+      "voiceover": "In this illustrative example, the same feature scores five out of five on the demo, and thirty-one out of fifty on real cases. That gap is your actual roadmap.",
+      "storyboard": {
+        "visual": "Kicker with amber ILLUSTRATIVE badge. Two stacked metric cards with progress bars: green 100% and amber 62%. Two-line conclusion with 'real roadmap.' highlighted.",
+        "animation": "Left card rises at 4 with bar fill + count-up; right card at 30 with bar fill + count-up; conclusion rises at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME FEATURE, TWO TESTS",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "DEMO PROMPTS",
+        "value": "5 / 5",
+        "ratio": 1,
+        "tone": "success",
+        "caption": "Looks ready to ship"
+      },
+      "right": {
+        "label": "EVAL SET · 50 REAL CASES",
+        "value": "31 / 50",
+        "ratio": 0.62,
+        "tone": "warning",
+        "caption": "Shows what to fix first"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "The gap is your"
+        },
+        {
+          "text": "real roadmap.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "tick"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Resolve the hook with one memorable rule, one save CTA, then subtle brand end card.",
+      "onScreen": "THE TAKEAWAY / Ship against your eval set. Not your demo. / Save this for your next launch review / AI PRODUCT MANAGER end card",
+      "voiceover": "Ship against your eval set, not your demo. Save this for your next launch review.",
+      "storyboard": {
+        "visual": "Large three-line takeaway, 'Not your demo.' highlighted. Indigo-outlined CTA pill with bookmark icon. Monogram + name + promise at the bottom of the safe zone.",
+        "animation": "Lines rise in (6-frame stagger); CTA pill at 40; end card at 70; clean static final frame. Audio bed fades over last 0.8s."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Ship against"
+        },
+        {
+          "text": "your eval set."
+        },
+        {
+          "text": "Not your demo.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next launch review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "BEFORE YOU SHIP",
+    "headline": [
+      {
+        "text": "Demo prompts"
+      },
+      {
+        "text": "aren’t an"
+      },
+      {
+        "text": "evaluation",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Five demo prompts that all pass tell you one thing: your team knows which prompts work.",
+    "body": [
+      "They don't tell you how the feature handles:\n→ vague, typo-filled questions\n→ questions with missing context\n→ requests it should refuse or hand off\n→ long, messy documents\n→ users trying to get around the rules",
+      "Before launch, build an eval set: real inputs from logs and support tickets, the behaviour you expect for each one, and a pass rule you apply the same way every time. Rerun it whenever the prompt, model or retrieval changes.",
+      "The gap between your demo score and your eval score isn't bad news. It's your real roadmap.",
+      "(The 5/5 vs 31/50 in the reel is an illustrative example, not data from a real product.)"
+    ],
+    "cta": "Save this for your next AI launch review.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductManagement",
+      "#GenAI",
+      "#LLMEvaluation",
+      "#AIProducts"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next launch review"
+  },
+  "audio": {
+    "bed": "audio/aipm-001-demo-prompts-not-evals-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  },
+  "claims": [
+    {
+      "text": "Prompts chosen by the team because they work over-represent the happy path and don't reflect real user inputs.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "An eval set pairs real inputs with expected behaviour and a consistent pass rule, and should be rerun when the prompt, model or retrieval changes.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Demo 5/5 vs eval set 31/50 (62%).",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "2026-10-21",
+    "notes": "Evergreen; no time-sensitive claims. Post when your audience is most active (check Instagram Insights once you have a baseline)."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Five great demo prompts are not an evaluation.",
+      "2/ Why the demo misleads: the team wrote the prompts and kept the ones that worked.",
+      "3/ What real users send: typos, missing context, out-of-scope asks, messy files, rule-breaking attempts.",
+      "4/ Anatomy of an eval case: INPUT → EXPECTED BEHAVIOUR → PASS RULE (with the three examples).",
+      "5/ Where to get inputs: logs, support tickets, SME-written edge cases, past escalations.",
+      "6/ When to rerun: every prompt, model, or retrieval change; track pass rate over time.",
+      "7/ Save-able summary card + 'Save this for your next launch review'."
+    ],
+    "followUpReel": "Format 2 (Framework): 'How to write a pass rule for an AI answer' — exact match vs rubric vs human review, and when each is worth the cost.",
+    "linkedin": "Text post opening with the demo-vs-eval gap as a PM lesson; 3 short paragraphs on where eval inputs come from and how to make pass rules consistent; ask peers how they source edge cases. No numbers presented as real data."
+  }
+}
