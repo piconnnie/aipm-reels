@@ -1,0 +1,36 @@
+{
+  "id": "aipm-004-which-one-do-you-need",
+  "createdAt": "2026-10-19T17:44:20.731Z",
+  "release": {
+    "tag": "reel-aipm-004-which-one-do-you-need",
+    "video": "aipm-004-which-one-do-you-need.mp4",
+    "cover": "aipm-004-which-one-do-you-need.jpg",
+    "contactSheet": "aipm-004-which-one-do-you-need-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "5fbc9756a9a17012f2c949f7188476af92575ef17bfaefbe0536c2d053333a77",
+    "cover": "97815ce55b8dce3080ab5af828ef630af8d2e453d1b44a305d8c2769b15820e9"
+  },
+  "durationSec": 23,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 38
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

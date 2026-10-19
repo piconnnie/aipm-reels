@@ -1,0 +1,206 @@
+{
+  "contentId": "aipm-004-which-one-do-you-need",
+  "version": 1,
+  "generatedAt": "2026-10-19T17:44:14.306Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "a-vs-b",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers choosing how to improve an LLM feature",
+  "topic": "RAG vs fine-tuning: which problem each actually solves",
+  "coreInsight": "Choose by what the model is missing: retrieval fixes missing or changing facts, fine-tuning fixes behaviour like format and tone, and a better prompt is the cheapest first test for both.",
+  "hookVariants": [
+    {
+      "text": "RAG or fine-tuning? Ask what’s missing.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Fine-tuning is the wrong fix for most knowledge gaps.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Your model doesn’t need training. It needs the right page.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 18
+    }
+  ],
+  "selectedHook": "RAG or fine-tuning? Ask what’s missing.",
+  "selectionRationale": "Highest total (23/25) and the most honest: it promises a decision rule rather than declaring a winner, and the reel delivers the rule plus a third, cheaper option.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "RAG or fine-tuning? Ask what’s missing. / Knowledge or behaviour?",
+      "voiceover": "RAG or fine-tuning? Start by asking what the model is missing."
+    },
+    {
+      "scene": "the-question",
+      "onScreen": "THE QUESTION / What is the model missing? / KNOWLEDGE: private or changing facts / BEHAVIOUR: a format, tone or skill",
+      "voiceover": "Either it's missing knowledge — private or changing facts — or it's missing behaviour: a format, a tone, a skill."
+    },
+    {
+      "scene": "the-mapping",
+      "onScreen": "MATCH THE FIX / GAP → FIX → WHY / This week’s docs → RAG / Wrong format or house tone → Fine-tuning / Ignores clear instructions → Fix the prompt first",
+      "voiceover": "If answers need this week's documents, that's retrieval — facts change. If the format or tone is wrong, that's behaviour — fine-tuning can help. And if it ignores clear instructions, fix the prompt first; it's the cheapest test."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Facts → RAG. Behaviour → fine-tuning. / Save this for your next build decision",
+      "voiceover": "Missing facts: retrieve them. Wrong behaviour: tune it. Save this for your next build decision."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "the-question",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 240,
+      "startSec": 3,
+      "endSec": 8
+    },
+    {
+      "id": "the-mapping",
+      "type": "table",
+      "startFrame": 240,
+      "endFrame": 540,
+      "startSec": 8,
+      "endSec": 18
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 540,
+      "endFrame": 690,
+      "startSec": 18,
+      "endSec": 23
+    }
+  ],
+  "caption": "“Should we fine-tune?” is usually the wrong first question. Ask what the model is missing.\n\nMissing knowledge (private docs, facts that change every week) → retrieval. Put the right page in front of the model at answer time.\n\nMissing behaviour (a format, a house tone, a narrow skill) → fine-tuning can help.\n\nIgnoring clear instructions → fix the prompt first. It’s the cheapest experiment, and many teams skip it.\n\nPlenty of products end up using retrieval and fine-tuning together. Whichever you try, measure it on the same eval set before and after.\n\nSave this for your next build decision.\n\n#AIProductManagement #RAG #FineTuning #GenAI #LLM",
+  "hashtags": [
+    "#AIProductManagement",
+    "#RAG",
+    "#FineTuning",
+    "#GenAI",
+    "#LLM"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next build decision"
+  },
+  "coverHeadline": "Which one do you need?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Retrieval suits missing or frequently changing knowledge; fine-tuning suits behaviour such as format, tone or narrow skills; prompt changes are the cheapest first test.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-004-which-one-do-you-need-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-004-which-one-do-you-need.mp4",
+    "cover": "output/covers/aipm-004-which-one-do-you-need.png",
+    "caption": "output/captions/aipm-004-which-one-do-you-need.txt",
+    "storyboard": "output/storyboards/aipm-004-which-one-do-you-need.md",
+    "subtitles": "output/storyboards/aipm-004-which-one-do-you-need.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-19T17:44:20.688Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-004-which-one-do-you-need/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "2026-10-21",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ RAG or fine-tuning? Ask what’s missing.",
+      "2/ Knowledge vs behaviour",
+      "3/ Gap → fix table",
+      "4/ Try the prompt first",
+      "5/ Using both",
+      "6/ Measure on the same eval set + save CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture in 30 seconds): where RAG answers fail — retrieval misses vs generation errors.",
+    "linkedin": "Post walking through the gap → fix table with one hypothetical example per row, ending with a question about how teams decide."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

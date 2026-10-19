@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+RAG or fine-tuning? Start by asking what the model is missing.
+
+2
+00:00:03,130 --> 00:00:07,930
+Either it's missing knowledge — private or changing facts — or it's missing behaviour: a format, a tone, a skill.
+
+3
+00:00:08,130 --> 00:00:17,930
+If answers need this week's documents, that's retrieval — facts change. If the format or tone is wrong, that's behaviour — fine-tuning can help. And if it ignores clear instructions, fix the prompt first; it's the cheapest test.
+
+4
+00:00:18,130 --> 00:00:22,930
+Missing facts: retrieve them. Wrong behaviour: tune it. Save this for your next build decision.
