@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t019",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "a-vs-b",
+    "research": false
+  },
+  "reelId": "aipm-003-do-you-need-an-agent",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
