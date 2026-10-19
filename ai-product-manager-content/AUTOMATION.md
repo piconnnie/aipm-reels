@@ -19,8 +19,9 @@ Every morning a GitHub Actions workflow takes a new reel, renders it with Remoti
 
 you        merge = approve · edit the JSON in the PR = auto re-render · close = reject
 
-19:05 IST  AIPM · Approve & publish   (also runs the moment you merge)
-           oldest approved reel, max 1/day, after AIPM_POST_TIME
+hourly     AIPM · Approve & publish   (also runs the moment you merge)
+           records approval for every merged reel PR (so none is lost)
+           oldest approved reel, max 1/day, once the local time passes AIPM_POST_TIME
            → verifies the file hashes match what passed QA and what you approved
            → Instagram Graph API: create REELS container → wait FINISHED → publish
            → comments the permalink on the PR
@@ -29,6 +30,8 @@ Sunday     AIPM · Weekly topics & insights
            Instagram insights → data/performance → planner weighting
            (opt-in only) Claude web-scans for timely topics (with sources) → backlog
 ```
+
+**Control panel:** everything below can also be done from the web control panel (see "Control panel" further down): review and approve, make a reel, post now, pause, change the posting time, manage the queue.
 
 Nothing is ever posted without a merged PR. If 3 reels are already waiting for review, the daily run skips generation instead of piling up drafts.
 
@@ -98,6 +101,24 @@ Then run **AIPM · Check Instagram setup**. It lists anything missing (token, pe
 
 ---
 
+## Control panel (GitHub Pages)
+
+A Streamlit app that runs entirely in your browser and controls the pipeline through the GitHub API. Nothing to host or pay for.
+
+**Turn it on (once):** repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**. Then Actions → **AIPM · Control panel (GitHub Pages)** → Run workflow (it also runs on every change to `control-panel/`). The page is at `https://<your-user>.github.io/aipm-reels/`.
+
+**Sign in:** paste a fine-grained GitHub token limited to this repo, with Actions, Contents, Pull requests and Variables set to *Read and write*, plus Issues *Read* (and optionally Secrets *Read*, which only shows whether Instagram is connected). The panel shows these steps too. The token stays in the browser tab's memory and is sent only to `api.github.com`; closing the tab forgets it. Use **Explore with sample data** to look around without a token.
+
+| Tab | What you can do |
+|---|---|
+| Overview | Drafts left, reels waiting, approved, posted; recent posts with links; failures; status of each workflow |
+| Review | Cover + video for each reel waiting, QA and editor notes; **Approve** (merges the PR) or **Reject** (closes it, with an optional reason) |
+| Make a reel | Make one now; send an existing reel to review; **post an approved reel now** (or dry-run); check Instagram setup; import insights; refresh the token |
+| Queue | Every draft and whether it's been used; upload new drafts (they're renumbered automatically) |
+| Settings | Pause/resume the daily reel, posting and weekly import; posting time, time zone, posts per day, review limit, queue warning level, writer, Instagram login type |
+
+Every irreversible button asks for confirmation. The first load takes ~20 seconds while Python starts in the browser.
+
 ## Day to day
 
 - **Morning:** open the PR. Watch the MP4 (the "Watch the reel" link), skim the script table, the editor scores and the claims/sources.
@@ -112,7 +133,7 @@ Then run **AIPM · Check Instagram setup**. It lists anything missing (token, pe
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `AIPM_POST_TIME` | `19:00` | Earliest local posting time. Also edit the cron in `aipm-publish.yml` to match. |
+| `AIPM_POST_TIME` | `19:00` | Earliest local posting time (checked hourly, so changes apply within the hour) |
 | `AIPM_TZ` | `Asia/Kolkata` | Time zone for the slot and the daily cap |
 | `AIPM_MAX_PER_DAY` | `1` | Posts per day |
 | `AIPM_MAX_OPEN_REVIEWS` | `3` | Skip generation when this many PRs await review |

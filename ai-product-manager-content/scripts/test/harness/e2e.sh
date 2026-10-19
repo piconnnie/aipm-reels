@@ -139,7 +139,7 @@ git -C "$W" checkout -q main
 echo "== 5. Merge PR #2 → approval recorded, not yet posted (before slot)"
 git -C "$U" fetch -q origin && git -C "$U" checkout -q main && git -C "$U" pull -q origin main
 git -C "$U" merge -q --no-ff "origin/reel/$NEWID" -m "Merge reel $NEWID" && git -C "$U" push -q origin main
-node -e "const f='$GH_FAKE_STATE',fs=require('fs');const s=JSON.parse(fs.readFileSync(f));s.prs[1].state='merged';fs.writeFileSync(f,JSON.stringify(s,null,2))"
+node -e "const f='$GH_FAKE_STATE',fs=require('fs');const s=JSON.parse(fs.readFileSync(f));s.prs[1].state='merged';s.prs[1].mergedBy={login:'faraz'};s.prs[1].mergedAt=new Date().toISOString();fs.writeFileSync(f,JSON.stringify(s,null,2))"
 MERGE_EVENT="{\"pull_request\":{\"number\":2,\"merged\":true,\"merged_at\":\"$(date -u +%FT%TZ)\",\"merged_by\":{\"login\":\"faraz\"},\"labels\":[{\"name\":\"daily-reel\"}],\"head\":{\"ref\":\"reel/$NEWID\"}}}"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event pull_request --event-json "$MERGE_EVENT" --secrets "$IGSECRETS" --vars '{"AIPM_POST_TIME":"23:59"}'
 git -C "$W" fetch -q origin
@@ -160,6 +160,17 @@ check "Token never in workflow output or git" "! git -C '$W' log -p origin/main 
 echo "== 7. Second publish run the same day → nothing more is posted"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars '{"AIPM_POST_TIME":"00:00"}'
 check "Still exactly one post" "[ \"\$(grep -c media_publish '$E2E/ig-log.jsonl')\" = 1 ]"
+
+echo "== 7b. A merge whose own run was cancelled is still recorded by the next hourly run"
+SUBREEL=$(reel_of_pr 2)
+git -C "$U" fetch -q origin && git -C "$U" checkout -q main && git -C "$U" pull -q origin main
+git -C "$U" merge -q --no-ff "origin/reel/$SUBREEL" -m "Merge reel $SUBREEL" && git -C "$U" push -q origin main
+node -e "const f='$GH_FAKE_STATE',fs=require('fs');const s=JSON.parse(fs.readFileSync(f));Object.assign(s.prs[2],{state:'merged',mergedBy:{login:'faraz'},mergedAt:new Date().toISOString()});fs.writeFileSync(f,JSON.stringify(s,null,2))"
+$RUN "$WF/aipm-publish.yml" --repo "$W" --event schedule --secrets "$IGSECRETS" --vars '{"AIPM_POST_TIME":"23:59"}' > /dev/null
+git -C "$W" fetch -q origin
+check "Approval for $SUBREEL recorded without its merge run" "git -C '$W' show origin/main:ai-product-manager-content/archive/$SUBREEL/state.json | grep -q '\"approvedBy\": \"faraz\"'"
+check "PR #3 told it is scheduled" "ghq 's.prs[2].comments.join(\"|\")' | grep -q 'Approved by @faraz'"
+check "Already-recorded approvals are not re-commented" "[ \"\$(ghq 's.prs[1].comments.filter(c=>c.includes(\"Approved by\")).length')\" = 1 ]"
 
 echo "== 8. A merged PR without the daily-reel label is ignored"
 $RUN "$WF/aipm-publish.yml" --repo "$W" --event pull_request --event-json '{"pull_request":{"number":9,"merged":true,"labels":[{"name":"docs"}],"head":{"ref":"feature/x"}}}' --secrets "$IGSECRETS" | tee "$E2E/s8.log" > /dev/null

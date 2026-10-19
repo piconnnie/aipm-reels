@@ -51,7 +51,7 @@ if (group === 'pr') {
     prs = prs.filter((p) => p.state === st);
     if (flag('label')) prs = prs.filter((p) => p.labels.includes(flag('label')));
     if (flag('head')) prs = prs.filter((p) => p.headRefName === flag('head'));
-    done(jq(prs.map((p) => ({number: p.number, headRefName: p.headRefName})), flag('jq')));
+    done(jq(prs.map((p) => ({number: p.number, headRefName: p.headRefName, labels: p.labels.map((name) => ({name})), mergedBy: p.mergedBy ?? null, mergedAt: p.mergedAt ?? null})), flag('jq')));
   }
   if (cmd === 'create') {
     const number = state.prs.length + 1;
