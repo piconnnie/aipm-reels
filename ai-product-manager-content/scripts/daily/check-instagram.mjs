@@ -51,10 +51,9 @@ if (quota?.error) {
   ok(`Content publishing permission works; quota usage ${JSON.stringify(quota)}`);
 }
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  bad('ANTHROPIC_API_KEY is not set (needed by the daily writer).');
-  failures++;
-} else ok('ANTHROPIC_API_KEY is set');
+if (process.env.HAS_OAUTH === 'true') ok('Writer: Claude Code on your Claude subscription (CLAUDE_CODE_OAUTH_TOKEN)');
+else if (process.env.ANTHROPIC_API_KEY) ok('Writer: Claude API (ANTHROPIC_API_KEY)');
+else info('Writer: content queue only (no CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY). Reels come from data/queue until it runs out.');
 
 console.log(failures ? `\n${failures} problem(s) to fix before automated posting.` : '\nReady: the publisher can post approved reels.');
 process.exit(failures ? 1 : 0);

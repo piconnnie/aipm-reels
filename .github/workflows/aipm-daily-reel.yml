@@ -1,6 +1,7 @@
 name: "AIPM · Daily reel"
 # Writes, renders and QA-checks one new reel every morning and opens a review
-# PR with previews. Merging the PR approves it for posting (see aipm-publish.yml).
+# PR with previews. Writer: Claude Code on your Claude subscription, the Claude
+# API, or the pre-written queue in data/queue (see AUTOMATION.md). Merging the PR approves it for posting (see aipm-publish.yml).
 
 on:
   schedule:
@@ -23,6 +24,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write # Claude Code GitHub Action authentication
 
 concurrency:
   group: aipm-daily-reel
@@ -75,27 +77,86 @@ jobs:
           done
           echo "Reels visible to the planner:"; ls src/content/reels
 
-      - name: Write today's reel with Claude
+      - name: Choose the writer
         if: steps.gate.outputs.skip != 'true'
-        id: write
+        id: mode
+        env:
+          HAS_OAUTH: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+          FORCE_MODE: ${{ vars.AIPM_WRITER }}
+        # existing  → re-review a content file already in the repo (reel_id input)
+        # subscription → Claude Code GitHub Action on your Claude plan (CLAUDE_CODE_OAUTH_TOKEN)
+        # api       → Claude API (ANTHROPIC_API_KEY, billed per token)
+        # queue     → next pre-written draft in data/queue (no model, no cost)
         run: |
-          if [ -n "$INPUT_REEL_ID" ]; then
-            if ! [[ "$INPUT_REEL_ID" =~ ^aipm-[a-z0-9-]+$ ]] || [ ! -f "src/content/reels/$INPUT_REEL_ID.json" ]; then
-              echo "::error::No content file src/content/reels/$INPUT_REEL_ID.json"; exit 1
-            fi
-            echo "id=$INPUT_REEL_ID" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          if [ -z "$ANTHROPIC_API_KEY" ]; then
-            echo "::error::Add the ANTHROPIC_API_KEY repository secret (see ai-product-manager-content/AUTOMATION.md)."
-            exit 1
-          fi
+          if [ -n "$INPUT_REEL_ID" ]; then mode=existing
+          elif [ -n "$FORCE_MODE" ]; then mode="$FORCE_MODE"
+          elif [ "$HAS_OAUTH" = "true" ]; then mode=subscription
+          elif [ -n "$ANTHROPIC_API_KEY" ]; then mode=api
+          else mode=queue; fi
+          echo "Writer: $mode"; echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          node scripts/daily/dequeue.mjs --status || true
+
+      - name: Prepare the writing brief
+        if: steps.gate.outputs.skip != 'true' && steps.mode.outputs.mode == 'subscription'
+        run: |
           args=()
           [ -n "$INPUT_TOPIC" ] && args+=(--topic "$INPUT_TOPIC")
           [ -n "$INPUT_FORMAT" ] && args+=(--format "$INPUT_FORMAT")
           [ -n "$INPUT_PILLAR" ] && args+=(--pillar "$INPUT_PILLAR")
-          node scripts/daily/write-reel.mjs "${args[@]}" | tee /tmp/writer.log
-          echo "id=$(tail -n1 /tmp/writer.log)" >> "$GITHUB_OUTPUT"
+          node scripts/daily/prepare-brief.mjs "${args[@]}"
+
+      - name: Claude Code writes today's reel (Claude subscription)
+        if: steps.gate.outputs.skip != 'true' && steps.mode.outputs.mode == 'subscription'
+        id: claude
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # Scheduled runs are attributed to whoever last edited the cron line,
+          # which can be a bot account when the file was pushed by an app.
+          allowed_bots: "claude[bot],claude,github-actions[bot]"
+          prompt: "Read ai-product-manager-content/output/daily/brief.md and follow its steps exactly. Write only draft.json and review.json in ai-product-manager-content/output/daily/."
+          claude_args: >-
+            --model ${{ vars.AIPM_MODEL || 'claude-opus-5-5' }}
+            --max-turns 40
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(node ai-product-manager-content/scripts/daily/finalize-draft.mjs:*)"
+
+      - name: Finalize today's reel
+        if: steps.gate.outputs.skip != 'true'
+        id: write
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+          CLAUDE_OUTCOME: ${{ steps.claude.outcome }}
+        run: |
+          set -o pipefail
+          if [ "$MODE" = existing ]; then
+            if ! [[ "$INPUT_REEL_ID" =~ ^aipm-[a-z0-9-]+$ ]] || [ ! -f "src/content/reels/$INPUT_REEL_ID.json" ]; then
+              echo "::error::No content file src/content/reels/$INPUT_REEL_ID.json"; exit 1
+            fi
+            echo "id=$INPUT_REEL_ID" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          id=""
+          if [ "$MODE" = subscription ]; then
+            if [ "$CLAUDE_OUTCOME" = success ] && [ -f output/daily/draft.json ] && \
+               node scripts/daily/finalize-draft.mjs output/daily/draft.json --source "claude-code:$AIPM_MODEL" --review output/daily/review.json | tee /tmp/writer.log; then
+              id=$(tail -n1 /tmp/writer.log)
+            else
+              echo "::warning::Claude Code did not produce a valid draft (outcome: $CLAUDE_OUTCOME). Falling back to the content queue."
+            fi
+          elif [ "$MODE" = api ]; then
+            args=()
+            [ -n "$INPUT_TOPIC" ] && args+=(--topic "$INPUT_TOPIC")
+            [ -n "$INPUT_FORMAT" ] && args+=(--format "$INPUT_FORMAT")
+            [ -n "$INPUT_PILLAR" ] && args+=(--pillar "$INPUT_PILLAR")
+            if node scripts/daily/write-reel.mjs "${args[@]}" | tee /tmp/writer.log; then id=$(tail -n1 /tmp/writer.log)
+            else echo "::warning::API writer failed. Falling back to the content queue."; fi
+          fi
+          if [ -z "$id" ]; then
+            node scripts/daily/dequeue.mjs | tee /tmp/writer.log
+            id=$(tail -n1 /tmp/writer.log)
+          fi
+          echo "Today's reel: $id"
+          echo "id=$id" >> "$GITHUB_OUTPUT"
 
       - name: Render, check and upload previews
         if: steps.gate.outputs.skip != 'true'

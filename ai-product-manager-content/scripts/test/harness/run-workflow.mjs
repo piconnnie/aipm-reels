@@ -146,6 +146,15 @@ for (const [i, step] of job.steps.entries()) {
         spawnSync('git', ['pull', '-q', '--ff-only', 'origin', ref], {cwd: repo});
       }
       console.log(`  ✓  ${name}${ref ? ` (ref ${ref})` : ''} [emulated]`);
+    } else if (step.uses.startsWith('anthropics/claude-code-action')) {
+      // Emulated by a test command (HARNESS_CLAUDE_ACTION) that plays Claude Code.
+      const cmd = process.env.HARNESS_CLAUDE_ACTION;
+      const withEnv = Object.fromEntries(Object.entries(step.with ?? {}).map(([k, v]) => [`INPUT_${k.toUpperCase()}`, interpolate(v)]));
+      const r = cmd ? spawnSync('bash', ['-eo', 'pipefail', '-c', cmd], {cwd: repo, env: {...baseEnv, ...jobEnv, ...withEnv}, encoding: 'utf8'}) : {status: 1, stdout: '', stderr: 'no HARNESS_CLAUDE_ACTION'};
+      const outcome = r.status === 0 ? 'success' : 'failure';
+      if (step.id) steps[step.id] = {outputs: {}, outcome};
+      if (outcome === 'failure' && !step['continue-on-error']) jobStatus = 'failure';
+      console.log(`  ${outcome === 'success' ? '✓' : '⚠'}  ${name} [emulated Claude Code: ${outcome}]`);
     } else {
       console.log(`  ·  ${name} [skipped: local toolchain]`);
     }

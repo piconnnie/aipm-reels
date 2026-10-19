@@ -1,0 +1,134 @@
+{
+  "brief": {
+    "topic": "RAG vs fine-tuning: which problem each actually solves",
+    "audience": "PMs and engineers choosing how to improve an LLM feature",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "a-vs-b",
+    "targetDurationSec": 23,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t010"
+  },
+  "coreInsight": "Choose by what the model is missing: retrieval fixes missing or changing facts, fine-tuning fixes behaviour like format and tone, and a better prompt is the cheapest first test for both.",
+  "hooks": [
+    {
+      "text": "RAG or fine-tuning? Ask what’s missing.",
+      "angle": "Immediately usable framework",
+      "scores": {"specificity": 4, "relevance": 5, "curiosity": 4, "credibility": 5, "comprehension": 5},
+      "notes": "Turns a confusing technical debate into one diagnostic question the viewer can use in their next meeting."
+    },
+    {
+      "text": "Fine-tuning is the wrong fix for most knowledge gaps.",
+      "angle": "Common misconception",
+      "scores": {"specificity": 4, "relevance": 5, "curiosity": 5, "credibility": 3, "comprehension": 4},
+      "notes": "Punchy, but 'most' is hard to back up and invites argument rather than learning."
+    },
+    {
+      "text": "Your model doesn’t need training. It needs the right page.",
+      "angle": "Counterintuitive insight",
+      "scores": {"specificity": 3, "relevance": 4, "curiosity": 4, "credibility": 4, "comprehension": 3},
+      "notes": "Memorable but only covers the RAG half of the decision."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25) and the most honest: it promises a decision rule rather than declaring a winner, and the reel delivers the rule plus a third, cheaper option.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Frame a common debate as a single diagnostic question.",
+      "onScreen": "RAG or fine-tuning? Ask what’s missing. / Knowledge or behaviour?",
+      "voiceover": "RAG or fine-tuning? Start by asking what the model is missing.",
+      "storyboard": {"visual": "Four-line headline; last two lines highlighted; slate sub-line.", "animation": "Readable on frame 0; underline sweeps; sub rises at 18."},
+      "kicker": "GENAI DELIVERY",
+      "lines": [{"text": "RAG or"}, {"text": "fine-tuning?"}, {"text": "Ask what’s", "highlight": true}, {"text": "missing.", "highlight": true}],
+      "sub": "Knowledge, or behaviour?",
+      "sfx": [{"at": 6, "kind": "impact"}]
+    },
+    {
+      "id": "the-question",
+      "type": "cards",
+      "durationInFrames": 150,
+      "purpose": "Split every gap into two kinds so the mapping in the next scene is obvious.",
+      "onScreen": "THE QUESTION / What is the model missing? / KNOWLEDGE: private or changing facts / BEHAVIOUR: a format, tone or skill",
+      "voiceover": "Either it's missing knowledge — private or changing facts — or it's missing behaviour: a format, a tone, a skill.",
+      "storyboard": {"visual": "Two tagged cards with question-mark icons.", "animation": "Cards pop at 10 and 50; ~2.8s hold."},
+      "transitionIn": "fade-up",
+      "kicker": "THE QUESTION",
+      "headline": [{"text": "What is the model"}, {"text": "missing?", "highlight": true}],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 40,
+      "cards": [
+        {"text": "Private or changing facts", "status": "unknown", "tag": "KNOWLEDGE"},
+        {"text": "A format, tone or skill", "status": "unknown", "tag": "BEHAVIOUR"}
+      ],
+      "sfx": [{"at": 0, "kind": "whoosh"}, {"at": 16, "kind": "tick"}, {"at": 56, "kind": "tick"}]
+    },
+    {
+      "id": "the-mapping",
+      "type": "table",
+      "durationInFrames": 300,
+      "purpose": "Map three concrete gaps to the right fix, including the cheapest one people skip.",
+      "onScreen": "MATCH THE FIX / GAP → FIX → WHY / This week’s docs → RAG / Wrong format or house tone → Fine-tuning / Ignores clear instructions → Fix the prompt first",
+      "voiceover": "If answers need this week's documents, that's retrieval — facts change. If the format or tone is wrong, that's behaviour — fine-tuning can help. And if it ignores clear instructions, fix the prompt first; it's the cheapest test.",
+      "storyboard": {"visual": "Legend GAP → FIX → WHY; three rows with the fix in cyan and the reason in green; two notes.", "animation": "Rows at 30/75/120; notes at 180/210; ~3s hold."},
+      "transitionIn": "fade-up",
+      "kicker": "MATCH THE FIX",
+      "headline": [{"text": "Match the fix"}, {"text": "to the gap.", "highlight": true}],
+      "columns": ["GAP", "FIX", "WHY"],
+      "rows": [
+        {"input": "Answers need this week’s docs", "expected": "RAG", "passIf": "Facts change often"},
+        {"input": "Wrong format or house tone", "expected": "Fine-tuning", "passIf": "It’s a behaviour"},
+        {"input": "Ignores clear instructions", "expected": "Fix the prompt first", "passIf": "Cheapest to test"}
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": ["Many products end up using both", "Measure each change on an eval set"],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [{"at": 0, "kind": "whoosh"}, {"at": 32, "kind": "tick"}, {"at": 77, "kind": "tick"}, {"at": 122, "kind": "tick"}, {"at": 182, "kind": "tick"}]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Compress the rule into one line worth saving.",
+      "onScreen": "Facts → RAG. Behaviour → fine-tuning. / Save this for your next build decision",
+      "voiceover": "Missing facts: retrieve them. Wrong behaviour: tune it. Save this for your next build decision.",
+      "storyboard": {"visual": "Three-line takeaway, last line highlighted; bookmark CTA; end card.", "animation": "Lines rise; CTA at 40; end card at 70."},
+      "transitionIn": "fade-up",
+      "lines": [{"text": "Facts → RAG."}, {"text": "Behaviour →"}, {"text": "fine-tuning.", "highlight": true}],
+      "cta": "Save this for your next build decision",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [{"at": 0, "kind": "whoosh"}, {"at": 72, "kind": "chime"}]
+    }
+  ],
+  "cover": {"kicker": "RAG VS FINE-TUNING", "headline": [{"text": "Which one"}, {"text": "do you need?", "highlight": true}]},
+  "caption": {
+    "opening": "“Should we fine-tune?” is usually the wrong first question. Ask what the model is missing.",
+    "body": [
+      "Missing knowledge (private docs, facts that change every week) → retrieval. Put the right page in front of the model at answer time.",
+      "Missing behaviour (a format, a house tone, a narrow skill) → fine-tuning can help.",
+      "Ignoring clear instructions → fix the prompt first. It’s the cheapest experiment, and many teams skip it.",
+      "Plenty of products end up using retrieval and fine-tuning together. Whichever you try, measure it on the same eval set before and after."
+    ],
+    "cta": "Save this for your next build decision.",
+    "hashtags": ["#AIProductManagement", "#RAG", "#FineTuning", "#GenAI", "#LLM"]
+  },
+  "primaryCta": {"type": "save", "text": "Save this for your next build decision"},
+  "claims": [
+    {"text": "Retrieval suits missing or frequently changing knowledge; fine-tuning suits behaviour such as format, tone or narrow skills; prompt changes are the cheapest first test.", "kind": "practitioner-opinion", "sources": []}
+  ],
+  "publish": {"suggestedDate": "2026-10-21", "notes": "Evergreen."},
+  "repurposing": {
+    "carousel": ["1/ RAG or fine-tuning? Ask what’s missing.", "2/ Knowledge vs behaviour", "3/ Gap → fix table", "4/ Try the prompt first", "5/ Using both", "6/ Measure on the same eval set + save CTA"],
+    "followUpReel": "Format 4 (Architecture in 30 seconds): where RAG answers fail — retrieval misses vs generation errors.",
+    "linkedin": "Post walking through the gap → fix table with one hypothetical example per row, ending with a question about how teams decide."
+  }
+}

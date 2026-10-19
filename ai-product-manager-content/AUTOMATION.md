@@ -1,13 +1,16 @@
 # Daily automation
 
-Every morning a GitHub Actions workflow writes a new reel with Claude, renders it with Remotion, runs every quality gate, and opens a **review pull request** with the cover, a frame contact sheet and the MP4. **Merging the PR approves it.** The approved reel is posted to Instagram at the daily slot (default 19:00 IST). Closing the PR rejects it; nothing is posted.
+Every morning a GitHub Actions workflow writes a new reel, renders it with Remotion, runs every quality gate, and opens a **review pull request** with the cover, a frame contact sheet and the MP4. **Merging the PR approves it.** The approved reel is posted to Instagram at the daily slot (default 19:00 IST). Closing the PR rejects it; nothing is posted.
 
 ```
 06:00 IST  AIPM · Daily reel
            plan topic (pillar mix, format rotation, no repeats, performance-weighted)
-           → Claude writes the reel JSON (web research when the topic needs it)
-           → validator: copy limits + safe-zone layout check → revise (≤3 rounds)
-           → Claude editor pass: hook, insight, accuracy, intrigue, clarity, brand → revise
+           → writer (first available):
+               1. Claude Code on your Claude subscription   (CLAUDE_CODE_OAUTH_TOKEN, no API bill)
+               2. Claude API                                 (ANTHROPIC_API_KEY, pay per token)
+               3. Content queue: next pre-written draft      (data/queue, no model, free)
+             the writer checks its draft against the copy limits + safe-zone layout,
+             self-reviews as a demanding editor and revises; if it fails, the queue is used
            → render (Remotion) → Instagram spec conform → full QA → previews to a pre-release
            → review PR  [daily-reel]  (+ [needs-attention] if the editor wasn't satisfied)
 
@@ -20,7 +23,7 @@ you        merge = approve · edit the JSON in the PR = auto re-render · close 
            → comments the permalink on the PR
 
 Sunday     AIPM · Weekly topics & insights
-           Claude web-scans for timely topics (with sources) → backlog
+           Claude (subscription or API) web-scans for timely topics (with sources) → backlog
            Instagram insights → data/performance → planner weighting
 ```
 
@@ -40,18 +43,25 @@ Repo → **Settings → Actions → General → Workflow permissions**:
 - select **Read and write permissions**
 - tick **Allow GitHub Actions to create and approve pull requests**
 
-### 3. Add the Claude API key
+### 3. Choose how reels get written
 
-Repo → **Settings → Secrets and variables → Actions → New repository secret**:
+Pick one (you can change any time — the workflow uses the first one it finds):
 
-| Secret | Value |
-|---|---|
-| `ANTHROPIC_API_KEY` | An API key from the Claude Console (platform.claude.com → API keys) |
+**A. Your Claude subscription — recommended, no API bill.** Needs a Claude Pro, Max, Team or Enterprise plan.
+1. On your computer, install Claude Code (`npm install -g @anthropic-ai/claude-code`) and run `claude setup-token`. Sign in with your Claude account; it prints a long-lived token.
+2. Repo → **Settings → Secrets and variables → Actions → New repository secret**: name `CLAUDE_CODE_OAUTH_TOKEN`, value = that token.
+3. Make sure the Claude GitHub App is installed on the repo (you did this already).
+
+Each day's run uses Claude Code inside the workflow: it reads the brief, writes the reel, runs the validator itself and fixes what fails, then reviews its own draft as the editor. It counts toward your plan's normal usage limits (one reel a day is a small share). If a run fails — for example you've hit your plan's limit — that day's reel comes from the queue instead.
+
+**B. Claude API key — pay per token.** Secret `ANTHROPIC_API_KEY` from the Claude Console. Costs are under "Costs" below.
+
+**C. Nothing — the content queue.** With no token or key, each day takes the next pre-written draft from `data/queue/`. The repo starts with 4 drafts; when they run out, ask Claude in a chat to "write the next batch of queue drafts for aipm-reels" and commit them (or let Claude push them). `node scripts/daily/dequeue.mjs --status` shows how many are left.
 
 ### 4. Try it
 
 Actions → **AIPM · Daily reel** → **Run workflow**.
-- Leave everything blank to generate a new reel, or
+- Leave everything blank to make today's reel with whichever writer you set up (with nothing set up, it takes the next queue draft), or
 - put `aipm-001-demo-prompts-not-evals` (or `aipm-002-spec-how-your-ai-feature-fails`) in **reel_id** to send an existing reel through review.
 
 A PR appears in ~10–15 minutes. Turn on GitHub mobile notifications for the repo to get it on your phone.
@@ -102,6 +112,7 @@ Then run **AIPM · Check Instagram setup**. It lists anything missing (token, pe
 | `AIPM_TZ` | `Asia/Kolkata` | Time zone for the slot and the daily cap |
 | `AIPM_MAX_PER_DAY` | `1` | Posts per day |
 | `AIPM_MAX_OPEN_REVIEWS` | `3` | Skip generation when this many PRs await review |
+| `AIPM_WRITER` | auto | Force a writer: `subscription`, `api` or `queue` |
 | `AIPM_MODEL` | `claude-opus-5-5` | Writer/editor model (`claude-sonnet-5-5` is cheaper; `claude-fable-5-1` is stronger and pricier) |
 | `IG_LOGIN` | `instagram` | `instagram` or `facebook` |
 | `IG_API_VERSION` | `v26.0` | Graph API version |
@@ -114,12 +125,15 @@ The daily generation time is the cron in `aipm-daily-reel.yml` (`30 0 * * *` = 0
 ## Costs
 
 - **GitHub Actions:** free for public repositories.
-- **Claude API:** each PR shows the estimated cost of writing that reel. With `claude-opus-5-5` ($4 / $20 per million input/output tokens) expect very roughly **$0.40–$1.20 per reel**, depending on revision rounds. The weekly topic scan adds web searches ($10 per 1,000) plus tokens, typically well under $1.
+- **Claude subscription (option A):** no extra charge; runs count toward your plan's usage limits.
+- **Content queue (option C):** free.
+- **Claude API (option B):** each PR shows the estimated cost of writing that reel. With `claude-opus-5-5` ($4 / $20 per million input/output tokens) expect very roughly **$0.40–$1.20 per reel**, depending on revision rounds. The weekly topic scan adds web searches ($10 per 1,000) plus tokens, typically well under $1.
 - **Remotion:** free for individuals and very small companies; larger companies need a Remotion company license (see remotion.dev/license).
 
 ## What the automation can't do
 
 - It can't judge taste the way you can. The editor pass and QA gates catch overclaims, unlabelled numbers, layout problems and weak hooks, but **your merge is the real quality gate**.
+- GitHub Models' free tier isn't used: its per-request limits (about 8k tokens in, 4k out) are too small for the brand brief plus a full reel.
 - It has no voiceover (no TTS provider configured). Reels are text-on-screen with an original synthesized soundtrack.
 - Instagram insight metric names change between Graph API versions. Unsupported metrics are skipped, never estimated; the CSV can always be filled in by hand.
 
@@ -127,7 +141,9 @@ The daily generation time is the cron in `aipm-daily-reel.yml` (`30 0 * * *` = 0
 
 | Symptom | Fix |
 |---|---|
-| Daily run fails at "Write today's reel" | Check the `ANTHROPIC_API_KEY` secret. If the writer couldn't pass validation in 3 rounds, the run log lists the failing limits; it tries a fresh topic the next day. |
+| Daily run fails at "Finalize today's reel" with "queue is empty" | No writer is configured and the queue ran out. Add `CLAUDE_CODE_OAUTH_TOKEN` (option A) or new drafts to `data/queue/`. |
+| The Claude Code step fails with an "actor is a bot" or permission message | Scheduled runs are attributed to whoever last edited the cron line. Edit that line once yourself (e.g. change the minute) and commit, or run the workflow manually. Make sure the Claude GitHub App is installed on the repo. |
+| Claude Code step fails with an authentication error | Re-run `claude setup-token` and update the `CLAUDE_CODE_OAUTH_TOKEN` secret. That day's reel still comes from the queue. |
 | `gh pr create` fails with a permissions error | Step 2 above (allow Actions to create PRs). |
 | Publish says "not approved" | The PR must be merged (not closed) and carry the `daily-reel` label. |
 | Container status `ERROR` | Usually the video URL couldn't be fetched. See "About video URLs". |
