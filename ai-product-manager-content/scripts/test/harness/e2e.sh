@@ -16,7 +16,10 @@ DRAFT="$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
 E2E="${E2E_DIR:-$(mktemp -d)}"
 rm -rf "$E2E" && mkdir -p "$E2E"/{bin,releases}
 export GH_FAKE_STATE="$E2E/gh-state.json" GH_FAKE_RELEASES="$E2E/releases"
-RUN="node $HERE/run-workflow.mjs"
+# Each workflow run starts from a clean checkout of main, like a fresh GitHub runner.
+fresh() { git -C "$W" reset -q --hard 2>/dev/null; git -C "$W" clean -qfdx 2>/dev/null; git -C "$W" checkout -q main 2>/dev/null; git -C "$W" pull -q origin main 2>/dev/null; true; }
+run_wf() { fresh; node "$HERE/run-workflow.mjs" "$@"; }
+RUN="run_wf"
 WF="$SRC/.github/workflows"
 PASS=0; FAIL=0
 check() { if eval "$2"; then echo "PASS  $1"; PASS=$((PASS+1)); else echo "FAIL  $1"; FAIL=$((FAIL+1)); fi; }
