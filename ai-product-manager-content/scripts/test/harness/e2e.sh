@@ -176,7 +176,7 @@ check "Scanned topic without sources rejected" "! git -C '$W' show origin/main:a
 
 echo "== 9b. Weekly in default free mode → no topic scan, insights still run"
 HARNESS_CLAUDE_ACTION="$MOCKCC" $RUN "$WF/aipm-weekly.yml" --repo "$W" --event schedule --secrets "{\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\",\"CLAUDE_CODE_OAUTH_TOKEN\":\"oauth-test\"}" | tee "$E2E/s9b.log" > /dev/null
-check "Scan skipped without the opt-in" "grep -q 'Free mode: topic scan skipped' '$E2E/s9b.log' && ! grep -q 'mock: wrote scan.json' '$E2E/s9b.log'"
+check "Scan skipped without the opt-in" "grep -q '⏭  Claude Code scans for timely topics' '$E2E/s9b.log' && grep -q 'success' '$E2E/s9b.log' && [ \"\$(git -C '$W' show origin/main:ai-product-manager-content/data/topics/backlog.json | grep -c 'trend-scan')\" = 1 ]"
 
 echo "== 10. Setup check and token refresh"
 $RUN "$WF/aipm-check-instagram.yml" --repo "$W" --event workflow_dispatch --secrets "{\"ANTHROPIC_API_KEY\":\"x\",\"IG_ACCESS_TOKEN\":\"SECRET_TEST_TOKEN\",\"IG_USER_ID\":\"IGID\"}" | tee "$E2E/s10.log" > /dev/null
