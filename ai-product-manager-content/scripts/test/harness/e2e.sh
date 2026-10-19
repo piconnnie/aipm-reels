@@ -34,6 +34,9 @@ mkdir "$E2E/seed"
 ( cd "$SRC" && git ls-files -co --exclude-standard -z | grep -zv '^ai-product-manager-content/output/' | xargs -0 -I{} cp --parents "{}" "$E2E/seed/" )
 # Tests use the four fixture drafts q001–q004 so numbering stays deterministic.
 find "$E2E/seed/ai-product-manager-content/data/queue" -name '*.json' ! -name 'q00[1-4]-*' -delete
+# ...and start from the two fixture reels, not whatever the live repo has published since.
+find "$E2E/seed/ai-product-manager-content/src/content/reels" -name 'aipm-*.json' ! -name 'aipm-00[12]-*' -delete
+rm -rf "$E2E/seed/ai-product-manager-content/archive" "$E2E/seed/ai-product-manager-content/data/performance/index.json"
 ( cd "$E2E/seed" && git init -q -b main && git add -A && git -c user.name=seed -c user.email=s@x commit -qm seed )
 git clone -q --bare "$E2E/seed" "$E2E/remote.git"
 git clone -q "$E2E/remote.git" "$E2E/work"
