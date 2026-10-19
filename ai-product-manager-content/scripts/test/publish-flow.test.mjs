@@ -46,6 +46,7 @@ const server = http.createServer((req, res) => {
       res.end(JSON.stringify(o));
     };
     if (req.method === 'HEAD' && url.pathname.startsWith('/assets/')) return res.writeHead(200).end();
+    if (url.pathname === '/v26.0/me') return json({user_id: 'IGID', username: 'aiproductmanager', account_type: 'MEDIA_CREATOR'});
     if (url.pathname === '/v26.0/IGID/content_publishing_limit') return json({data: [{quota_usage: 0, config: {quota_total: 100}}]});
     if (url.pathname === '/v26.0/IGID/media' && req.method === 'POST') {
       return params.upload_type === 'resumable' ? json({id: 'c1', uri: `http://127.0.0.1:${server.address().port}/upload/c1`}) : json({id: 'c1'});
@@ -136,6 +137,17 @@ polls = 0;
 r = await run('scripts/daily/publish-instagram.mjs', [id], {...baseEnv, IG_LOGIN: 'facebook', IG_UPLOAD_MODE: 'resumable'});
 const upload = calls.find((c) => c.path === '/upload/c1');
 check('Resumable mode uploads the video with OAuth + offset headers', r.code === 0 && upload && upload.headers.authorization?.startsWith('OAuth ') && upload.headers.offset === '0' && Number(upload.headers.file_size) === original.length, r.err.trim().slice(-200));
+
+// 9. Instagram Login without IG_USER_ID: the account id is looked up from the token.
+const s3 = readState();
+s3.publish = {status: 'pending', attempts: 0};
+fs.writeFileSync(statePath, JSON.stringify(s3, null, 2));
+calls.length = 0;
+polls = 0;
+r = await run('scripts/daily/publish-instagram.mjs', [id], {...baseEnv, IG_USER_ID: ''});
+check('Without IG_USER_ID it looks up the account from the token and posts', r.code === 0 && calls[0]?.path === '/v26.0/me' && calls.some((c) => c.path === '/v26.0/IGID/media_publish') && readState().publish.status === 'published', r.err.trim().slice(-200));
+r = await run('scripts/daily/check-instagram.mjs', [], {...baseEnv, IG_USER_ID: ''});
+check('Setup check passes with just the token and reports the account', r.code === 0 && /::notice title=Instagram account::@aiproductmanager/.test(r.out) && !r.out.includes('TEST_TOKEN_SECRET'), r.out.slice(-300));
 
 server.close();
 fs.rmSync(tmp, {recursive: true, force: true});

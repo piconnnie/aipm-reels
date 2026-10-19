@@ -86,7 +86,7 @@ Choose one login type. Meta's dashboards change often, so follow the current scr
 2. Permissions: `instagram_business_basic` and `instagram_business_content_publish`.
 3. Under the app's **Roles**, add your Instagram account as an Instagram tester and accept the invite in Instagram (Settings → Website permissions / Apps and websites → Tester invites). An account with a role on the app can use it without App Review; check the App Dashboard if Meta asks for more.
 4. In the API setup screen, **generate an access token** for your account. It is a long-lived token (~60 days).
-5. Add secrets `IG_ACCESS_TOKEN` and `IG_USER_ID` (the check in step 6 prints the correct user id if you're unsure), and the variable `IG_LOGIN` = `instagram`.
+5. Add the secret `IG_ACCESS_TOKEN`. That's all the publisher needs: the account id is looked up from the token (`IG_USER_ID` is optional with this login type). `IG_LOGIN` defaults to `instagram`.
 6. Token renewal: add a `GH_SECRETS_PAT` secret (fine-grained GitHub token for this repo with **Secrets: read and write**) and **AIPM · Refresh Instagram token** renews it monthly. Without it, the workflow opens a reminder issue instead.
 
 **Option B — Instagram API with Facebook Login (needs a Facebook Page linked to the account)**

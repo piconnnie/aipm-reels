@@ -8,7 +8,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {ROOT, loadReel} from '../lib.mjs';
-import {graph, igConfig, missingConfig} from './instagram.mjs';
+import {ensureUserId, graph, igConfig, missingConfig} from './instagram.mjs';
 import {loadStates} from './publish-due.mjs';
 
 const c = igConfig();
@@ -16,6 +16,7 @@ if (missingConfig(c).length) {
   console.log('Instagram not configured; skipping insights import (manual CSV still works).');
   process.exit(0);
 }
+await ensureUserId(c);
 const metrics = (process.env.AIPM_INSIGHT_METRICS || 'reach,saved,shares,views,comments,ig_reels_avg_watch_time,follows,profile_visits').split(',').map((s) => s.trim());
 const csvPath = path.join(ROOT, 'data', 'performance', 'performance.csv');
 const header = 'content_id,posted_date,days_since_post,duration_sec,pillar,format,hook_angle,cta_type,reach,non_follower_reach,plays,avg_watch_time_sec,shares,saves,comments_meaningful,profile_visits,follows,production_time_min,notes';

@@ -2,11 +2,12 @@
 // Tells you exactly what is (and isn't) ready for automated Instagram posting.
 //   node scripts/daily/check-instagram.mjs
 // Never prints the token.
-import {graph, igConfig, missingConfig, publishingQuota} from './instagram.mjs';
+import {ensureUserId, graph, igConfig, missingConfig, publishingQuota} from './instagram.mjs';
 
 const c = igConfig();
 const ok = (m) => console.log(`✅ ${m}`);
-const bad = (m) => console.log(`❌ ${m}`);
+// ::error / ::notice lines also show as annotations on the run page (and in the control panel).
+const bad = (m) => console.log(`❌ ${m}\n::error title=Instagram setup::${m}`);
 const info = (m) => console.log(`ℹ️  ${m}`);
 let failures = 0;
 
@@ -20,7 +21,7 @@ if (missing.length) {
   bad(`Missing secrets: ${missing.join(', ')}. See AUTOMATION.md → "Instagram setup".`);
   process.exit(1);
 }
-ok('IG_ACCESS_TOKEN and IG_USER_ID are set');
+ok(c.userId ? 'IG_ACCESS_TOKEN and IG_USER_ID are set' : 'IG_ACCESS_TOKEN is set (account id will be looked up from it)');
 
 try {
   if (c.login === 'facebook') {
@@ -28,8 +29,9 @@ try {
     ok(`Token can read the Instagram account @${acct.username ?? '?'} (${acct.id})`);
   } else {
     const me = await graph('GET', 'me', {fields: 'user_id,username,account_type'}, c);
-    ok(`Token belongs to @${me.username} (${me.account_type ?? 'account type not returned'})`);
-    if (me.user_id && String(me.user_id) !== String(c.userId)) {
+    ok(`Token belongs to @${me.username} (${me.account_type ?? 'account type not returned'}), account id ${me.user_id}`);
+    console.log(`::notice title=Instagram account::@${me.username} (${me.account_type ?? '?'}), id ${me.user_id}`);
+    if (me.user_id && c.userId && String(me.user_id) !== String(c.userId)) {
       bad(`IG_USER_ID (${c.userId}) differs from the token's user_id (${me.user_id}). Use ${me.user_id}.`);
       failures++;
     }
@@ -43,6 +45,12 @@ try {
   failures++;
 }
 
+try {
+  await ensureUserId(c);
+} catch (e) {
+  bad(e.message);
+  process.exit(1);
+}
 const quota = await publishingQuota(c);
 if (quota?.error) {
   bad(`Publishing-limit check failed (often a missing content-publish permission): ${quota.error}`);
@@ -56,4 +64,5 @@ else if (process.env.ANTHROPIC_API_KEY) ok('Writer: Claude API (ANTHROPIC_API_KE
 else info('Writer: content queue only (no CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY). Reels come from data/queue until it runs out.');
 
 console.log(failures ? `\n${failures} problem(s) to fix before automated posting.` : '\nReady: the publisher can post approved reels.');
+if (!failures) console.log('::notice title=Instagram setup::Ready: approved reels will be posted automatically.');
 process.exit(failures ? 1 : 0);

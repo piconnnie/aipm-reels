@@ -10,7 +10,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import {OUT, ROOT} from '../lib.mjs';
-import {createReelContainer, igConfig, missingConfig, publishContainer, publishingQuota, resolvePublicUrl, graph, waitForContainer} from './instagram.mjs';
+import {createReelContainer, ensureUserId, igConfig, missingConfig, publishContainer, publishingQuota, resolvePublicUrl, graph, waitForContainer} from './instagram.mjs';
 
 const id = process.argv[2];
 const dry = process.argv.includes('--dry-run');
@@ -48,6 +48,8 @@ if (missing.length) {
   save();
   process.exit(0);
 }
+
+await ensureUserId(c);
 
 const repo = process.env.GITHUB_REPOSITORY;
 const base = process.env.AIPM_PUBLIC_BASE_URL || (repo ? `https://github.com/${repo}/releases/download/${state.release.tag}` : null);

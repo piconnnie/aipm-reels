@@ -4,7 +4,8 @@
 //
 // Configuration (GitHub secrets / variables):
 //   IG_ACCESS_TOKEN  Instagram User token (Instagram Login) or Page token (Facebook Login)
-//   IG_USER_ID       Instagram professional account ID
+//   IG_USER_ID       Instagram professional account ID (optional with Instagram Login:
+//                    looked up from the token via /me)
 //   IG_LOGIN         "instagram" (graph.instagram.com) or "facebook" (graph.facebook.com)
 //   IG_API_VERSION   default v26.0
 //   IG_UPLOAD_MODE   "url" (Meta fetches a public video URL) or "resumable" (upload the
@@ -23,7 +24,18 @@ export const igConfig = () => {
   };
 };
 
-export const missingConfig = (c = igConfig()) => [!c.token && 'IG_ACCESS_TOKEN', !c.userId && 'IG_USER_ID'].filter(Boolean);
+export const missingConfig = (c = igConfig()) =>
+  [!c.token && 'IG_ACCESS_TOKEN', !c.userId && c.login === 'facebook' && 'IG_USER_ID'].filter(Boolean);
+
+// With Instagram Login the token identifies the account, so IG_USER_ID can be
+// looked up instead of configured. Fills c.userId in place and returns it.
+export async function ensureUserId(c = igConfig()) {
+  if (c.userId || c.login === 'facebook' || !c.token) return c.userId;
+  const me = await graph('GET', 'me', {fields: 'user_id,username'}, c);
+  c.userId = String(me.user_id ?? me.id ?? '');
+  if (!c.userId) throw new Error('Could not look up the Instagram account id from the token (GET /me returned no user_id).');
+  return c.userId;
+}
 
 const redact = (s, token) => (token ? String(s).split(token).join('***') : String(s));
 

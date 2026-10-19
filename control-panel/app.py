@@ -137,7 +137,7 @@ def overview(snap):
             st.warning(f"Writer is set to **{v['AIPM_WRITER']}** but the `{need}` secret is missing, so reels come from the free queue.")
         else:
             st.info(f"Paid writer on: **{v['AIPM_WRITER']}**. Set it back to `queue` in Settings to stay free.")
-    if secrets is not None and not {"IG_ACCESS_TOKEN", "IG_USER_ID"} <= set(secrets):
+    if secrets is not None and "IG_ACCESS_TOKEN" not in secrets:
         st.info("Instagram isn't connected yet: approved reels will need manual posting. See AUTOMATION.md → Connect Instagram.")
     for key in ("daily", "publish"):
         w = wf.get(gh.WORKFLOWS[key][0])
