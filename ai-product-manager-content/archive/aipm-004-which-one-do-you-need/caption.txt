@@ -1,0 +1,13 @@
+“Should we fine-tune?” is usually the wrong first question. Ask what the model is missing.
+
+Missing knowledge (private docs, facts that change every week) → retrieval. Put the right page in front of the model at answer time.
+
+Missing behaviour (a format, a house tone, a narrow skill) → fine-tuning can help.
+
+Ignoring clear instructions → fix the prompt first. It’s the cheapest experiment, and many teams skip it.
+
+Plenty of products end up using retrieval and fine-tuning together. Whichever you try, measure it on the same eval set before and after.
+
+Save this for your next build decision.
+
+#AIProductManagement #RAG #FineTuning #GenAI #LLM
