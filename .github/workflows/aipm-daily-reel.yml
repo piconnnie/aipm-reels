@@ -188,7 +188,7 @@ jobs:
           if [ "$left" -le "$LOW" ]; then
             gh label create queue-low --color FFC66D --description "Content queue needs a refill" --force > /dev/null
             existing=$(gh issue list --label queue-low --state open --json number --jq '.[0].number // empty')
-            body="Only $left pre-written reel draft(s) left in ai-product-manager-content/data/queue (about $left day(s) of posts). To refill for free, ask Claude in chat: \"write the next batch of queue drafts for aipm-reels\" and commit them (or let Claude push them)."
+            body="Only $left pre-written reel draft(s) left in ai-product-manager-content/data/queue (about $left day(s) of posts). The weekly scheduled refill (Mondays) should top it up automatically; if this issue stays open, check that scheduled task, or ask Claude in chat: \"write the next batch of queue drafts for aipm-reels\"."
             if [ -n "$existing" ]; then gh issue comment "$existing" --body "$body"; else gh issue create --title "Content queue running low ($left left)" --body "$body" --label queue-low; fi
           fi
 

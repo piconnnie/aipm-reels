@@ -57,7 +57,8 @@ Repo → **Settings → Actions → General → Workflow permissions**:
 
 - `node scripts/daily/dequeue.mjs --status` lists what's left (`--count` prints just the number).
 - When 5 or fewer drafts remain, the daily run opens (or comments on) an issue labelled **queue-low**. Turn on GitHub notifications to see it.
-- **To refill for free:** in a Claude chat, ask: *"write the next batch of queue drafts for aipm-reels"*. Claude writes and validates them; commit them to `data/queue/` or let Claude push them. Ten drafts = ten days.
+- **Automatic refill:** a weekly scheduled Claude task (Mondays, 09:57 IST) runs `scripts/daily/refill-plan.mjs` and tops the queue back up to ~21 drafts, following [`data/queue/REFILL.md`](data/queue/REFILL.md). It writes and validates the drafts and commits them to `main`. It runs on your Claude plan; there's no API bill and nothing to set up in GitHub. Manage it from your Claude scheduled tasks.
+- **To refill by hand:** in a Claude chat, ask: *"write the next batch of queue drafts for aipm-reels"*. Claude writes and validates them; commit them to `data/queue/` or let Claude push them. Ten drafts = ten days.
 - Drafts are never deleted; a draft counts as used once a reel carries its `queueId`. A draft that has become too similar to a newer reel is skipped automatically.
 
 **Optional, paid — a model writes each reel at run time.** Off unless you set the repo variable `AIPM_WRITER`. Adding a secret alone never turns these on.
