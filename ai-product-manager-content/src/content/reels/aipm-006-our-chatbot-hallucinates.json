@@ -1,0 +1,325 @@
+{
+  "id": "aipm-006-our-chatbot-hallucinates",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "AI PM interview: 'Our chatbot hallucinates. What do you do?'",
+    "audience": "PMs preparing for AI product management interviews",
+    "pillar": "E: AI Product Career",
+    "objective": "saves",
+    "format": "interview",
+    "targetDurationSec": 23,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t035",
+    "queueId": "q004-interview-chatbot-hallucinates",
+    "writer": "queue"
+  },
+  "coreInsight": "A strong answer diagnoses where the chatbot fails, measures it on real questions, fixes the cheapest cause first and adds guardrails — instead of jumping to a bigger model.",
+  "hooks": [
+    {
+      "text": "“Our chatbot hallucinates. What do you do?”",
+      "angle": "Interview question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "A real, common interview prompt; the viewer immediately tries to answer it."
+    },
+    {
+      "text": "The interview answer that sinks AI PM candidates.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Curiosity-heavy; 'sinks' overclaims and the question isn't named."
+    },
+    {
+      "text": "Don’t say “use a bigger model.” Say this.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Good tension, but the context (interview, hallucination) arrives too late."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25). Quoting the question puts viewers in the interview chair, and the reel gives them a structure they can reuse word for word.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "Put the viewer in the interview seat.",
+      "onScreen": "“Our chatbot hallucinates. What do you do?” / A 4-step answer.",
+      "voiceover": "Interview question: our chatbot hallucinates. What do you do?",
+      "storyboard": {
+        "visual": "Four-line quoted question; last two lines highlighted; sub-line.",
+        "animation": "Readable on frame 0; underline sweep; sub at 18."
+      },
+      "kicker": "AI PM INTERVIEW",
+      "lines": [
+        {
+          "text": "“Our chatbot"
+        },
+        {
+          "text": "hallucinates."
+        },
+        {
+          "text": "What do",
+          "highlight": true
+        },
+        {
+          "text": "you do?”",
+          "highlight": true
+        }
+      ],
+      "sub": "A 4-step answer.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "answer",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "Give a structured, reusable answer.",
+      "onScreen": "A STRONG ANSWER / Diagnose before you fix. / 1 Find where it fails 2 Measure on real questions 3 Fix the cheapest cause 4 Add guardrails / Name the metric you’d watch after launch.",
+      "voiceover": "First, find where it fails: retrieval, prompt, or model. Measure it on a fixed set of real questions. Fix the cheapest cause first and re-measure. Then add guardrails: cite sources, or say 'I don't know'. And name the metric you'd watch after launch.",
+      "storyboard": {
+        "visual": "Four numbered steps; cyan rule box.",
+        "animation": "Items every 45 frames from 24; rule at ~210; ~3s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "A STRONG ANSWER",
+      "headline": [
+        {
+          "text": "Diagnose before"
+        },
+        {
+          "text": "you fix.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Find where it fails: retrieval, prompt or model",
+        "Measure it on a fixed set of real questions",
+        "Fix the cheapest cause first, then re-measure",
+        "Add guardrails: cite sources or say “not sure”"
+      ],
+      "itemStart": 24,
+      "itemStagger": 45,
+      "rule": "Close by naming the metric you’d watch after launch.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 72,
+          "kind": "tick"
+        },
+        {
+          "at": 117,
+          "kind": "tick"
+        },
+        {
+          "at": 162,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "cards",
+      "durationInFrames": 150,
+      "purpose": "Show what interviewers listen for, including the red flag.",
+      "onScreen": "WHAT THEY LISTEN FOR / Signals, not buzzwords. / Asks where it fails first · Proposes an eval set · RED FLAG: jumps to “use a bigger model”",
+      "voiceover": "Interviewers listen for diagnosis and measurement. The red flag is jumping straight to 'use a bigger model'.",
+      "storyboard": {
+        "visual": "Two green signal cards and one amber red-flag card.",
+        "animation": "Cards pop every 30 frames from 10; ~2s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT THEY LISTEN FOR",
+      "headline": [
+        {
+          "text": "Signals,"
+        },
+        {
+          "text": "not buzzwords."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 30,
+      "cards": [
+        {
+          "text": "Asks where it fails first",
+          "status": "pass",
+          "tag": "DIAGNOSIS"
+        },
+        {
+          "text": "Proposes an eval set",
+          "status": "pass",
+          "tag": "MEASUREMENT"
+        },
+        {
+          "text": "Jumps to “use a bigger model”",
+          "status": "warn",
+          "tag": "RED FLAG"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 46,
+          "kind": "tick"
+        },
+        {
+          "at": 76,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "A three-beat line candidates can remember.",
+      "onScreen": "Diagnose, measure, then fix. / Save this for your next interview",
+      "voiceover": "Diagnose, measure, then fix. Save this for your next interview.",
+      "storyboard": {
+        "visual": "Three-line takeaway; bookmark CTA; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Diagnose,"
+        },
+        {
+          "text": "measure,"
+        },
+        {
+          "text": "then fix.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next interview",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM INTERVIEW",
+    "headline": [
+      {
+        "text": "“Our chatbot"
+      },
+      {
+        "text": "hallucinates.”",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "AI PM interview question: “Our chatbot hallucinates. What do you do?” Here’s a structure that works.",
+    "body": [
+      "1. Diagnose: is it a retrieval miss (the right document never reached the model), a prompt problem, or the model itself?\n2. Measure: build a fixed set of real user questions and score answers the same way every time.\n3. Fix the cheapest cause first, then re-measure.\n4. Add guardrails: cite sources, or say “not sure” and hand off.",
+      "Close by naming the metric you’d watch after launch.",
+      "What interviewers listen for: diagnosis and measurement. The red flag: “just use a bigger model.”"
+    ],
+    "cta": "Save this for your next interview.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductManagerInterview",
+      "#PMInterview",
+      "#GenAI",
+      "#LLM"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next interview"
+  },
+  "claims": [
+    {
+      "text": "A strong answer diagnoses the failure source, measures on real questions, fixes the cheapest cause first and adds guardrails before reaching for a bigger model.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "2026-10-23",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ The interview question",
+      "2/ Diagnose",
+      "3/ Measure",
+      "4/ Fix cheapest first",
+      "5/ Guardrails",
+      "6/ What they listen for",
+      "7/ Save for your next interview"
+    ],
+    "followUpReel": "Format 6 (Interview): 'How would you measure the quality of an AI writing assistant?'",
+    "linkedin": "Post sharing the four-step answer as a template and asking hiring managers what else they listen for."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "midnight",
+    "music": "arcade",
+    "motion": "rise"
+  },
+  "audio": {
+    "bed": "audio/aipm-006-our-chatbot-hallucinates-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-006-our-chatbot-hallucinates",
+  "version": 1,
+  "generatedAt": "2026-10-20T10:38:17.125Z",
+  "pillar": "E: AI Product Career",
+  "format": "interview",
+  "objective": "saves",
+  "targetAudience": "PMs preparing for AI product management interviews",
+  "topic": "AI PM interview: 'Our chatbot hallucinates. What do you do?'",
+  "coreInsight": "A strong answer diagnoses where the chatbot fails, measures it on real questions, fixes the cheapest cause first and adds guardrails — instead of jumping to a bigger model.",
+  "hookVariants": [
+    {
+      "text": "“Our chatbot hallucinates. What do you do?”",
+      "angle": "Interview question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "The interview answer that sinks AI PM candidates.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "total": 19
+    },
+    {
+      "text": "Don’t say “use a bigger model.” Say this.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "“Our chatbot hallucinates. What do you do?”",
+  "selectionRationale": "Highest total (24/25). Quoting the question puts viewers in the interview chair, and the reel gives them a structure they can reuse word for word.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "“Our chatbot hallucinates. What do you do?” / A 4-step answer.",
+      "voiceover": "Interview question: our chatbot hallucinates. What do you do?"
+    },
+    {
+      "scene": "answer",
+      "onScreen": "A STRONG ANSWER / Diagnose before you fix. / 1 Find where it fails 2 Measure on real questions 3 Fix the cheapest cause 4 Add guardrails / Name the metric you’d watch after launch.",
+      "voiceover": "First, find where it fails: retrieval, prompt, or model. Measure it on a fixed set of real questions. Fix the cheapest cause first and re-measure. Then add guardrails: cite sources, or say 'I don't know'. And name the metric you'd watch after launch."
+    },
+    {
+      "scene": "signals",
+      "onScreen": "WHAT THEY LISTEN FOR / Signals, not buzzwords. / Asks where it fails first · Proposes an eval set · RED FLAG: jumps to “use a bigger model”",
+      "voiceover": "Interviewers listen for diagnosis and measurement. The red flag is jumping straight to 'use a bigger model'."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Diagnose, measure, then fix. / Save this for your next interview",
+      "voiceover": "Diagnose, measure, then fix. Save this for your next interview."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "answer",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 390,
+      "startSec": 3,
+      "endSec": 13
+    },
+    {
+      "id": "signals",
+      "type": "cards",
+      "startFrame": 390,
+      "endFrame": 540,
+      "startSec": 13,
+      "endSec": 18
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 540,
+      "endFrame": 690,
+      "startSec": 18,
+      "endSec": 23
+    }
+  ],
+  "caption": "AI PM interview question: “Our chatbot hallucinates. What do you do?” Here’s a structure that works.\n\n1. Diagnose: is it a retrieval miss (the right document never reached the model), a prompt problem, or the model itself?\n2. Measure: build a fixed set of real user questions and score answers the same way every time.\n3. Fix the cheapest cause first, then re-measure.\n4. Add guardrails: cite sources, or say “not sure” and hand off.\n\nClose by naming the metric you’d watch after launch.\n\nWhat interviewers listen for: diagnosis and measurement. The red flag: “just use a bigger model.”\n\nSave this for your next interview.\n\n#AIProductManagement #ProductManagerInterview #PMInterview #GenAI #LLM",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductManagerInterview",
+    "#PMInterview",
+    "#GenAI",
+    "#LLM"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next interview"
+  },
+  "coverHeadline": "“Our chatbot hallucinates.”",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "A strong answer diagnoses the failure source, measures on real questions, fixes the cheapest cause first and adds guardrails before reaching for a bigger model.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-006-our-chatbot-hallucinates-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-006-our-chatbot-hallucinates.mp4",
+    "cover": "output/covers/aipm-006-our-chatbot-hallucinates.png",
+    "caption": "output/captions/aipm-006-our-chatbot-hallucinates.txt",
+    "storyboard": "output/storyboards/aipm-006-our-chatbot-hallucinates.md",
+    "subtitles": "output/storyboards/aipm-006-our-chatbot-hallucinates.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-20T10:38:24.634Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-006-our-chatbot-hallucinates/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "2026-10-23",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ The interview question",
+      "2/ Diagnose",
+      "3/ Measure",
+      "4/ Fix cheapest first",
+      "5/ Guardrails",
+      "6/ What they listen for",
+      "7/ Save for your next interview"
+    ],
+    "followUpReel": "Format 6 (Interview): 'How would you measure the quality of an AI writing assistant?'",
+    "linkedin": "Post sharing the four-step answer as a template and asking hiring managers what else they listen for."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
