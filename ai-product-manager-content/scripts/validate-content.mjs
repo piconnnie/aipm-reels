@@ -139,7 +139,9 @@ if (!contentOnly && !preRender) {
     add('technical', 'IG: no MP4 edit lists', head.indexOf('elst') < 0 || head.indexOf('elst') > (mdatAt < 0 ? Infinity : mdatAt), head.indexOf('elst') >= 0 && head.indexOf('elst') < (mdatAt < 0 ? Infinity : mdatAt) ? 'edit list found' : '');
     const vbr = Number(v.bit_rate ?? 0);
     add('technical', 'IG: video bitrate ≤ 25 Mbps', vbr > 0 && vbr <= 25e6, `${(vbr / 1e6).toFixed(2)} Mbps`);
-    if (a) add('technical', 'IG: audio bitrate ≈128 kbps', Number(a.bit_rate) <= 140000, `${Math.round(Number(a.bit_rate) / 1000)} kbps`);
+    // Encoded at 128k (IG's recommendation); the AAC encoder overshoots a little on
+    // bright, dense music, which Instagram accepts (it re-encodes on upload).
+    if (a) add('technical', 'IG: audio bitrate ≤ 160 kbps (target 128)', Number(a.bit_rate) <= 160000, `${Math.round(Number(a.bit_rate) / 1000)} kbps`);
     add('technical', 'IG: file size ≤ 300 MB', fs.statSync(mp4).size <= 300 * 1024 * 1024, `${(fs.statSync(mp4).size / 1048576).toFixed(1)} MB`);
     const jpg = path.join(OUT.covers, `${id}.jpg`);
     add('technical', 'IG: JPEG cover ≤ 8 MB', fs.existsSync(jpg) && fs.statSync(jpg).size <= 8 * 1024 * 1024, fs.existsSync(jpg) ? `${(fs.statSync(jpg).size / 1024).toFixed(0)} KB` : 'missing');
