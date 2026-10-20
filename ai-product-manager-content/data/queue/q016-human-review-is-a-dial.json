@@ -1,0 +1,315 @@
+{
+  "brief": {
+    "topic": "Human-in-the-loop is a dial, not a switch",
+    "audience": "PMs designing review steps for AI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "framework",
+    "targetDurationSec": 25,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t006"
+  },
+  "coreInsight": "Human review has levels — review all, review risky, sample, audit — and you set the level per task, moving down only when reviewers rarely change the AI’s output.",
+  "hooks": [
+    {
+      "text": "Human review is a dial, not a switch.",
+      "angle": "Reframe",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Replaces the on/off debate with a clear model the reel then lays out."
+    },
+    {
+      "text": "“Keep a human in the loop” isn’t a plan.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Pushes back well but doesn’t hint at the answer."
+    },
+    {
+      "text": "When can you stop reviewing AI output?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Useful question; slightly weaker promise than the reframe."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): one memorable image (a dial) that the checklist turns into four concrete settings and one metric.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Human review is a dial, not a switch. / Four settings, and when to move.",
+      "voiceover": "Human review is a dial, not a switch. Four settings, and when to move between them.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "Human review"
+        },
+        {
+          "text": "is a dial,"
+        },
+        {
+          "text": "not a switch.",
+          "highlight": true
+        }
+      ],
+      "sub": "Four settings, and when to move.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "levels",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "Name the four levels and the metric that moves you between them.",
+      "onScreen": "THE REVIEW DIAL / Four settings, one metric. / Review all: a person approves every output · Review risky: only flagged or high-stakes cases · Sample: check a random slice each week · Audit: review logs after incidents / Move down a level only when reviewers rarely change outputs.",
+      "voiceover": "Review all. Review only risky cases. Sample a random slice. Audit after incidents. Move down a level only when reviewers rarely change the output.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE REVIEW DIAL",
+      "headline": [
+        {
+          "text": "Four settings,"
+        },
+        {
+          "text": "one metric.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Review all: a person approves every output",
+        "Review risky: only flagged or high-stakes cases",
+        "Sample: check a random slice each week",
+        "Audit: review logs after incidents"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Move down a level only when reviewers rarely change outputs.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 200,
+      "purpose": "Worked example: one feature, different settings per task.",
+      "onScreen": "EXAMPLE: SUPPORT REPLIES / Same feature, different settings. / HIGH STAKES Refund promises → review all · MEDIUM Policy answers → review risky · LOW How-to answers → sample · TRIVIAL Greetings → audit only",
+      "voiceover": "In one support assistant: refund promises get reviewed every time, policy answers when flagged, how-to answers by sample, greetings only in audits.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE: SUPPORT REPLIES",
+      "headline": [
+        {
+          "text": "Same feature,"
+        },
+        {
+          "text": "different settings.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Refund promises → review all",
+          "status": "warn",
+          "tag": "HIGH STAKES"
+        },
+        {
+          "text": "Policy answers → review risky",
+          "status": "warn",
+          "tag": "MEDIUM"
+        },
+        {
+          "text": "How-to answers → sample",
+          "status": "pass",
+          "tag": "LOW"
+        },
+        {
+          "text": "Greetings → audit only",
+          "status": "pass",
+          "tag": "TRIVIAL"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 94,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Set the dial per task, not per product. / Save this to set your review levels",
+      "voiceover": "Set the dial per task, not per product. Save this to set your review levels.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Set the dial"
+        },
+        {
+          "text": "per task, not"
+        },
+        {
+          "text": "per product.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this to set your review levels",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "HUMAN IN THE LOOP",
+    "headline": [
+      {
+        "text": "Review is"
+      },
+      {
+        "text": "a dial, not"
+      },
+      {
+        "text": "a switch",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Keep a human in the loop” is where the design starts, not where it ends.",
+    "body": [
+      "Four settings for human review:\n→ Review all: a person approves every output\n→ Review risky: only flagged or high-stakes cases\n→ Sample: check a random slice each week\n→ Audit: look at logs after incidents",
+      "The metric that moves the dial: how often reviewers change what the AI produced. When that stays low on a task, move that task down one level. When it rises, move it back up.",
+      "Set it per task. A refund promise and a greeting don’t deserve the same review."
+    ],
+    "cta": "Save this to set your review levels.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#HumanInTheLoop",
+      "#ResponsibleAI",
+      "#ProductManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this to set your review levels"
+  },
+  "claims": [
+    {
+      "text": "Human review of AI output works best as graduated levels set per task, adjusted by how often reviewers change the output.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Human review is a dial",
+      "2/ Review all",
+      "3/ Review risky",
+      "4/ Sample",
+      "5/ Audit",
+      "6/ The metric that moves the dial",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: where to put human approval gates in an agent.",
+    "linkedin": "Post on setting review levels per task, using the reviewer-change rate as the signal to move down a level."
+  }
+}

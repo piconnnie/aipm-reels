@@ -1,0 +1,333 @@
+{
+  "brief": {
+    "topic": "Myth: more agents means a smarter system",
+    "audience": "PMs and engineers designing agentic systems",
+    "pillar": "C: Agentic AI",
+    "objective": "shares",
+    "format": "myth-vs-reality",
+    "targetDurationSec": 24,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t024"
+  },
+  "coreInsight": "Each extra agent adds hand-offs, coordination failures, cost and debugging pain, so start with one agent and split only when an eval shows the split does better.",
+  "hooks": [
+    {
+      "text": "More agents, more ways to fail.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Flips the common assumption in five words."
+    },
+    {
+      "text": "Your multi-agent system might be one agent too many.",
+      "angle": "Warning",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Reasonable but less punchy."
+    },
+    {
+      "text": "Why we merged four agents into one.",
+      "angle": "Story",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 2,
+        "comprehension": 4
+      },
+      "notes": "Implies a real case we can’t cite."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): short, contradicts the myth directly, and the reel shows each failure mode then a test for adding an agent.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "More agents, more ways to fail. / Earn every agent you add.",
+      "voiceover": "More agents, more ways to fail. Earn every agent you add.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "More agents,"
+        },
+        {
+          "text": "more ways"
+        },
+        {
+          "text": "to fail.",
+          "highlight": true
+        }
+      ],
+      "sub": "Earn every agent you add.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "durationInFrames": 220,
+      "purpose": "Show each promised benefit, then flip it to what it actually adds.",
+      "onScreen": "MORE AGENTS / The promise vs what you get. / MYTH A specialist for every step → REALITY Context lost at each hand-off · MYTH Agents check each other → REALITY Agents loop or agree on errors · MYTH Parallel means faster → REALITY More calls, cost and latency",
+      "voiceover": "The promise: a specialist for every step, agents that check each other, parallel speed. What you get: context lost at hand-offs, agents that loop or agree on the same error, and more calls, cost and latency.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards that flip to their real-world counterpart.",
+        "animation": "Cards pop every 14 frames from 10; flips every 32 frames from 76."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "MORE AGENTS",
+      "headline": [
+        {
+          "text": "The promise vs"
+        },
+        {
+          "text": "what you get.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "A specialist for every step",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Context lost at each hand-off",
+            "tag": "REALITY",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Agents check each other",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Agents loop or agree on errors",
+            "tag": "REALITY",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Parallel means faster",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "More calls, cost and latency",
+            "tag": "REALITY",
+            "status": "warn"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "low"
+        },
+        {
+          "at": 115,
+          "kind": "low"
+        },
+        {
+          "at": 147,
+          "kind": "low"
+        }
+      ],
+      "swapStart": 76,
+      "swapStagger": 32
+    },
+    {
+      "id": "earn",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "Give the test for adding an agent.",
+      "onScreen": "EARN EACH AGENT / Add an agent only if… / One agent fails a task you can name · The sub-task needs different tools or permissions · The hand-off has a clear, testable contract · Your eval shows the split beats one agent / Start with one agent and a good workflow. Split when evals say so.",
+      "voiceover": "Add an agent only if one agent fails a task you can name, the sub-task needs different tools or permissions, the hand-off has a testable contract, and your eval shows the split wins.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EARN EACH AGENT",
+      "headline": [
+        {
+          "text": "Add an agent"
+        },
+        {
+          "text": "only if…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "One agent fails a task you can name",
+        "The sub-task needs different tools or permissions",
+        "The hand-off has a clear, testable contract",
+        "Your eval shows the split beats one agent"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Start with one agent and a good workflow. Split when evals say so.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Earn every agent you add. / Share this with your agent team",
+      "voiceover": "Earn every agent you add. Share this with your agent team.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Earn every"
+        },
+        {
+          "text": "agent you"
+        },
+        {
+          "text": "add.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your agent team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "MYTH VS REALITY",
+    "headline": [
+      {
+        "text": "More agents"
+      },
+      {
+        "text": "isn’t"
+      },
+      {
+        "text": "smarter",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Multi-agent diagrams look impressive. Every arrow in them is a place where things go wrong.",
+    "body": [
+      "What each extra agent adds:\n→ a hand-off where context gets lost\n→ a chance for agents to loop, or confidently agree on the same mistake\n→ more model calls, more cost, more waiting\n→ one more place to look when something breaks",
+      "Start with one agent and a well-defined workflow. Split only when a specific task fails, needs different tools or permissions, and your eval shows the split does better."
+    ],
+    "cta": "Share this with your agent team.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIAgents",
+      "#MultiAgent",
+      "#AIProductManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your agent team"
+  },
+  "claims": [
+    {
+      "text": "Adding agents adds hand-off, coordination, cost and debugging overhead; a single agent should be the default until evaluation shows a split performs better.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ More agents, more ways to fail",
+      "2/ Myth: a specialist for every step",
+      "3/ Myth: agents check each other",
+      "4/ Myth: parallel means faster",
+      "5/ When to add an agent",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Framework: where to put human approval gates in an agent.",
+    "linkedin": "Post arguing for single-agent defaults, with the four-question test for splitting."
+  }
+}

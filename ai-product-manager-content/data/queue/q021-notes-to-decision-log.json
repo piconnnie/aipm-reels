@@ -1,0 +1,340 @@
+{
+  "brief": {
+    "topic": "A prompt that turns meeting notes into a decision log",
+    "audience": "PMs and team leads who run lots of meetings",
+    "pillar": "F: AI Tools and Experiments",
+    "objective": "saves",
+    "format": "build-with-me",
+    "targetDurationSec": 25,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Example output is fictional and labelled as an example"
+    ],
+    "backlogId": "t041"
+  },
+  "coreInsight": "Ask the model for decisions only — each with an owner, due date and open question, marking missing owners as UNASSIGNED and forbidding invention — and the gaps become the useful output.",
+  "hooks": [
+    {
+      "text": "Turn meeting notes into a decision log.",
+      "angle": "Utility",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Clear, useful promise; the reel hands over the prompt."
+    },
+    {
+      "text": "Your meeting notes are missing the only part that matters.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Intriguing but vague for two seconds."
+    },
+    {
+      "text": "One prompt that finds decisions nobody owns.",
+      "angle": "Benefit",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Strong; slightly narrower than the full prompt."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a practical promise the viewer can use today; the UNASSIGNED angle becomes the payoff.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Turn notes into a decision log. / One prompt. Copy it.",
+      "voiceover": "Turn meeting notes into a decision log. One prompt. Copy it.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "BUILD WITH ME",
+      "lines": [
+        {
+          "text": "Turn notes"
+        },
+        {
+          "text": "into a"
+        },
+        {
+          "text": "decision log.",
+          "highlight": true
+        }
+      ],
+      "sub": "One prompt. Copy it.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "type": "terminal",
+      "durationInFrames": 260,
+      "purpose": "Show the full prompt.",
+      "onScreen": "THE PROMPT / Paste notes, then this. / From these notes, list only · decisions actually made. · For each: decision, owner, · due date, open question. · If no owner: UNASSIGNED. · Don’t invent anything.",
+      "voiceover": "Paste your notes, then: from these notes, list only decisions actually made. For each, the decision, owner, due date and open question. If there’s no owner, write UNASSIGNED. Don’t invent anything.",
+      "storyboard": {
+        "visual": "Terminal window 'prompt.txt' with deterministic typing.",
+        "animation": "Lines type in at their cue frames."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE PROMPT",
+      "headline": [
+        {
+          "text": "Paste notes,"
+        },
+        {
+          "text": "then this.",
+          "highlight": true
+        }
+      ],
+      "title": "prompt.txt",
+      "lines": [
+        {
+          "text": "From these notes, list only",
+          "at": 10
+        },
+        {
+          "text": "decisions actually made.",
+          "at": 40
+        },
+        {
+          "text": "For each: decision, owner,",
+          "at": 70
+        },
+        {
+          "text": "due date, open question.",
+          "at": 100
+        },
+        {
+          "text": "If no owner: UNASSIGNED.",
+          "at": 130,
+          "tone": "warning"
+        },
+        {
+          "text": "Don’t invent anything.",
+          "at": 160,
+          "tone": "success"
+        }
+      ],
+      "charsPerFrame": 1.2,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        },
+        {
+          "at": 70,
+          "kind": "tick"
+        },
+        {
+          "at": 100,
+          "kind": "tick"
+        },
+        {
+          "at": 130,
+          "kind": "tick"
+        },
+        {
+          "at": 160,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "output",
+      "type": "table",
+      "durationInFrames": 260,
+      "purpose": "Show what the output looks like (fictional example).",
+      "onScreen": "EXAMPLE OUTPUT / One row per decision. / DECISION → OWNER → OPEN QUESTION / Pause the pricing test → Owner: Priya → Restart date? · Ship search beta to 10% → Owner: UNASSIGNED → Who signs off? · Drop the PDF export → Owner: Sam → Tell support? / UNASSIGNED is the useful part · Paste the log back into the doc",
+      "voiceover": "One row per decision, with an owner and an open question. The UNASSIGNED rows are the useful part. Paste the log back into the meeting doc.",
+      "storyboard": {
+        "visual": "Legend DECISION → OWNER → OPEN QUESTION; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 40 frames from 30; notes from 170."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE OUTPUT",
+      "headline": [
+        {
+          "text": "One row per"
+        },
+        {
+          "text": "decision.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "DECISION",
+        "OWNER",
+        "OPEN QUESTION"
+      ],
+      "rows": [
+        {
+          "input": "Pause the pricing test",
+          "expected": "Owner: Priya",
+          "passIf": "Restart date?"
+        },
+        {
+          "input": "Ship search beta to 10%",
+          "expected": "Owner: UNASSIGNED",
+          "passIf": "Who signs off?"
+        },
+        {
+          "input": "Drop the PDF export",
+          "expected": "Owner: Sam",
+          "passIf": "Tell support?"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 40,
+      "notes": [
+        "UNASSIGNED is the useful part",
+        "Paste the log back into the doc"
+      ],
+      "notesStart": 170,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 72,
+          "kind": "tick"
+        },
+        {
+          "at": 112,
+          "kind": "tick"
+        },
+        {
+          "at": 172,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Decisions need owners. / Save this prompt for Monday",
+      "voiceover": "Decisions need owners. Save this prompt for Monday.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Decisions"
+        },
+        {
+          "text": "need owners.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this prompt for Monday",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "BUILD WITH ME",
+    "headline": [
+      {
+        "text": "Notes into a"
+      },
+      {
+        "text": "decision log",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Most meeting notes record what was said. The decisions are buried in the middle, often without an owner.",
+    "body": [
+      "The prompt (paste your notes first):\n“From these notes, list only decisions actually made. For each: decision, owner, due date, open question. If no owner: write UNASSIGNED. Don’t invent anything.”",
+      "Why it works:\n→ “only decisions” filters out discussion\n→ UNASSIGNED makes missing owners visible instead of guessed\n→ “don’t invent anything” keeps it to what the notes say",
+      "Check the output against the notes before you send it. The example in the reel is made up."
+    ],
+    "cta": "Save this prompt for Monday.",
+    "hashtags": [
+      "#AITools",
+      "#PromptEngineering",
+      "#ProductivityTips",
+      "#ProductManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this prompt for Monday"
+  },
+  "claims": [
+    {
+      "text": "Constraining a model to list only decisions, with explicit placeholders for missing owners and an instruction not to invent, produces a more useful and safer meeting summary than a general summary request.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen. Example rows are fictional."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Turn notes into a decision log",
+      "2/ The prompt",
+      "3/ Example output",
+      "4/ Why UNASSIGNED matters",
+      "5/ Check before you send",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to compare two AI tools fairly.",
+    "linkedin": "Post sharing the prompt and the habit of pasting the decision log back into the meeting doc."
+  }
+}

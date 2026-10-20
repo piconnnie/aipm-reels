@@ -1,0 +1,357 @@
+{
+  "brief": {
+    "topic": "Measuring an agent only by whether the final answer was right",
+    "audience": "PMs and engineers evaluating AI agents",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "mistake",
+    "targetDurationSec": 25,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Example runs labelled illustrative"
+    ],
+    "backlogId": "t021"
+  },
+  "coreInsight": "A correct final answer can hide wrong tool calls, wasted steps and risky actions, so evaluate an agent’s trajectory — tools, steps and unapproved actions — not just its output.",
+  "hooks": [
+    {
+      "text": "Right answer. Wrong path.",
+      "angle": "Contrast",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Four words; the reel shows three runs where this happens."
+    },
+    {
+      "text": "Your agent passed the eval and still emailed a customer.",
+      "angle": "Scenario",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Vivid but feels like a made-up incident."
+    },
+    {
+      "text": "Grading agents on the final answer is half an eval.",
+      "angle": "Direct claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Accurate but flat."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): a crisp contrast that the card flips prove and the table turns into checks.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Right answer. Wrong path. / Grade how your agent got there.",
+      "voiceover": "Right answer. Wrong path. Grade how your agent got there.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENT EVALUATION",
+      "lines": [
+        {
+          "text": "Right answer."
+        },
+        {
+          "text": "Wrong path.",
+          "highlight": true
+        }
+      ],
+      "sub": "Grade how your agent got there.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "runs",
+      "type": "cards",
+      "durationInFrames": 220,
+      "purpose": "Show three runs that pass on the answer, then reveal their paths.",
+      "onScreen": "THREE RUNS (ILLUSTRATIVE) / All three got the answer right. / FINAL ANSWER Run 1: correct answer → PATH OK Called the right tools · FINAL ANSWER Run 2: correct answer → PATH WASTEFUL Took 14 steps for a 3-step job · FINAL ANSWER Run 3: correct answer → PATH RISKY Emailed a customer by mistake",
+      "voiceover": "Three illustrative runs, all with the right answer. Run one used the right tools. Run two took fourteen steps for a three-step job. Run three emailed a customer by mistake.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards that flip to their real-world counterpart.",
+        "animation": "Cards pop every 14 frames from 10; flips every 32 frames from 76."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THREE RUNS (ILLUSTRATIVE)",
+      "headline": [
+        {
+          "text": "All three got"
+        },
+        {
+          "text": "the answer right.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Run 1: correct answer",
+          "status": "pass",
+          "tag": "FINAL ANSWER",
+          "swap": {
+            "text": "Called the right tools",
+            "tag": "PATH OK",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Run 2: correct answer",
+          "status": "pass",
+          "tag": "FINAL ANSWER",
+          "swap": {
+            "text": "Took 14 steps for a 3-step job",
+            "tag": "PATH WASTEFUL",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Run 3: correct answer",
+          "status": "pass",
+          "tag": "FINAL ANSWER",
+          "swap": {
+            "text": "Emailed a customer by mistake",
+            "tag": "PATH RISKY",
+            "status": "warn"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "tick"
+        },
+        {
+          "at": 115,
+          "kind": "low"
+        },
+        {
+          "at": 147,
+          "kind": "low"
+        }
+      ],
+      "swapStart": 76,
+      "swapStagger": 32
+    },
+    {
+      "id": "checks",
+      "type": "table",
+      "durationInFrames": 290,
+      "purpose": "The better approach: grade the trajectory.",
+      "onScreen": "GRADE THE TRAJECTORY / Check the path, not just the end. / CHECK → LOOK FOR → FAIL IF / Tool choice → Right tool, right args → Wrong or made-up tool · Steps taken → Close to expected → Loops or detours · Risky actions → Approved first → Any unapproved write / Log every step, not just the output · Review failed paths, even on passes",
+      "voiceover": "Grade the trajectory: the right tool with the right arguments, a step count close to expected, and no risky action without approval. Log every step, and review bad paths even when the answer passed.",
+      "storyboard": {
+        "visual": "Legend CHECK → LOOK FOR → FAIL IF; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "GRADE THE TRAJECTORY",
+      "headline": [
+        {
+          "text": "Check the path,"
+        },
+        {
+          "text": "not just the end.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "CHECK",
+        "LOOK FOR",
+        "FAIL IF"
+      ],
+      "rows": [
+        {
+          "input": "Tool choice",
+          "expected": "Right tool, right args",
+          "passIf": "Wrong or made-up tool"
+        },
+        {
+          "input": "Steps taken",
+          "expected": "Close to expected",
+          "passIf": "Loops or detours"
+        },
+        {
+          "input": "Risky actions",
+          "expected": "Approved first",
+          "passIf": "Any unapproved write"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Log every step, not just the output",
+        "Review failed paths, even on passes"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Grade the path, not just the end. / Save this for your agent eval plan",
+      "voiceover": "Grade the path, not just the end. Save this for your agent eval plan.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Grade the"
+        },
+        {
+          "text": "path, not"
+        },
+        {
+          "text": "just the end.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your agent eval plan",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT EVALUATION",
+    "headline": [
+      {
+        "text": "Right answer,"
+      },
+      {
+        "text": "wrong path",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "An agent can reach the right answer the wrong way, and a final-answer eval will score it a pass.",
+    "body": [
+      "What a final-answer check misses:\n→ the wrong tool, or made-up arguments, that happened to work\n→ fourteen steps for a three-step job (cost and latency)\n→ an action nobody approved, like sending an email",
+      "Grade the trajectory too:\n→ tool choice and arguments\n→ step count against what you expect\n→ any write or external action without approval = fail",
+      "(The three runs in the reel are illustrative examples.)"
+    ],
+    "cta": "Save this for your agent eval plan.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIAgents",
+      "#LLMEvaluation",
+      "#AIProductManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your agent eval plan"
+  },
+  "claims": [
+    {
+      "text": "Evaluating agents only on the final answer misses wrong tool use, wasted steps and unapproved actions; trajectories should be evaluated as well.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Three example runs, including one taking 14 steps for a 3-step job.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Right answer. Wrong path.",
+      "2/ Three runs, all correct",
+      "3/ What the paths revealed",
+      "4/ Check tool choice",
+      "5/ Check step count",
+      "6/ Check risky actions",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to measure real autonomy instead of marketing autonomy.",
+    "linkedin": "Post on adding trajectory checks to an agent eval set, with the three checks as a starter rubric."
+  }
+}

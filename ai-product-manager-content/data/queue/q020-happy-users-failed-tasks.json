@@ -1,0 +1,306 @@
+{
+  "brief": {
+    "topic": "Task success rate vs user satisfaction as the north-star metric for an AI assistant",
+    "audience": "PMs choosing metrics for AI assistants",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "a-vs-b",
+    "targetDurationSec": 23,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t007"
+  },
+  "coreInsight": "Users rate how an AI answer feels, not whether it got the job done, so satisfaction can rise while task success falls; lead with task success wherever the outcome can be checked.",
+  "hooks": [
+    {
+      "text": "Happy users, failed tasks.",
+      "angle": "Paradox",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Four words that contain the whole tension."
+    },
+    {
+      "text": "Your thumbs-up rate is lying to you.",
+      "angle": "Provocation",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Overstates; satisfaction isn’t useless."
+    },
+    {
+      "text": "CSAT or task success: which is your AI’s north star?",
+      "angle": "Direct question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Clear but reads like a textbook prompt."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a paradox that stops the scroll, delivered by an illustrative comparison and a rule for choosing.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Happy users, failed tasks. / Why CSAT can hide a worse product.",
+      "voiceover": "Happy users, failed tasks. Why satisfaction can hide a worse product.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT METRICS",
+      "lines": [
+        {
+          "text": "Happy users,"
+        },
+        {
+          "text": "failed tasks.",
+          "highlight": true
+        }
+      ],
+      "sub": "Why CSAT can hide a worse product.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "gap",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Make the gap tangible with a clearly labelled illustration.",
+      "onScreen": "SAME ASSISTANT [ILLUSTRATIVE] / THUMBS-UP RATE 82% / TASKS ACTUALLY DONE 54% / Users rate tone, not the outcome.",
+      "voiceover": "In this illustrative example, eighty-two percent thumbs up, but only fifty-four percent of tasks actually done. Users rate tone, not the outcome.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; success bar vs warning bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME ASSISTANT",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "THUMBS-UP RATE",
+        "value": "82%",
+        "ratio": 0.82,
+        "tone": "success",
+        "caption": "Feels like success"
+      },
+      "right": {
+        "label": "TASKS ACTUALLY DONE",
+        "value": "54%",
+        "ratio": 0.54,
+        "tone": "warning",
+        "caption": "Checked against outcome"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Users rate tone,"
+        },
+        {
+          "text": "not the outcome.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "choose",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "When to lead with each metric.",
+      "onScreen": "PICK YOUR NORTH STAR / When to lead with each. / Task success when the job has a checkable outcome · Satisfaction when quality is a matter of taste · Define “success” per task before launch · Track both; investigate when they diverge / Rising CSAT + falling success = errors users can’t see.",
+      "voiceover": "Lead with task success when the outcome can be checked, with satisfaction when quality is taste. Define success per task before launch, track both, and investigate when they split.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "PICK YOUR NORTH STAR",
+      "headline": [
+        {
+          "text": "When to lead"
+        },
+        {
+          "text": "with each.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Task success when the job has a checkable outcome",
+        "Satisfaction when quality is a matter of taste",
+        "Define “success” per task before launch",
+        "Track both; investigate when they diverge"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Rising CSAT + falling success = errors users can’t see.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Measure the outcome, not the mood. / Share this with your AI metrics owner",
+      "voiceover": "Measure the outcome, not the mood. Share this with whoever owns your AI metrics.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Measure the"
+        },
+        {
+          "text": "outcome, not"
+        },
+        {
+          "text": "the mood.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your AI metrics owner",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "NORTH-STAR METRICS",
+    "headline": [
+      {
+        "text": "CSAT up,"
+      },
+      {
+        "text": "product"
+      },
+      {
+        "text": "worse?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A confident, friendly wrong answer often gets a thumbs up.",
+    "body": [
+      "That’s why satisfaction and task success can move in opposite directions. Users rate how an answer feels; they often can’t tell whether it was right.",
+      "How to choose:\n→ lead with task success when the job has a checkable outcome (booked, resolved, correct)\n→ lead with satisfaction when quality is a matter of taste (tone, style)\n→ track both, and treat a gap between them as a bug report",
+      "(The 82% vs 54% in the reel is an illustrative example, not data from a real product.)"
+    ],
+    "cta": "Share this with your AI metrics owner.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductMetrics",
+      "#NorthStarMetric",
+      "#GenAI",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI metrics owner"
+  },
+  "claims": [
+    {
+      "text": "User satisfaction ratings for AI answers can rise while task success falls, because users often cannot judge correctness; task success should lead where outcomes are checkable.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "82% thumbs-up rate vs 54% of tasks actually completed.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Happy users, failed tasks",
+      "2/ 82% thumbs up vs 54% done (illustrative)",
+      "3/ Why they diverge",
+      "4/ When to lead with task success",
+      "5/ When to lead with satisfaction",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Interview: how would you measure the quality of an AI writing assistant?",
+    "linkedin": "Post on treating a gap between CSAT and task success as a bug report, with how to define success per task."
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "brief": {
+    "topic": "Build vs buy for an enterprise AI capability",
+    "audience": "Product and technology leaders in enterprises",
+    "pillar": "D: Enterprise AI",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "targetDurationSec": 24,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t027"
+  },
+  "coreInsight": "Decide build vs buy on five questions — differentiation, data sensitivity, speed, three-year cost and exit cost — and settle the exit cost before you sign, not at renewal.",
+  "hooks": [
+    {
+      "text": "Build or buy? Ask these five first.",
+      "angle": "Checklist promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Clear decision moment with a concrete promise."
+    },
+    {
+      "text": "The AI vendor decision most teams make backwards.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Teases without saying what’s backwards."
+    },
+    {
+      "text": "Buying AI is easy. Leaving is the expensive part.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Strong angle but covers only one of the five questions."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names the exact decision and promises a usable list; the exit-cost angle becomes the takeaway.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Build or buy? Ask these five first. / Before anyone opens a vendor deck.",
+      "voiceover": "Build or buy? Ask these five questions first, before anyone opens a vendor deck.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "ENTERPRISE AI",
+      "lines": [
+        {
+          "text": "Build or buy?"
+        },
+        {
+          "text": "Ask these"
+        },
+        {
+          "text": "five first.",
+          "highlight": true
+        }
+      ],
+      "sub": "Before anyone opens a vendor deck.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "durationInFrames": 320,
+      "purpose": "The five questions, in order.",
+      "onScreen": "BUILD VS BUY / Five questions, in this order. / Is this capability how you win, or table stakes? · How sensitive is the data it touches? · How soon do you need it working? · What does it cost to run for three years? · What would it cost to switch away later? / Write the answers down and revisit them at every renewal.",
+      "voiceover": "Is it how you win, or table stakes? How sensitive is the data? How soon do you need it? What does three years cost? What would it cost to leave? Write the answers down and revisit them at every renewal.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 40 frames from 24; rule at 230."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "BUILD VS BUY",
+      "headline": [
+        {
+          "text": "Five questions,"
+        },
+        {
+          "text": "in this order.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Is this capability how you win, or table stakes?",
+        "How sensitive is the data it touches?",
+        "How soon do you need it working?",
+        "What does it cost to run for three years?",
+        "What would it cost to switch away later?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 40,
+      "rule": "Write the answers down and revisit them at every renewal.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 67,
+          "kind": "tick"
+        },
+        {
+          "at": 107,
+          "kind": "tick"
+        },
+        {
+          "at": 147,
+          "kind": "tick"
+        },
+        {
+          "at": 187,
+          "kind": "tick"
+        },
+        {
+          "at": 232,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "read",
+      "type": "cards",
+      "durationInFrames": 170,
+      "purpose": "Show how the answers usually tip the decision.",
+      "onScreen": "READING THE ANSWERS / What usually tips it. / BUY Table stakes → buy · BUILD How you win → build · EITHER High exit cost → negotiate",
+      "voiceover": "Table stakes: buy. How you win: build. High exit cost: negotiate it before you sign.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 24 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "READING THE ANSWERS",
+      "headline": [
+        {
+          "text": "What usually"
+        },
+        {
+          "text": "tips it.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 24,
+      "cards": [
+        {
+          "text": "Table stakes → buy",
+          "status": "pass",
+          "tag": "BUY"
+        },
+        {
+          "text": "How you win → build",
+          "status": "pass",
+          "tag": "BUILD"
+        },
+        {
+          "text": "High exit cost → negotiate",
+          "status": "warn",
+          "tag": "EITHER"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        },
+        {
+          "at": 64,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Price the exit before you sign. / Save this before the vendor demo",
+      "voiceover": "Price the exit before you sign. Save this before the vendor demo.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Price the"
+        },
+        {
+          "text": "exit before"
+        },
+        {
+          "text": "you sign.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this before the vendor demo",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "ENTERPRISE AI",
+    "headline": [
+      {
+        "text": "Build or"
+      },
+      {
+        "text": "buy? Five"
+      },
+      {
+        "text": "questions",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Build vs buy for AI is rarely about the model. It’s about what you can’t easily undo.",
+    "body": [
+      "Five questions, in this order:\n→ Is this how you win, or table stakes?\n→ How sensitive is the data it touches?\n→ How soon do you need it working?\n→ What does it cost to run for three years, not one?\n→ What would it cost to switch away later?",
+      "Table stakes usually point to buying. How you win usually points to building. A high exit cost is something to negotiate before you sign: data export, model portability, notice periods."
+    ],
+    "cta": "Save this before the vendor demo.",
+    "hashtags": [
+      "#EnterpriseAI",
+      "#BuildVsBuy",
+      "#AIStrategy",
+      "#AIProductManagement",
+      "#CIO"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before the vendor demo"
+  },
+  "claims": [
+    {
+      "text": "Build-vs-buy decisions for AI capabilities should weigh differentiation, data sensitivity, time to value, multi-year cost and exit cost, with exit terms settled before signing.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Build or buy? Five questions",
+      "2/ How you win or table stakes",
+      "3/ Data sensitivity",
+      "4/ Time to value",
+      "5/ Three-year cost",
+      "6/ Exit cost",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Checklist: questions to ask before connecting an LLM to internal data.",
+    "linkedin": "Post on negotiating exit terms (data export, portability, notice) as part of any AI vendor deal."
+  }
+}

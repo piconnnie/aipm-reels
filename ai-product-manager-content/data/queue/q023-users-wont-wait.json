@@ -1,0 +1,309 @@
+{
+  "brief": {
+    "topic": "Latency vs quality: when a faster, smaller model is the better product",
+    "audience": "PMs choosing models for user-facing AI features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "a-vs-b",
+    "targetDurationSec": 23,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t016"
+  },
+  "coreInsight": "Speed is part of quality: route narrow, easy requests to a smaller, faster model when your eval shows no meaningful drop, and keep the large model as the fallback for hard cases.",
+  "hooks": [
+    {
+      "text": "Users won’t wait for the best answer.",
+      "angle": "User truth",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Grounded in user behaviour and sets up the routing answer."
+    },
+    {
+      "text": "The best model can make a worse product.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good tension, less specific about why."
+    },
+    {
+      "text": "Stop sending every request to your biggest model.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear but reads as a lecture."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): starts from what users do, which the illustrative comparison and the routing checklist then resolve.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Users won’t wait for the best answer. / When a smaller model wins.",
+      "voiceover": "Users won’t wait for the best answer. Here’s when a smaller model wins.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "LATENCY VS QUALITY",
+      "lines": [
+        {
+          "text": "Users won’t"
+        },
+        {
+          "text": "wait for the"
+        },
+        {
+          "text": "best answer.",
+          "highlight": true
+        }
+      ],
+      "sub": "When a smaller model wins.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "wait",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show the waiting-time difference with a labelled illustration.",
+      "onScreen": "SAME FEATURE [ILLUSTRATIVE] / LARGE MODEL ON EVERY ASK 8 s / ROUTED: SMALL FOR EASY 2 s / Route easy asks to the small model.",
+      "voiceover": "Illustrative: eight seconds per answer with the large model on everything, two seconds when easy asks go to a small model. Route easy asks to the small model.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; warning bar vs success bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME FEATURE",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "LARGE MODEL ON EVERY ASK",
+        "value": "8 s",
+        "ratio": 1,
+        "tone": "warning",
+        "caption": "Typical wait per answer"
+      },
+      "right": {
+        "label": "ROUTED: SMALL FOR EASY",
+        "value": "2 s",
+        "ratio": 0.25,
+        "tone": "success",
+        "caption": "Easy asks answered fast"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Route easy asks"
+        },
+        {
+          "text": "to the small model.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "chime"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "when",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "When the smaller model is the better product.",
+      "onScreen": "WHEN SMALL WINS / Pick the faster model when… / The task is narrow: classify, extract, rewrite · Your eval shows no meaningful quality drop · Users are waiting in the loop, not in a batch · A large model is the fallback for hard cases / Decide with your eval set, not with the leaderboard.",
+      "voiceover": "Pick the faster model when the task is narrow, your eval shows no real quality drop, users are waiting, and a large model catches the hard cases. Decide with your eval set, not the leaderboard.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHEN SMALL WINS",
+      "headline": [
+        {
+          "text": "Pick the faster"
+        },
+        {
+          "text": "model when…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "The task is narrow: classify, extract, rewrite",
+        "Your eval shows no meaningful quality drop",
+        "Users are waiting in the loop, not in a batch",
+        "A large model is the fallback for hard cases"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Decide with your eval set, not with the leaderboard.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Speed is part of quality. / Save this for your next model choice",
+      "voiceover": "Speed is part of quality. Save this for your next model choice.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Speed is"
+        },
+        {
+          "text": "part of"
+        },
+        {
+          "text": "quality.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next model choice",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "LATENCY VS QUALITY",
+    "headline": [
+      {
+        "text": "Users won’t"
+      },
+      {
+        "text": "wait for the"
+      },
+      {
+        "text": "best answer",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A slightly better answer that arrives much later can be the worse product.",
+    "body": [
+      "A smaller, faster model is often the right call when:\n→ the task is narrow: classify, extract, rewrite, route\n→ your eval set shows no meaningful quality drop\n→ a person is waiting on the answer\n→ a larger model is still there for the hard cases",
+      "Route by difficulty, measure both speed and quality, and decide with your own eval set rather than a public leaderboard.",
+      "(The 8 s vs 2 s in the reel is an illustrative example, not a benchmark.)"
+    ],
+    "cta": "Save this for your next model choice.",
+    "hashtags": [
+      "#GenAI",
+      "#LLM",
+      "#AIProductManagement",
+      "#ModelRouting",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next model choice"
+  },
+  "claims": [
+    {
+      "text": "For narrow, user-facing tasks, a smaller and faster model with a large-model fallback is often the better product, if evaluation shows no meaningful quality loss.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "8 seconds per answer with a large model on every request vs 2 seconds with easy requests routed to a small model.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Users won’t wait for the best answer",
+      "2/ 8 s vs 2 s (illustrative)",
+      "3/ Narrow tasks",
+      "4/ No quality drop on your eval",
+      "5/ Large model as fallback",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Framework: three layers of LLM evaluation every team needs.",
+    "linkedin": "Post on routing by difficulty, with how to set up a small-model-first, large-model-fallback test."
+  }
+}

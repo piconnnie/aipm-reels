@@ -1,0 +1,327 @@
+{
+  "brief": {
+    "topic": "The PoC was cheap. Production costs far more. Why?",
+    "audience": "PMs and leads taking a GenAI PoC to production",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "poc-to-production",
+    "targetDurationSec": 26,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t013"
+  },
+  "coreInsight": "PoC costs hide four multipliers — real volume, longer context, retries and tool calls, and eval runs — so model cost per completed task at full scale before you commit.",
+  "hooks": [
+    {
+      "text": "Your PoC bill isn’t your real bill.",
+      "angle": "Warning",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Plain, credible and specific to the moment teams get surprised."
+    },
+    {
+      "text": "The PoC was cheap. That’s the problem.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Intriguing but the “why” takes a beat to arrive."
+    },
+    {
+      "text": "Four numbers your AI cost estimate is missing.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Clear but generic list framing."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): direct and credible; the diagram shows the four multipliers and the checklist turns them into an estimate.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your PoC bill isn’t your real bill. / Four multipliers the demo hides.",
+      "voiceover": "Your PoC bill isn’t your real bill. Four multipliers the demo hides.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "POC TO PRODUCTION",
+      "lines": [
+        {
+          "text": "Your PoC bill"
+        },
+        {
+          "text": "isn’t your"
+        },
+        {
+          "text": "real bill.",
+          "highlight": true
+        }
+      ],
+      "sub": "Four multipliers the demo hides.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "multipliers",
+      "type": "diagram",
+      "durationInFrames": 250,
+      "purpose": "Show what multiplies cost between PoC and production.",
+      "onScreen": "PRODUCTION COST MODEL / What multiplies in production. / PoC cost → × real volume → × longer context → × retries & tools → × eval runs / Each factor looks small. Multiplied, they reshape the business case.",
+      "voiceover": "Start from the PoC cost. Multiply by real volume, longer context, retries and tool calls, and eval runs on every change. Each looks small. Multiplied, they reshape the business case.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 5.",
+        "animation": "Nodes every 20 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "PRODUCTION COST MODEL",
+      "headline": [
+        {
+          "text": "What multiplies"
+        },
+        {
+          "text": "in production.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "PoC cost",
+          "detail": "baseline"
+        },
+        {
+          "label": "× real volume",
+          "detail": "users × days"
+        },
+        {
+          "label": "× longer context",
+          "detail": "RAG + history"
+        },
+        {
+          "label": "× retries & tools",
+          "detail": "agent loops"
+        },
+        {
+          "label": "× eval runs",
+          "detail": "every change",
+          "tone": "warning"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 20,
+      "callout": {
+        "nodeIndex": 4,
+        "text": "Each factor looks small. Multiplied, they reshape the business case.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 43,
+          "kind": "tick"
+        },
+        {
+          "at": 63,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "tick"
+        },
+        {
+          "at": 103,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "estimate",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "Give the steps to model the cost envelope early.",
+      "onScreen": "BEFORE YOU SCALE / Model the cost envelope early. / Estimate daily requests at full rollout · Measure real prompt size, not the demo’s · Count model calls per task, including retries · Budget eval runs for every prompt or model change / Report cost per completed task, not cost per call.",
+      "voiceover": "Estimate requests at full rollout, measure real prompt size, count calls per task including retries, and budget eval runs. Report cost per completed task, not per call.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "BEFORE YOU SCALE",
+      "headline": [
+        {
+          "text": "Model the cost"
+        },
+        {
+          "text": "envelope early.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Estimate daily requests at full rollout",
+        "Measure real prompt size, not the demo’s",
+        "Count model calls per task, including retries",
+        "Budget eval runs for every prompt or model change"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Report cost per completed task, not cost per call.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Price it at full scale. Before launch. / Save this before you scale a PoC",
+      "voiceover": "Price it at full scale, before launch. Save this before you scale a PoC.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Price it at"
+        },
+        {
+          "text": "full scale."
+        },
+        {
+          "text": "Before launch.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this before you scale a PoC",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "POC TO PRODUCTION",
+    "headline": [
+      {
+        "text": "Your PoC"
+      },
+      {
+        "text": "bill isn’t"
+      },
+      {
+        "text": "the real bill",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A PoC runs a few people, short prompts and one call per question. Production runs none of those.",
+    "body": [
+      "What multiplies between the demo and the launch:\n→ volume: every user, every day\n→ context: retrieved documents and chat history make prompts longer\n→ retries and tool calls: one task can mean several model calls\n→ eval runs: you re-test on every prompt or model change",
+      "Model this before the business case goes in. The unit that matters to finance is cost per completed task, not cost per call."
+    ],
+    "cta": "Save this before you scale a PoC.",
+    "hashtags": [
+      "#GenAI",
+      "#AIProductManagement",
+      "#LLMOps",
+      "#AICost",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before you scale a PoC"
+  },
+  "claims": [
+    {
+      "text": "Production GenAI costs are driven by volume, context length, calls per task (retries, tools) and evaluation runs, which PoC costs rarely reflect.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your PoC bill isn’t your real bill",
+      "2/ × real volume",
+      "3/ × longer context",
+      "4/ × retries and tools",
+      "5/ × eval runs",
+      "6/ Cost per completed task",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: a one-page AI business case finance will accept.",
+    "linkedin": "Post with a simple spreadsheet template for cost per completed task at full rollout."
+  }
+}
