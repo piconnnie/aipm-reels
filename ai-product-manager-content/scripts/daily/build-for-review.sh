@@ -5,10 +5,26 @@
 # Needs: GH_TOKEN, GITHUB_REPOSITORY. Run from ai-product-manager-content/.
 set -euo pipefail
 ID="$1"
-node scripts/render-content.mjs "$ID"
-node scripts/build-package.mjs "$ID"
-node scripts/validate-content.mjs "$ID"
-node scripts/daily/archive.mjs "$ID" --repo "$GITHUB_REPOSITORY"
+
+# Run a step; on failure, surface its last lines (and any QA FAIL lines) as
+# GitHub annotations so the cause is visible on the run page without logs.
+step() {
+  local name="$1"; shift
+  local log; log=$(mktemp)
+  if "$@" 2>&1 | tee "$log"; then rm -f "$log"; return 0; fi
+  local fails; fails=$(grep -E '^FAIL' "$log" | head -8 || true)
+  local tail; tail=$(grep -vE '^\s*$' "$log" | tail -12)
+  local msg="${fails:-$tail}"
+  msg="${msg//'%'/'%25'}"; msg="${msg//$'\r'/}"; msg="${msg//$'\n'/'%0A'}"
+  echo "::error title=${name} failed for ${ID}::${msg}"
+  rm -f "$log"
+  return 1
+}
+
+step "Render" node scripts/render-content.mjs "$ID"
+step "Package" node scripts/build-package.mjs "$ID"
+step "QA" node scripts/validate-content.mjs "$ID"
+step "Archive" node scripts/daily/archive.mjs "$ID" --repo "$GITHUB_REPOSITORY"
 
 TAG="reel-$ID"
 cp "output/qa/$ID/contact-sheet.png" "output/qa/$ID/$ID-contact-sheet.png"
