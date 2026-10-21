@@ -1,0 +1,17 @@
+A licence tells you someone can use the tool. It doesn’t tell you they do — or that it helps.
+
+Common rollout metrics measure access:
+→ licences assigned
+→ logins this month
+→ prompts sent
+
+Better signals of adoption and value:
+→ weekly users on a real, named task
+→ tasks done faster or better (pick one task, measure before and after)
+→ people still using it after week four
+
+(The 100% vs 18% in the reel is an illustrative example, not data from a real organisation.)
+
+Share this with your AI rollout team.
+
+#EnterpriseAI #AIAdoption #AIProductManagement #ChangeManagement #GenAI

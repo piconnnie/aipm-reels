@@ -1,0 +1,225 @@
+{
+  "contentId": "aipm-005-licenses-arent-adoption",
+  "version": 1,
+  "generatedAt": "2026-10-19T18:22:39.454Z",
+  "pillar": "D: Enterprise AI",
+  "format": "mistake",
+  "objective": "shares",
+  "targetAudience": "Leaders and PMs running enterprise AI rollouts",
+  "topic": "Measuring AI adoption by licenses issued",
+  "coreInsight": "Licences, logins and prompt counts measure access, not adoption; report weekly use on real work, measurable task impact and repeat use instead.",
+  "hookVariants": [
+    {
+      "text": "Licenses issued is not AI adoption.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "Your AI rollout dashboard is measuring the wrong thing.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "5,000 seats. How many people actually changed how they work?",
+      "angle": "Concrete before-and-after",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "total": 18
+    }
+  ],
+  "selectedHook": "Licenses issued is not AI adoption.",
+  "selectionRationale": "Highest total (24/25). It challenges a metric leaders actually report, which makes it shareable inside rollout teams, and the reel replaces it with three better measures.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Licenses issued is not adoption. / Measure this instead.",
+      "voiceover": "Licenses issued is not AI adoption."
+    },
+    {
+      "scene": "vanity",
+      "onScreen": "WHAT GETS REPORTED / Easy to count. Says little. / Licenses assigned · Logins this month · Prompts sent",
+      "voiceover": "Licenses assigned, logins, prompts sent. Easy to count. They say little."
+    },
+    {
+      "scene": "value",
+      "onScreen": "WHAT SHOWS VALUE / Count use on real work. / ADOPTION weekly users on a real task · IMPACT tasks done faster or better · RETENTION repeat use after week 4",
+      "voiceover": "Instead, count weekly users on a real task, tasks done faster or better, and people still using it after week four."
+    },
+    {
+      "scene": "the-gap",
+      "onScreen": "SAME ROLLOUT [ILLUSTRATIVE] / Seats with a license 100% / Weekly use on real work 18% / Report the second number.",
+      "voiceover": "In this illustrative example, every seat has a license, but only eighteen percent use it weekly on real work. Report the second number."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Count use, not licenses. / Share this with your AI rollout team",
+      "voiceover": "Count use, not licenses. Share this with your AI rollout team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "vanity",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 195,
+      "startSec": 3,
+      "endSec": 6.5
+    },
+    {
+      "id": "value",
+      "type": "cards",
+      "startFrame": 195,
+      "endFrame": 375,
+      "startSec": 6.5,
+      "endSec": 12.5
+    },
+    {
+      "id": "the-gap",
+      "type": "comparison",
+      "startFrame": 375,
+      "endFrame": 540,
+      "startSec": 12.5,
+      "endSec": 18
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 540,
+      "endFrame": 690,
+      "startSec": 18,
+      "endSec": 23
+    }
+  ],
+  "caption": "A licence tells you someone can use the tool. It doesn’t tell you they do — or that it helps.\n\nCommon rollout metrics measure access:\n→ licences assigned\n→ logins this month\n→ prompts sent\n\nBetter signals of adoption and value:\n→ weekly users on a real, named task\n→ tasks done faster or better (pick one task, measure before and after)\n→ people still using it after week four\n\n(The 100% vs 18% in the reel is an illustrative example, not data from a real organisation.)\n\nShare this with your AI rollout team.\n\n#EnterpriseAI #AIAdoption #AIProductManagement #ChangeManagement #GenAI",
+  "hashtags": [
+    "#EnterpriseAI",
+    "#AIAdoption",
+    "#AIProductManagement",
+    "#ChangeManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI rollout team"
+  },
+  "coverHeadline": "Licenses aren’t adoption",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Licence counts, logins and prompt volumes measure access rather than adoption or value.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "100% of seats licensed vs 18% weekly use on real work.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-005-licenses-arent-adoption-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-005-licenses-arent-adoption.mp4",
+    "cover": "output/covers/aipm-005-licenses-arent-adoption.png",
+    "caption": "output/captions/aipm-005-licenses-arent-adoption.txt",
+    "storyboard": "output/storyboards/aipm-005-licenses-arent-adoption.md",
+    "subtitles": "output/storyboards/aipm-005-licenses-arent-adoption.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-19T18:22:46.615Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-005-licenses-arent-adoption/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "2026-10-22",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Licences issued is not adoption",
+      "2/ What usually gets reported",
+      "3/ Adoption: weekly use on a real task",
+      "4/ Impact: before/after on one task",
+      "5/ Retention: still using it after week 4",
+      "6/ Illustrative gap",
+      "7/ Share with your rollout team"
+    ],
+    "followUpReel": "Format 2 (Framework): how to measure task impact in a two-week before/after test.",
+    "linkedin": "Post for rollout leads: replace three vanity metrics with three adoption metrics; ask which one their dashboard shows today."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

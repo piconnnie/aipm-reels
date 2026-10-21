@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t028",
+    "pillar": "D",
+    "pillarName": "D: Enterprise AI",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-005-licenses-arent-adoption",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
