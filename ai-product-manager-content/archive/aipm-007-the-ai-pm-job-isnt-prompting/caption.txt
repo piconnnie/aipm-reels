@@ -1,0 +1,12 @@
+Prompts change every week. The definition of “good” is the part of the job that lasts.
+
+What an AI PM actually owns:
+→ the eval set: real inputs and what a good answer looks like
+→ the failure budget: which mistakes are never acceptable
+→ the failure design: what users see when the model is wrong or unsure
+
+Prompting matters, and engineers often do it better. Deciding what “good” means is the PM’s call.
+
+Share this with an aspiring AI PM.
+
+#AIProductManagement #ProductManagement #AIPM #GenAI

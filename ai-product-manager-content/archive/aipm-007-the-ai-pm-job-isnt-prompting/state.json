@@ -1,0 +1,36 @@
+{
+  "id": "aipm-007-the-ai-pm-job-isnt-prompting",
+  "createdAt": "2026-10-21T05:11:17.574Z",
+  "release": {
+    "tag": "reel-aipm-007-the-ai-pm-job-isnt-prompting",
+    "video": "aipm-007-the-ai-pm-job-isnt-prompting.mp4",
+    "cover": "aipm-007-the-ai-pm-job-isnt-prompting.jpg",
+    "contactSheet": "aipm-007-the-ai-pm-job-isnt-prompting-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "70cb37f2b7d86b65575dce2c10c5f2db8485548c1ecda67335aec1a2b15169fa",
+    "cover": "95d98b22de2bb613c489be470c8c0ee2b4ad231584995cc25ee55813875bb607"
+  },
+  "durationSec": 17.73,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

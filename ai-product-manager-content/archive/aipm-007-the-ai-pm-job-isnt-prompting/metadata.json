@@ -1,0 +1,205 @@
+{
+  "contentId": "aipm-007-the-ai-pm-job-isnt-prompting",
+  "version": 1,
+  "generatedAt": "2026-10-21T05:11:09.545Z",
+  "pillar": "A: AI Product Management",
+  "format": "myth-vs-reality",
+  "objective": "shares",
+  "targetAudience": "PMs moving into AI product management",
+  "topic": "Myth: an AI PM's job is writing prompts",
+  "coreInsight": "An AI PM's core job isn't prompting; it's defining what good looks like — owning the eval set, deciding which errors are unacceptable and designing for failure.",
+  "hookVariants": [
+    {
+      "text": "Prompting isn’t the AI PM job.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "The AI PM skill nobody puts in the job description.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 19
+    },
+    {
+      "text": "Great prompts don’t make a great AI product.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "Prompting isn’t the AI PM job.",
+  "selectionRationale": "Highest total (24/25): names the misconception directly and the reel answers 'then what is?' with three concrete responsibilities.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Prompting isn’t the AI PM job. / Here’s what is.",
+      "voiceover": "Prompting isn't the AI PM job. Here's what is."
+    },
+    {
+      "scene": "myth",
+      "onScreen": "THE MYTH / The AI PM writes prompts. / MYTH Writes the perfect prompt · MYTH Picks the best model · MYTH Demos the happy path",
+      "voiceover": "The myth: the AI PM writes the perfect prompt, picks the best model and demos the happy path."
+    },
+    {
+      "scene": "reality",
+      "onScreen": "THE REALITY / The AI PM defines “good”. / REALITY Owns the eval set · REALITY Decides what counts as wrong · REALITY Designs for failure cases",
+      "voiceover": "The reality: they own the eval set, decide what counts as wrong, and design for the failure cases."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Own the definition of “good”. / Share this with an aspiring AI PM",
+      "voiceover": "Own the definition of good. Share this with an aspiring AI PM."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 199,
+      "startSec": 3,
+      "endSec": 6.63
+    },
+    {
+      "id": "reality",
+      "type": "cards",
+      "startFrame": 199,
+      "endFrame": 382,
+      "startSec": 6.63,
+      "endSec": 12.73
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 382,
+      "endFrame": 532,
+      "startSec": 12.73,
+      "endSec": 17.73
+    }
+  ],
+  "caption": "Prompts change every week. The definition of “good” is the part of the job that lasts.\n\nWhat an AI PM actually owns:\n→ the eval set: real inputs and what a good answer looks like\n→ the failure budget: which mistakes are never acceptable\n→ the failure design: what users see when the model is wrong or unsure\n\nPrompting matters, and engineers often do it better. Deciding what “good” means is the PM’s call.\n\nShare this with an aspiring AI PM.\n\n#AIProductManagement #ProductManagement #AIPM #GenAI",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductManagement",
+    "#AIPM",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with an aspiring AI PM"
+  },
+  "coverHeadline": "The AI PM job isn’t prompting",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "An AI PM's core contribution is defining quality, owning evaluation and designing for failure, more than writing prompts.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 17.73,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-007-the-ai-pm-job-isnt-prompting-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-007-the-ai-pm-job-isnt-prompting.mp4",
+    "cover": "output/covers/aipm-007-the-ai-pm-job-isnt-prompting.png",
+    "caption": "output/captions/aipm-007-the-ai-pm-job-isnt-prompting.txt",
+    "storyboard": "output/storyboards/aipm-007-the-ai-pm-job-isnt-prompting.md",
+    "subtitles": "output/storyboards/aipm-007-the-ai-pm-job-isnt-prompting.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-21T05:11:17.525Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-007-the-ai-pm-job-isnt-prompting/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Prompting isn’t the AI PM job",
+      "2/ The myth",
+      "3/ Owns the eval set",
+      "4/ Decides what counts as wrong",
+      "5/ Designs for failure",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 2: how to write a failure budget for an AI feature.",
+    "linkedin": "Post contrasting 'prompt writer' vs 'definer of good' with one example per responsibility."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Prompting isn't the AI PM job. Here's what is.
+
+2
+00:00:03,130 --> 00:00:06,560
+The myth: the AI PM writes the perfect prompt, picks the best model and demos the happy path.
+
+3
+00:00:06,760 --> 00:00:12,660
+The reality: they own the eval set, decide what counts as wrong, and design for the failure cases.
+
+4
+00:00:12,860 --> 00:00:17,660
+Own the definition of good. Share this with an aspiring AI PM.

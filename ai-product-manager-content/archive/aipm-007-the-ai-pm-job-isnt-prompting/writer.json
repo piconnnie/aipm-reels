@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-21",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t003",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "myth-vs-reality",
+    "research": false
+  },
+  "reelId": "aipm-007-the-ai-pm-job-isnt-prompting",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
