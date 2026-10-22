@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-20",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t035",
+    "pillar": "E",
+    "pillarName": "E: AI Product Career",
+    "format": "interview",
+    "research": false
+  },
+  "reelId": "aipm-006-our-chatbot-hallucinates",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

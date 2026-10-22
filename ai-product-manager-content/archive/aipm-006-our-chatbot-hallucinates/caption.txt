@@ -1,0 +1,14 @@
+AI PM interview question: “Our chatbot hallucinates. What do you do?” Here’s a structure that works.
+
+1. Diagnose: is it a retrieval miss (the right document never reached the model), a prompt problem, or the model itself?
+2. Measure: build a fixed set of real user questions and score answers the same way every time.
+3. Fix the cheapest cause first, then re-measure.
+4. Add guardrails: cite sources, or say “not sure” and hand off.
+
+Close by naming the metric you’d watch after launch.
+
+What interviewers listen for: diagnosis and measurement. The red flag: “just use a bigger model.”
+
+Save this for your next interview.
+
+#AIProductManagement #ProductManagerInterview #PMInterview #GenAI #LLM

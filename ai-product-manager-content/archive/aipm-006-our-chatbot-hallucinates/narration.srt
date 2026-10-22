@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Interview question: our chatbot hallucinates. What do you do?
+
+2
+00:00:03,130 --> 00:00:12,930
+First, find where it fails: retrieval, prompt, or model. Measure it on a fixed set of real questions. Fix the cheapest cause first and re-measure. Then add guardrails: cite sources, or say 'I don't know'. And name the metric you'd watch after launch.
+
+3
+00:00:13,130 --> 00:00:17,930
+Interviewers listen for diagnosis and measurement. The red flag is jumping straight to 'use a bigger model'.
+
+4
+00:00:18,130 --> 00:00:22,930
+Diagnose, measure, then fix. Save this for your next interview.
