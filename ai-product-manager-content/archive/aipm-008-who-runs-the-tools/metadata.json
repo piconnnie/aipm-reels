@@ -1,0 +1,204 @@
+{
+  "contentId": "aipm-008-who-runs-the-tools",
+  "version": 1,
+  "generatedAt": "2026-10-22T05:13:45.190Z",
+  "pillar": "C: Agentic AI",
+  "format": "architecture",
+  "objective": "saves",
+  "targetAudience": "PMs and leaders reviewing agent designs",
+  "topic": "How tool calling actually works, in 30 seconds",
+  "coreInsight": "In tool calling the model only proposes a call; your code decides whether and how to run it, so permissions, approvals and logging belong in your code, not the prompt.",
+  "hookVariants": [
+    {
+      "text": "The model doesn’t run your tools. Your code does.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "Tool calling in 30 seconds.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 20
+    },
+    {
+      "text": "Who’s really in control of your AI agent?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "The model doesn’t run your tools. Your code does.",
+  "selectionRationale": "Highest total (24/25): the reframe is accurate and has a direct product consequence — where you put permissions and approvals.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "The model doesn’t run your tools. / Your code does.",
+      "voiceover": "The model doesn't run your tools. Your code does."
+    },
+    {
+      "scene": "flow",
+      "onScreen": "TOOL CALLING IN 30S / Who does what? / User request → Model proposes → Your code runs it → Result to model → Final answer / Permissions live in your code, not the prompt.",
+      "voiceover": "The user asks. The model proposes a tool and arguments. Your code decides whether to run it. The result goes back to the model, which writes the answer. Permissions live in your code, not in the prompt."
+    },
+    {
+      "scene": "questions",
+      "onScreen": "PM QUESTIONS / Ask before you ship. / Which tools can it call, and with what scope? · Which actions need human approval? · What happens when a call fails? · Is every tool call logged for audit? / If you can’t answer one, it’s not ready.",
+      "voiceover": "Before you ship, ask: which tools, with what scope? Which actions need approval? What happens when a call fails? Is every call logged?"
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "The model suggests. Your code acts. / Save this for your next agent review",
+      "voiceover": "The model suggests. Your code acts. Save this for your next agent review."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "startFrame": 90,
+      "endFrame": 320,
+      "startSec": 3,
+      "endSec": 10.67
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "startFrame": 320,
+      "endFrame": 608,
+      "startSec": 10.67,
+      "endSec": 20.27
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 608,
+      "endFrame": 758,
+      "startSec": 20.27,
+      "endSec": 25.27
+    }
+  ],
+  "caption": "In tool calling, the model never presses the button. It asks your code to.\n\nThe loop:\n1. User asks\n2. Model proposes a tool + arguments\n3. Your code decides whether to run it\n4. Result goes back to the model\n5. Model writes the answer\n\nThat’s why permissions, approval gates and audit logs belong in your code. A prompt that says “don’t delete anything” is a request, not a control.\n\nReview questions: which tools and scope? Which actions need a human? What happens on failure? Is every call logged?\n\nSave this for your next agent review.\n\n#AIAgents #AgenticAI #AIProductManagement #LLM",
+  "hashtags": [
+    "#AIAgents",
+    "#AgenticAI",
+    "#AIProductManagement",
+    "#LLM"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next agent review"
+  },
+  "coverHeadline": "Who runs the tools?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "In tool-calling systems the model proposes calls and application code executes them, so access control belongs in application code rather than prompts.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.27,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-008-who-runs-the-tools-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-008-who-runs-the-tools.mp4",
+    "cover": "output/covers/aipm-008-who-runs-the-tools.png",
+    "caption": "output/captions/aipm-008-who-runs-the-tools.txt",
+    "storyboard": "output/storyboards/aipm-008-who-runs-the-tools.md",
+    "subtitles": "output/storyboards/aipm-008-who-runs-the-tools.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-22T05:13:50.668Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-008-who-runs-the-tools/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ The model doesn’t run your tools",
+      "2/ The 5-step loop",
+      "3/ Where permissions live",
+      "4/ Four review questions",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 2: where to put human approval gates in an agent.",
+    "linkedin": "Post explaining the tool-calling loop for non-engineers with the four review questions."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
