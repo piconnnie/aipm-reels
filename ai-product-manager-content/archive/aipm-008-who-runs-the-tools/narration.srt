@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+The model doesn't run your tools. Your code does.
+
+2
+00:00:03,130 --> 00:00:10,600
+The user asks. The model proposes a tool and arguments. Your code decides whether to run it. The result goes back to the model, which writes the answer. Permissions live in your code, not in the prompt.
+
+3
+00:00:10,800 --> 00:00:20,200
+Before you ship, ask: which tools, with what scope? Which actions need approval? What happens when a call fails? Is every call logged?
+
+4
+00:00:20,400 --> 00:00:25,200
+The model suggests. Your code acts. Save this for your next agent review.
