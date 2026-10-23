@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-23",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t017",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "decision-checklist",
+    "research": false
+  },
+  "reelId": "aipm-009-what-to-monitor-in-production",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
