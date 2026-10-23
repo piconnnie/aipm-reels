@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Launch day is when evaluation starts.
+
+2
+00:00:03,130 --> 00:00:13,260
+Watch input drift, the refusal rate, cost per completed task, user corrections and retries, and the eval pass rate on every change. Set thresholds before launch.
+
+3
+00:00:13,460 --> 00:00:18,200
+Silent failures look like success: retries spike after an update, cost creeps up, new kinds of questions appear.
+
+4
+00:00:18,400 --> 00:00:23,200
+Shipped isn't finished. Save this for your launch checklist.

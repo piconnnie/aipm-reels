@@ -1,0 +1,202 @@
+{
+  "contentId": "aipm-009-what-to-monitor-in-production",
+  "version": 1,
+  "generatedAt": "2026-10-23T05:13:59.228Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "decision-checklist",
+  "objective": "saves",
+  "targetAudience": "PMs and engineering leads launching GenAI features",
+  "topic": "What to monitor once your LLM feature is live",
+  "coreInsight": "LLM features fail quietly after launch, so set thresholds before launch for input drift, refusal rate, cost per task, user corrections and eval pass rate.",
+  "hookVariants": [
+    {
+      "text": "Launch day is when evaluation starts.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your AI feature is failing quietly. Here’s how to tell.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Five numbers to watch after an AI launch.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Launch day is when evaluation starts.",
+  "selectionRationale": "Highest total (23/25): reframes launch as the start of measurement and delivers five concrete signals.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Launch day is when evaluation starts. / 5 signals to watch.",
+      "voiceover": "Launch day is when evaluation starts."
+    },
+    {
+      "scene": "signals",
+      "onScreen": "MONITOR THESE / After launch, watch for… / Input drift: users ask new kinds of things · Refusal and “not sure” rate · Cost per completed task · User corrections and retries · Eval pass rate on every change / Set an alert threshold for each before launch.",
+      "voiceover": "Watch input drift, the refusal rate, cost per completed task, user corrections and retries, and the eval pass rate on every change. Set thresholds before launch."
+    },
+    {
+      "scene": "why",
+      "onScreen": "WHY IT MATTERS / Silent failures look like success. / EXAMPLE Retries spike after an update · EXAMPLE Cost per task creeps up · EXAMPLE New question types appear",
+      "voiceover": "Silent failures look like success: retries spike after an update, cost creeps up, new kinds of questions appear."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Shipped isn’t finished. / Save this for your launch checklist",
+      "voiceover": "Shipped isn't finished. Save this for your launch checklist."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "signals",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 400,
+      "startSec": 3,
+      "endSec": 13.33
+    },
+    {
+      "id": "why",
+      "type": "cards",
+      "startFrame": 400,
+      "endFrame": 548,
+      "startSec": 13.33,
+      "endSec": 18.27
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 548,
+      "endFrame": 698,
+      "startSec": 18.27,
+      "endSec": 23.27
+    }
+  ],
+  "caption": "An LLM feature rarely breaks loudly. It drifts.\n\nFive signals to watch from day one:\n→ input drift (new kinds of questions)\n→ refusal / “not sure” rate\n→ cost per completed task\n→ user corrections and retries\n→ eval pass rate on every prompt or model change\n\nPick a threshold for each before launch, so a change triggers a look rather than a debate.\n\nSave this for your launch checklist.\n\n#GenAI #LLMOps #AIProductManagement #ProductManagement",
+  "hashtags": [
+    "#GenAI",
+    "#LLMOps",
+    "#AIProductManagement",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your launch checklist"
+  },
+  "coverHeadline": "What to monitor in production",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Production LLM features should be monitored for input drift, refusal rate, cost per task, user corrections and eval regressions.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23.27,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-009-what-to-monitor-in-production-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-009-what-to-monitor-in-production.mp4",
+    "cover": "output/covers/aipm-009-what-to-monitor-in-production.png",
+    "caption": "output/captions/aipm-009-what-to-monitor-in-production.txt",
+    "storyboard": "output/storyboards/aipm-009-what-to-monitor-in-production.md",
+    "subtitles": "output/storyboards/aipm-009-what-to-monitor-in-production.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-23T05:14:08.287Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-009-what-to-monitor-in-production/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Launch is when evaluation starts",
+      "2–6/ One signal per slide",
+      "7/ Set thresholds first + save CTA"
+    ],
+    "followUpReel": "Format 1: the mistake of changing the model without rerunning evals.",
+    "linkedin": "Post with the five signals as a launch-readiness checklist."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

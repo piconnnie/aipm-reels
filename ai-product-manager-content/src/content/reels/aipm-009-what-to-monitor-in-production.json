@@ -1,0 +1,324 @@
+{
+  "id": "aipm-009-what-to-monitor-in-production",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "What to monitor once your LLM feature is live",
+    "audience": "PMs and engineering leads launching GenAI features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "targetDurationSec": 23,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t017",
+    "queueId": "q007-monitor-after-launch",
+    "writer": "queue"
+  },
+  "coreInsight": "LLM features fail quietly after launch, so set thresholds before launch for input drift, refusal rate, cost per task, user corrections and eval pass rate.",
+  "hooks": [
+    {
+      "text": "Launch day is when evaluation starts.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Flips the common idea that evaluation ends at launch."
+    },
+    {
+      "text": "Your AI feature is failing quietly. Here’s how to tell.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Strong but presumes failure."
+    },
+    {
+      "text": "Five numbers to watch after an AI launch.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Useful, less scroll-stopping."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): reframes launch as the start of measurement and delivers five concrete signals.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Launch day is when evaluation starts. / 5 signals to watch.",
+      "voiceover": "Launch day is when evaluation starts.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "Launch day"
+        },
+        {
+          "text": "is when"
+        },
+        {
+          "text": "evaluation",
+          "highlight": true
+        },
+        {
+          "text": "starts.",
+          "highlight": true
+        }
+      ],
+      "sub": "5 signals to watch.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "checklist",
+      "durationInFrames": 310,
+      "purpose": "Give the five signals.",
+      "onScreen": "MONITOR THESE / After launch, watch for… / Input drift: users ask new kinds of things · Refusal and “not sure” rate · Cost per completed task · User corrections and retries · Eval pass rate on every change / Set an alert threshold for each before launch.",
+      "voiceover": "Watch input drift, the refusal rate, cost per completed task, user corrections and retries, and the eval pass rate on every change. Set thresholds before launch.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 38 frames from 24; rule at 220."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "MONITOR THESE",
+      "headline": [
+        {
+          "text": "After launch,"
+        },
+        {
+          "text": "watch for…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Input drift: users ask new kinds of things",
+        "Refusal and “not sure” rate",
+        "Cost per completed task",
+        "User corrections and retries",
+        "Eval pass rate on every change"
+      ],
+      "itemStart": 24,
+      "itemStagger": 38,
+      "rule": "Set an alert threshold for each before launch.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 65,
+          "kind": "tick"
+        },
+        {
+          "at": 103,
+          "kind": "tick"
+        },
+        {
+          "at": 141,
+          "kind": "tick"
+        },
+        {
+          "at": 179,
+          "kind": "tick"
+        },
+        {
+          "at": 222,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "type": "cards",
+      "durationInFrames": 148,
+      "purpose": "Show what quiet failure looks like.",
+      "onScreen": "WHY IT MATTERS / Silent failures look like success. / EXAMPLE Retries spike after an update · EXAMPLE Cost per task creeps up · EXAMPLE New question types appear",
+      "voiceover": "Silent failures look like success: retries spike after an update, cost creeps up, new kinds of questions appear.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 24 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHY IT MATTERS",
+      "headline": [
+        {
+          "text": "Silent failures"
+        },
+        {
+          "text": "look like success."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 24,
+      "cards": [
+        {
+          "text": "Retries spike after an update",
+          "status": "warn",
+          "tag": "EXAMPLE"
+        },
+        {
+          "text": "Cost per task creeps up",
+          "status": "warn",
+          "tag": "EXAMPLE"
+        },
+        {
+          "text": "New question types appear",
+          "status": "unknown",
+          "tag": "EXAMPLE"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 40,
+          "kind": "low"
+        },
+        {
+          "at": 64,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Shipped isn’t finished. / Save this for your launch checklist",
+      "voiceover": "Shipped isn't finished. Save this for your launch checklist.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Shipped isn’t"
+        },
+        {
+          "text": "finished.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your launch checklist",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AFTER LAUNCH",
+    "headline": [
+      {
+        "text": "What to"
+      },
+      {
+        "text": "monitor"
+      },
+      {
+        "text": "in production",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "An LLM feature rarely breaks loudly. It drifts.",
+    "body": [
+      "Five signals to watch from day one:\n→ input drift (new kinds of questions)\n→ refusal / “not sure” rate\n→ cost per completed task\n→ user corrections and retries\n→ eval pass rate on every prompt or model change",
+      "Pick a threshold for each before launch, so a change triggers a look rather than a debate."
+    ],
+    "cta": "Save this for your launch checklist.",
+    "hashtags": [
+      "#GenAI",
+      "#LLMOps",
+      "#AIProductManagement",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your launch checklist"
+  },
+  "claims": [
+    {
+      "text": "Production LLM features should be monitored for input drift, refusal rate, cost per task, user corrections and eval regressions.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Launch is when evaluation starts",
+      "2–6/ One signal per slide",
+      "7/ Set thresholds first + save CTA"
+    ],
+    "followUpReel": "Format 1: the mistake of changing the model without rerunning evals.",
+    "linkedin": "Post with the five signals as a launch-readiness checklist."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "grape",
+    "music": "drive",
+    "motion": "rise"
+  },
+  "audio": {
+    "bed": "audio/aipm-009-what-to-monitor-in-production-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

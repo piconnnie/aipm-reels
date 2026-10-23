@@ -1,0 +1,14 @@
+An LLM feature rarely breaks loudly. It drifts.
+
+Five signals to watch from day one:
+→ input drift (new kinds of questions)
+→ refusal / “not sure” rate
+→ cost per completed task
+→ user corrections and retries
+→ eval pass rate on every prompt or model change
+
+Pick a threshold for each before launch, so a change triggers a look rather than a debate.
+
+Save this for your launch checklist.
+
+#GenAI #LLMOps #AIProductManagement #ProductManagement
