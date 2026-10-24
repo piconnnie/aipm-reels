@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Not every feature needs AI. Four questions decide it.
+
+2
+00:00:03,130 --> 00:00:12,530
+Use AI only if a fixed rule can't do the job, occasional errors are acceptable, a wrong answer can be caught or undone, and you have real data to test it. Fail two? Ship the rule first.
+
+3
+00:00:12,730 --> 00:00:17,730
+An invoice total: use a rule. Summarising a messy complaint: AI. Approving refunds automatically: be careful.
+
+4
+00:00:17,930 --> 00:00:22,730
+Rule first. AI where it earns it. Save this for your next roadmap review.

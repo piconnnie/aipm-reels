@@ -1,0 +1,203 @@
+{
+  "contentId": "aipm-010-does-it-need-ai-at-all",
+  "version": 1,
+  "generatedAt": "2026-10-24T04:56:14.257Z",
+  "pillar": "A: AI Product Management",
+  "format": "decision-checklist",
+  "objective": "saves",
+  "targetAudience": "PMs and product leaders prioritising AI features",
+  "topic": "Should this feature use AI at all?",
+  "coreInsight": "Use AI only when a fixed rule can't do the job, occasional errors are acceptable or catchable, and you have data to test it; otherwise ship the rule first.",
+  "hookVariants": [
+    {
+      "text": "Not every feature needs AI.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "The cheapest AI feature is the one you replace with a rule.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 20
+    },
+    {
+      "text": "4 questions before you add AI to anything.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 22
+    }
+  ],
+  "selectedHook": "Not every feature needs AI.",
+  "selectionRationale": "Highest total (23/25): plain-spoken and directly useful in roadmap reviews; the reel delivers a 4-question test with examples.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Not every feature needs AI. / 4 questions decide it.",
+      "voiceover": "Not every feature needs AI. Four questions decide it."
+    },
+    {
+      "scene": "questions",
+      "onScreen": "THE 4 QUESTIONS / Use AI only if… / A fixed rule can’t do the job well · Occasional errors are acceptable · A wrong answer can be caught or undone · You have real data to test it on / Fail two? Ship the rule-based version first.",
+      "voiceover": "Use AI only if a fixed rule can't do the job, occasional errors are acceptable, a wrong answer can be caught or undone, and you have real data to test it. Fail two? Ship the rule first."
+    },
+    {
+      "scene": "examples",
+      "onScreen": "EXAMPLES / AI or a rule? / USE A RULE Check an invoice total adds up · USE AI Summarise a messy complaint · CAREFUL Approve refunds automatically",
+      "voiceover": "An invoice total: use a rule. Summarising a messy complaint: AI. Approving refunds automatically: be careful."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Rule first. AI where it earns it. / Save this for your next roadmap review",
+      "voiceover": "Rule first. AI where it earns it. Save this for your next roadmap review."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 378,
+      "startSec": 3,
+      "endSec": 12.6
+    },
+    {
+      "id": "examples",
+      "type": "cards",
+      "startFrame": 378,
+      "endFrame": 534,
+      "startSec": 12.6,
+      "endSec": 17.8
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 534,
+      "endFrame": 684,
+      "startSec": 17.8,
+      "endSec": 22.8
+    }
+  ],
+  "caption": "Some of the best AI product decisions are “no AI here”.\n\nUse AI only if:\n→ a fixed rule can’t do the job well\n→ occasional errors are acceptable\n→ a wrong answer can be caught or undone\n→ you have real data to test it on\n\nFail two of the four? Ship the rule-based version first and revisit with data.\n\nSave this for your next roadmap review.\n\n#AIProductManagement #ProductStrategy #GenAI #ProductManagement",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductStrategy",
+    "#GenAI",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next roadmap review"
+  },
+  "coverHeadline": "Does it need AI at all?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "AI is justified when rules are insufficient, errors are tolerable or recoverable, and test data exists.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 22.8,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-010-does-it-need-ai-at-all-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-010-does-it-need-ai-at-all.mp4",
+    "cover": "output/covers/aipm-010-does-it-need-ai-at-all.png",
+    "caption": "output/captions/aipm-010-does-it-need-ai-at-all.txt",
+    "storyboard": "output/storyboards/aipm-010-does-it-need-ai-at-all.md",
+    "subtitles": "output/storyboards/aipm-010-does-it-need-ai-at-all.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-24T04:56:21.142Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-010-does-it-need-ai-at-all/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Not every feature needs AI",
+      "2–5/ One question per slide",
+      "6/ Examples",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Format 3: rule vs model vs model-with-rules for the same feature.",
+    "linkedin": "Post with the four questions and a request for examples where 'no AI' was the right call."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

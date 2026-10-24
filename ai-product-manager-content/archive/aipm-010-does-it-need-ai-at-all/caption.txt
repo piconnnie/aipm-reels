@@ -1,0 +1,13 @@
+Some of the best AI product decisions are “no AI here”.
+
+Use AI only if:
+→ a fixed rule can’t do the job well
+→ occasional errors are acceptable
+→ a wrong answer can be caught or undone
+→ you have real data to test it on
+
+Fail two of the four? Ship the rule-based version first and revisit with data.
+
+Save this for your next roadmap review.
+
+#AIProductManagement #ProductStrategy #GenAI #ProductManagement
