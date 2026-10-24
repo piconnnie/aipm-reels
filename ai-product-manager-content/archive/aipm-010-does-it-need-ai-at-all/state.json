@@ -1,0 +1,36 @@
+{
+  "id": "aipm-010-does-it-need-ai-at-all",
+  "createdAt": "2026-10-24T04:56:21.184Z",
+  "release": {
+    "tag": "reel-aipm-010-does-it-need-ai-at-all",
+    "video": "aipm-010-does-it-need-ai-at-all.mp4",
+    "cover": "aipm-010-does-it-need-ai-at-all.jpg",
+    "contactSheet": "aipm-010-does-it-need-ai-at-all-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "ffede661c182f80fce22066a5ac79f96fe209d575b897105c263c6341f91194c",
+    "cover": "25f7e922de8c83b6960a8c69e1998dc05f8eff726e5757fb36e2d64c14a55672"
+  },
+  "durationSec": 22.8,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
