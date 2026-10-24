@@ -1,0 +1,335 @@
+{
+  "id": "aipm-007-the-ai-pm-job-isnt-prompting",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Myth: an AI PM's job is writing prompts",
+    "audience": "PMs moving into AI product management",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "myth-vs-reality",
+    "targetDurationSec": 18,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t003",
+    "queueId": "q005-prompting-isnt-the-job",
+    "writer": "queue"
+  },
+  "coreInsight": "An AI PM's core job isn't prompting; it's defining what good looks like — owning the eval set, deciding which errors are unacceptable and designing for failure.",
+  "hooks": [
+    {
+      "text": "Prompting isn’t the AI PM job.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Contradicts a popular belief in plain words; the reel replaces it with the real job."
+    },
+    {
+      "text": "The AI PM skill nobody puts in the job description.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Intriguing but vague in the first two seconds."
+    },
+    {
+      "text": "Great prompts don’t make a great AI product.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "True but doesn't say what does."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): names the misconception directly and the reel answers 'then what is?' with three concrete responsibilities.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Prompting isn’t the AI PM job. / Here’s what is.",
+      "voiceover": "Prompting isn't the AI PM job. Here's what is.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "Prompting"
+        },
+        {
+          "text": "isn’t the"
+        },
+        {
+          "text": "AI PM job.",
+          "highlight": true
+        }
+      ],
+      "sub": "Here’s what is.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "durationInFrames": 109,
+      "purpose": "Show the popular picture of the role.",
+      "onScreen": "THE MYTH / The AI PM writes prompts. / MYTH Writes the perfect prompt · MYTH Picks the best model · MYTH Demos the happy path",
+      "voiceover": "The myth: the AI PM writes the perfect prompt, picks the best model and demos the happy path.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 12 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE MYTH",
+      "headline": [
+        {
+          "text": "The AI PM"
+        },
+        {
+          "text": "writes prompts."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 12,
+      "cards": [
+        {
+          "text": "Writes the perfect prompt",
+          "status": "unknown",
+          "tag": "MYTH"
+        },
+        {
+          "text": "Picks the best model",
+          "status": "unknown",
+          "tag": "MYTH"
+        },
+        {
+          "text": "Demos the happy path",
+          "status": "unknown",
+          "tag": "MYTH"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 28,
+          "kind": "tick"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "reality",
+      "type": "cards",
+      "durationInFrames": 183,
+      "purpose": "Replace each myth with the real responsibility.",
+      "onScreen": "THE REALITY / The AI PM defines “good”. / REALITY Owns the eval set · REALITY Decides what counts as wrong · REALITY Designs for failure cases",
+      "voiceover": "The reality: they own the eval set, decide what counts as wrong, and design for the failure cases.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "THE REALITY",
+      "headline": [
+        {
+          "text": "The AI PM"
+        },
+        {
+          "text": "defines “good”.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "Writes the perfect prompt",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Owns the eval set",
+            "tag": "REALITY",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Picks the best model",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Decides what counts as wrong",
+            "tag": "REALITY",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Demos the happy path",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Designs for failure cases",
+            "tag": "REALITY",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Own the definition of “good”. / Share this with an aspiring AI PM",
+      "voiceover": "Own the definition of good. Share this with an aspiring AI PM.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Own the"
+        },
+        {
+          "text": "definition"
+        },
+        {
+          "text": "of “good”.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with an aspiring AI PM",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "MYTH VS REALITY",
+    "headline": [
+      {
+        "text": "The AI PM"
+      },
+      {
+        "text": "job isn’t"
+      },
+      {
+        "text": "prompting",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Prompts change every week. The definition of “good” is the part of the job that lasts.",
+    "body": [
+      "What an AI PM actually owns:\n→ the eval set: real inputs and what a good answer looks like\n→ the failure budget: which mistakes are never acceptable\n→ the failure design: what users see when the model is wrong or unsure",
+      "Prompting matters, and engineers often do it better. Deciding what “good” means is the PM’s call."
+    ],
+    "cta": "Share this with an aspiring AI PM.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductManagement",
+      "#AIPM",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with an aspiring AI PM"
+  },
+  "claims": [
+    {
+      "text": "An AI PM's core contribution is defining quality, owning evaluation and designing for failure, more than writing prompts.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Prompting isn’t the AI PM job",
+      "2/ The myth",
+      "3/ Owns the eval set",
+      "4/ Decides what counts as wrong",
+      "5/ Designs for failure",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 2: how to write a failure budget for an AI feature.",
+    "linkedin": "Post contrasting 'prompt writer' vs 'definer of good' with one example per responsibility."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "ember",
+    "music": "cinematic",
+    "motion": "slide"
+  },
+  "audio": {
+    "bed": "audio/aipm-007-the-ai-pm-job-isnt-prompting-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}
