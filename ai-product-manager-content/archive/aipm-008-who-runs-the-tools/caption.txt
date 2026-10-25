@@ -1,0 +1,16 @@
+In tool calling, the model never presses the button. It asks your code to.
+
+The loop:
+1. User asks
+2. Model proposes a tool + arguments
+3. Your code decides whether to run it
+4. Result goes back to the model
+5. Model writes the answer
+
+That’s why permissions, approval gates and audit logs belong in your code. A prompt that says “don’t delete anything” is a request, not a control.
+
+Review questions: which tools and scope? Which actions need a human? What happens on failure? Is every call logged?
+
+Save this for your next agent review.
+
+#AIAgents #AgenticAI #AIProductManagement #LLM
