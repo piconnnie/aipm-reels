@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Nine perfect demos. Still not ready. Here's the math.
+
+2
+00:00:03,130 --> 00:00:07,160
+In the demo, every step worked: read the request, find the record, update the system, send the reply.
+
+3
+00:00:07,360 --> 00:00:12,660
+Illustrative math: if each step succeeds ninety-five percent of the time, ten steps in a row succeed about sixty percent of the time. Errors compound.
+
+4
+00:00:12,860 --> 00:00:17,660
+Test the whole task, not one step. Share this with your agent team.

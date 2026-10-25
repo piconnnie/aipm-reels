@@ -1,0 +1,36 @@
+{
+  "id": "aipm-011-why-agents-fail-at-scale",
+  "createdAt": "2026-10-25T05:07:49.650Z",
+  "release": {
+    "tag": "reel-aipm-011-why-agents-fail-at-scale",
+    "video": "aipm-011-why-agents-fail-at-scale.mp4",
+    "cover": "aipm-011-why-agents-fail-at-scale.jpg",
+    "contactSheet": "aipm-011-why-agents-fail-at-scale-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "85a32b8e5b9516659adb44a307607d46a8d06f03650cdc4469582eae4918d5a0",
+    "cover": "35e48e0c71a65225c2bf18771342c772ed188d226b745c9b59ed2b4a5f839ea5"
+  },
+  "durationSec": 17.73,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "contentId": "aipm-011-why-agents-fail-at-scale",
+  "version": 1,
+  "generatedAt": "2026-10-25T05:07:43.326Z",
+  "pillar": "C: Agentic AI",
+  "format": "poc-to-production",
+  "objective": "shares",
+  "targetAudience": "PMs and engineers building multi-step agents",
+  "topic": "Your agent demo succeeded 9 times. Why it still fails in production",
+  "coreInsight": "Per-step reliability multiplies across long tasks, so evaluate end-to-end task success over many runs instead of trusting a few successful demos.",
+  "hookVariants": [
+    {
+      "text": "9 perfect demos. Still not ready.",
+      "angle": "Concrete before-and-after",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Agents don’t fail at a step. They fail at the sum.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "total": 20
+    },
+    {
+      "text": "The math that breaks long agent tasks.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "9 perfect demos. Still not ready.",
+  "selectionRationale": "Highest total (23/25): concrete, intriguing, and the reel backs it with a labelled illustrative calculation.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "9 perfect demos. Still not ready. / Here’s the math.",
+      "voiceover": "Nine perfect demos. Still not ready. Here's the math."
+    },
+    {
+      "scene": "demo",
+      "onScreen": "THE DEMO / Every step worked. / STEP 1 Read the request · STEP 2 Find the record · STEP 3 Update the system · STEP 4 Send the reply",
+      "voiceover": "In the demo, every step worked: read the request, find the record, update the system, send the reply."
+    },
+    {
+      "scene": "math",
+      "onScreen": "WHY IT BREAKS [ILLUSTRATIVE] / ONE STEP 95% / 10 STEPS IN A ROW 60% / Errors compound.",
+      "voiceover": "Illustrative math: if each step succeeds ninety-five percent of the time, ten steps in a row succeed about sixty percent of the time. Errors compound."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Test the whole task, not one step. / Share this with your agent team",
+      "voiceover": "Test the whole task, not one step. Share this with your agent team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "demo",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 217,
+      "startSec": 3,
+      "endSec": 7.23
+    },
+    {
+      "id": "math",
+      "type": "comparison",
+      "startFrame": 217,
+      "endFrame": 382,
+      "startSec": 7.23,
+      "endSec": 12.73
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 382,
+      "endFrame": 532,
+      "startSec": 12.73,
+      "endSec": 17.73
+    }
+  ],
+  "caption": "A step that works 95% of the time sounds solid. Chain ten of them and it’s closer to a coin flip with good odds.\n\nIllustrative math (assuming independent steps): 0.95 × 0.95 … ten times ≈ 0.60. Real systems differ, but the direction holds: long tasks amplify small error rates.\n\nSo evaluate the whole task, many times:\n→ end-to-end success rate over dozens of runs\n→ where in the chain failures cluster\n→ which steps need a check or a human approval\n\n(Numbers in the reel are illustrative, not measurements of a real system.)\n\nShare this with your agent team.\n\n#AIAgents #AgenticAI #AIProductManagement #LLM",
+  "hashtags": [
+    "#AIAgents",
+    "#AgenticAI",
+    "#AIProductManagement",
+    "#LLM"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your agent team"
+  },
+  "coverHeadline": "Why agents fail at scale",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "95% per-step success over 10 independent steps ≈ 60% end-to-end (0.95^10 ≈ 0.599).",
+      "kind": "illustrative",
+      "sources": []
+    },
+    {
+      "text": "Agent reliability should be evaluated end to end over many runs rather than inferred from successful demos.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 17.73,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-011-why-agents-fail-at-scale-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-011-why-agents-fail-at-scale.mp4",
+    "cover": "output/covers/aipm-011-why-agents-fail-at-scale.png",
+    "caption": "output/captions/aipm-011-why-agents-fail-at-scale.txt",
+    "storyboard": "output/storyboards/aipm-011-why-agents-fail-at-scale.md",
+    "subtitles": "output/storyboards/aipm-011-why-agents-fail-at-scale.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-25T05:07:49.603Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-011-why-agents-fail-at-scale/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ 9 perfect demos, still not ready",
+      "2/ The steps",
+      "3/ The math (illustrative)",
+      "4/ What to measure",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 2: where to put human approval gates in an agent.",
+    "linkedin": "Post with the compounding-error math and a question about how teams test long agent tasks."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
