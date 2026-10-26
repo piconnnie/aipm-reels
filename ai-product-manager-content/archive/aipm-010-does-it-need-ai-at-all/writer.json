@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-24",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t004",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "decision-checklist",
+    "research": false
+  },
+  "reelId": "aipm-010-does-it-need-ai-at-all",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
