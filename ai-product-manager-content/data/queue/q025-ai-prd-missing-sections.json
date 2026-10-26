@@ -1,0 +1,358 @@
+{
+  "brief": {
+    "topic": "Writing a PRD for an AI feature exactly like a normal PRD",
+    "audience": "PMs writing specs for AI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "mistake",
+    "targetDurationSec": 26,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t008"
+  },
+  "coreInsight": "A standard PRD template assumes the software does what it is told; an AI PRD needs four extra sections — failure modes, eval plan, data dependencies and a cost envelope — before anyone builds.",
+  "hooks": [
+    {
+      "text": "Your PRD template assumes the code is right.",
+      "angle": "Hidden assumption",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Names the flaw in the template itself; the reel shows the four missing sections."
+    },
+    {
+      "text": "Four sections every AI PRD is missing.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear, but a common list pattern."
+    },
+    {
+      "text": "Copy-pasting your PRD template into an AI project?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Relatable but softer and longer."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): it points at an assumption every PM has never questioned, and the flip cards show exactly where the template falls short.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your PRD template assumes the code is right. / Add these four sections.",
+      "voiceover": "Your PRD template assumes the code is right. AI features need four more sections.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRDS",
+      "lines": [
+        {
+          "text": "Your PRD"
+        },
+        {
+          "text": "template"
+        },
+        {
+          "text": "assumes"
+        },
+        {
+          "text": "the code"
+        },
+        {
+          "text": "is right.",
+          "highlight": true
+        }
+      ],
+      "sub": "Add these four sections.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "template",
+      "type": "cards",
+      "durationInFrames": 254,
+      "purpose": "Show the normal sections, then flip each to what an AI feature also needs.",
+      "onScreen": "THE USUAL TEMPLATE / The usual sections, minus the AI parts. / NORMAL PRD Requirements → MISSING Plus: how it can be wrong · NORMAL PRD Acceptance criteria → MISSING Plus: the eval plan · NORMAL PRD Dependencies: APIs → MISSING Plus: the data it reads · NORMAL PRD Cost: infra estimate → MISSING Plus: cost per task",
+      "voiceover": "The usual template has requirements, acceptance criteria, dependencies and cost. For AI you also need how it can be wrong, an eval plan, the data it reads, and cost per task.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards that flip to their real-world counterpart.",
+        "animation": "Cards pop every 14 frames from 10; flips every 32 frames from 76."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE USUAL TEMPLATE",
+      "headline": [
+        {
+          "text": "The usual sections,"
+        },
+        {
+          "text": "minus the AI parts.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Requirements",
+          "status": "unknown",
+          "tag": "NORMAL PRD",
+          "swap": {
+            "text": "Plus: how it can be wrong",
+            "tag": "MISSING",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Acceptance criteria",
+          "status": "unknown",
+          "tag": "NORMAL PRD",
+          "swap": {
+            "text": "Plus: the eval plan",
+            "tag": "MISSING",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Dependencies: APIs",
+          "status": "unknown",
+          "tag": "NORMAL PRD",
+          "swap": {
+            "text": "Plus: the data it reads",
+            "tag": "MISSING",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Cost: infra estimate",
+          "status": "unknown",
+          "tag": "NORMAL PRD",
+          "swap": {
+            "text": "Plus: cost per task",
+            "tag": "MISSING",
+            "status": "warn"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 58,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "low"
+        },
+        {
+          "at": 115,
+          "kind": "low"
+        },
+        {
+          "at": 147,
+          "kind": "low"
+        },
+        {
+          "at": 179,
+          "kind": "low"
+        }
+      ],
+      "swapStart": 76,
+      "swapStagger": 32
+    },
+    {
+      "id": "sections",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "The better approach: the four AI sections, concretely.",
+      "onScreen": "ADD THESE FOUR / Write them before the build. / Failure modes: what wrong looks like + fallback · Eval plan: test set, metric, pass bar · Data: what it reads, who owns it, how fresh · Cost envelope: max cost and latency per task / If a section is still blank, the feature isn’t ready to build.",
+      "voiceover": "Add four sections. Failure modes and the fallback. An eval plan with a test set and a pass bar. The data it reads, who owns it and how fresh it is. And a maximum cost and latency per task. If a section is blank, it isn’t ready to build.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ADD THESE FOUR",
+      "headline": [
+        {
+          "text": "Write them"
+        },
+        {
+          "text": "before the build.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Failure modes: what wrong looks like + fallback",
+        "Eval plan: test set, metric, pass bar",
+        "Data: what it reads, who owns it, how fresh",
+        "Cost envelope: max cost and latency per task"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "If a section is still blank, the feature isn’t ready to build.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "A PRD for AI says how it can be wrong. / Save this before your next AI PRD",
+      "voiceover": "A PRD for AI says how it can be wrong. Save this before your next AI PRD.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "A PRD for AI"
+        },
+        {
+          "text": "says how it"
+        },
+        {
+          "text": "can be wrong.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this before your next AI PRD",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PRODUCT MANAGEMENT",
+    "headline": [
+      {
+        "text": "Your AI PRD"
+      },
+      {
+        "text": "is missing"
+      },
+      {
+        "text": "four pages",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A normal PRD template quietly assumes the software does what it’s told. AI features don’t.",
+    "body": [
+      "Four sections to add to every AI PRD:\n→ Failure modes: what a wrong answer looks like, and the fallback\n→ Eval plan: the test set, the metric, the pass bar\n→ Data: what it reads, who owns it, how fresh it must be\n→ Cost envelope: maximum cost and latency per task",
+      "Write them before the build starts. A blank section is a question the team will answer by accident later."
+    ],
+    "cta": "Save this before your next AI PRD.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductManagement",
+      "#PRD",
+      "#GenAI",
+      "#AIProducts"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before your next AI PRD"
+  },
+  "claims": [
+    {
+      "text": "PRDs for AI features should add failure modes, an eval plan, data dependencies and a cost envelope to the standard template.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your PRD template assumes the code is right",
+      "2/ What the usual template has",
+      "3/ Failure modes",
+      "4/ Eval plan",
+      "5/ Data dependencies",
+      "6/ Cost envelope",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Decision checklist: is your AI feature ready to launch?",
+    "linkedin": "Post sharing a one-page AI PRD addendum with the four sections as fill-in prompts."
+  }
+}

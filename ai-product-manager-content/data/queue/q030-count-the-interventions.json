@@ -1,0 +1,319 @@
+{
+  "brief": {
+    "topic": "How to measure real autonomy instead of marketing autonomy",
+    "audience": "PMs and buyers evaluating AI agents",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "framework",
+    "targetDurationSec": 25,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Example numbers labelled illustrative on screen and in caption"
+    ],
+    "backlogId": "t026"
+  },
+  "coreInsight": "An agent’s real autonomy is measured by how often a human has to step in per task and how much time each intervention costs, not by the label on the product.",
+  "hooks": [
+    {
+      "text": "Count the times a human steps in.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Gives the metric immediately; the reel shows how to log and read it."
+    },
+    {
+      "text": "“Fully autonomous” needs a number behind it.",
+      "angle": "Challenge",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good tension but doesn’t name the number."
+    },
+    {
+      "text": "Your agent is less autonomous than the demo says.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Echoes earlier demo-skeptic reels."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names the one measure that cuts through autonomy claims, which the checklist turns into a simple log.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Count the times a human steps in. / That’s your agent’s real autonomy.",
+      "voiceover": "Count the times a human steps in. That’s your agent’s real autonomy.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENT AUTONOMY",
+      "lines": [
+        {
+          "text": "Count the"
+        },
+        {
+          "text": "times a human"
+        },
+        {
+          "text": "steps in.",
+          "highlight": true
+        }
+      ],
+      "sub": "That’s your agent’s real autonomy.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "log",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "The framework: what to log for every agent task.",
+      "onScreen": "THE AUTONOMY LOG / Track per task, every week. / Interventions: approvals, fixes, restarts · Minutes of human time per intervention · Share of tasks done with zero help · Split it by task type, trend it weekly / Real autonomy is the share of tasks done with no human help.",
+      "voiceover": "For every task, log interventions: approvals, fixes and restarts. Log the minutes each one costs. Track the share of tasks finished with zero help. Split by task type and trend it weekly.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE AUTONOMY LOG",
+      "headline": [
+        {
+          "text": "Track per task,"
+        },
+        {
+          "text": "every week.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Interventions: approvals, fixes, restarts",
+        "Minutes of human time per intervention",
+        "Share of tasks done with zero help",
+        "Split it by task type, trend it weekly"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Real autonomy is the share of tasks done with no human help.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 204,
+      "purpose": "Worked example with illustrative numbers.",
+      "onScreen": "EXAMPLE (ILLUSTRATIVE) / The label vs the log. / THE LABEL Sold as “fully autonomous” · THE LOG 1.8 interventions per task · THE LOG 6 minutes per intervention · THE LOG 1 in 5 tasks need no help",
+      "voiceover": "Illustrative example: sold as fully autonomous. The log says 1.8 interventions per task, six minutes each, and only one in five tasks done with no help.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE (ILLUSTRATIVE)",
+      "headline": [
+        {
+          "text": "The label vs"
+        },
+        {
+          "text": "the log.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Sold as “fully autonomous”",
+          "status": "unknown",
+          "tag": "THE LABEL"
+        },
+        {
+          "text": "1.8 interventions per task",
+          "status": "warn",
+          "tag": "THE LOG"
+        },
+        {
+          "text": "6 minutes per intervention",
+          "status": "warn",
+          "tag": "THE LOG"
+        },
+        {
+          "text": "1 in 5 tasks need no help",
+          "status": "warn",
+          "tag": "THE LOG"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 94,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Measure the help it still needs. / Save this for your next agent review",
+      "voiceover": "Measure the help it still needs. Save this for your next agent review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Measure the"
+        },
+        {
+          "text": "help it"
+        },
+        {
+          "text": "still needs.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next agent review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENTIC AI",
+    "headline": [
+      {
+        "text": "Real autonomy"
+      },
+      {
+        "text": "is a number",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Autonomous” is a label. Interventions per task is a measurement.",
+    "body": [
+      "Log this for every agent task:\n→ Interventions: approvals, fixes, restarts\n→ Minutes of human time per intervention\n→ Share of tasks finished with zero help\n→ Split by task type, trend it weekly",
+      "Real autonomy is the share of tasks done with no human help, plus what the remaining help costs. Ask vendors for the same numbers.",
+      "(The 1.8 interventions, 6 minutes and 1-in-5 figures in the reel are illustrative, not from a real product.)"
+    ],
+    "cta": "Save this for your next agent review.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIAgents",
+      "#AIProductManagement",
+      "#GenAI",
+      "#ProductMetrics"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next agent review"
+  },
+  "claims": [
+    {
+      "text": "Agent autonomy is best measured by human interventions per task, the time each costs, and the share of tasks completed without help.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "1.8 interventions per task, 6 minutes per intervention, 1 in 5 tasks needing no help.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Count the times a human steps in",
+      "2/ Log interventions",
+      "3/ Log minutes per intervention",
+      "4/ Share of tasks with zero help",
+      "5/ Split by task type",
+      "6/ Label vs log example",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: where to put human approval gates in an agent.",
+    "linkedin": "Post on an autonomy log template and the three numbers to ask any agent vendor for."
+  }
+}

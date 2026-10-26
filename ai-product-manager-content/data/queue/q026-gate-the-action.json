@@ -1,0 +1,317 @@
+{
+  "brief": {
+    "topic": "Where to put human approval gates in an agent",
+    "audience": "PMs and engineers designing agent workflows",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "framework",
+    "targetDurationSec": 25,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t023"
+  },
+  "coreInsight": "Put approval gates on actions, not on the whole agent: the harder an action is to undo, the earlier a human approves it.",
+  "hooks": [
+    {
+      "text": "Don’t approve the agent. Approve the action.",
+      "angle": "Reframe",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Shifts the debate from trusting the agent to gating specific actions."
+    },
+    {
+      "text": "Your agent needs four gate levels, not one.",
+      "angle": "Number promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Concrete but sounds like a list."
+    },
+    {
+      "text": "Approving every agent step defeats the point.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "True, but doesn’t say where gates go."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a crisp reframe that the gate map makes concrete and the refund example proves.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Don’t approve the agent. Approve the action. / Where the gates go, by risk.",
+      "voiceover": "Don’t approve the agent. Approve the action. Here’s where the gates go.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENT DESIGN",
+      "lines": [
+        {
+          "text": "Don’t approve"
+        },
+        {
+          "text": "the agent."
+        },
+        {
+          "text": "Approve"
+        },
+        {
+          "text": "the action.",
+          "highlight": true
+        }
+      ],
+      "sub": "Where the gates go, by risk.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "map",
+      "type": "checklist",
+      "durationInFrames": 300,
+      "purpose": "The framework: gate level by how hard the action is to undo.",
+      "onScreen": "THE GATE MAP / Gate by action, not by agent. / Read-only lookups: no gate, just log them · Drafts and internal notes: spot-check later · Messages to customers: approve before sending · Money, deletes, permissions: always approve / The harder an action is to undo, the earlier a human steps in.",
+      "voiceover": "Read-only lookups: no gate, just log them. Drafts and internal notes: spot-check later. Messages to customers: approve before sending. Money, deletes and permissions: always approve. The harder an action is to undo, the earlier a human steps in.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE GATE MAP",
+      "headline": [
+        {
+          "text": "Gate by action,"
+        },
+        {
+          "text": "not by agent.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Read-only lookups: no gate, just log them",
+        "Drafts and internal notes: spot-check later",
+        "Messages to customers: approve before sending",
+        "Money, deletes, permissions: always approve"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "The harder an action is to undo, the earlier a human steps in.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 204,
+      "purpose": "Worked example: one agent, four gate levels.",
+      "onScreen": "EXAMPLE: REFUND AGENT / One agent, four gate levels. / NO GATE Look up the order · SPOT-CHECK Draft the reply · APPROVE FIRST Send it to the customer · ALWAYS APPROVE Issue the refund",
+      "voiceover": "In a refund agent: looking up the order needs no gate. Drafting the reply gets spot-checked. Sending it needs approval first. Issuing the refund is always approved.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE: REFUND AGENT",
+      "headline": [
+        {
+          "text": "One agent,"
+        },
+        {
+          "text": "four gate levels.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Look up the order",
+          "status": "pass",
+          "tag": "NO GATE"
+        },
+        {
+          "text": "Draft the reply",
+          "status": "pass",
+          "tag": "SPOT-CHECK"
+        },
+        {
+          "text": "Send it to the customer",
+          "status": "warn",
+          "tag": "APPROVE FIRST"
+        },
+        {
+          "text": "Issue the refund",
+          "status": "warn",
+          "tag": "ALWAYS APPROVE"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 94,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Gate what you can’t undo. / Save this for your agent design review",
+      "voiceover": "Gate what you can’t undo. Save this for your agent design review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Gate what"
+        },
+        {
+          "text": "you can’t"
+        },
+        {
+          "text": "undo.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your agent design review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENTIC AI",
+    "headline": [
+      {
+        "text": "Approve the"
+      },
+      {
+        "text": "action, not"
+      },
+      {
+        "text": "the agent",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Human in the loop” for an agent shouldn’t mean approving every step. Gate the actions instead.",
+    "body": [
+      "A simple gate map:\n→ Read-only lookups: no gate, just log them\n→ Drafts and internal notes: spot-check later\n→ Messages to customers: approve before sending\n→ Money, deletes, permissions: always approve",
+      "The rule: the harder an action is to undo, the earlier a human steps in. List every tool your agent can call and give each one a gate level before launch."
+    ],
+    "cta": "Save this for your agent design review.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIAgents",
+      "#HumanInTheLoop",
+      "#AIProductManagement",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your agent design review"
+  },
+  "claims": [
+    {
+      "text": "Approval gates in an agent work best per action, set by how reversible and high-impact the action is.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Approve the action, not the agent",
+      "2/ Read-only: no gate",
+      "3/ Drafts: spot-check",
+      "4/ Customer messages: approve first",
+      "5/ Money and deletes: always approve",
+      "6/ Refund agent example",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to measure real autonomy instead of marketing autonomy.",
+    "linkedin": "Post on mapping every agent tool to a gate level, with the refund agent as the worked example."
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "brief": {
+    "topic": "Myth: a bigger model will fix our hallucinations",
+    "audience": "PMs and engineers shipping RAG and chat features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "shares",
+    "format": "myth-vs-reality",
+    "targetDurationSec": 27,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [
+      "Example cases labelled illustrative on screen and in caption"
+    ],
+    "backlogId": "t015"
+  },
+  "coreInsight": "Many product hallucinations come from missing or stale sources, prompts that never allow “I don’t know”, or missing tools — a bigger model can’t supply facts it never saw, so check inputs first.",
+  "hooks": [
+    {
+      "text": "A bigger model won’t fix missing facts.",
+      "angle": "Direct rebuttal",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Pins the myth to its flaw in six words; the flips show the real causes."
+    },
+    {
+      "text": "Upgrading the model didn’t stop the made-up answers.",
+      "angle": "Scenario",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Relatable, slightly long for frame 0."
+    },
+    {
+      "text": "Hallucinations are usually an input problem.",
+      "angle": "Claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Accurate but abstract."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a short rebuttal that is readable at once, with cards that flip each symptom to its real cause.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "A bigger model won’t fix missing facts. / Find the real cause first.",
+      "voiceover": "A bigger model won’t fix missing facts. Find the real cause first.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "HALLUCINATIONS",
+      "lines": [
+        {
+          "text": "A bigger"
+        },
+        {
+          "text": "model won’t"
+        },
+        {
+          "text": "fix missing"
+        },
+        {
+          "text": "facts.",
+          "highlight": true
+        }
+      ],
+      "sub": "Find the real cause first.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "causes",
+      "type": "cards",
+      "durationInFrames": 254,
+      "purpose": "Show symptoms blamed on the model, then flip each to the usual real cause.",
+      "onScreen": "EXAMPLES (ILLUSTRATIVE) / Blamed on the model. Caused upstream. / BLAMED: MODEL Quotes last year’s price → STALE DATA Index never refreshed · BLAMED: MODEL Invents a policy rule → RETRIEVAL Right doc never retrieved · BLAMED: MODEL Guesses an order status → MISSING TOOL No tool to check orders · BLAMED: MODEL Answers out of scope → PROMPT Prompt bans “I don’t know”",
+      "voiceover": "Quoting last year’s price: the index was never refreshed. Inventing a policy: the right document was never retrieved. Guessing an order status: there’s no tool to check. Answering out of scope: the prompt never allows “I don’t know.”",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards that flip to their real-world counterpart.",
+        "animation": "Cards pop every 14 frames from 10; flips every 32 frames from 76."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLES (ILLUSTRATIVE)",
+      "headline": [
+        {
+          "text": "Blamed on the model."
+        },
+        {
+          "text": "Caused upstream.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Quotes last year’s price",
+          "status": "unknown",
+          "tag": "BLAMED: MODEL",
+          "swap": {
+            "text": "Index never refreshed",
+            "tag": "STALE DATA",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Invents a policy rule",
+          "status": "unknown",
+          "tag": "BLAMED: MODEL",
+          "swap": {
+            "text": "Right doc never retrieved",
+            "tag": "RETRIEVAL",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Guesses an order status",
+          "status": "unknown",
+          "tag": "BLAMED: MODEL",
+          "swap": {
+            "text": "No tool to check orders",
+            "tag": "MISSING TOOL",
+            "status": "warn"
+          }
+        },
+        {
+          "text": "Answers out of scope",
+          "status": "unknown",
+          "tag": "BLAMED: MODEL",
+          "swap": {
+            "text": "Prompt bans “I don’t know”",
+            "tag": "PROMPT",
+            "status": "warn"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        },
+        {
+          "at": 58,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "low"
+        },
+        {
+          "at": 115,
+          "kind": "low"
+        },
+        {
+          "at": 147,
+          "kind": "low"
+        },
+        {
+          "at": 179,
+          "kind": "low"
+        }
+      ],
+      "swapStart": 76,
+      "swapStagger": 32
+    },
+    {
+      "id": "order",
+      "type": "checklist",
+      "durationInFrames": 330,
+      "purpose": "Reasoning: check the cheap causes before changing the model.",
+      "onScreen": "CHECK IN THIS ORDER / Cheapest fix first. / Was the right source retrieved? · Is that source current and correct? · Does the prompt allow “I don’t know”? · Is there a tool for live data? · Only then: test a bigger model on your eval set / A bigger model can reason better. It can’t know what it never saw.",
+      "voiceover": "Check in this order: was the right source retrieved, is it current, does the prompt allow I don’t know, is there a tool for live data. Only then test a bigger model on your eval set.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 242."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "CHECK IN THIS ORDER",
+      "headline": [
+        {
+          "text": "Cheapest"
+        },
+        {
+          "text": "fix first.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Was the right source retrieved?",
+        "Is that source current and correct?",
+        "Does the prompt allow “I don’t know”?",
+        "Is there a tool for live data?",
+        "Only then: test a bigger model on your eval set"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "A bigger model can reason better. It can’t know what it never saw.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 195,
+          "kind": "tick"
+        },
+        {
+          "at": 244,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Fix the inputs before the model. / Share this with your AI team",
+      "voiceover": "Fix the inputs before the model. Share this with your AI team.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Fix the"
+        },
+        {
+          "text": "inputs before"
+        },
+        {
+          "text": "the model.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your AI team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "GENAI DELIVERY",
+    "headline": [
+      {
+        "text": "Bigger model,"
+      },
+      {
+        "text": "same made-up"
+      },
+      {
+        "text": "answers",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Let’s just use a bigger model” is the most expensive way to not fix a hallucination.",
+    "body": [
+      "Typical causes that look like model errors:\n→ Stale data: the index was never refreshed\n→ Retrieval: the right document never reached the prompt\n→ Missing tool: no way to check live facts like order status\n→ Prompt: nothing allows “I don’t know”",
+      "Check those in order, cheapest first. Then, if answers are still wrong, test a bigger model on your own eval set and compare.",
+      "(The cases in the reel are illustrative examples, not measured data.)"
+    ],
+    "cta": "Share this with your AI team.",
+    "hashtags": [
+      "#GenAI",
+      "#LLM",
+      "#RAG",
+      "#AIProductManagement",
+      "#Hallucinations"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI team"
+  },
+  "claims": [
+    {
+      "text": "Many hallucinations in products come from retrieval gaps, stale data, missing tools or prompts that forbid uncertainty; a larger model cannot supply facts it never received.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Four example symptoms and their causes.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ A bigger model won’t fix missing facts",
+      "2/ Stale data",
+      "3/ Retrieval misses",
+      "4/ Missing tools",
+      "5/ Prompts that ban “I don’t know”",
+      "6/ Check in this order",
+      "7/ Share CTA"
+    ],
+    "followUpReel": "Mistake: chunking documents by fixed size.",
+    "linkedin": "Post with a hallucination triage order for RAG features, cheapest check first."
+  }
+}

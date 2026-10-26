@@ -1,0 +1,307 @@
+{
+  "brief": {
+    "topic": "Is your AI feature ready to launch?",
+    "audience": "PMs preparing to launch AI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "targetDurationSec": 26,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t009"
+  },
+  "coreInsight": "An AI feature is ready to launch only when its eval passes a bar set in advance, red-team cases are handled, a fallback works, monitoring is live and rollback is tested; any “no” shrinks the launch.",
+  "hooks": [
+    {
+      "text": "Can you turn it off in 5 minutes?",
+      "angle": "Pointed question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "A concrete test most teams can’t answer yes to; opens the full launch gate."
+    },
+    {
+      "text": "Five yeses before an AI feature ships.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear but generic."
+    },
+    {
+      "text": "“The demo works” is not a launch criterion.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good tension but close to earlier demo-vs-eval reels."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a specific, uncomfortable question that leads straight into the five-part launch gate.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Can you turn it off in 5 minutes? / If not, it isn’t ready to ship.",
+      "voiceover": "Can you turn it off in five minutes? If not, it isn’t ready to ship.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "LAUNCH READINESS",
+      "lines": [
+        {
+          "text": "Can you"
+        },
+        {
+          "text": "turn it off"
+        },
+        {
+          "text": "in 5 minutes?",
+          "highlight": true
+        }
+      ],
+      "sub": "If not, it isn’t ready to ship.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "type": "checklist",
+      "durationInFrames": 330,
+      "purpose": "The questions and the decision rule.",
+      "onScreen": "THE LAUNCH GATE / Ship only if all five are yes. / Eval set passes a bar set before testing · Red-team prompts tried, worst ones fixed · Fallback works when the model fails or times out · Dashboards and alerts live on day one · Kill switch tested, with a named owner / One “no” means a smaller rollout, not a full launch.",
+      "voiceover": "Ship only if all five are yes. The eval passes a bar you set before testing. Red-team prompts are tried and the worst fixed. The fallback works. Dashboards and alerts are live on day one. The kill switch is tested, with an owner. One no means a smaller rollout.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 242."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE LAUNCH GATE",
+      "headline": [
+        {
+          "text": "Ship only if"
+        },
+        {
+          "text": "all five are yes.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Eval set passes a bar set before testing",
+        "Red-team prompts tried, worst ones fixed",
+        "Fallback works when the model fails or times out",
+        "Dashboards and alerts live on day one",
+        "Kill switch tested, with a named owner"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "One “no” means a smaller rollout, not a full launch.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 195,
+          "kind": "tick"
+        },
+        {
+          "at": 244,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "no",
+      "type": "cards",
+      "durationInFrames": 200,
+      "purpose": "What to do with a “no”: shrink the launch.",
+      "onScreen": "IF ONE IS “NO” / Shrink the launch, don’t skip the gate. / INTERNAL No red-team yet → staff only · LIMITED No fallback → opt-in beta · BLOCKED No kill switch → don’t ship",
+      "voiceover": "No red-team yet? Staff only. No fallback? An opt-in beta. No kill switch? Don’t ship.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "IF ONE IS “NO”",
+      "headline": [
+        {
+          "text": "Shrink the launch,"
+        },
+        {
+          "text": "don’t skip the gate.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "No red-team yet → staff only",
+          "status": "warn",
+          "tag": "INTERNAL"
+        },
+        {
+          "text": "No fallback → opt-in beta",
+          "status": "warn",
+          "tag": "LIMITED"
+        },
+        {
+          "text": "No kill switch → don’t ship",
+          "status": "warn",
+          "tag": "BLOCKED"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Can’t undo it? Don’t ship it. / Save this for your launch review",
+      "voiceover": "Can’t undo it? Don’t ship it. Save this for your launch review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Can’t undo it?"
+        },
+        {
+          "text": "Don’t ship it.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your launch review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PRODUCT MANAGEMENT",
+    "headline": [
+      {
+        "text": "Ready to"
+      },
+      {
+        "text": "launch? Five"
+      },
+      {
+        "text": "yeses first",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If you can’t turn your AI feature off in five minutes, it isn’t ready to launch.",
+    "body": [
+      "The launch gate: ship only if all five are yes.\n→ Eval set passes a bar you set before testing\n→ Red-team prompts tried, worst ones fixed\n→ Fallback works when the model fails or times out\n→ Dashboards and alerts live on day one\n→ Kill switch tested, with a named owner",
+      "One “no” doesn’t cancel the launch. It shrinks it: staff only, an opt-in beta, or blocked until the kill switch exists."
+    ],
+    "cta": "Save this for your launch review.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductLaunch",
+      "#ResponsibleAI",
+      "#GenAI",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your launch review"
+  },
+  "claims": [
+    {
+      "text": "AI features should pass an eval bar, red-team testing, a working fallback, live monitoring and a tested rollback before full launch; gaps call for a limited rollout.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Can you turn it off in 5 minutes?",
+      "2/ Eval bar set in advance",
+      "3/ Red-team prompts",
+      "4/ Fallback path",
+      "5/ Monitoring on day one",
+      "6/ Kill switch + owner",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Mistake: writing a PRD for an AI feature exactly like a normal PRD.",
+    "linkedin": "Post sharing the five-question launch gate and how each “no” maps to a smaller rollout."
+  }
+}

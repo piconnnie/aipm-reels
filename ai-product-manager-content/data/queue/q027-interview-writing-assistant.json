@@ -1,0 +1,322 @@
+{
+  "brief": {
+    "topic": "AI PM interview: “How would you measure the quality of an AI writing assistant?”",
+    "audience": "Aspiring and junior AI PMs preparing for interviews",
+    "pillar": "E: AI Product Career",
+    "objective": "saves",
+    "format": "interview",
+    "targetDurationSec": 26,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t034"
+  },
+  "coreInsight": "A strong answer to “measure an AI writing assistant” starts by splitting it into tasks, builds an eval set per task, pairs offline rubric scores with online usage signals, and plans for failure.",
+  "hooks": [
+    {
+      "text": "Measure an AI writing assistant. Go.",
+      "angle": "Interview prompt",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Drops the viewer into the interview moment without a quote-style question."
+    },
+    {
+      "text": "“How would you measure an AI writing assistant?”",
+      "angle": "Quoted question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Clear but repeats the quoted-question opening of an earlier interview reel."
+    },
+    {
+      "text": "Thumbs-up rate is the wrong answer here.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Intriguing but unclear without the question."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): puts the viewer in the hot seat, then the checklist gives the structure and the cards show what interviewers reward.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Measure an AI writing assistant. Go. / Start with tasks, not metrics.",
+      "voiceover": "Measure an AI writing assistant. Go. Start with tasks, not metrics.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PM INTERVIEW",
+      "lines": [
+        {
+          "text": "Measure an"
+        },
+        {
+          "text": "AI writing"
+        },
+        {
+          "text": "assistant."
+        },
+        {
+          "text": "Go.",
+          "highlight": true
+        }
+      ],
+      "sub": "Start with tasks, not metrics.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "answer",
+      "type": "checklist",
+      "durationInFrames": 330,
+      "purpose": "The structured answer.",
+      "onScreen": "A STRONG ANSWER / Tasks first, metrics second. / Define the tasks: emails, summaries, rewrites · Build an eval set from real drafts per task · Offline: rubric scores for accuracy and tone · Online: text kept, edits made, retries · Plan for failure: made-up facts, wrong tone / Close with the one metric you’d watch every release.",
+      "voiceover": "Define the tasks: emails, summaries, rewrites. Build an eval set from real drafts for each. Offline, score accuracy and tone with a rubric. Online, track how much text users keep, edit or retry. Plan for made-up facts and wrong tone. Close with the one metric you’d watch every release.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 242."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "A STRONG ANSWER",
+      "headline": [
+        {
+          "text": "Tasks first,"
+        },
+        {
+          "text": "metrics second.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Define the tasks: emails, summaries, rewrites",
+        "Build an eval set from real drafts per task",
+        "Offline: rubric scores for accuracy and tone",
+        "Online: text kept, edits made, retries",
+        "Plan for failure: made-up facts, wrong tone"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Close with the one metric you’d watch every release.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 195,
+          "kind": "tick"
+        },
+        {
+          "at": 244,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "cards",
+      "durationInFrames": 204,
+      "purpose": "What interviewers listen for.",
+      "onScreen": "WHAT THEY LISTEN FOR / What earns the follow-up. / STRONG Splits quality by task · STRONG Tracks how much text is kept · STRONG Names made-up facts as a risk · RED FLAG Only says “thumbs-up rate”",
+      "voiceover": "Interviewers listen for quality split by task, tracking how much text users keep, and naming made-up facts as a risk. The red flag: only saying thumbs-up rate.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT THEY LISTEN FOR",
+      "headline": [
+        {
+          "text": "What earns"
+        },
+        {
+          "text": "the follow-up.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Splits quality by task",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Tracks how much text is kept",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Names made-up facts as a risk",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Only says “thumbs-up rate”",
+          "status": "warn",
+          "tag": "RED FLAG"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 94,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Tasks first. Then the metrics. / Save this for your AI PM interview",
+      "voiceover": "Tasks first. Then the metrics. Save this for your AI PM interview.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Tasks first."
+        },
+        {
+          "text": "Then the"
+        },
+        {
+          "text": "metrics.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your AI PM interview",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM INTERVIEW",
+    "headline": [
+      {
+        "text": "Measure an"
+      },
+      {
+        "text": "AI writing"
+      },
+      {
+        "text": "assistant",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A classic AI PM interview question: how would you measure the quality of an AI writing assistant?",
+    "body": [
+      "A structure that works:\n→ Define the tasks first: emails, summaries, rewrites\n→ Build an eval set from real drafts for each task\n→ Offline: rubric scores for accuracy and tone\n→ Online: how much text users keep, edit or retry\n→ Plan for failure: made-up facts, wrong tone",
+      "What interviewers listen for: quality split by task, a usage signal beyond ratings, and failure named as a risk. “Thumbs-up rate” alone is a red flag."
+    ],
+    "cta": "Save this for your AI PM interview.",
+    "hashtags": [
+      "#AIProductManager",
+      "#PMInterview",
+      "#ProductManagement",
+      "#LLMEvaluation",
+      "#AICareers"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your AI PM interview"
+  },
+  "claims": [
+    {
+      "text": "A strong answer defines tasks, builds per-task eval sets, combines offline rubric scoring with online usage signals, and plans for failure modes.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Measure an AI writing assistant. Go.",
+      "2/ Define the tasks",
+      "3/ Build an eval set",
+      "4/ Offline vs online metrics",
+      "5/ Plan for failure",
+      "6/ What interviewers listen for",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: three layers of LLM evaluation every team needs.",
+    "linkedin": "Post walking through a full answer to the writing-assistant interview question, with example metrics per task."
+  }
+}
