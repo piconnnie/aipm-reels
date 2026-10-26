@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Fifty pilots, fifty rebuilt basics.
+
+2
+00:00:03,130 --> 00:00:10,600
+Use-case apps sit on a shared layer: access control, logging and evals, model routing, approved models and data. Build it after two or three real use cases, not before.
+
+3
+00:00:10,800 --> 00:00:15,530
+Each new use case stops rebuilding access, logging and audit, and eval and safety checks.
+
+4
+00:00:15,730 --> 00:00:20,530
+Pilot to learn. Platform to scale. Share this with your AI platform team.

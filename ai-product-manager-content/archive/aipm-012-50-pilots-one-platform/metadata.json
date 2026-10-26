@@ -1,0 +1,204 @@
+{
+  "contentId": "aipm-012-50-pilots-one-platform",
+  "version": 1,
+  "generatedAt": "2026-10-26T05:11:07.724Z",
+  "pillar": "D: Enterprise AI",
+  "format": "architecture",
+  "objective": "shares",
+  "targetAudience": "Enterprise AI leaders and platform PMs",
+  "topic": "Why enterprises build an AI platform layer instead of many separate pilots",
+  "coreInsight": "A shared platform layer — access control, logging, evals and model routing — makes each new AI use case cheaper, but build it after a few real pilots, not before.",
+  "hookVariants": [
+    {
+      "text": "50 pilots, 50 rebuilt basics.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 22
+    },
+    {
+      "text": "Your AI pilots are paying the same bill 50 times.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Why AI platforms beat AI pilots at scale.",
+      "angle": "A vs B",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "50 pilots, 50 rebuilt basics.",
+  "selectionRationale": "Highest total (22/25): the pattern is recognisable to the audience and the reel adds the honest trade-off on timing.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "50 pilots, 50 rebuilt basics. / Why platforms win at scale.",
+      "voiceover": "Fifty pilots, fifty rebuilt basics."
+    },
+    {
+      "scene": "layer",
+      "onScreen": "THE SHARED LAYER / Build once. Reuse it. / Use case apps → Access control → Logging + evals → Model routing → Models + data / Trade-off: build it after 2–3 real use cases, not before.",
+      "voiceover": "Use-case apps sit on a shared layer: access control, logging and evals, model routing, approved models and data. Build it after two or three real use cases, not before."
+    },
+    {
+      "scene": "reuse",
+      "onScreen": "EACH PILOT STOPS… / What teams stop rebuilding / REUSED Access and permissions · REUSED Logging and audit trail · REUSED Eval and safety checks",
+      "voiceover": "Each new use case stops rebuilding access, logging and audit, and eval and safety checks."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Pilot to learn. Platform to scale. / Share this with your AI platform team",
+      "voiceover": "Pilot to learn. Platform to scale. Share this with your AI platform team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "layer",
+      "type": "diagram",
+      "startFrame": 90,
+      "endFrame": 320,
+      "startSec": 3,
+      "endSec": 10.67
+    },
+    {
+      "id": "reuse",
+      "type": "cards",
+      "startFrame": 320,
+      "endFrame": 468,
+      "startSec": 10.67,
+      "endSec": 15.6
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 468,
+      "endFrame": 618,
+      "startSec": 15.6,
+      "endSec": 20.6
+    }
+  ],
+  "caption": "Every AI pilot needs the same plumbing: who can see what, what gets logged, how answers are checked, which model runs.\n\nBuild that once as a shared layer and each new use case starts further ahead:\n→ access control\n→ logging and audit\n→ evals and safety checks\n→ model routing\n\nThe trade-off: a platform built before any pilot proves value tends to solve the wrong problems. Two or three real use cases first.\n\nShare this with your AI platform team.\n\n#EnterpriseAI #AIPlatform #AIProductManagement #GenAI",
+  "hashtags": [
+    "#EnterpriseAI",
+    "#AIPlatform",
+    "#AIProductManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI platform team"
+  },
+  "coverHeadline": "50 pilots, one platform",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "A shared AI platform layer reduces the marginal cost of new use cases; building it after a few pilots reduces the risk of solving the wrong problems.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 20.6,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-012-50-pilots-one-platform-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-012-50-pilots-one-platform.mp4",
+    "cover": "output/covers/aipm-012-50-pilots-one-platform.png",
+    "caption": "output/captions/aipm-012-50-pilots-one-platform.txt",
+    "storyboard": "output/storyboards/aipm-012-50-pilots-one-platform.md",
+    "subtitles": "output/storyboards/aipm-012-50-pilots-one-platform.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-26T05:11:13.548Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-012-50-pilots-one-platform/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ 50 pilots, 50 rebuilt basics",
+      "2/ The shared layer",
+      "3/ What teams stop rebuilding",
+      "4/ When to build it",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 10: is your organisation ready for an AI platform team?",
+    "linkedin": "Post on platform timing: what to learn from the first three pilots before building the layer."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
