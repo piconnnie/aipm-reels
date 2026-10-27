@@ -1,0 +1,12 @@
+Moving into AI product management doesn’t start with training models.
+
+The skills that show up in the work:
+→ writing a clear eval set: real inputs and what good looks like
+→ reasoning about error costs: which mistakes matter and which don’t
+→ explaining trade-offs simply to engineers and executives
+
+Technical fluency helps. You build it by working with the team, not before you’re allowed in the room.
+
+Share this with someone moving into AI PM.
+
+#AIPM #AIProductManagement #CareerChange #ProductManagement

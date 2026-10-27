@@ -1,0 +1,330 @@
+{
+  "id": "aipm-013-no-ml-degree-needed",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Myth: you need an ML degree to become an AI PM",
+    "audience": "PMs and analysts considering a move into AI product management",
+    "pillar": "E: AI Product Career",
+    "objective": "shares",
+    "format": "myth-vs-reality",
+    "targetDurationSec": 18,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t036",
+    "queueId": "q011-no-ml-degree-needed",
+    "writer": "queue"
+  },
+  "coreInsight": "AI PMs don't need to train models; they need to write clear eval sets, reason about the cost of errors and explain trade-offs simply.",
+  "hooks": [
+    {
+      "text": "You don’t need an ML degree.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Speaks directly to a common worry and promises a better answer."
+    },
+    {
+      "text": "The AI PM skill that isn’t on any syllabus.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Intriguing, vague."
+    },
+    {
+      "text": "What AI PM interviews actually test.",
+      "angle": "Career framework",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Useful, less emotional pull."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): addresses a real barrier for career switchers and replaces it with three learnable skills.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "You don’t need an ML degree. / You need these 3 skills.",
+      "voiceover": "You don't need an ML degree. You need these three skills.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT CAREER",
+      "lines": [
+        {
+          "text": "You don’t"
+        },
+        {
+          "text": "need an ML"
+        },
+        {
+          "text": "degree.",
+          "highlight": true
+        }
+      ],
+      "sub": "You need these 3 skills.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "durationInFrames": 109,
+      "purpose": "State the myth.",
+      "onScreen": "THE MYTH / AI PMs need to be ML experts. / MYTH Can train a model · MYTH Knows all the maths · MYTH Reads every paper",
+      "voiceover": "The myth: you must train models, know all the maths and read every paper.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 12 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE MYTH",
+      "headline": [
+        {
+          "text": "AI PMs need"
+        },
+        {
+          "text": "to be ML experts."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 12,
+      "cards": [
+        {
+          "text": "Can train a model",
+          "status": "unknown",
+          "tag": "MYTH"
+        },
+        {
+          "text": "Knows all the maths",
+          "status": "unknown",
+          "tag": "MYTH"
+        },
+        {
+          "text": "Reads every paper",
+          "status": "unknown",
+          "tag": "MYTH"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 28,
+          "kind": "tick"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "reality",
+      "type": "cards",
+      "durationInFrames": 183,
+      "purpose": "Replace each myth with a learnable skill.",
+      "onScreen": "WHAT MATTERS / Judgment about uncertainty. / SKILL Writes a clear eval set · SKILL Reasons about error costs · SKILL Explains trade-offs simply",
+      "voiceover": "What matters: writing a clear eval set, reasoning about the cost of errors, and explaining trade-offs simply.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "WHAT MATTERS",
+      "headline": [
+        {
+          "text": "Judgment about"
+        },
+        {
+          "text": "uncertainty.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "Can train a model",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Writes a clear eval set",
+            "tag": "SKILL",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Knows all the maths",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Reasons about error costs",
+            "tag": "SKILL",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Reads every paper",
+          "status": "unknown",
+          "tag": "MYTH",
+          "swap": {
+            "text": "Explains trade-offs simply",
+            "tag": "SKILL",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Learn to measure. Not to train. / Share with someone moving to AI PM",
+      "voiceover": "Learn to measure, not to train. Share this with someone moving into AI PM.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Learn to"
+        },
+        {
+          "text": "measure."
+        },
+        {
+          "text": "Not to train.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share with someone moving to AI PM",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM CAREERS",
+    "headline": [
+      {
+        "text": "No ML degree"
+      },
+      {
+        "text": "needed",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Moving into AI product management doesn’t start with training models.",
+    "body": [
+      "The skills that show up in the work:\n→ writing a clear eval set: real inputs and what good looks like\n→ reasoning about error costs: which mistakes matter and which don’t\n→ explaining trade-offs simply to engineers and executives",
+      "Technical fluency helps. You build it by working with the team, not before you’re allowed in the room."
+    ],
+    "cta": "Share this with someone moving into AI PM.",
+    "hashtags": [
+      "#AIPM",
+      "#AIProductManagement",
+      "#CareerChange",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share with someone moving to AI PM"
+  },
+  "claims": [
+    {
+      "text": "AI PM effectiveness depends more on evaluation, error-cost reasoning and communication than on model-training expertise.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ No ML degree needed",
+      "2/ The myth",
+      "3–5/ One skill per slide",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 7: build a one-weekend AI PM portfolio project.",
+    "linkedin": "Post for career switchers listing the three skills with one practice exercise each."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "ember",
+    "music": "glow",
+    "motion": "slide"
+  },
+  "audio": {
+    "bed": "audio/aipm-013-no-ml-degree-needed-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

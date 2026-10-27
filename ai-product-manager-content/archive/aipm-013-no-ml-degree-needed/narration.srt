@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+You don't need an ML degree. You need these three skills.
+
+2
+00:00:03,130 --> 00:00:06,560
+The myth: you must train models, know all the maths and read every paper.
+
+3
+00:00:06,760 --> 00:00:12,660
+What matters: writing a clear eval set, reasoning about the cost of errors, and explaining trade-offs simply.
+
+4
+00:00:12,860 --> 00:00:17,660
+Learn to measure, not to train. Share this with someone moving into AI PM.

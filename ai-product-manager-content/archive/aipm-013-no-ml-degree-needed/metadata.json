@@ -1,0 +1,203 @@
+{
+  "contentId": "aipm-013-no-ml-degree-needed",
+  "version": 1,
+  "generatedAt": "2026-10-27T05:25:32.561Z",
+  "pillar": "E: AI Product Career",
+  "format": "myth-vs-reality",
+  "objective": "shares",
+  "targetAudience": "PMs and analysts considering a move into AI product management",
+  "topic": "Myth: you need an ML degree to become an AI PM",
+  "coreInsight": "AI PMs don't need to train models; they need to write clear eval sets, reason about the cost of errors and explain trade-offs simply.",
+  "hookVariants": [
+    {
+      "text": "You don’t need an ML degree.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "The AI PM skill that isn’t on any syllabus.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 19
+    },
+    {
+      "text": "What AI PM interviews actually test.",
+      "angle": "Career framework",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "You don’t need an ML degree.",
+  "selectionRationale": "Highest total (23/25): addresses a real barrier for career switchers and replaces it with three learnable skills.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "You don’t need an ML degree. / You need these 3 skills.",
+      "voiceover": "You don't need an ML degree. You need these three skills."
+    },
+    {
+      "scene": "myth",
+      "onScreen": "THE MYTH / AI PMs need to be ML experts. / MYTH Can train a model · MYTH Knows all the maths · MYTH Reads every paper",
+      "voiceover": "The myth: you must train models, know all the maths and read every paper."
+    },
+    {
+      "scene": "reality",
+      "onScreen": "WHAT MATTERS / Judgment about uncertainty. / SKILL Writes a clear eval set · SKILL Reasons about error costs · SKILL Explains trade-offs simply",
+      "voiceover": "What matters: writing a clear eval set, reasoning about the cost of errors, and explaining trade-offs simply."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Learn to measure. Not to train. / Share with someone moving to AI PM",
+      "voiceover": "Learn to measure, not to train. Share this with someone moving into AI PM."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 199,
+      "startSec": 3,
+      "endSec": 6.63
+    },
+    {
+      "id": "reality",
+      "type": "cards",
+      "startFrame": 199,
+      "endFrame": 382,
+      "startSec": 6.63,
+      "endSec": 12.73
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 382,
+      "endFrame": 532,
+      "startSec": 12.73,
+      "endSec": 17.73
+    }
+  ],
+  "caption": "Moving into AI product management doesn’t start with training models.\n\nThe skills that show up in the work:\n→ writing a clear eval set: real inputs and what good looks like\n→ reasoning about error costs: which mistakes matter and which don’t\n→ explaining trade-offs simply to engineers and executives\n\nTechnical fluency helps. You build it by working with the team, not before you’re allowed in the room.\n\nShare this with someone moving into AI PM.\n\n#AIPM #AIProductManagement #CareerChange #ProductManagement",
+  "hashtags": [
+    "#AIPM",
+    "#AIProductManagement",
+    "#CareerChange",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share with someone moving to AI PM"
+  },
+  "coverHeadline": "No ML degree needed",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "AI PM effectiveness depends more on evaluation, error-cost reasoning and communication than on model-training expertise.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 17.73,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-013-no-ml-degree-needed-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-013-no-ml-degree-needed.mp4",
+    "cover": "output/covers/aipm-013-no-ml-degree-needed.png",
+    "caption": "output/captions/aipm-013-no-ml-degree-needed.txt",
+    "storyboard": "output/storyboards/aipm-013-no-ml-degree-needed.md",
+    "subtitles": "output/storyboards/aipm-013-no-ml-degree-needed.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-27T05:25:39.943Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-013-no-ml-degree-needed/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ No ML degree needed",
+      "2/ The myth",
+      "3–5/ One skill per slide",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 7: build a one-weekend AI PM portfolio project.",
+    "linkedin": "Post for career switchers listing the three skills with one practice exercise each."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
