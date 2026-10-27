@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-25",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t025",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "poc-to-production",
+    "research": false
+  },
+  "reelId": "aipm-011-why-agents-fail-at-scale",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
