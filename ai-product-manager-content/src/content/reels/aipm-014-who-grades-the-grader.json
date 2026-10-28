@@ -1,0 +1,287 @@
+{
+  "id": "aipm-014-who-grades-the-grader",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Using an LLM to grade an LLM without checking the grader",
+    "audience": "Teams building LLM evaluation pipelines",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "mistake",
+    "targetDurationSec": 18,
+    "technicalDepth": "advanced",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t018",
+    "queueId": "q012-grade-the-grader",
+    "writer": "queue"
+  },
+  "coreInsight": "Before trusting an LLM judge, score a sample both by humans and by the judge and ship it only if they agree on the cases that matter.",
+  "hooks": [
+    {
+      "text": "Your AI grader needs grading too.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Points at a blind spot in many eval pipelines."
+    },
+    {
+      "text": "Who checks the AI that checks your AI?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Catchy but slower to parse."
+    },
+    {
+      "text": "LLM-as-judge is only as good as its agreement with you.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "notes": "Accurate, wordy."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names the blind spot and the reel shows exactly how to check it.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your AI grader needs grading too. / One check you can’t skip.",
+      "voiceover": "Your AI grader needs grading too.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "Your AI"
+        },
+        {
+          "text": "grader"
+        },
+        {
+          "text": "needs grading",
+          "highlight": true
+        },
+        {
+          "text": "too.",
+          "highlight": true
+        }
+      ],
+      "sub": "One check you can’t skip.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "check",
+      "type": "table",
+      "durationInFrames": 290,
+      "purpose": "Show how to measure judge agreement.",
+      "onScreen": "ILLUSTRATIVE CHECK / Compare it with human scores. / ANSWER → HUMAN → JUDGE / Cites the wrong policy → Human: fail → Judge: fail ✓ · Correct but very short → Human: pass → Judge: fail ✗ · Confident, made-up detail → Human: fail → Judge: pass ✗ / Score 50+ samples both ways · Use the judge only if they agree",
+      "voiceover": "Take a sample of answers. Score them with humans and with the judge. Here the judge agrees once and disagrees twice — including passing a confident, made-up detail. Score fifty or more samples both ways, and use the judge only if they agree.",
+      "storyboard": {
+        "visual": "Legend ANSWER → HUMAN → JUDGE; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ILLUSTRATIVE CHECK",
+      "headline": [
+        {
+          "text": "Compare it with"
+        },
+        {
+          "text": "human scores.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "ANSWER",
+        "HUMAN",
+        "JUDGE"
+      ],
+      "rows": [
+        {
+          "input": "Cites the wrong policy",
+          "expected": "Human: fail",
+          "passIf": "Judge: fail ✓"
+        },
+        {
+          "input": "Correct but very short",
+          "expected": "Human: pass",
+          "passIf": "Judge: fail ✗"
+        },
+        {
+          "input": "Confident, made-up detail",
+          "expected": "Human: fail",
+          "passIf": "Judge: pass ✗"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Score 50+ samples both ways",
+        "Use the judge only if they agree"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Grade the grader first. / Save this for your eval setup",
+      "voiceover": "Grade the grader first. Save this for your eval setup.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Grade"
+        },
+        {
+          "text": "the grader"
+        },
+        {
+          "text": "first.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your eval setup",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "LLM-AS-JUDGE",
+    "headline": [
+      {
+        "text": "Who grades"
+      },
+      {
+        "text": "the grader?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Using a model to score your model’s answers is fast. It’s only useful if it agrees with the people who define “good”.",
+    "body": [
+      "Before trusting an LLM judge:\n→ take a sample of real answers (50+ is a reasonable start)\n→ score them with humans and with the judge\n→ check agreement, especially on failures that matter, like confident made-up details",
+      "Re-check whenever you change the judge’s prompt or model. (The three example rows in the reel are illustrative.)"
+    ],
+    "cta": "Save this for your eval setup.",
+    "hashtags": [
+      "#LLMEvaluation",
+      "#GenAI",
+      "#AIProductManagement",
+      "#LLMOps"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your eval setup"
+  },
+  "claims": [
+    {
+      "text": "LLM-as-judge evaluators should be validated against human scores on a sample before being trusted.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Three example rows showing judge/human agreement and disagreement.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI grader needs grading",
+      "2/ The check",
+      "3/ Example disagreements",
+      "4/ When to re-check",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 2: writing rubrics an LLM judge can apply consistently.",
+    "linkedin": "Post explaining judge-human agreement checks for non-specialists."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "mint",
+    "music": "drive",
+    "motion": "zoom"
+  },
+  "audio": {
+    "bed": "audio/aipm-014-who-grades-the-grader-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

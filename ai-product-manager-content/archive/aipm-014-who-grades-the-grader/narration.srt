@@ -1,0 +1,11 @@
+1
+00:00:00,130 --> 00:00:02,930
+Your AI grader needs grading too.
+
+2
+00:00:03,130 --> 00:00:12,600
+Take a sample of answers. Score them with humans and with the judge. Here the judge agrees once and disagrees twice — including passing a confident, made-up detail. Score fifty or more samples both ways, and use the judge only if they agree.
+
+3
+00:00:12,800 --> 00:00:17,600
+Grade the grader first. Save this for your eval setup.
