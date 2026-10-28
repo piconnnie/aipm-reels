@@ -1,0 +1,12 @@
+Using a model to score your model’s answers is fast. It’s only useful if it agrees with the people who define “good”.
+
+Before trusting an LLM judge:
+→ take a sample of real answers (50+ is a reasonable start)
+→ score them with humans and with the judge
+→ check agreement, especially on failures that matter, like confident made-up details
+
+Re-check whenever you change the judge’s prompt or model. (The three example rows in the reel are illustrative.)
+
+Save this for your eval setup.
+
+#LLMEvaluation #GenAI #AIProductManagement #LLMOps

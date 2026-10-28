@@ -1,0 +1,36 @@
+{
+  "id": "aipm-014-who-grades-the-grader",
+  "createdAt": "2026-10-28T06:04:34.735Z",
+  "release": {
+    "tag": "reel-aipm-014-who-grades-the-grader",
+    "video": "aipm-014-who-grades-the-grader.mp4",
+    "cover": "aipm-014-who-grades-the-grader.jpg",
+    "contactSheet": "aipm-014-who-grades-the-grader-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "ad6303fabf065f061151225ce2db02863e3e61abd1a1d3fb91847773952e1d46",
+    "cover": "19e99f57033a0dfbc1c3522caa53ddc19f873bf4d9708c1adfa01a977a036558"
+  },
+  "durationSec": 17.67,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

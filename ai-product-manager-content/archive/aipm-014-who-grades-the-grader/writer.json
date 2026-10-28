@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-28",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t018",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-014-who-grades-the-grader",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

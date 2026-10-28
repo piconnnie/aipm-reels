@@ -1,0 +1,196 @@
+{
+  "contentId": "aipm-014-who-grades-the-grader",
+  "version": 1,
+  "generatedAt": "2026-10-28T06:04:29.324Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "mistake",
+  "objective": "saves",
+  "targetAudience": "Teams building LLM evaluation pipelines",
+  "topic": "Using an LLM to grade an LLM without checking the grader",
+  "coreInsight": "Before trusting an LLM judge, score a sample both by humans and by the judge and ship it only if they agree on the cases that matter.",
+  "hookVariants": [
+    {
+      "text": "Your AI grader needs grading too.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 23
+    },
+    {
+      "text": "Who checks the AI that checks your AI?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 20
+    },
+    {
+      "text": "LLM-as-judge is only as good as its agreement with you.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Your AI grader needs grading too.",
+  "selectionRationale": "Highest total (23/25): names the blind spot and the reel shows exactly how to check it.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Your AI grader needs grading too. / One check you can’t skip.",
+      "voiceover": "Your AI grader needs grading too."
+    },
+    {
+      "scene": "check",
+      "onScreen": "ILLUSTRATIVE CHECK / Compare it with human scores. / ANSWER → HUMAN → JUDGE / Cites the wrong policy → Human: fail → Judge: fail ✓ · Correct but very short → Human: pass → Judge: fail ✗ · Confident, made-up detail → Human: fail → Judge: pass ✗ / Score 50+ samples both ways · Use the judge only if they agree",
+      "voiceover": "Take a sample of answers. Score them with humans and with the judge. Here the judge agrees once and disagrees twice — including passing a confident, made-up detail. Score fifty or more samples both ways, and use the judge only if they agree."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Grade the grader first. / Save this for your eval setup",
+      "voiceover": "Grade the grader first. Save this for your eval setup."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "check",
+      "type": "table",
+      "startFrame": 90,
+      "endFrame": 380,
+      "startSec": 3,
+      "endSec": 12.67
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 380,
+      "endFrame": 530,
+      "startSec": 12.67,
+      "endSec": 17.67
+    }
+  ],
+  "caption": "Using a model to score your model’s answers is fast. It’s only useful if it agrees with the people who define “good”.\n\nBefore trusting an LLM judge:\n→ take a sample of real answers (50+ is a reasonable start)\n→ score them with humans and with the judge\n→ check agreement, especially on failures that matter, like confident made-up details\n\nRe-check whenever you change the judge’s prompt or model. (The three example rows in the reel are illustrative.)\n\nSave this for your eval setup.\n\n#LLMEvaluation #GenAI #AIProductManagement #LLMOps",
+  "hashtags": [
+    "#LLMEvaluation",
+    "#GenAI",
+    "#AIProductManagement",
+    "#LLMOps"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your eval setup"
+  },
+  "coverHeadline": "Who grades the grader?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "LLM-as-judge evaluators should be validated against human scores on a sample before being trusted.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Three example rows showing judge/human agreement and disagreement.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 17.67,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-014-who-grades-the-grader-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-014-who-grades-the-grader.mp4",
+    "cover": "output/covers/aipm-014-who-grades-the-grader.png",
+    "caption": "output/captions/aipm-014-who-grades-the-grader.txt",
+    "storyboard": "output/storyboards/aipm-014-who-grades-the-grader.md",
+    "subtitles": "output/storyboards/aipm-014-who-grades-the-grader.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-28T06:04:34.696Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-014-who-grades-the-grader/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI grader needs grading",
+      "2/ The check",
+      "3/ Example disagreements",
+      "4/ When to re-check",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 2: writing rubrics an LLM judge can apply consistently.",
+    "linkedin": "Post explaining judge-human agreement checks for non-specialists."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
