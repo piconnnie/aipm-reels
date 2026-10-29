@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-26",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t031",
+    "pillar": "D",
+    "pillarName": "D: Enterprise AI",
+    "format": "architecture",
+    "research": false
+  },
+  "reelId": "aipm-012-50-pilots-one-platform",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

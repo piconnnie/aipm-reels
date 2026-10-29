@@ -1,0 +1,36 @@
+{
+  "id": "aipm-012-50-pilots-one-platform",
+  "createdAt": "2026-10-26T05:11:13.585Z",
+  "release": {
+    "tag": "reel-aipm-012-50-pilots-one-platform",
+    "video": "aipm-012-50-pilots-one-platform.mp4",
+    "cover": "aipm-012-50-pilots-one-platform.jpg",
+    "contactSheet": "aipm-012-50-pilots-one-platform-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "0e23e9bbb179896bb742e96065a33b7e0bf89bc9096a8f01c84eb3dfcf93a3df",
+    "cover": "7112f014fe415e9af3e881382d5825c02c5bfeff1bb795ff82c86ddc9fa401c2"
+  },
+  "durationSec": 20.6,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
