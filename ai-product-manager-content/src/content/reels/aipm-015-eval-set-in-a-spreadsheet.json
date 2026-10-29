@@ -1,0 +1,358 @@
+{
+  "id": "aipm-015-eval-set-in-a-spreadsheet",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Build a 20-case eval set in a spreadsheet",
+    "audience": "PMs who want a hands-on first eval set",
+    "pillar": "F: AI Tools and Experiments",
+    "objective": "saves",
+    "format": "build-with-me",
+    "targetDurationSec": 25,
+    "technicalDepth": "beginner",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t039",
+    "queueId": "q013-eval-set-in-a-spreadsheet",
+    "writer": "queue"
+  },
+  "coreInsight": "A useful first eval set is 20 real questions in a spreadsheet with expected behaviour and a pass rule, re-scored after every change.",
+  "hooks": [
+    {
+      "text": "An eval set in a spreadsheet.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Makes evaluation feel achievable today."
+    },
+    {
+      "text": "You don’t need an eval platform to start.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Good, less concrete."
+    },
+    {
+      "text": "20 rows that tell you if your AI works.",
+      "angle": "Concrete promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Slight overpromise."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): concrete and doable, and the reel shows the columns, sample rows and a scored run.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "An eval set in a spreadsheet. / 20 rows. One afternoon.",
+      "voiceover": "An eval set in a spreadsheet. Twenty rows, one afternoon.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "BUILD WITH ME",
+      "lines": [
+        {
+          "text": "An eval set"
+        },
+        {
+          "text": "in a"
+        },
+        {
+          "text": "spreadsheet.",
+          "highlight": true
+        }
+      ],
+      "sub": "20 rows. One afternoon.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "columns",
+      "type": "table",
+      "durationInFrames": 290,
+      "purpose": "Show the structure with an HR-assistant example.",
+      "onScreen": "THE COLUMNS / Three columns are enough. / INPUT → EXPECTED → PASS IF / How many leave days do I get? → Quote the policy → Matches handbook · Can you approve my leave? → Decline + route → Hands off to HR · what about part time ppl → Ask a clarifying Q → Asks before answering / Mix 10 common, 5 edge, 5 refuse · Re-score it after every change",
+      "voiceover": "Three columns: the input, the expected behaviour, and the pass rule. Mix ten common questions, five edge cases and five it should refuse. Re-score after every change.",
+      "storyboard": {
+        "visual": "Legend INPUT → EXPECTED → PASS IF; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE COLUMNS",
+      "headline": [
+        {
+          "text": "Three columns"
+        },
+        {
+          "text": "are enough.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "INPUT",
+        "EXPECTED",
+        "PASS IF"
+      ],
+      "rows": [
+        {
+          "input": "How many leave days do I get?",
+          "expected": "Quote the policy",
+          "passIf": "Matches handbook"
+        },
+        {
+          "input": "Can you approve my leave?",
+          "expected": "Decline + route",
+          "passIf": "Hands off to HR"
+        },
+        {
+          "input": "what about part time ppl",
+          "expected": "Ask a clarifying Q",
+          "passIf": "Asks before answering"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Mix 10 common, 5 edge, 5 refuse",
+        "Re-score it after every change"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "run",
+      "type": "terminal",
+      "durationInFrames": 212,
+      "purpose": "Show a scored run (illustrative).",
+      "onScreen": "SCORE IT / Run it. Count passes. / $ score eval-set.csv · rows ......... 20 · pass ......... 14 · fail ......... 6 · (illustrative output)",
+      "voiceover": "Score it: twenty rows, fourteen pass, six fail. Illustrative output — the six failures are your to-do list.",
+      "storyboard": {
+        "visual": "Terminal window 'eval-run' with deterministic typing.",
+        "animation": "Lines type in at their cue frames."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SCORE IT",
+      "headline": [
+        {
+          "text": "Run it."
+        },
+        {
+          "text": "Count passes.",
+          "highlight": true
+        }
+      ],
+      "title": "eval-run",
+      "lines": [
+        {
+          "text": "$ score eval-set.csv",
+          "at": 10
+        },
+        {
+          "text": "rows ......... 20",
+          "at": 45,
+          "tone": "neutral"
+        },
+        {
+          "text": "pass ......... 14",
+          "at": 70,
+          "tone": "success"
+        },
+        {
+          "text": "fail ......... 6",
+          "at": 95,
+          "tone": "warning"
+        },
+        {
+          "text": "(illustrative output)",
+          "at": 120,
+          "tone": "neutral"
+        }
+      ],
+      "charsPerFrame": 1.2,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 45,
+          "kind": "tick"
+        },
+        {
+          "at": 70,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 120,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "20 real rows beat a perfect demo. / Save this and build yours today",
+      "voiceover": "Twenty real rows beat a perfect demo. Save this and build yours today.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "20 real rows"
+        },
+        {
+          "text": "beat a perfect"
+        },
+        {
+          "text": "demo.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this and build yours today",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "BUILD WITH ME",
+    "headline": [
+      {
+        "text": "Eval set in"
+      },
+      {
+        "text": "a spreadsheet",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Your first eval set doesn’t need a platform. It needs 20 real questions and an afternoon.",
+    "body": [
+      "Columns:\n→ INPUT: a real question from users or support tickets\n→ EXPECTED: what a good response does (answer, decline, ask, hand off)\n→ PASS IF: one rule you apply the same way every time",
+      "Mix about 10 common questions, 5 edge cases and 5 it should refuse. Score it now, and again after every prompt or model change.",
+      "(The 14/20 run in the reel is illustrative.)"
+    ],
+    "cta": "Save this and build yours today.",
+    "hashtags": [
+      "#LLMEvaluation",
+      "#AIProductManagement",
+      "#GenAI",
+      "#BuildInPublic"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this and build yours today"
+  },
+  "claims": [
+    {
+      "text": "A small, real-input eval set with expected behaviour and a pass rule is a practical first evaluation.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Example run: 20 rows, 14 pass, 6 fail.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ An eval set in a spreadsheet",
+      "2/ The three columns",
+      "3/ Example rows",
+      "4/ The 10/5/5 mix",
+      "5/ Score + re-score",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 1: the mistake of only testing questions your team wrote.",
+    "linkedin": "Post sharing a copyable eval-set template with the three columns."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "grape",
+    "music": "lofi",
+    "motion": "rise"
+  },
+  "audio": {
+    "bed": "audio/aipm-015-eval-set-in-a-spreadsheet-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "contentId": "aipm-015-eval-set-in-a-spreadsheet",
+  "version": 1,
+  "generatedAt": "2026-10-29T06:16:32.549Z",
+  "pillar": "F: AI Tools and Experiments",
+  "format": "build-with-me",
+  "objective": "saves",
+  "targetAudience": "PMs who want a hands-on first eval set",
+  "topic": "Build a 20-case eval set in a spreadsheet",
+  "coreInsight": "A useful first eval set is 20 real questions in a spreadsheet with expected behaviour and a pass rule, re-scored after every change.",
+  "hookVariants": [
+    {
+      "text": "An eval set in a spreadsheet.",
+      "angle": "Immediately usable framework",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "You don’t need an eval platform to start.",
+      "angle": "Common misconception",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "20 rows that tell you if your AI works.",
+      "angle": "Concrete promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "An eval set in a spreadsheet.",
+  "selectionRationale": "Highest total (23/25): concrete and doable, and the reel shows the columns, sample rows and a scored run.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "An eval set in a spreadsheet. / 20 rows. One afternoon.",
+      "voiceover": "An eval set in a spreadsheet. Twenty rows, one afternoon."
+    },
+    {
+      "scene": "columns",
+      "onScreen": "THE COLUMNS / Three columns are enough. / INPUT → EXPECTED → PASS IF / How many leave days do I get? → Quote the policy → Matches handbook · Can you approve my leave? → Decline + route → Hands off to HR · what about part time ppl → Ask a clarifying Q → Asks before answering / Mix 10 common, 5 edge, 5 refuse · Re-score it after every change",
+      "voiceover": "Three columns: the input, the expected behaviour, and the pass rule. Mix ten common questions, five edge cases and five it should refuse. Re-score after every change."
+    },
+    {
+      "scene": "run",
+      "onScreen": "SCORE IT / Run it. Count passes. / $ score eval-set.csv · rows ......... 20 · pass ......... 14 · fail ......... 6 · (illustrative output)",
+      "voiceover": "Score it: twenty rows, fourteen pass, six fail. Illustrative output — the six failures are your to-do list."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "20 real rows beat a perfect demo. / Save this and build yours today",
+      "voiceover": "Twenty real rows beat a perfect demo. Save this and build yours today."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "columns",
+      "type": "table",
+      "startFrame": 90,
+      "endFrame": 380,
+      "startSec": 3,
+      "endSec": 12.67
+    },
+    {
+      "id": "run",
+      "type": "terminal",
+      "startFrame": 380,
+      "endFrame": 592,
+      "startSec": 12.67,
+      "endSec": 19.73
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 592,
+      "endFrame": 742,
+      "startSec": 19.73,
+      "endSec": 24.73
+    }
+  ],
+  "caption": "Your first eval set doesn’t need a platform. It needs 20 real questions and an afternoon.\n\nColumns:\n→ INPUT: a real question from users or support tickets\n→ EXPECTED: what a good response does (answer, decline, ask, hand off)\n→ PASS IF: one rule you apply the same way every time\n\nMix about 10 common questions, 5 edge cases and 5 it should refuse. Score it now, and again after every prompt or model change.\n\n(The 14/20 run in the reel is illustrative.)\n\nSave this and build yours today.\n\n#LLMEvaluation #AIProductManagement #GenAI #BuildInPublic",
+  "hashtags": [
+    "#LLMEvaluation",
+    "#AIProductManagement",
+    "#GenAI",
+    "#BuildInPublic"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this and build yours today"
+  },
+  "coverHeadline": "Eval set in a spreadsheet",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "A small, real-input eval set with expected behaviour and a pass rule is a practical first evaluation.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Example run: 20 rows, 14 pass, 6 fail.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 24.73,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-015-eval-set-in-a-spreadsheet-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-015-eval-set-in-a-spreadsheet.mp4",
+    "cover": "output/covers/aipm-015-eval-set-in-a-spreadsheet.png",
+    "caption": "output/captions/aipm-015-eval-set-in-a-spreadsheet.txt",
+    "storyboard": "output/storyboards/aipm-015-eval-set-in-a-spreadsheet.md",
+    "subtitles": "output/storyboards/aipm-015-eval-set-in-a-spreadsheet.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-29T06:16:39.964Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-015-eval-set-in-a-spreadsheet/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ An eval set in a spreadsheet",
+      "2/ The three columns",
+      "3/ Example rows",
+      "4/ The 10/5/5 mix",
+      "5/ Score + re-score",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 1: the mistake of only testing questions your team wrote.",
+    "linkedin": "Post sharing a copyable eval-set template with the three columns."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

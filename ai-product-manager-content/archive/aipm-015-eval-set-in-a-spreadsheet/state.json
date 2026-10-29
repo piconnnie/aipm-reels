@@ -1,0 +1,36 @@
+{
+  "id": "aipm-015-eval-set-in-a-spreadsheet",
+  "createdAt": "2026-10-29T06:16:40.011Z",
+  "release": {
+    "tag": "reel-aipm-015-eval-set-in-a-spreadsheet",
+    "video": "aipm-015-eval-set-in-a-spreadsheet.mp4",
+    "cover": "aipm-015-eval-set-in-a-spreadsheet.jpg",
+    "contactSheet": "aipm-015-eval-set-in-a-spreadsheet-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "1e48b8e82a4a6044495f8bcb96b6a3b84ac9204e604e47a39be6d1e8e6ab64ad",
+    "cover": "776adb586daf0d4aefa9dd5d31983cb924d079e9917cb8d496c18f607f310a3e"
+  },
+  "durationSec": 24.73,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

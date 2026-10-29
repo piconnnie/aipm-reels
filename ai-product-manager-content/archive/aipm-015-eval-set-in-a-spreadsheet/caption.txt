@@ -1,0 +1,14 @@
+Your first eval set doesn’t need a platform. It needs 20 real questions and an afternoon.
+
+Columns:
+→ INPUT: a real question from users or support tickets
+→ EXPECTED: what a good response does (answer, decline, ask, hand off)
+→ PASS IF: one rule you apply the same way every time
+
+Mix about 10 common questions, 5 edge cases and 5 it should refuse. Score it now, and again after every prompt or model change.
+
+(The 14/20 run in the reel is illustrative.)
+
+Save this and build yours today.
+
+#LLMEvaluation #AIProductManagement #GenAI #BuildInPublic
