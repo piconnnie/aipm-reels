@@ -1,0 +1,36 @@
+{
+  "id": "aipm-013-no-ml-degree-needed",
+  "createdAt": "2026-10-27T05:25:39.988Z",
+  "release": {
+    "tag": "reel-aipm-013-no-ml-degree-needed",
+    "video": "aipm-013-no-ml-degree-needed.mp4",
+    "cover": "aipm-013-no-ml-degree-needed.jpg",
+    "contactSheet": "aipm-013-no-ml-degree-needed-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "948e765e20f16ff5d5e2068f2ab6b79d320f7958fd8b33cf30b87caebbff5270",
+    "cover": "d919e02a07a5421b25e19df928efc5fa39b3956f9595a23ed3a5dbbda510829c"
+  },
+  "durationSec": 17.73,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
