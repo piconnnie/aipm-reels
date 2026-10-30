@@ -1,0 +1,12 @@
+An assistant that never says “not sure” will eventually be confidently wrong in front of a user.
+
+Design the unsure state before launch:
+→ say so plainly, in one line
+→ show what it did find, with sources
+→ offer the next step or a human
+
+Then track how often it happens. Rising “not sure” rates are an early signal; a rate near zero can mean it’s guessing.
+
+Share this with your design team.
+
+#AIUX #AIProductManagement #ProductDesign #GenAI
