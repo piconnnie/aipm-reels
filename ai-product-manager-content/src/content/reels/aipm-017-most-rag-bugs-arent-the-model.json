@@ -1,0 +1,346 @@
+{
+  "id": "aipm-017-most-rag-bugs-arent-the-model",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Why your RAG answers are wrong even when the model is good",
+    "audience": "PMs and engineers shipping RAG features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "architecture",
+    "targetDurationSec": 25,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t011",
+    "queueId": "q015-rag-check-retrieval-first",
+    "writer": "queue"
+  },
+  "coreInsight": "When a RAG answer is wrong, the cause is usually upstream of the model: the right chunk never reached the prompt, so debug retrieval before you blame or swap the model.",
+  "hooks": [
+    {
+      "text": "Wrong RAG answer? Check what the model was given.",
+      "angle": "Debugging instruction",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Concrete action in the first frame; the reel shows where to look."
+    },
+    {
+      "text": "Swapping the model won’t fix your RAG bot.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Strong, but slightly overclaims for every case."
+    },
+    {
+      "text": "Your RAG bot isn’t dumb. It’s blind.",
+      "angle": "Metaphor",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Catchy; the metaphor needs explaining before it lands."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): it tells the viewer exactly where to look, and the diagram and checklist deliver that debugging order.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Wrong answer? Check what it was given. / RAG bugs often start upstream.",
+      "voiceover": "Wrong answer? Check what the model was given. RAG bugs often start upstream.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "Wrong answer?"
+        },
+        {
+          "text": "Check what"
+        },
+        {
+          "text": "it was given.",
+          "highlight": true
+        }
+      ],
+      "sub": "RAG bugs often start upstream.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "durationInFrames": 250,
+      "purpose": "Trace one wrong answer through the RAG pipeline and show where it usually breaks.",
+      "onScreen": "WHERE RAG BREAKS / Trace one wrong answer. / User question → Query rewrite → Retrieve top-k → Build prompt → Model answers / If the right chunk never arrives, no model can answer correctly.",
+      "voiceover": "Follow one wrong answer: the question, the rewritten query, the retrieved chunks, the prompt, the answer. If the right chunk never arrives, no model can answer correctly.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 3.",
+        "animation": "Nodes every 20 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHERE RAG BREAKS",
+      "headline": [
+        {
+          "text": "Trace one"
+        },
+        {
+          "text": "wrong answer.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "User question",
+          "detail": "intent"
+        },
+        {
+          "label": "Query rewrite",
+          "detail": "terms lost?"
+        },
+        {
+          "label": "Retrieve top-k",
+          "detail": "right chunk?",
+          "tone": "warning"
+        },
+        {
+          "label": "Build prompt",
+          "detail": "cut off?"
+        },
+        {
+          "label": "Model answers",
+          "detail": "from context",
+          "tone": "success"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 20,
+      "callout": {
+        "nodeIndex": 2,
+        "text": "If the right chunk never arrives, no model can answer correctly.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 43,
+          "kind": "tick"
+        },
+        {
+          "at": 63,
+          "kind": "tick"
+        },
+        {
+          "at": 83,
+          "kind": "tick"
+        },
+        {
+          "at": 103,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "debug",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "Give the order to debug in.",
+      "onScreen": "DEBUG IN THIS ORDER / Before blaming the model… / Was the answer in the knowledge base at all? · Did retrieval return the right chunk? · Was it ranked high enough to fit the prompt? · Did the model ignore context it was given? / Log retrieved chunks with every answer so you can tell which.",
+      "voiceover": "Check in order: was the answer in the knowledge base, did retrieval find it, was it ranked high enough to fit, and only then, did the model ignore it. Log retrieved chunks with every answer.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 200."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "DEBUG IN THIS ORDER",
+      "headline": [
+        {
+          "text": "Before blaming"
+        },
+        {
+          "text": "the model…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Was the answer in the knowledge base at all?",
+        "Did retrieval return the right chunk?",
+        "Was it ranked high enough to fit the prompt?",
+        "Did the model ignore context it was given?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Log retrieved chunks with every answer so you can tell which.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 202,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Debug the retrieval first. / Save this for the next wrong answer",
+      "voiceover": "Debug the retrieval first. Save this for the next wrong answer.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Debug the"
+        },
+        {
+          "text": "retrieval"
+        },
+        {
+          "text": "first.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for the next wrong answer",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "RAG ARCHITECTURE",
+    "headline": [
+      {
+        "text": "Most RAG bugs"
+      },
+      {
+        "text": "aren’t the"
+      },
+      {
+        "text": "model",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A good model can’t answer from a document it never saw.",
+    "body": [
+      "When a RAG answer is wrong, walk back up the pipeline:\n→ Was the answer in the knowledge base at all?\n→ Did retrieval return the right chunk?\n→ Was it ranked high enough to make it into the prompt?\n→ Only then: did the model ignore what it was given?",
+      "Make this cheap to check: log the retrieved chunks next to every answer. Most “model problems” turn out to be search problems."
+    ],
+    "cta": "Save this for the next wrong answer.",
+    "hashtags": [
+      "#RAG",
+      "#GenAI",
+      "#AIProductManagement",
+      "#LLM",
+      "#AIEngineering"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for the next wrong answer"
+  },
+  "claims": [
+    {
+      "text": "Many wrong RAG answers are caused by retrieval (the relevant chunk not reaching the prompt) rather than by the model, so retrieval should be debugged first.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Wrong RAG answer? Check what the model was given",
+      "2/ The pipeline, step by step",
+      "3/ Where it usually breaks: retrieval",
+      "4/ The debug order",
+      "5/ Log retrieved chunks",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Mistake format: chunking documents by fixed size.",
+    "linkedin": "Post walking through one wrong RAG answer from question to prompt, showing the step where the right chunk dropped out."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "paper",
+    "music": "cinematic",
+    "motion": "zoom"
+  },
+  "audio": {
+    "bed": "audio/aipm-017-most-rag-bugs-arent-the-model-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}
