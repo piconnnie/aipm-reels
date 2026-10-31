@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+An eval set in a spreadsheet. Twenty rows, one afternoon.
+
+2
+00:00:03,130 --> 00:00:12,600
+Three columns: the input, the expected behaviour, and the pass rule. Mix ten common questions, five edge cases and five it should refuse. Re-score after every change.
+
+3
+00:00:12,800 --> 00:00:19,660
+Score it: twenty rows, fourteen pass, six fail. Illustrative output — the six failures are your to-do list.
+
+4
+00:00:19,860 --> 00:00:24,660
+Twenty real rows beat a perfect demo. Save this and build yours today.

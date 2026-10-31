@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-29",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t039",
+    "pillar": "F",
+    "pillarName": "F: AI Tools and Experiments",
+    "format": "build-with-me",
+    "research": false
+  },
+  "reelId": "aipm-015-eval-set-in-a-spreadsheet",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
