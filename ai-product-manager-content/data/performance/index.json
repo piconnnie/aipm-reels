@@ -1,8 +1,15 @@
 {
-  "aipm-003-do-you-need-an-agent": 1.639,
-  "aipm-004-which-one-do-you-need": 0.649,
-  "aipm-005-licenses-arent-adoption": 0.582,
-  "aipm-006-our-chatbot-hallucinates": 0.895,
-  "aipm-007-the-ai-pm-job-isnt-prompting": 1.306,
-  "aipm-009-what-to-monitor-in-production": 1.105
+  "aipm-003-do-you-need-an-agent": 2.438,
+  "aipm-004-which-one-do-you-need": 1,
+  "aipm-005-licenses-arent-adoption": 0.897,
+  "aipm-006-our-chatbot-hallucinates": 1.345,
+  "aipm-007-the-ai-pm-job-isnt-prompting": 2.058,
+  "aipm-009-what-to-monitor-in-production": 1.568,
+  "aipm-008-who-runs-the-tools": 2.228,
+  "aipm-010-does-it-need-ai-at-all": 0.835,
+  "aipm-011-why-agents-fail-at-scale": 4.518,
+  "aipm-012-50-pilots-one-platform": 0.462,
+  "aipm-013-no-ml-degree-needed": 0.895,
+  "aipm-014-who-grades-the-grader": 0.898,
+  "aipm-015-eval-set-in-a-spreadsheet": 0.77
 }

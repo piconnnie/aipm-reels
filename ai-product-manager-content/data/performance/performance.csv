@@ -1,7 +1,14 @@
 content_id,posted_date,days_since_post,duration_sec,pillar,format,hook_angle,cta_type,reach,non_follower_reach,plays,avg_watch_time_sec,shares,saves,comments_meaningful,profile_visits,follows,production_time_min,notes
-aipm-003-do-you-need-an-agent,2026-10-19,5,27,C: Agentic AI,a-vs-b,Counterintuitive insight,share,15,,20,8.6,0,0,,,,,auto-imported 2026-10-25; comments total 0
-aipm-004-which-one-do-you-need,2026-10-20,4,23,B: GenAI Product Delivery,a-vs-b,Immediately usable framework,save,78,,96,2.9,1,0,,,,,auto-imported 2026-10-25; comments total 0
-aipm-005-licenses-arent-adoption,2026-10-21,3,23,D: Enterprise AI,mistake,Specific professional mistake,share,77,,87,2.6,1,0,,,,,auto-imported 2026-10-25; comments total 0
-aipm-006-our-chatbot-hallucinates,2026-10-22,2,23,E: AI Product Career,interview,Interview question,save,13,,13,4.0,0,0,,,,,auto-imported 2026-10-25; comments total 0
-aipm-007-the-ai-pm-job-isnt-prompting,2026-10-24,0,17.73,A: AI Product Management,myth-vs-reality,Common misconception,share,9,,10,4.5,0,0,,,,,auto-imported 2026-10-25; comments total 0
-aipm-009-what-to-monitor-in-production,2026-10-23,1,23.27,B: GenAI Product Delivery,decision-checklist,Counterintuitive insight,save,7,,9,5.0,0,0,,,,,auto-imported 2026-10-25; comments total 0
+aipm-003-do-you-need-an-agent,2026-10-19,12,27,C: Agentic AI,a-vs-b,Counterintuitive insight,share,16,,21,8.3,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-004-which-one-do-you-need,2026-10-20,11,23,B: GenAI Product Delivery,a-vs-b,Immediately usable framework,save,79,,98,2.9,1,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-005-licenses-arent-adoption,2026-10-21,10,23,D: Enterprise AI,mistake,Specific professional mistake,share,78,,89,2.6,1,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-006-our-chatbot-hallucinates,2026-10-22,9,23,E: AI Product Career,interview,Interview question,save,14,,15,3.9,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-007-the-ai-pm-job-isnt-prompting,2026-10-24,7,17.73,A: AI Product Management,myth-vs-reality,Common misconception,share,10,,13,4.6,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-009-what-to-monitor-in-production,2026-10-23,8,23.27,B: GenAI Product Delivery,decision-checklist,Counterintuitive insight,save,8,,12,4.6,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-008-who-runs-the-tools,2026-10-25,6,25.27,C: Agentic AI,architecture,Counterintuitive insight,save,6,,8,7.1,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-010-does-it-need-ai-at-all,2026-10-26,5,22.8,A: AI Product Management,decision-checklist,Common misconception,save,17,,21,2.4,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-011-why-agents-fail-at-scale,2026-10-27,4,17.73,C: Agentic AI,poc-to-production,Concrete before-and-after,share,4,,4,10.1,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-012-50-pilots-one-platform,2026-10-29,2,20.6,D: Enterprise AI,architecture,Specific professional mistake,share,29,,30,1.2,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-013-no-ml-degree-needed,2026-10-30,1,17.73,E: AI Product Career,myth-vs-reality,Common misconception,share,26,,31,2.0,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-014-who-grades-the-grader,2026-10-28,3,17.67,B: GenAI Product Delivery,mistake,Specific professional mistake,save,38,,52,2.0,0,0,,,,,auto-imported 2026-11-01; comments total 0
+aipm-015-eval-set-in-a-spreadsheet,2026-10-31,0,24.73,F: AI Tools and Experiments,build-with-me,Immediately usable framework,save,21,,32,2.4,0,0,,,,,auto-imported 2026-11-01; comments total 0
