@@ -1,0 +1,316 @@
+{
+  "id": "aipm-016-design-the-not-sure-state",
+  "version": 1,
+  "status": "qa-passed",
+  "brief": {
+    "topic": "Launching an AI feature without designing the 'I don't know' state",
+    "audience": "PMs and designers shipping AI assistants",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "mistake",
+    "targetDurationSec": 21,
+    "technicalDepth": "intermediate",
+    "voiceover": false,
+    "research": "not-required",
+    "constraints": [],
+    "backlogId": "t005",
+    "queueId": "q014-design-the-not-sure-state",
+    "writer": "queue"
+  },
+  "coreInsight": "Design the 'not sure' state before launch: say so plainly, show what was found with sources, offer a next step or a human, and track how often it happens.",
+  "hooks": [
+    {
+      "text": "Your AI needs a way to say “not sure.”",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Names a design gap teams recognise once pointed out."
+    },
+    {
+      "text": "Confidently wrong is a design bug.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Punchy, slightly abstract."
+    },
+    {
+      "text": "The screen every AI product forgets.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Overclaims 'every'."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): specific, actionable for PMs and designers, and the reel gives a three-part design.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your AI needs a way to say “not sure.” / Design it before launch.",
+      "voiceover": "Your AI needs a way to say 'not sure.'",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "Your AI needs"
+        },
+        {
+          "text": "a way to say"
+        },
+        {
+          "text": "“not sure.”",
+          "highlight": true
+        }
+      ],
+      "sub": "Design it before launch.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "type": "cards",
+      "durationInFrames": 148,
+      "purpose": "Show what happens without the state.",
+      "onScreen": "THE MISTAKE / Only the happy path is designed. / MISSING No answer? It guesses anyway · MISSING Low confidence looks certain · MISSING No route to a human",
+      "voiceover": "When only the happy path is designed, it guesses anyway, low confidence looks certain, and there's no route to a human.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 24 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE MISTAKE",
+      "headline": [
+        {
+          "text": "Only the happy"
+        },
+        {
+          "text": "path is designed."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 24,
+      "cards": [
+        {
+          "text": "No answer? It guesses anyway",
+          "status": "warn",
+          "tag": "MISSING"
+        },
+        {
+          "text": "Low confidence looks certain",
+          "status": "warn",
+          "tag": "MISSING"
+        },
+        {
+          "text": "No route to a human",
+          "status": "warn",
+          "tag": "MISSING"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 40,
+          "kind": "low"
+        },
+        {
+          "at": 64,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "type": "checklist",
+      "durationInFrames": 246,
+      "purpose": "Give the three-part design.",
+      "onScreen": "DESIGN THE UNSURE STATE / When it’s not sure… / Say so plainly, in one line · Show what it did find, with sources · Offer the next step or a human / Track how often it says “not sure” after launch.",
+      "voiceover": "When it's not sure: say so plainly, show what it did find with sources, and offer a next step or a human. Then track how often it happens.",
+      "storyboard": {
+        "visual": "3 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 156."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "DESIGN THE UNSURE STATE",
+      "headline": [
+        {
+          "text": "When it’s"
+        },
+        {
+          "text": "not sure…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Say so plainly, in one line",
+        "Show what it did find, with sources",
+        "Offer the next step or a human"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Track how often it says “not sure” after launch.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 158,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Unsure beats confidently wrong. / Share this with your design team",
+      "voiceover": "Unsure beats confidently wrong. Share this with your design team.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Unsure beats"
+        },
+        {
+          "text": "confidently",
+          "highlight": true
+        },
+        {
+          "text": "wrong.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your design team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI UX",
+    "headline": [
+      {
+        "text": "Design the"
+      },
+      {
+        "text": "“not sure”",
+        "highlight": true
+      },
+      {
+        "text": "state"
+      }
+    ]
+  },
+  "caption": {
+    "opening": "An assistant that never says “not sure” will eventually be confidently wrong in front of a user.",
+    "body": [
+      "Design the unsure state before launch:\n→ say so plainly, in one line\n→ show what it did find, with sources\n→ offer the next step or a human",
+      "Then track how often it happens. Rising “not sure” rates are an early signal; a rate near zero can mean it’s guessing."
+    ],
+    "cta": "Share this with your design team.",
+    "hashtags": [
+      "#AIUX",
+      "#AIProductManagement",
+      "#ProductDesign",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your design team"
+  },
+  "claims": [
+    {
+      "text": "AI assistants should have a designed uncertainty state with transparent sources and a handoff path.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI needs a way to say “not sure”",
+      "2/ What goes wrong",
+      "3/ The three-part design",
+      "4/ What to track",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 8: myth — users hate it when AI says 'I don't know'.",
+    "linkedin": "Post with before/after copy for an unsure answer and the three design rules."
+  },
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "style": {
+    "theme": "ocean",
+    "music": "arcade",
+    "motion": "slide"
+  },
+  "audio": {
+    "bed": "audio/aipm-016-design-the-not-sure-state-bed.wav",
+    "bedVolume": 1,
+    "voiceover": null,
+    "voiceoverVolume": 1
+  }
+}

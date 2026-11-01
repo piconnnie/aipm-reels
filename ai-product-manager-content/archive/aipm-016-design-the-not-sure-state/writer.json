@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-30",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t005",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-016-design-the-not-sure-state",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

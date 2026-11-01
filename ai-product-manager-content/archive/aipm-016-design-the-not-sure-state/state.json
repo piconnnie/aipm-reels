@@ -1,0 +1,36 @@
+{
+  "id": "aipm-016-design-the-not-sure-state",
+  "createdAt": "2026-10-30T06:16:32.393Z",
+  "release": {
+    "tag": "reel-aipm-016-design-the-not-sure-state",
+    "video": "aipm-016-design-the-not-sure-state.mp4",
+    "cover": "aipm-016-design-the-not-sure-state.jpg",
+    "contactSheet": "aipm-016-design-the-not-sure-state-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "61c283b70d79027ed5a7f4e5b68e8f6461d88ba3672b3820a570647d8af76571",
+    "cover": "9d99deeaea84df57ad9401d7f113a22f103f83588980b0d2f59667a7014c1833"
+  },
+  "durationSec": 21.13,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

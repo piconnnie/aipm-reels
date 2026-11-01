@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Your AI needs a way to say 'not sure.'
+
+2
+00:00:03,130 --> 00:00:07,860
+When only the happy path is designed, it guesses anyway, low confidence looks certain, and there's no route to a human.
+
+3
+00:00:08,060 --> 00:00:16,060
+When it's not sure: say so plainly, show what it did find with sources, and offer a next step or a human. Then track how often it happens.
+
+4
+00:00:16,260 --> 00:00:21,060
+Unsure beats confidently wrong. Share this with your design team.
