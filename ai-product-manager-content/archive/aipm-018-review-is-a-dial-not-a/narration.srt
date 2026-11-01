@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Human review is a dial, not a switch. Four settings, and when to move between them.
+
+2
+00:00:03,130 --> 00:00:12,930
+Review all. Review only risky cases. Sample a random slice. Audit after incidents. Move down a level only when reviewers rarely change the output.
+
+3
+00:00:13,130 --> 00:00:19,600
+In one support assistant: refund promises get reviewed every time, policy answers when flagged, how-to answers by sample, greetings only in audits.
+
+4
+00:00:19,800 --> 00:00:24,600
+Set the dial per task, not per product. Save this to set your review levels.
