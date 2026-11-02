@@ -1,0 +1,206 @@
+{
+  "contentId": "aipm-017-most-rag-bugs-arent-the-model",
+  "version": 1,
+  "generatedAt": "2026-10-31T06:09:29.350Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "architecture",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers shipping RAG features",
+  "topic": "Why your RAG answers are wrong even when the model is good",
+  "coreInsight": "When a RAG answer is wrong, the cause is usually upstream of the model: the right chunk never reached the prompt, so debug retrieval before you blame or swap the model.",
+  "hookVariants": [
+    {
+      "text": "Wrong RAG answer? Check what the model was given.",
+      "angle": "Debugging instruction",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "Swapping the model won’t fix your RAG bot.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Your RAG bot isn’t dumb. It’s blind.",
+      "angle": "Metaphor",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Wrong RAG answer? Check what the model was given.",
+  "selectionRationale": "Highest total (24/25): it tells the viewer exactly where to look, and the diagram and checklist deliver that debugging order.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Wrong answer? Check what it was given. / RAG bugs often start upstream.",
+      "voiceover": "Wrong answer? Check what the model was given. RAG bugs often start upstream."
+    },
+    {
+      "scene": "flow",
+      "onScreen": "WHERE RAG BREAKS / Trace one wrong answer. / User question → Query rewrite → Retrieve top-k → Build prompt → Model answers / If the right chunk never arrives, no model can answer correctly.",
+      "voiceover": "Follow one wrong answer: the question, the rewritten query, the retrieved chunks, the prompt, the answer. If the right chunk never arrives, no model can answer correctly."
+    },
+    {
+      "scene": "debug",
+      "onScreen": "DEBUG IN THIS ORDER / Before blaming the model… / Was the answer in the knowledge base at all? · Did retrieval return the right chunk? · Was it ranked high enough to fit the prompt? · Did the model ignore context it was given? / Log retrieved chunks with every answer so you can tell which.",
+      "voiceover": "Check in order: was the answer in the knowledge base, did retrieval find it, was it ranked high enough to fit, and only then, did the model ignore it. Log retrieved chunks with every answer."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Debug the retrieval first. / Save this for the next wrong answer",
+      "voiceover": "Debug the retrieval first. Save this for the next wrong answer."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "startFrame": 90,
+      "endFrame": 340,
+      "startSec": 3,
+      "endSec": 11.33
+    },
+    {
+      "id": "debug",
+      "type": "checklist",
+      "startFrame": 340,
+      "endFrame": 630,
+      "startSec": 11.33,
+      "endSec": 21
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 630,
+      "endFrame": 780,
+      "startSec": 21,
+      "endSec": 26
+    }
+  ],
+  "caption": "A good model can’t answer from a document it never saw.\n\nWhen a RAG answer is wrong, walk back up the pipeline:\n→ Was the answer in the knowledge base at all?\n→ Did retrieval return the right chunk?\n→ Was it ranked high enough to make it into the prompt?\n→ Only then: did the model ignore what it was given?\n\nMake this cheap to check: log the retrieved chunks next to every answer. Most “model problems” turn out to be search problems.\n\nSave this for the next wrong answer.\n\n#RAG #GenAI #AIProductManagement #LLM #AIEngineering",
+  "hashtags": [
+    "#RAG",
+    "#GenAI",
+    "#AIProductManagement",
+    "#LLM",
+    "#AIEngineering"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for the next wrong answer"
+  },
+  "coverHeadline": "Most RAG bugs aren’t the model",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Many wrong RAG answers are caused by retrieval (the relevant chunk not reaching the prompt) rather than by the model, so retrieval should be debugged first.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 26,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-017-most-rag-bugs-arent-the-model-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-017-most-rag-bugs-arent-the-model.mp4",
+    "cover": "output/covers/aipm-017-most-rag-bugs-arent-the-model.png",
+    "caption": "output/captions/aipm-017-most-rag-bugs-arent-the-model.txt",
+    "storyboard": "output/storyboards/aipm-017-most-rag-bugs-arent-the-model.md",
+    "subtitles": "output/storyboards/aipm-017-most-rag-bugs-arent-the-model.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-10-31T06:09:36.975Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-017-most-rag-bugs-arent-the-model/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Wrong RAG answer? Check what the model was given",
+      "2/ The pipeline, step by step",
+      "3/ Where it usually breaks: retrieval",
+      "4/ The debug order",
+      "5/ Log retrieved chunks",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Mistake format: chunking documents by fixed size.",
+    "linkedin": "Post walking through one wrong RAG answer from question to prompt, showing the step where the right chunk dropped out."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

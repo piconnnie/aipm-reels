@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Wrong answer? Check what the model was given. RAG bugs often start upstream.
+
+2
+00:00:03,130 --> 00:00:11,260
+Follow one wrong answer: the question, the rewritten query, the retrieved chunks, the prompt, the answer. If the right chunk never arrives, no model can answer correctly.
+
+3
+00:00:11,460 --> 00:00:20,930
+Check in order: was the answer in the knowledge base, did retrieval find it, was it ranked high enough to fit, and only then, did the model ignore it. Log retrieved chunks with every answer.
+
+4
+00:00:21,130 --> 00:00:25,930
+Debug the retrieval first. Save this for the next wrong answer.

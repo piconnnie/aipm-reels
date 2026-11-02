@@ -1,0 +1,36 @@
+{
+  "id": "aipm-017-most-rag-bugs-arent-the-model",
+  "createdAt": "2026-10-31T06:09:37.022Z",
+  "release": {
+    "tag": "reel-aipm-017-most-rag-bugs-arent-the-model",
+    "video": "aipm-017-most-rag-bugs-arent-the-model.mp4",
+    "cover": "aipm-017-most-rag-bugs-arent-the-model.jpg",
+    "contactSheet": "aipm-017-most-rag-bugs-arent-the-model-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "567d90256e95ba5366ea30e758ae469a0efcc0333876295912ab51b3b1edf217",
+    "cover": "69428fa620014d527f49119efac23def92b1ee77d870a4c5f8cb4b74b6602438"
+  },
+  "durationSec": 26,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
