@@ -1,0 +1,13 @@
+A PoC runs a few people, short prompts and one call per question. Production runs none of those.
+
+What multiplies between the demo and the launch:
+→ volume: every user, every day
+→ context: retrieved documents and chat history make prompts longer
+→ retries and tool calls: one task can mean several model calls
+→ eval runs: you re-test on every prompt or model change
+
+Model this before the business case goes in. The unit that matters to finance is cost per completed task, not cost per call.
+
+Save this before you scale a PoC.
+
+#GenAI #AIProductManagement #LLMOps #AICost #ProductManagement

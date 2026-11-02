@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-019-your-poc-bill-isnt-the-real",
+  "version": 1,
+  "generatedAt": "2026-11-02T06:39:35.351Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "poc-to-production",
+  "objective": "saves",
+  "targetAudience": "PMs and leads taking a GenAI PoC to production",
+  "topic": "The PoC was cheap. Production costs far more. Why?",
+  "coreInsight": "PoC costs hide four multipliers — real volume, longer context, retries and tool calls, and eval runs — so model cost per completed task at full scale before you commit.",
+  "hookVariants": [
+    {
+      "text": "Your PoC bill isn’t your real bill.",
+      "angle": "Warning",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "The PoC was cheap. That’s the problem.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Four numbers your AI cost estimate is missing.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "Your PoC bill isn’t your real bill.",
+  "selectionRationale": "Highest total (23/25): direct and credible; the diagram shows the four multipliers and the checklist turns them into an estimate.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Your PoC bill isn’t your real bill. / Four multipliers the demo hides.",
+      "voiceover": "Your PoC bill isn’t your real bill. Four multipliers the demo hides."
+    },
+    {
+      "scene": "multipliers",
+      "onScreen": "PRODUCTION COST MODEL / What multiplies in production. / PoC cost → × real volume → × longer context → × retries & tools → × eval runs / Each factor looks small. Multiplied, they reshape the business case.",
+      "voiceover": "Start from the PoC cost. Multiply by real volume, longer context, retries and tool calls, and eval runs on every change. Each looks small. Multiplied, they reshape the business case."
+    },
+    {
+      "scene": "estimate",
+      "onScreen": "BEFORE YOU SCALE / Model the cost envelope early. / Estimate daily requests at full rollout · Measure real prompt size, not the demo’s · Count model calls per task, including retries · Budget eval runs for every prompt or model change / Report cost per completed task, not cost per call.",
+      "voiceover": "Estimate requests at full rollout, measure real prompt size, count calls per task including retries, and budget eval runs. Report cost per completed task, not per call."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Price it at full scale. Before launch. / Save this before you scale a PoC",
+      "voiceover": "Price it at full scale, before launch. Save this before you scale a PoC."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "multipliers",
+      "type": "diagram",
+      "startFrame": 90,
+      "endFrame": 340,
+      "startSec": 3,
+      "endSec": 11.33
+    },
+    {
+      "id": "estimate",
+      "type": "checklist",
+      "startFrame": 340,
+      "endFrame": 630,
+      "startSec": 11.33,
+      "endSec": 21
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 630,
+      "endFrame": 780,
+      "startSec": 21,
+      "endSec": 26
+    }
+  ],
+  "caption": "A PoC runs a few people, short prompts and one call per question. Production runs none of those.\n\nWhat multiplies between the demo and the launch:\n→ volume: every user, every day\n→ context: retrieved documents and chat history make prompts longer\n→ retries and tool calls: one task can mean several model calls\n→ eval runs: you re-test on every prompt or model change\n\nModel this before the business case goes in. The unit that matters to finance is cost per completed task, not cost per call.\n\nSave this before you scale a PoC.\n\n#GenAI #AIProductManagement #LLMOps #AICost #ProductManagement",
+  "hashtags": [
+    "#GenAI",
+    "#AIProductManagement",
+    "#LLMOps",
+    "#AICost",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before you scale a PoC"
+  },
+  "coverHeadline": "Your PoC bill isn’t the real bill",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Production GenAI costs are driven by volume, context length, calls per task (retries, tools) and evaluation runs, which PoC costs rarely reflect.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 26,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-019-your-poc-bill-isnt-the-real-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-019-your-poc-bill-isnt-the-real.mp4",
+    "cover": "output/covers/aipm-019-your-poc-bill-isnt-the-real.png",
+    "caption": "output/captions/aipm-019-your-poc-bill-isnt-the-real.txt",
+    "storyboard": "output/storyboards/aipm-019-your-poc-bill-isnt-the-real.md",
+    "subtitles": "output/storyboards/aipm-019-your-poc-bill-isnt-the-real.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-02T06:39:43.408Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-019-your-poc-bill-isnt-the-real/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Your PoC bill isn’t your real bill",
+      "2/ × real volume",
+      "3/ × longer context",
+      "4/ × retries and tools",
+      "5/ × eval runs",
+      "6/ Cost per completed task",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: a one-page AI business case finance will accept.",
+    "linkedin": "Post with a simple spreadsheet template for cost per completed task at full rollout."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
