@@ -1,0 +1,303 @@
+{
+  "brief": {
+    "topic": "Questions to ask before connecting an LLM to internal data",
+    "audience": "PMs and IT leads rolling out internal AI assistants",
+    "pillar": "D: Enterprise AI",
+    "objective": "shares",
+    "format": "decision-checklist",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t033",
+    "targetDurationSec": 21,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Don't connect an LLM to internal data until retrieval enforces each user's existing permissions and you've decided what gets logged and kept.",
+  "hooks": [
+    {
+      "text": "Before your AI reads the company wiki…",
+      "angle": "Timely setup",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Concrete scenario every enterprise team faces."
+    },
+    {
+      "text": "Your chatbot can see what the intern can’t.",
+      "angle": "Risk framing",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Scary but assumes a misconfiguration."
+    },
+    {
+      "text": "Permissions don’t survive the vector database.",
+      "angle": "Technical claim",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Overgeneralises; harder to read at a glance."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names the moment of decision, and the reel gives four questions in order.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Before your AI reads the company wiki… / Ask these four questions first.",
+      "voiceover": "Before your AI reads the company wiki, ask these four questions.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "ENTERPRISE AI",
+      "lines": [
+        {
+          "text": "Before your"
+        },
+        {
+          "text": "AI reads the"
+        },
+        {
+          "text": "company wiki…",
+          "highlight": true
+        }
+      ],
+      "sub": "Ask these four questions first.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The four questions, in order.",
+      "onScreen": "ASK BEFORE YOU CONNECT / Four questions, in this order. / Who can see each document today? · Is that checked at retrieval, per user? · What gets logged: prompts, answers, sources? · How long is it kept, and who reads the logs? / If retrieval ignores user permissions, don’t connect it yet.",
+      "voiceover": "Who can see each document today? Is that checked at retrieval, for each user? What gets logged: prompts, answers, sources? How long is it kept, and who can read the logs? If retrieval ignores user permissions, don't connect it yet.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ASK BEFORE YOU CONNECT",
+      "headline": [
+        {
+          "text": "Four questions,"
+        },
+        {
+          "text": "in this order.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Who can see each document today?",
+        "Is that checked at retrieval, per user?",
+        "What gets logged: prompts, answers, sources?",
+        "How long is it kept, and who reads the logs?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "If retrieval ignores user permissions, don’t connect it yet.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "flags",
+      "type": "cards",
+      "durationInFrames": 130,
+      "purpose": "Phrases that should stop the rollout.",
+      "onScreen": "RED FLAGS / Stop if you hear this. / RED FLAG “We index everything once” · RED FLAG “The bot has admin access” · RED FLAG “Logs? The vendor has them”",
+      "voiceover": "Red flags: we index everything once. The bot has admin access. Logs? The vendor has them.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 20 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "RED FLAGS",
+      "headline": [
+        {
+          "text": "Stop if you"
+        },
+        {
+          "text": "hear this.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 20,
+      "cards": [
+        {
+          "text": "“We index everything once”",
+          "status": "warn",
+          "tag": "RED FLAG"
+        },
+        {
+          "text": "“The bot has admin access”",
+          "status": "warn",
+          "tag": "RED FLAG"
+        },
+        {
+          "text": "“Logs? The vendor has them”",
+          "status": "warn",
+          "tag": "RED FLAG"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 56,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "The bot should know only what the user can. / Send this to your security lead",
+      "voiceover": "The bot should know only what the user can. Send this to your security lead.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "The bot should"
+        },
+        {
+          "text": "know only what"
+        },
+        {
+          "text": "the user can.",
+          "highlight": true
+        }
+      ],
+      "cta": "Send this to your security lead",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "ENTERPRISE AI",
+    "headline": [
+      {
+        "text": "Before AI"
+      },
+      {
+        "text": "reads your"
+      },
+      {
+        "text": "internal data",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Connecting an assistant to internal documents is a permissions project before it’s an AI project.",
+    "body": [
+      "Ask, in this order:\n→ Who can see each document today?\n→ Is that enforced at retrieval time, for each user?\n→ What gets logged: prompts, answers, sources?\n→ How long is it kept, and who can read the logs?",
+      "Red flags: “we index everything once”, “the bot has admin access”, “the vendor keeps the logs”. If retrieval ignores user permissions, don’t connect it yet."
+    ],
+    "cta": "Send this to your security lead.",
+    "hashtags": [
+      "#EnterpriseAI",
+      "#AIGovernance",
+      "#RAG",
+      "#AIProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Send this to your security lead"
+  },
+  "claims": [
+    {
+      "text": "Internal AI assistants should enforce each user's existing document permissions at retrieval time, and logging and retention should be decided before connecting internal data.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Before your AI reads the company wiki",
+      "2/ Who can see what today?",
+      "3/ Enforced at retrieval, per user?",
+      "4/ Logging and retention",
+      "5/ Red flags",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture): where permission checks sit in a RAG pipeline.",
+    "linkedin": "Post: the four questions as a pre-launch checklist for internal assistants, with the red-flag phrases."
+  }
+}

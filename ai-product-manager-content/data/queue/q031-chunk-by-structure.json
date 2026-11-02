@@ -1,0 +1,335 @@
+{
+  "brief": {
+    "topic": "Chunking documents by fixed size",
+    "audience": "PMs and engineers building RAG features",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "mistake",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Example documents are illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t012",
+    "targetDurationSec": 22,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Fixed-size chunks split tables, steps and rules from their exceptions, so chunk by document structure (headings, sections, whole tables) instead.",
+  "hooks": [
+    {
+      "text": "Fixed-size chunks break your RAG answers.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Names the default setting most teams ship with."
+    },
+    {
+      "text": "Your chunker split the rule from its exception.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Vivid, but needs a beat to parse."
+    },
+    {
+      "text": "Stop chunking every 500 tokens.",
+      "angle": "Direct instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Scolding; doesn't say what to do instead."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): names a concrete default, readable instantly, and the reel shows the fix side by side.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Fixed-size chunks break your RAG answers. / Chunk by structure instead.",
+      "voiceover": "Fixed-size chunks break your RAG answers.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "Fixed-size"
+        },
+        {
+          "text": "chunks break",
+          "highlight": true
+        },
+        {
+          "text": "your RAG"
+        },
+        {
+          "text": "answers."
+        }
+      ],
+      "sub": "Chunk by structure instead.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "mistake",
+      "type": "cards",
+      "durationInFrames": 140,
+      "purpose": "Show what fixed-size chunking does to real documents.",
+      "onScreen": "THE MISTAKE / Split every 500 tokens. / SPLIT Table header in one chunk · SPLIT Rule here, exception there · SPLIT Steps lose their numbering",
+      "voiceover": "Split every five hundred tokens and the table header lands in one chunk, the rule and its exception in two, and the steps lose their order.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 24 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE MISTAKE",
+      "headline": [
+        {
+          "text": "Split every"
+        },
+        {
+          "text": "500 tokens."
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 24,
+      "cards": [
+        {
+          "text": "Table header in one chunk",
+          "status": "warn",
+          "tag": "SPLIT"
+        },
+        {
+          "text": "Rule here, exception there",
+          "status": "warn",
+          "tag": "SPLIT"
+        },
+        {
+          "text": "Steps lose their numbering",
+          "status": "warn",
+          "tag": "SPLIT"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 40,
+          "kind": "low"
+        },
+        {
+          "at": 64,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "type": "table",
+      "durationInFrames": 290,
+      "purpose": "Show the better approach on the same documents (illustrative).",
+      "onScreen": "ILLUSTRATIVE EXAMPLES / Chunk by structure. / DOCUMENT → FIXED SIZE → BY STRUCTURE / Refund policy + exceptions → Exception dropped ✗ → Rule + exception ✓ · Pricing table → Rows lose headers ✗ → Whole table ✓ · Setup guide → Later steps missing ✗ → One section ✓ / Split on headings, not token counts · Prefix each chunk with its doc title",
+      "voiceover": "Illustrative examples. Chunk the refund policy by section and the exception stays with the rule. Keep tables whole. Keep each setup section together. Split on headings, and prefix each chunk with its document title.",
+      "storyboard": {
+        "visual": "Legend DOCUMENT → FIXED SIZE → BY STRUCTURE; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ILLUSTRATIVE EXAMPLES",
+      "headline": [
+        {
+          "text": "Chunk by"
+        },
+        {
+          "text": "structure.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "DOCUMENT",
+        "FIXED SIZE",
+        "BY STRUCTURE"
+      ],
+      "rows": [
+        {
+          "input": "Refund policy + exceptions",
+          "expected": "Exception dropped ✗",
+          "passIf": "Rule + exception ✓"
+        },
+        {
+          "input": "Pricing table",
+          "expected": "Rows lose headers ✗",
+          "passIf": "Whole table ✓"
+        },
+        {
+          "input": "Setup guide",
+          "expected": "Later steps missing ✗",
+          "passIf": "One section ✓"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Split on headings, not token counts",
+        "Prefix each chunk with its doc title"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Chunk by meaning, not by length. / Save this for your next RAG build",
+      "voiceover": "Chunk by meaning, not by length. Save this for your next RAG build.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Chunk by"
+        },
+        {
+          "text": "meaning, not",
+          "highlight": true
+        },
+        {
+          "text": "by length.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next RAG build",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "RAG BASICS",
+    "headline": [
+      {
+        "text": "Chunk by"
+      },
+      {
+        "text": "structure,",
+        "highlight": true
+      },
+      {
+        "text": "not size"
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If your RAG answers feel half-right, look at where your chunks end.",
+    "body": [
+      "Fixed-size chunking (say, every 500 tokens) cuts documents wherever the counter runs out:\n→ table headers split from their rows\n→ a rule in one chunk, its exception in the next\n→ step 7 retrieved without steps 1–6",
+      "Chunk by structure instead:\n→ split on headings and sections\n→ keep tables and numbered steps whole\n→ prefix each chunk with its document title",
+      "Then re-run your retrieval checks on the questions that failed. (The document examples in the reel are illustrative.)"
+    ],
+    "cta": "Save this for your next RAG build.",
+    "hashtags": [
+      "#RAG",
+      "#GenAI",
+      "#AIProductManagement",
+      "#LLM",
+      "#AIEngineering"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next RAG build"
+  },
+  "claims": [
+    {
+      "text": "Structure-aware chunking (by headings, sections and whole tables) usually retrieves more complete context than fixed-size chunking.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "The refund policy, pricing table and setup guide examples are illustrative.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Fixed-size chunks break your RAG answers",
+      "2/ What gets split",
+      "3/ Same docs, chunked by structure",
+      "4/ Two rules: split on headings, prefix the title",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture): what a retrieval pipeline does between the question and the prompt.",
+    "linkedin": "Post: before/after chunk boundaries for one policy document, and the three chunking rules."
+  }
+}

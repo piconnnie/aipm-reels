@@ -1,0 +1,320 @@
+{
+  "brief": {
+    "topic": "AI PMs who can't explain a trade-off to engineers",
+    "audience": "Aspiring and new AI PMs",
+    "pillar": "E: AI Product Career",
+    "objective": "shares",
+    "format": "mistake",
+    "technicalDepth": "beginner",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t038",
+    "targetDurationSec": 18,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Describe model and prompt trade-offs with eval results, cost and latency instead of adjectives, because engineers can check a number.",
+  "hooks": [
+    {
+      "text": "Engineers don’t trust adjectives.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Short and true; the reel shows the replacement."
+    },
+    {
+      "text": "Stop saying the new model ‘feels smarter’.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Scolding tone."
+    },
+    {
+      "text": "How to win a model debate with engineers.",
+      "angle": "How-to",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "'Win' frames it as a fight."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): readable at a glance, and the reel flips each vague claim into a checkable one.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Engineers don’t trust adjectives. / Bring numbers they can check.",
+      "voiceover": "Engineers don't trust adjectives.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT CAREER",
+      "lines": [
+        {
+          "text": "Engineers"
+        },
+        {
+          "text": "don’t trust"
+        },
+        {
+          "text": "adjectives.",
+          "highlight": true
+        }
+      ],
+      "sub": "Bring numbers they can check.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "vague",
+      "type": "cards",
+      "durationInFrames": 110,
+      "purpose": "Show how PMs describe trade-offs today.",
+      "onScreen": "WHAT PMS SAY / Adjectives, not evidence. / VAGUE “It feels smarter” · VAGUE “Quality is way better” · VAGUE “It’s worth the cost”",
+      "voiceover": "What PMs say: it feels smarter. Quality is way better. It’s worth the cost.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 14 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT PMS SAY",
+      "headline": [
+        {
+          "text": "Adjectives,"
+        },
+        {
+          "text": "not evidence.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "“It feels smarter”",
+          "status": "unknown",
+          "tag": "VAGUE"
+        },
+        {
+          "text": "“Quality is way better”",
+          "status": "unknown",
+          "tag": "VAGUE"
+        },
+        {
+          "text": "“It’s worth the cost”",
+          "status": "unknown",
+          "tag": "VAGUE"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 30,
+          "kind": "tick"
+        },
+        {
+          "at": 44,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "cards",
+      "durationInFrames": 190,
+      "purpose": "Replace each adjective with a checkable number (illustrative).",
+      "onScreen": "WHAT TO SAY · ILLUSTRATIVE / Numbers they can check. / EVAL +6 passes on our 50-case set · EVAL Wins 31 of 50 blind pairs · PRICE 2x cost per task, +0.8s wait",
+      "voiceover": "What to say instead, illustrative numbers: six more passes on our fifty-case set. Wins thirty-one of fifty blind comparisons. And the price: twice the cost per task and almost a second more wait.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2.5s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "WHAT TO SAY · ILLUSTRATIVE",
+      "headline": [
+        {
+          "text": "Numbers they"
+        },
+        {
+          "text": "can check.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "“It feels smarter”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "+6 passes on our 50-case set",
+            "tag": "EVAL",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "“Quality is way better”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "Wins 31 of 50 blind pairs",
+            "tag": "EVAL",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "“It’s worth the cost”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "2x cost per task, +0.8s wait",
+            "tag": "PRICE",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Name the gain and the price in numbers. / Share this with a PM pitching models",
+      "voiceover": "Name the gain and the price, in numbers. Share this with a PM pitching models.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Name the gain"
+        },
+        {
+          "text": "and the price"
+        },
+        {
+          "text": "in numbers.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with a PM pitching models",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM CAREER",
+    "headline": [
+      {
+        "text": "Say it in"
+      },
+      {
+        "text": "numbers",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“It feels smarter” starts an argument. “+6 passes on our eval set, at 2x the cost” starts a decision.",
+    "body": [
+      "Swap adjectives for evidence engineers can check:\n→ eval pass rate on a fixed set\n→ blind side-by-side wins\n→ cost per task and added latency",
+      "Always say both sides: the gain and the price. (The numbers in the reel are illustrative.)"
+    ],
+    "cta": "Share this with a PM pitching models.",
+    "hashtags": [
+      "#AIProductManager",
+      "#ProductManagement",
+      "#AICareers",
+      "#LLMEvaluation"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with a PM pitching models"
+  },
+  "claims": [
+    {
+      "text": "PMs communicate AI trade-offs more effectively with eval results, cost and latency than with qualitative descriptions.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "+6 passes on a 50-case set; 31 of 50 blind wins; 2x cost per task; +0.8s latency.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Engineers don’t trust adjectives",
+      "2/ What PMs say",
+      "3/ What to say instead (illustrative)",
+      "4/ Always name the price",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 6 (Interview): 'Walk me through a model trade-off you made.'",
+    "linkedin": "Post: three vague product claims rewritten as checkable ones, and why naming the cost builds trust with engineers."
+  }
+}

@@ -47,6 +47,9 @@
 
     {"id": "t039", "pillar": "F", "format": "build-with-me", "status": "open", "topic": "Build a 20-case eval set for a support bot in a spreadsheet", "angle": "Columns, sources, pass rules, and how to score it (illustrative output only)", "research": false},
     {"id": "t040", "pillar": "F", "format": "framework", "status": "open", "topic": "How to compare two AI tools fairly", "angle": "Same tasks, blind scoring, cost and latency recorded, decision rule set in advance", "research": false},
-    {"id": "t041", "pillar": "F", "format": "build-with-me", "status": "open", "topic": "A prompt that turns meeting notes into a decision log", "angle": "Show the prompt structure and the failure it still has", "research": false}
+    {"id": "t041", "pillar": "F", "format": "build-with-me", "status": "open", "topic": "A prompt that turns meeting notes into a decision log", "angle": "Show the prompt structure and the failure it still has", "research": false},
+
+    {"id": "t042", "pillar": "A", "format": "teardown", "status": "open", "topic": "Teardown: what one AI chat session tells you without a rating", "angle": "Ratings are rare; regenerations, heavy edits, copy-outs and abandonment show where answers failed, so log them from day one", "research": false},
+    {"id": "t043", "pillar": "A", "format": "a-vs-b", "status": "open", "topic": "Launch an AI feature as opt-in or on by default?", "angle": "Opt-in only hears from enthusiasts and hides failures; go default-on when wrong answers are cheap, reversible and have a fallback", "research": false}
   ]
 }

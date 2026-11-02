@@ -1,0 +1,341 @@
+{
+  "brief": {
+    "topic": "Teardown: what one AI chat session tells you without a rating",
+    "audience": "PMs choosing feedback metrics for AI features",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "teardown",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Session log is illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t042",
+    "targetDurationSec": 24,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Ratings are rare, but regenerations, heavy edits, copy-outs and abandonment show where AI answers worked or failed, so log them from day one.",
+  "hooks": [
+    {
+      "text": "Nobody clicks thumbs-down. Read what they do.",
+      "angle": "Behaviour over ratings",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Relatable; points at an action."
+    },
+    {
+      "text": "The user rewrote 70% of the answer. Rating: none.",
+      "angle": "Story fragment",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Vivid but needs an illustrative label on frame 0."
+    },
+    {
+      "text": "Your feedback button is mostly silent.",
+      "angle": "Observation",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "True but doesn't promise a fix."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): relatable, credible, and the reel shows exactly which behaviours to log.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Nobody clicks thumbs-down. Read what they do. / Behaviour is your real rating.",
+      "voiceover": "Nobody clicks thumbs-down. Read what they do.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT TEARDOWN",
+      "lines": [
+        {
+          "text": "Nobody clicks"
+        },
+        {
+          "text": "thumbs-down."
+        },
+        {
+          "text": "Read what"
+        },
+        {
+          "text": "they do.",
+          "highlight": true
+        }
+      ],
+      "sub": "Behaviour is your real rating.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "session",
+      "type": "terminal",
+      "durationInFrames": 220,
+      "purpose": "Tear down one session's signals (illustrative).",
+      "onScreen": "ONE SESSION, LOGGED / No rating. Lots of signal. / $ replay session · answer shown ....... 1.8s · regenerate ......... x2 · user edited ........ 70% · copied out ......... yes · thumbs ............. none · (illustrative output)",
+      "voiceover": "Illustrative session: answer shown, regenerated twice, seventy percent edited, then copied out. No rating at all, but lots of signal.",
+      "storyboard": {
+        "visual": "Terminal window 'session-log' with deterministic typing.",
+        "animation": "Lines type in at their cue frames."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ONE SESSION, LOGGED",
+      "headline": [
+        {
+          "text": "No rating."
+        },
+        {
+          "text": "Lots of signal.",
+          "highlight": true
+        }
+      ],
+      "title": "session-log",
+      "lines": [
+        {
+          "text": "$ replay session",
+          "at": 10
+        },
+        {
+          "text": "answer shown ....... 1.8s",
+          "at": 40,
+          "tone": "neutral"
+        },
+        {
+          "text": "regenerate ......... x2",
+          "at": 62,
+          "tone": "warning"
+        },
+        {
+          "text": "user edited ........ 70%",
+          "at": 84,
+          "tone": "warning"
+        },
+        {
+          "text": "copied out ......... yes",
+          "at": 106,
+          "tone": "success"
+        },
+        {
+          "text": "thumbs ............. none",
+          "at": 128,
+          "tone": "neutral"
+        },
+        {
+          "text": "(illustrative output)",
+          "at": 150,
+          "tone": "neutral"
+        }
+      ],
+      "charsPerFrame": 1.2,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        },
+        {
+          "at": 62,
+          "kind": "tick"
+        },
+        {
+          "at": 84,
+          "kind": "tick"
+        },
+        {
+          "at": 106,
+          "kind": "tick"
+        },
+        {
+          "at": 128,
+          "kind": "tick"
+        },
+        {
+          "at": 150,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "checklist",
+      "durationInFrames": 250,
+      "purpose": "The behaviours to log and what each means.",
+      "onScreen": "LOG FROM DAY ONE / Track what users do. / Regenerate: the first answer missed · Heavy edits: right idea, wrong words · Copy or send: the answer got used · Abandon mid-task: it failed or was too slow / Ratings tell you why. Behaviour tells you where to look.",
+      "voiceover": "Log from day one. Regenerate: the first answer missed. Heavy edits: right idea, wrong words. Copy or send: the answer got used. Abandon mid-task: it failed or was too slow. Ratings tell you why; behaviour tells you where to look.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 36 frames from 24; rule at 174."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "LOG FROM DAY ONE",
+      "headline": [
+        {
+          "text": "Track what"
+        },
+        {
+          "text": "users do.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Regenerate: the first answer missed",
+        "Heavy edits: right idea, wrong words",
+        "Copy or send: the answer got used",
+        "Abandon mid-task: it failed or was too slow"
+      ],
+      "itemStart": 24,
+      "itemStagger": 36,
+      "rule": "Ratings tell you why. Behaviour tells you where to look.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 63,
+          "kind": "tick"
+        },
+        {
+          "at": 99,
+          "kind": "tick"
+        },
+        {
+          "at": 135,
+          "kind": "tick"
+        },
+        {
+          "at": 176,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Watch the edits, not the thumbs. / Save this for your next metrics review",
+      "voiceover": "Watch the edits, not the thumbs. Save this for your next metrics review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Watch the"
+        },
+        {
+          "text": "edits, not",
+          "highlight": true
+        },
+        {
+          "text": "the thumbs.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next metrics review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI METRICS",
+    "headline": [
+      {
+        "text": "Watch what"
+      },
+      {
+        "text": "users do",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Most AI answers never get a rating. They still leave a trail.",
+    "body": [
+      "In the (illustrative) session in this reel: regenerated twice, 70% of the text edited, then copied out. No thumbs either way.",
+      "Log these from day one:\n→ Regenerate: the first answer missed\n→ Heavy edits: right idea, wrong words\n→ Copy or send: the answer got used\n→ Abandon mid-task: it failed or was too slow",
+      "Ratings tell you why. Behaviour tells you where to look."
+    ],
+    "cta": "Save this for your next metrics review.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductMetrics",
+      "#GenAI",
+      "#AIUX"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next metrics review"
+  },
+  "claims": [
+    {
+      "text": "Implicit behavioural signals (regenerations, edits, copy-outs, abandonment) are more plentiful than explicit ratings and help locate AI answer failures.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Session log: 2 regenerations, 70% edited, copied out, no rating.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Nobody clicks thumbs-down",
+      "2/ One session, logged (illustrative)",
+      "3/ Four behaviours to log",
+      "4/ Ratings = why, behaviour = where",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 3 (A vs B): thumbs-up rate vs task success (already queued as q020; follow with edit-distance as a metric).",
+    "linkedin": "Post: the four implicit signals as an event-tracking spec for an AI feature, with what each one means."
+  }
+}

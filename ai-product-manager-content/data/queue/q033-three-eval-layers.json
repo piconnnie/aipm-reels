@@ -1,0 +1,313 @@
+{
+  "brief": {
+    "topic": "Three layers of LLM evaluation every team needs",
+    "audience": "PMs and engineers setting up LLM evaluation",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "framework",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t014",
+    "targetDurationSec": 25,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Use three evaluation layers (code checks for exact rules, rubric grading for judgement calls, human review of real samples) because each catches failures the others miss.",
+  "hooks": [
+    {
+      "text": "Which eval would catch a rude answer?",
+      "angle": "Question that exposes a gap",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Makes the viewer test their own setup."
+    },
+    {
+      "text": "Code checks won’t catch a wrong policy.",
+      "angle": "Specific limitation",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Narrow; only covers one layer."
+    },
+    {
+      "text": "One eval layer isn’t enough.",
+      "angle": "Direct claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Generic."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a concrete failure the viewer can picture, and the reel answers it with three named layers.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Which eval catches a rude answer? / You need three layers to know.",
+      "voiceover": "Which eval catches a rude answer?",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "Which eval"
+        },
+        {
+          "text": "catches a"
+        },
+        {
+          "text": "rude answer?",
+          "highlight": true
+        }
+      ],
+      "sub": "You need three layers to know.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "layers",
+      "type": "checklist",
+      "durationInFrames": 230,
+      "purpose": "Name the three layers.",
+      "onScreen": "THE THREE LAYERS / Check, grade, then review. / Code checks: format, length, banned words, links · Rubric grading: correct, grounded, on tone? · Human review: a weekly sample of real chats / Run layer 1 on every change, 2 before release, 3 every week.",
+      "voiceover": "Three layers. Code checks for format, length, banned words and links. Rubric grading: is it correct, grounded and on tone? Human review of a weekly sample of real chats. Run layer one on every change, two before release, three every week.",
+      "storyboard": {
+        "visual": "3 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 156."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE THREE LAYERS",
+      "headline": [
+        {
+          "text": "Check, grade,"
+        },
+        {
+          "text": "then review.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Code checks: format, length, banned words, links",
+        "Rubric grading: correct, grounded, on tone?",
+        "Human review: a weekly sample of real chats"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Run layer 1 on every change, 2 before release, 3 every week.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 158,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "catches",
+      "type": "table",
+      "durationInFrames": 290,
+      "purpose": "Show which failure each layer catches.",
+      "onScreen": "WHAT EACH CATCHES / One bug list, three filters. / FAILURE → CAUGHT BY → WHY THERE / Broken JSON output → Layer 1: code → Rule is exact · Cites the wrong policy → Layer 2: rubric → Needs judgement · Correct but rude → Layer 3: humans → People notice it / Each layer costs more than the last · Turn repeat human finds into checks",
+      "voiceover": "Broken JSON? Layer one: the rule is exact. Wrong policy? Layer two: it needs judgement. Correct but rude? Layer three: people notice. Each layer costs more, so turn repeat human findings into checks.",
+      "storyboard": {
+        "visual": "Legend FAILURE → CAUGHT BY → WHY THERE; 3 rows as cards with chips; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT EACH CATCHES",
+      "headline": [
+        {
+          "text": "One bug list,"
+        },
+        {
+          "text": "three filters.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "FAILURE",
+        "CAUGHT BY",
+        "WHY THERE"
+      ],
+      "rows": [
+        {
+          "input": "Broken JSON output",
+          "expected": "Layer 1: code",
+          "passIf": "Rule is exact"
+        },
+        {
+          "input": "Cites the wrong policy",
+          "expected": "Layer 2: rubric",
+          "passIf": "Needs judgement"
+        },
+        {
+          "input": "Correct but rude",
+          "expected": "Layer 3: humans",
+          "passIf": "People notice it"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Each layer costs more than the last",
+        "Turn repeat human finds into checks"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Check cheap, grade smart, review real. / Save this for your eval plan",
+      "voiceover": "Check cheap, grade smart, review real. Save this for your eval plan.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Check cheap,"
+        },
+        {
+          "text": "grade smart,"
+        },
+        {
+          "text": "review real.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your eval plan",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "LLM EVALUATION",
+    "headline": [
+      {
+        "text": "Three layers"
+      },
+      {
+        "text": "of evals",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A test suite that only checks format will happily pass a correct, rude, made-up answer.",
+    "body": [
+      "Three layers of evaluation:\n→ Code checks: format, length, banned words, broken links. Run on every change.\n→ Rubric grading: correct, grounded, on tone? Run before every release.\n→ Human review: a weekly sample of real conversations.",
+      "Each layer is more expensive than the last. When humans keep finding the same problem, turn it into a check or a rubric line."
+    ],
+    "cta": "Save this for your eval plan.",
+    "hashtags": [
+      "#LLMEvaluation",
+      "#AIProductManagement",
+      "#GenAI",
+      "#AIQuality"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your eval plan"
+  },
+  "claims": [
+    {
+      "text": "Effective LLM evaluation combines deterministic checks, rubric-based grading and human review of real samples, because each catches different failures.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Which eval catches a rude answer?",
+      "2/ Layer 1: code checks",
+      "3/ Layer 2: rubric grading",
+      "4/ Layer 3: human review",
+      "5/ What each catches",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 1 (Mistake): using an LLM judge without checking it against humans (already queued as q012; follow with rubric design).",
+    "linkedin": "Post: one real failure from each layer (hypothetical), and the cadence for running each."
+  }
+}

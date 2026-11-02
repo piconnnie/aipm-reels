@@ -1,0 +1,307 @@
+{
+  "brief": {
+    "topic": "Launch an AI feature as opt-in or on by default?",
+    "audience": "PMs planning an AI feature launch",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "a-vs-b",
+    "technicalDepth": "beginner",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t043",
+    "targetDurationSec": 22,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Opt-in launches only hear from enthusiasts and hide quality problems, so go default-on when wrong answers are cheap, reversible and have a fallback.",
+  "hooks": [
+    {
+      "text": "Opt-in AI hides its own failures.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Challenges the 'safe' launch choice."
+    },
+    {
+      "text": "Opt-in or on by default? Decide by the cost of being wrong.",
+      "angle": "Decision framing",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 3
+      },
+      "notes": "Clear but too long for frame 0."
+    },
+    {
+      "text": "Your opt-in users aren’t your users.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Catchy but vague about the decision."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): reframes a launch default PMs rarely question, and the reel ends with a four-part rule.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Opt-in AI hides its own failures. / Choose the launch mode on purpose.",
+      "voiceover": "Opt-in AI hides its own failures.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "Opt-in AI"
+        },
+        {
+          "text": "hides its"
+        },
+        {
+          "text": "own failures.",
+          "highlight": true
+        }
+      ],
+      "sub": "Choose the launch mode on purpose.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show who each launch mode actually hears from (illustrative).",
+      "onScreen": "WHO SEES IT [ILLUSTRATIVE] / OPT-IN 4% / ON BY DEFAULT 100% / Opt-in data flatters you.",
+      "voiceover": "Illustrative: if four percent opt in, you only hear from fans. On by default, everyone sees it, edge cases included. Opt-in data flatters you.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; two metric cards with bars; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHO SEES IT",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "OPT-IN",
+        "value": "4%",
+        "ratio": 0.04,
+        "tone": "warning",
+        "caption": "Enthusiasts self-select"
+      },
+      "right": {
+        "label": "ON BY DEFAULT",
+        "value": "100%",
+        "ratio": 1,
+        "tone": "success",
+        "caption": "Edge cases included"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Opt-in data"
+        },
+        {
+          "text": "flatters you.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "rule",
+      "type": "checklist",
+      "durationInFrames": 250,
+      "purpose": "Give the decision rule for default-on.",
+      "onScreen": "PICK THE MODE / Default on only if… / A wrong answer is cheap to spot and undo · Users can switch back in one click · Your eval set looks like real traffic · Unsure answers fall back to the old flow / Miss one? Start opt-in, then test with users who didn’t choose it.",
+      "voiceover": "Go default-on only if a wrong answer is cheap to spot and undo, users can switch back in one click, your eval set looks like real traffic, and unsure answers fall back to the old flow. Miss one? Start opt-in, then test with users who didn't choose it.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "PICK THE MODE",
+      "headline": [
+        {
+          "text": "Default on"
+        },
+        {
+          "text": "only if…",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "A wrong answer is cheap to spot and undo",
+        "Users can switch back in one click",
+        "Your eval set looks like real traffic",
+        "Unsure answers fall back to the old flow"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Miss one? Start opt-in, then test with users who didn’t choose it.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Opt-in tests your fans, not your users. / Share this with your launch team",
+      "voiceover": "Opt-in tests your fans, not your users. Share this with your launch team.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Opt-in tests"
+        },
+        {
+          "text": "your fans,"
+        },
+        {
+          "text": "not your users.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your launch team",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "LAUNCH STRATEGY",
+    "headline": [
+      {
+        "text": "Opt-in or"
+      },
+      {
+        "text": "on by"
+      },
+      {
+        "text": "default?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Opt-in feels like the safe way to launch an AI feature. It’s also the best way to miss its failures.",
+    "body": [
+      "Opt-in users are self-selected enthusiasts. Their feedback flatters you, and the edge cases never show up. (The 4% in the reel is illustrative.)",
+      "Go on by default only if:\n→ a wrong answer is cheap to spot and undo\n→ users can switch back in one click\n→ your eval set looks like real traffic\n→ unsure answers fall back to the old flow",
+      "Miss one? Start opt-in, then deliberately test with users who didn’t choose it."
+    ],
+    "cta": "Share this with your launch team.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductLaunch",
+      "#GenAI",
+      "#ProductStrategy"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your launch team"
+  },
+  "claims": [
+    {
+      "text": "Opt-in AI launches over-represent enthusiastic users and can hide quality problems; default-on is appropriate when errors are cheap, reversible and have a fallback.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "4% opt-in vs 100% default exposure.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Opt-in AI hides its own failures",
+      "2/ Who each mode hears from (illustrative)",
+      "3/ Four conditions for default-on",
+      "4/ The fallback plan",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 10 (Decision checklist): is your AI feature ready to launch?",
+    "linkedin": "Post: a short story of an opt-in pilot that looked great and a default-on rollout that surfaced the real edge cases, framed as hypothetical, with the four conditions."
+  }
+}
