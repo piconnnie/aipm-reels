@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-01",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t006",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "framework",
+    "research": false
+  },
+  "reelId": "aipm-018-review-is-a-dial-not-a",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

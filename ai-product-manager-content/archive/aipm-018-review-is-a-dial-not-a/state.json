@@ -1,0 +1,36 @@
+{
+  "id": "aipm-018-review-is-a-dial-not-a",
+  "createdAt": "2026-11-01T06:39:00.886Z",
+  "release": {
+    "tag": "reel-aipm-018-review-is-a-dial-not-a",
+    "video": "aipm-018-review-is-a-dial-not-a.mp4",
+    "cover": "aipm-018-review-is-a-dial-not-a.jpg",
+    "contactSheet": "aipm-018-review-is-a-dial-not-a-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "2e7c61f8dc1ea7da16afa774be0860da9da8d6bfac5c69f3b93f71c570af8ce3",
+    "cover": "9a01daeee974c32f31792399c3861ef8a2f0d0489a5471caa92a7d8e463946d0"
+  },
+  "durationSec": 24.67,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
