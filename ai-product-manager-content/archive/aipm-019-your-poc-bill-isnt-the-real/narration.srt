@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Your PoC bill isn’t your real bill. Four multipliers the demo hides.
+
+2
+00:00:03,130 --> 00:00:11,260
+Start from the PoC cost. Multiply by real volume, longer context, retries and tool calls, and eval runs on every change. Each looks small. Multiplied, they reshape the business case.
+
+3
+00:00:11,460 --> 00:00:20,930
+Estimate requests at full rollout, measure real prompt size, count calls per task including retries, and budget eval runs. Report cost per completed task, not per call.
+
+4
+00:00:21,130 --> 00:00:25,930
+Price it at full scale, before launch. Save this before you scale a PoC.

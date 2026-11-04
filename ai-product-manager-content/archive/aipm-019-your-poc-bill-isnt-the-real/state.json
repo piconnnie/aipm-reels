@@ -1,0 +1,36 @@
+{
+  "id": "aipm-019-your-poc-bill-isnt-the-real",
+  "createdAt": "2026-11-02T06:39:43.450Z",
+  "release": {
+    "tag": "reel-aipm-019-your-poc-bill-isnt-the-real",
+    "video": "aipm-019-your-poc-bill-isnt-the-real.mp4",
+    "cover": "aipm-019-your-poc-bill-isnt-the-real.jpg",
+    "contactSheet": "aipm-019-your-poc-bill-isnt-the-real-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "b0800e9ed1a099237611396c092a44358174a138c233da402e48594b8305ccca",
+    "cover": "5e8b8d2ce738a27092ad788a138a6a6e480a1d7cd2ebc847803bc9dec7189f0b"
+  },
+  "durationSec": 26,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
