@@ -1,0 +1,36 @@
+{
+  "id": "aipm-021-build-or-buy-five-questions",
+  "createdAt": "2026-11-04T06:54:05.343Z",
+  "release": {
+    "tag": "reel-aipm-021-build-or-buy-five-questions",
+    "video": "aipm-021-build-or-buy-five-questions.mp4",
+    "cover": "aipm-021-build-or-buy-five-questions.jpg",
+    "contactSheet": "aipm-021-build-or-buy-five-questions-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "eb83840ac11e6eee0c362d58868163fc329cc961bf4e8a01b8be8558eaf999b9",
+    "cover": "a06699d30b80de425faba02954b305ab43db91f077ed01dac1dadd343cddb2c4"
+  },
+  "durationSec": 24.33,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
