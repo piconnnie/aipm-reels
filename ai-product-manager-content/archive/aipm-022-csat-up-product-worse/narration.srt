@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Happy users, failed tasks. Why satisfaction can hide a worse product.
+
+2
+00:00:03,130 --> 00:00:08,430
+In this illustrative example, eighty-two percent thumbs up, but only fifty-four percent of tasks actually done. Users rate tone, not the outcome.
+
+3
+00:00:08,630 --> 00:00:18,100
+Lead with task success when the outcome can be checked, with satisfaction when quality is taste. Define success per task before launch, track both, and investigate when they split.
+
+4
+00:00:18,300 --> 00:00:23,100
+Measure the outcome, not the mood. Share this with whoever owns your AI metrics.

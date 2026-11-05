@@ -1,0 +1,36 @@
+{
+  "id": "aipm-022-csat-up-product-worse",
+  "createdAt": "2026-11-05T07:13:01.839Z",
+  "release": {
+    "tag": "reel-aipm-022-csat-up-product-worse",
+    "video": "aipm-022-csat-up-product-worse.mp4",
+    "cover": "aipm-022-csat-up-product-worse.jpg",
+    "contactSheet": "aipm-022-csat-up-product-worse-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "9a278169b400f5d490e0f4a6816a009b6854910c3d5a4a0e03f175156680769f",
+    "cover": "e8d77b87791d5b3b47d1629bb46e79f91b4e216cbb678482b9414b890f1b4ccf"
+  },
+  "durationSec": 23.17,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
