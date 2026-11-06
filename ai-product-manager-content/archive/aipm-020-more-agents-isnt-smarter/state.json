@@ -1,0 +1,36 @@
+{
+  "id": "aipm-020-more-agents-isnt-smarter",
+  "createdAt": "2026-11-03T07:08:55.313Z",
+  "release": {
+    "tag": "reel-aipm-020-more-agents-isnt-smarter",
+    "video": "aipm-020-more-agents-isnt-smarter.mp4",
+    "cover": "aipm-020-more-agents-isnt-smarter.jpg",
+    "contactSheet": "aipm-020-more-agents-isnt-smarter-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "86da4002842b427750e632cdb8fba3794d5c58837d4fdd23e99865768731d8ed",
+    "cover": "4779ef38796bfd4841620e14ff849f43c4c3e4907b931c759a58211137e79cb3"
+  },
+  "durationSec": 25,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

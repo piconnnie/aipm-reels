@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-03",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t024",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "myth-vs-reality",
+    "research": false
+  },
+  "reelId": "aipm-020-more-agents-isnt-smarter",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

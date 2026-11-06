@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+More agents, more ways to fail. Earn every agent you add.
+
+2
+00:00:03,130 --> 00:00:10,260
+The promise: a specialist for every step, agents that check each other, parallel speed. What you get: context lost at hand-offs, agents that loop or agree on the same error, and more calls, cost and latency.
+
+3
+00:00:10,460 --> 00:00:19,930
+Add an agent only if one agent fails a task you can name, the sub-task needs different tools or permissions, the hand-off has a testable contract, and your eval shows the split wins.
+
+4
+00:00:20,130 --> 00:00:24,930
+Earn every agent you add. Share this with your agent team.

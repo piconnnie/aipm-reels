@@ -1,0 +1,206 @@
+{
+  "contentId": "aipm-020-more-agents-isnt-smarter",
+  "version": 1,
+  "generatedAt": "2026-11-03T07:08:47.305Z",
+  "pillar": "C: Agentic AI",
+  "format": "myth-vs-reality",
+  "objective": "shares",
+  "targetAudience": "PMs and engineers designing agentic systems",
+  "topic": "Myth: more agents means a smarter system",
+  "coreInsight": "Each extra agent adds hand-offs, coordination failures, cost and debugging pain, so start with one agent and split only when an eval shows the split does better.",
+  "hookVariants": [
+    {
+      "text": "More agents, more ways to fail.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your multi-agent system might be one agent too many.",
+      "angle": "Warning",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    },
+    {
+      "text": "Why we merged four agents into one.",
+      "angle": "Story",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 2,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "More agents, more ways to fail.",
+  "selectionRationale": "Highest total (23/25): short, contradicts the myth directly, and the reel shows each failure mode then a test for adding an agent.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "More agents, more ways to fail. / Earn every agent you add.",
+      "voiceover": "More agents, more ways to fail. Earn every agent you add."
+    },
+    {
+      "scene": "myth",
+      "onScreen": "MORE AGENTS / The promise vs what you get. / MYTH A specialist for every step → REALITY Context lost at each hand-off · MYTH Agents check each other → REALITY Agents loop or agree on errors · MYTH Parallel means faster → REALITY More calls, cost and latency",
+      "voiceover": "The promise: a specialist for every step, agents that check each other, parallel speed. What you get: context lost at hand-offs, agents that loop or agree on the same error, and more calls, cost and latency."
+    },
+    {
+      "scene": "earn",
+      "onScreen": "EARN EACH AGENT / Add an agent only if… / One agent fails a task you can name · The sub-task needs different tools or permissions · The hand-off has a clear, testable contract · Your eval shows the split beats one agent / Start with one agent and a good workflow. Split when evals say so.",
+      "voiceover": "Add an agent only if one agent fails a task you can name, the sub-task needs different tools or permissions, the hand-off has a testable contract, and your eval shows the split wins."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Earn every agent you add. / Share this with your agent team",
+      "voiceover": "Earn every agent you add. Share this with your agent team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "myth",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 310,
+      "startSec": 3,
+      "endSec": 10.33
+    },
+    {
+      "id": "earn",
+      "type": "checklist",
+      "startFrame": 310,
+      "endFrame": 600,
+      "startSec": 10.33,
+      "endSec": 20
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 600,
+      "endFrame": 750,
+      "startSec": 20,
+      "endSec": 25
+    }
+  ],
+  "caption": "Multi-agent diagrams look impressive. Every arrow in them is a place where things go wrong.\n\nWhat each extra agent adds:\n→ a hand-off where context gets lost\n→ a chance for agents to loop, or confidently agree on the same mistake\n→ more model calls, more cost, more waiting\n→ one more place to look when something breaks\n\nStart with one agent and a well-defined workflow. Split only when a specific task fails, needs different tools or permissions, and your eval shows the split does better.\n\nShare this with your agent team.\n\n#AgenticAI #AIAgents #MultiAgent #AIProductManagement #GenAI",
+  "hashtags": [
+    "#AgenticAI",
+    "#AIAgents",
+    "#MultiAgent",
+    "#AIProductManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your agent team"
+  },
+  "coverHeadline": "More agents isn’t smarter",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Adding agents adds hand-off, coordination, cost and debugging overhead; a single agent should be the default until evaluation shows a split performs better.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-020-more-agents-isnt-smarter-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-020-more-agents-isnt-smarter.mp4",
+    "cover": "output/covers/aipm-020-more-agents-isnt-smarter.png",
+    "caption": "output/captions/aipm-020-more-agents-isnt-smarter.txt",
+    "storyboard": "output/storyboards/aipm-020-more-agents-isnt-smarter.md",
+    "subtitles": "output/storyboards/aipm-020-more-agents-isnt-smarter.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-03T07:08:55.266Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-020-more-agents-isnt-smarter/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ More agents, more ways to fail",
+      "2/ Myth: a specialist for every step",
+      "3/ Myth: agents check each other",
+      "4/ Myth: parallel means faster",
+      "5/ When to add an agent",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Framework: where to put human approval gates in an agent.",
+    "linkedin": "Post arguing for single-agent defaults, with the four-question test for splitting."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

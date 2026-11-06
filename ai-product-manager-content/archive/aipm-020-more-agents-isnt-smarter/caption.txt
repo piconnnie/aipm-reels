@@ -1,0 +1,13 @@
+Multi-agent diagrams look impressive. Every arrow in them is a place where things go wrong.
+
+What each extra agent adds:
+→ a hand-off where context gets lost
+→ a chance for agents to loop, or confidently agree on the same mistake
+→ more model calls, more cost, more waiting
+→ one more place to look when something breaks
+
+Start with one agent and a well-defined workflow. Split only when a specific task fails, needs different tools or permissions, and your eval shows the split does better.
+
+Share this with your agent team.
+
+#AgenticAI #AIAgents #MultiAgent #AIProductManagement #GenAI
