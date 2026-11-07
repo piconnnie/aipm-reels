@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-04",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t027",
+    "pillar": "D",
+    "pillarName": "D: Enterprise AI",
+    "format": "decision-checklist",
+    "research": false
+  },
+  "reelId": "aipm-021-build-or-buy-five-questions",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

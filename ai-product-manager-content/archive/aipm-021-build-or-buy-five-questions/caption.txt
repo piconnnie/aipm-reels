@@ -1,0 +1,14 @@
+Build vs buy for AI is rarely about the model. It’s about what you can’t easily undo.
+
+Five questions, in this order:
+→ Is this how you win, or table stakes?
+→ How sensitive is the data it touches?
+→ How soon do you need it working?
+→ What does it cost to run for three years, not one?
+→ What would it cost to switch away later?
+
+Table stakes usually point to buying. How you win usually points to building. A high exit cost is something to negotiate before you sign: data export, model portability, notice periods.
+
+Save this before the vendor demo.
+
+#EnterpriseAI #BuildVsBuy #AIStrategy #AIProductManagement #CIO

@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-021-build-or-buy-five-questions",
+  "version": 1,
+  "generatedAt": "2026-11-04T06:53:56.625Z",
+  "pillar": "D: Enterprise AI",
+  "format": "decision-checklist",
+  "objective": "saves",
+  "targetAudience": "Product and technology leaders in enterprises",
+  "topic": "Build vs buy for an enterprise AI capability",
+  "coreInsight": "Decide build vs buy on five questions — differentiation, data sensitivity, speed, three-year cost and exit cost — and settle the exit cost before you sign, not at renewal.",
+  "hookVariants": [
+    {
+      "text": "Build or buy? Ask these five first.",
+      "angle": "Checklist promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "The AI vendor decision most teams make backwards.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "total": 18
+    },
+    {
+      "text": "Buying AI is easy. Leaving is the expensive part.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Build or buy? Ask these five first.",
+  "selectionRationale": "Highest total (23/25): names the exact decision and promises a usable list; the exit-cost angle becomes the takeaway.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Build or buy? Ask these five first. / Before anyone opens a vendor deck.",
+      "voiceover": "Build or buy? Ask these five questions first, before anyone opens a vendor deck."
+    },
+    {
+      "scene": "questions",
+      "onScreen": "BUILD VS BUY / Five questions, in this order. / Is this capability how you win, or table stakes? · How sensitive is the data it touches? · How soon do you need it working? · What does it cost to run for three years? · What would it cost to switch away later? / Write the answers down and revisit them at every renewal.",
+      "voiceover": "Is it how you win, or table stakes? How sensitive is the data? How soon do you need it? What does three years cost? What would it cost to leave? Write the answers down and revisit them at every renewal."
+    },
+    {
+      "scene": "read",
+      "onScreen": "READING THE ANSWERS / What usually tips it. / BUY Table stakes → buy · BUILD How you win → build · EITHER High exit cost → negotiate",
+      "voiceover": "Table stakes: buy. How you win: build. High exit cost: negotiate it before you sign."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Price the exit before you sign. / Save this before the vendor demo",
+      "voiceover": "Price the exit before you sign. Save this before the vendor demo."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 410,
+      "startSec": 3,
+      "endSec": 13.67
+    },
+    {
+      "id": "read",
+      "type": "cards",
+      "startFrame": 410,
+      "endFrame": 580,
+      "startSec": 13.67,
+      "endSec": 19.33
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 580,
+      "endFrame": 730,
+      "startSec": 19.33,
+      "endSec": 24.33
+    }
+  ],
+  "caption": "Build vs buy for AI is rarely about the model. It’s about what you can’t easily undo.\n\nFive questions, in this order:\n→ Is this how you win, or table stakes?\n→ How sensitive is the data it touches?\n→ How soon do you need it working?\n→ What does it cost to run for three years, not one?\n→ What would it cost to switch away later?\n\nTable stakes usually point to buying. How you win usually points to building. A high exit cost is something to negotiate before you sign: data export, model portability, notice periods.\n\nSave this before the vendor demo.\n\n#EnterpriseAI #BuildVsBuy #AIStrategy #AIProductManagement #CIO",
+  "hashtags": [
+    "#EnterpriseAI",
+    "#BuildVsBuy",
+    "#AIStrategy",
+    "#AIProductManagement",
+    "#CIO"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before the vendor demo"
+  },
+  "coverHeadline": "Build or buy? Five questions",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Build-vs-buy decisions for AI capabilities should weigh differentiation, data sensitivity, time to value, multi-year cost and exit cost, with exit terms settled before signing.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 24.33,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-021-build-or-buy-five-questions-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-021-build-or-buy-five-questions.mp4",
+    "cover": "output/covers/aipm-021-build-or-buy-five-questions.png",
+    "caption": "output/captions/aipm-021-build-or-buy-five-questions.txt",
+    "storyboard": "output/storyboards/aipm-021-build-or-buy-five-questions.md",
+    "subtitles": "output/storyboards/aipm-021-build-or-buy-five-questions.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-04T06:54:05.299Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-021-build-or-buy-five-questions/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Build or buy? Five questions",
+      "2/ How you win or table stakes",
+      "3/ Data sensitivity",
+      "4/ Time to value",
+      "5/ Three-year cost",
+      "6/ Exit cost",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Checklist: questions to ask before connecting an LLM to internal data.",
+    "linkedin": "Post on negotiating exit terms (data export, portability, notice) as part of any AI vendor deal."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
