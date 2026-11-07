@@ -1,0 +1,36 @@
+{
+  "id": "aipm-023-notes-into-a-decision-log",
+  "createdAt": "2026-11-07T06:26:05.871Z",
+  "release": {
+    "tag": "reel-aipm-023-notes-into-a-decision-log",
+    "video": "aipm-023-notes-into-a-decision-log.mp4",
+    "cover": "aipm-023-notes-into-a-decision-log.jpg",
+    "contactSheet": "aipm-023-notes-into-a-decision-log-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "57c2e6617aac56986a2c77987e5b1d08dc4f7e3b2aee4e1e80a7f7fb934203c3",
+    "cover": "860e1cb87ffd95dfd4d23a058374ed1c56eddcc1df1b052f848de446838286db"
+  },
+  "durationSec": 25.33,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
