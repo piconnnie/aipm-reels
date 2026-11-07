@@ -1,0 +1,15 @@
+Most meeting notes record what was said. The decisions are buried in the middle, often without an owner.
+
+The prompt (paste your notes first):
+“From these notes, list only decisions actually made. For each: decision, owner, due date, open question. If no owner: write UNASSIGNED. Don’t invent anything.”
+
+Why it works:
+→ “only decisions” filters out discussion
+→ UNASSIGNED makes missing owners visible instead of guessed
+→ “don’t invent anything” keeps it to what the notes say
+
+Check the output against the notes before you send it. The example in the reel is made up.
+
+Save this prompt for Monday.
+
+#AITools #PromptEngineering #ProductivityTips #ProductManagement #GenAI
