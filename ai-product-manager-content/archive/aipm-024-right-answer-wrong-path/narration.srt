@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Right answer. Wrong path. Grade how your agent got there.
+
+2
+00:00:03,130 --> 00:00:10,260
+Three illustrative runs, all with the right answer. Run one used the right tools. Run two took fourteen steps for a three-step job. Run three emailed a customer by mistake.
+
+3
+00:00:10,460 --> 00:00:19,930
+Grade the trajectory: the right tool with the right arguments, a step count close to expected, and no risky action without approval. Log every step, and review bad paths even when the answer passed.
+
+4
+00:00:20,130 --> 00:00:24,930
+Grade the path, not just the end. Save this for your agent eval plan.

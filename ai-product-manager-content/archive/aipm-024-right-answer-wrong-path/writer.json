@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-08",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t021",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-024-right-answer-wrong-path",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

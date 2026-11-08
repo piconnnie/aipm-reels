@@ -1,0 +1,17 @@
+An agent can reach the right answer the wrong way, and a final-answer eval will score it a pass.
+
+What a final-answer check misses:
+→ the wrong tool, or made-up arguments, that happened to work
+→ fourteen steps for a three-step job (cost and latency)
+→ an action nobody approved, like sending an email
+
+Grade the trajectory too:
+→ tool choice and arguments
+→ step count against what you expect
+→ any write or external action without approval = fail
+
+(The three runs in the reel are illustrative examples.)
+
+Save this for your agent eval plan.
+
+#AgenticAI #AIAgents #LLMEvaluation #AIProductManagement #GenAI

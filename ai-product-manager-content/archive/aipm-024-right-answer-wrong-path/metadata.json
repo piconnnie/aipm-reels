@@ -1,0 +1,212 @@
+{
+  "contentId": "aipm-024-right-answer-wrong-path",
+  "version": 1,
+  "generatedAt": "2026-11-08T06:33:12.725Z",
+  "pillar": "C: Agentic AI",
+  "format": "mistake",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers evaluating AI agents",
+  "topic": "Measuring an agent only by whether the final answer was right",
+  "coreInsight": "A correct final answer can hide wrong tool calls, wasted steps and risky actions, so evaluate an agent’s trajectory — tools, steps and unapproved actions — not just its output.",
+  "hookVariants": [
+    {
+      "text": "Right answer. Wrong path.",
+      "angle": "Contrast",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "Your agent passed the eval and still emailed a customer.",
+      "angle": "Scenario",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Grading agents on the final answer is half an eval.",
+      "angle": "Direct claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Right answer. Wrong path.",
+  "selectionRationale": "Highest total (24/25): a crisp contrast that the card flips prove and the table turns into checks.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Right answer. Wrong path. / Grade how your agent got there.",
+      "voiceover": "Right answer. Wrong path. Grade how your agent got there."
+    },
+    {
+      "scene": "runs",
+      "onScreen": "THREE RUNS (ILLUSTRATIVE) / All three got the answer right. / FINAL ANSWER Run 1: correct answer → PATH OK Called the right tools · FINAL ANSWER Run 2: correct answer → PATH WASTEFUL Took 14 steps for a 3-step job · FINAL ANSWER Run 3: correct answer → PATH RISKY Emailed a customer by mistake",
+      "voiceover": "Three illustrative runs, all with the right answer. Run one used the right tools. Run two took fourteen steps for a three-step job. Run three emailed a customer by mistake."
+    },
+    {
+      "scene": "checks",
+      "onScreen": "GRADE THE TRAJECTORY / Check the path, not just the end. / CHECK → LOOK FOR → FAIL IF / Tool choice → Right tool, right args → Wrong or made-up tool · Steps taken → Close to expected → Loops or detours · Risky actions → Approved first → Any unapproved write / Log every step, not just the output · Review failed paths, even on passes",
+      "voiceover": "Grade the trajectory: the right tool with the right arguments, a step count close to expected, and no risky action without approval. Log every step, and review bad paths even when the answer passed."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Grade the path, not just the end. / Save this for your agent eval plan",
+      "voiceover": "Grade the path, not just the end. Save this for your agent eval plan."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "runs",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 310,
+      "startSec": 3,
+      "endSec": 10.33
+    },
+    {
+      "id": "checks",
+      "type": "table",
+      "startFrame": 310,
+      "endFrame": 600,
+      "startSec": 10.33,
+      "endSec": 20
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 600,
+      "endFrame": 750,
+      "startSec": 20,
+      "endSec": 25
+    }
+  ],
+  "caption": "An agent can reach the right answer the wrong way, and a final-answer eval will score it a pass.\n\nWhat a final-answer check misses:\n→ the wrong tool, or made-up arguments, that happened to work\n→ fourteen steps for a three-step job (cost and latency)\n→ an action nobody approved, like sending an email\n\nGrade the trajectory too:\n→ tool choice and arguments\n→ step count against what you expect\n→ any write or external action without approval = fail\n\n(The three runs in the reel are illustrative examples.)\n\nSave this for your agent eval plan.\n\n#AgenticAI #AIAgents #LLMEvaluation #AIProductManagement #GenAI",
+  "hashtags": [
+    "#AgenticAI",
+    "#AIAgents",
+    "#LLMEvaluation",
+    "#AIProductManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your agent eval plan"
+  },
+  "coverHeadline": "Right answer, wrong path",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Evaluating agents only on the final answer misses wrong tool use, wasted steps and unapproved actions; trajectories should be evaluated as well.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Three example runs, including one taking 14 steps for a 3-step job.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-024-right-answer-wrong-path-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-024-right-answer-wrong-path.mp4",
+    "cover": "output/covers/aipm-024-right-answer-wrong-path.png",
+    "caption": "output/captions/aipm-024-right-answer-wrong-path.txt",
+    "storyboard": "output/storyboards/aipm-024-right-answer-wrong-path.md",
+    "subtitles": "output/storyboards/aipm-024-right-answer-wrong-path.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-08T06:33:20.395Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-024-right-answer-wrong-path/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Right answer. Wrong path.",
+      "2/ Three runs, all correct",
+      "3/ What the paths revealed",
+      "4/ Check tool choice",
+      "5/ Check step count",
+      "6/ Check risky actions",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to measure real autonomy instead of marketing autonomy.",
+    "linkedin": "Post on adding trajectory checks to an agent eval set, with the three checks as a starter rubric."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
