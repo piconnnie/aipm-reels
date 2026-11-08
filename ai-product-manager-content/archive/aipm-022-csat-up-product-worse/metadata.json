@@ -1,0 +1,211 @@
+{
+  "contentId": "aipm-022-csat-up-product-worse",
+  "version": 1,
+  "generatedAt": "2026-11-05T07:12:53.699Z",
+  "pillar": "A: AI Product Management",
+  "format": "a-vs-b",
+  "objective": "shares",
+  "targetAudience": "PMs choosing metrics for AI assistants",
+  "topic": "Task success rate vs user satisfaction as the north-star metric for an AI assistant",
+  "coreInsight": "Users rate how an AI answer feels, not whether it got the job done, so satisfaction can rise while task success falls; lead with task success wherever the outcome can be checked.",
+  "hookVariants": [
+    {
+      "text": "Happy users, failed tasks.",
+      "angle": "Paradox",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your thumbs-up rate is lying to you.",
+      "angle": "Provocation",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "total": 21
+    },
+    {
+      "text": "CSAT or task success: which is your AI’s north star?",
+      "angle": "Direct question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Happy users, failed tasks.",
+  "selectionRationale": "Highest total (23/25): a paradox that stops the scroll, delivered by an illustrative comparison and a rule for choosing.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Happy users, failed tasks. / Why CSAT can hide a worse product.",
+      "voiceover": "Happy users, failed tasks. Why satisfaction can hide a worse product."
+    },
+    {
+      "scene": "gap",
+      "onScreen": "SAME ASSISTANT [ILLUSTRATIVE] / THUMBS-UP RATE 82% / TASKS ACTUALLY DONE 54% / Users rate tone, not the outcome.",
+      "voiceover": "In this illustrative example, eighty-two percent thumbs up, but only fifty-four percent of tasks actually done. Users rate tone, not the outcome."
+    },
+    {
+      "scene": "choose",
+      "onScreen": "PICK YOUR NORTH STAR / When to lead with each. / Task success when the job has a checkable outcome · Satisfaction when quality is a matter of taste · Define “success” per task before launch · Track both; investigate when they diverge / Rising CSAT + falling success = errors users can’t see.",
+      "voiceover": "Lead with task success when the outcome can be checked, with satisfaction when quality is taste. Define success per task before launch, track both, and investigate when they split."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Measure the outcome, not the mood. / Share this with your AI metrics owner",
+      "voiceover": "Measure the outcome, not the mood. Share this with whoever owns your AI metrics."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "gap",
+      "type": "comparison",
+      "startFrame": 90,
+      "endFrame": 255,
+      "startSec": 3,
+      "endSec": 8.5
+    },
+    {
+      "id": "choose",
+      "type": "checklist",
+      "startFrame": 255,
+      "endFrame": 545,
+      "startSec": 8.5,
+      "endSec": 18.17
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 545,
+      "endFrame": 695,
+      "startSec": 18.17,
+      "endSec": 23.17
+    }
+  ],
+  "caption": "A confident, friendly wrong answer often gets a thumbs up.\n\nThat’s why satisfaction and task success can move in opposite directions. Users rate how an answer feels; they often can’t tell whether it was right.\n\nHow to choose:\n→ lead with task success when the job has a checkable outcome (booked, resolved, correct)\n→ lead with satisfaction when quality is a matter of taste (tone, style)\n→ track both, and treat a gap between them as a bug report\n\n(The 82% vs 54% in the reel is an illustrative example, not data from a real product.)\n\nShare this with your AI metrics owner.\n\n#AIProductManagement #ProductMetrics #NorthStarMetric #GenAI #ProductManagement",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductMetrics",
+    "#NorthStarMetric",
+    "#GenAI",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI metrics owner"
+  },
+  "coverHeadline": "CSAT up, product worse?",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "User satisfaction ratings for AI answers can rise while task success falls, because users often cannot judge correctness; task success should lead where outcomes are checkable.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "82% thumbs-up rate vs 54% of tasks actually completed.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23.17,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-022-csat-up-product-worse-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-022-csat-up-product-worse.mp4",
+    "cover": "output/covers/aipm-022-csat-up-product-worse.png",
+    "caption": "output/captions/aipm-022-csat-up-product-worse.txt",
+    "storyboard": "output/storyboards/aipm-022-csat-up-product-worse.md",
+    "subtitles": "output/storyboards/aipm-022-csat-up-product-worse.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-05T07:13:01.793Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-022-csat-up-product-worse/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Happy users, failed tasks",
+      "2/ 82% thumbs up vs 54% done (illustrative)",
+      "3/ Why they diverge",
+      "4/ When to lead with task success",
+      "5/ When to lead with satisfaction",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Interview: how would you measure the quality of an AI writing assistant?",
+    "linkedin": "Post on treating a gap between CSAT and task success as a bug report, with how to define success per task."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

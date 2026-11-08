@@ -1,0 +1,14 @@
+A confident, friendly wrong answer often gets a thumbs up.
+
+That’s why satisfaction and task success can move in opposite directions. Users rate how an answer feels; they often can’t tell whether it was right.
+
+How to choose:
+→ lead with task success when the job has a checkable outcome (booked, resolved, correct)
+→ lead with satisfaction when quality is a matter of taste (tone, style)
+→ track both, and treat a gap between them as a bug report
+
+(The 82% vs 54% in the reel is an illustrative example, not data from a real product.)
+
+Share this with your AI metrics owner.
+
+#AIProductManagement #ProductMetrics #NorthStarMetric #GenAI #ProductManagement
