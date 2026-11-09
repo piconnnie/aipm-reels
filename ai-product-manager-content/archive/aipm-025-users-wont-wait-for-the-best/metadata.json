@@ -1,0 +1,211 @@
+{
+  "contentId": "aipm-025-users-wont-wait-for-the-best",
+  "version": 1,
+  "generatedAt": "2026-11-09T07:02:18.042Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "a-vs-b",
+  "objective": "saves",
+  "targetAudience": "PMs choosing models for user-facing AI features",
+  "topic": "Latency vs quality: when a faster, smaller model is the better product",
+  "coreInsight": "Speed is part of quality: route narrow, easy requests to a smaller, faster model when your eval shows no meaningful drop, and keep the large model as the fallback for hard cases.",
+  "hookVariants": [
+    {
+      "text": "Users won’t wait for the best answer.",
+      "angle": "User truth",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 22
+    },
+    {
+      "text": "The best model can make a worse product.",
+      "angle": "Counterintuitive insight",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Stop sending every request to your biggest model.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Users won’t wait for the best answer.",
+  "selectionRationale": "Highest total (22/25): starts from what users do, which the illustrative comparison and the routing checklist then resolve.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Users won’t wait for the best answer. / When a smaller model wins.",
+      "voiceover": "Users won’t wait for the best answer. Here’s when a smaller model wins."
+    },
+    {
+      "scene": "wait",
+      "onScreen": "SAME FEATURE [ILLUSTRATIVE] / LARGE MODEL ON EVERY ASK 8 s / ROUTED: SMALL FOR EASY 2 s / Route easy asks to the small model.",
+      "voiceover": "Illustrative: eight seconds per answer with the large model on everything, two seconds when easy asks go to a small model. Route easy asks to the small model."
+    },
+    {
+      "scene": "when",
+      "onScreen": "WHEN SMALL WINS / Pick the faster model when… / The task is narrow: classify, extract, rewrite · Your eval shows no meaningful quality drop · Users are waiting in the loop, not in a batch · A large model is the fallback for hard cases / Decide with your eval set, not with the leaderboard.",
+      "voiceover": "Pick the faster model when the task is narrow, your eval shows no real quality drop, users are waiting, and a large model catches the hard cases. Decide with your eval set, not the leaderboard."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Speed is part of quality. / Save this for your next model choice",
+      "voiceover": "Speed is part of quality. Save this for your next model choice."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "wait",
+      "type": "comparison",
+      "startFrame": 90,
+      "endFrame": 255,
+      "startSec": 3,
+      "endSec": 8.5
+    },
+    {
+      "id": "when",
+      "type": "checklist",
+      "startFrame": 255,
+      "endFrame": 545,
+      "startSec": 8.5,
+      "endSec": 18.17
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 545,
+      "endFrame": 695,
+      "startSec": 18.17,
+      "endSec": 23.17
+    }
+  ],
+  "caption": "A slightly better answer that arrives much later can be the worse product.\n\nA smaller, faster model is often the right call when:\n→ the task is narrow: classify, extract, rewrite, route\n→ your eval set shows no meaningful quality drop\n→ a person is waiting on the answer\n→ a larger model is still there for the hard cases\n\nRoute by difficulty, measure both speed and quality, and decide with your own eval set rather than a public leaderboard.\n\n(The 8 s vs 2 s in the reel is an illustrative example, not a benchmark.)\n\nSave this for your next model choice.\n\n#GenAI #LLM #AIProductManagement #ModelRouting #ProductManagement",
+  "hashtags": [
+    "#GenAI",
+    "#LLM",
+    "#AIProductManagement",
+    "#ModelRouting",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next model choice"
+  },
+  "coverHeadline": "Users won’t wait for the best answer",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "For narrow, user-facing tasks, a smaller and faster model with a large-model fallback is often the better product, if evaluation shows no meaningful quality loss.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "8 seconds per answer with a large model on every request vs 2 seconds with easy requests routed to a small model.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23.17,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-025-users-wont-wait-for-the-best-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-025-users-wont-wait-for-the-best.mp4",
+    "cover": "output/covers/aipm-025-users-wont-wait-for-the-best.png",
+    "caption": "output/captions/aipm-025-users-wont-wait-for-the-best.txt",
+    "storyboard": "output/storyboards/aipm-025-users-wont-wait-for-the-best.md",
+    "subtitles": "output/storyboards/aipm-025-users-wont-wait-for-the-best.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-09T07:02:26.501Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-025-users-wont-wait-for-the-best/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Users won’t wait for the best answer",
+      "2/ 8 s vs 2 s (illustrative)",
+      "3/ Narrow tasks",
+      "4/ No quality drop on your eval",
+      "5/ Large model as fallback",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Framework: three layers of LLM evaluation every team needs.",
+    "linkedin": "Post on routing by difficulty, with how to set up a small-model-first, large-model-fallback test."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

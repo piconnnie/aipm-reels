@@ -1,0 +1,15 @@
+A slightly better answer that arrives much later can be the worse product.
+
+A smaller, faster model is often the right call when:
+→ the task is narrow: classify, extract, rewrite, route
+→ your eval set shows no meaningful quality drop
+→ a person is waiting on the answer
+→ a larger model is still there for the hard cases
+
+Route by difficulty, measure both speed and quality, and decide with your own eval set rather than a public leaderboard.
+
+(The 8 s vs 2 s in the reel is an illustrative example, not a benchmark.)
+
+Save this for your next model choice.
+
+#GenAI #LLM #AIProductManagement #ModelRouting #ProductManagement

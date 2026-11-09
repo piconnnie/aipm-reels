@@ -1,0 +1,36 @@
+{
+  "id": "aipm-025-users-wont-wait-for-the-best",
+  "createdAt": "2026-11-09T07:02:26.547Z",
+  "release": {
+    "tag": "reel-aipm-025-users-wont-wait-for-the-best",
+    "video": "aipm-025-users-wont-wait-for-the-best.mp4",
+    "cover": "aipm-025-users-wont-wait-for-the-best.jpg",
+    "contactSheet": "aipm-025-users-wont-wait-for-the-best-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "db35aa8c53dd116704d8ecc2e5b5477469e8fda659424729764ef56d57ace1c6",
+    "cover": "59e14a54c2ec2e7a52ad4a1ec165d2727dd52468dac9f6f5369b1898c912b3c0"
+  },
+  "durationSec": 23.17,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

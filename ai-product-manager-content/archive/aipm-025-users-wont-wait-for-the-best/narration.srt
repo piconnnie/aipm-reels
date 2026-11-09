@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Users won’t wait for the best answer. Here’s when a smaller model wins.
+
+2
+00:00:03,130 --> 00:00:08,430
+Illustrative: eight seconds per answer with the large model on everything, two seconds when easy asks go to a small model. Route easy asks to the small model.
+
+3
+00:00:08,630 --> 00:00:18,100
+Pick the faster model when the task is narrow, your eval shows no real quality drop, users are waiting, and a large model catches the hard cases. Decide with your eval set, not the leaderboard.
+
+4
+00:00:18,300 --> 00:00:23,100
+Speed is part of quality. Save this for your next model choice.
