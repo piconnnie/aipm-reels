@@ -1,0 +1,311 @@
+{
+  "brief": {
+    "topic": "How to compare two AI tools fairly",
+    "audience": "PMs and team leads choosing between AI tools",
+    "pillar": "F: AI Tools and Experiments",
+    "objective": "saves",
+    "format": "framework",
+    "technicalDepth": "beginner",
+    "constraints": [
+      "Example numbers are illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t040",
+    "targetDurationSec": 22,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Compare AI tools on the same real tasks, scored blind, with cost and latency logged and the decision rule fixed before anyone sees results.",
+  "hooks": [
+    {
+      "text": "Write the scorecard before the demo.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Clear action, and it implies the trap."
+    },
+    {
+      "text": "Your AI tool trial is rigged by accident.",
+      "angle": "Provocation",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Edgy; 'rigged' overstates."
+    },
+    {
+      "text": "How to compare two AI tools fairly.",
+      "angle": "How-to",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Plain; low curiosity."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): one clear action at a glance, and the reel shows why the rule must come first.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Write the scorecard before the demo. / Or the best demo wins.",
+      "voiceover": "Write the scorecard before the demo. Or the best demo wins.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI TOOLS",
+      "lines": [
+        {
+          "text": "Write the"
+        },
+        {
+          "text": "scorecard"
+        },
+        {
+          "text": "before the"
+        },
+        {
+          "text": "demo.",
+          "highlight": true
+        }
+      ],
+      "sub": "Or the best demo wins.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "fair-test",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The four rules of a fair comparison.",
+      "onScreen": "A FAIR BAKE-OFF / Same test, both tools. / Same set of your real tasks · Score blind: hide which tool answered · Log cost and wait time per task · Set the winning rule before you start / Vendors demo their best case. Test yours.",
+      "voiceover": "Same test, both tools. Use the same set of your real tasks. Score blind: hide which tool answered. Log cost and wait time per task. Set the winning rule before you start. Vendors demo their best case. Test yours.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "A FAIR BAKE-OFF",
+      "headline": [
+        {
+          "text": "Same test,"
+        },
+        {
+          "text": "both tools.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Same set of your real tasks",
+        "Score blind: hide which tool answered",
+        "Log cost and wait time per task",
+        "Set the winning rule before you start"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Vendors demo their best case. Test yours.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 150,
+      "purpose": "Worked example of a rule set in advance (illustrative).",
+      "onScreen": "EXAMPLE · ILLUSTRATIVE / The rule decides, not you. / RULE Switch only if 3+ more passes · RESULT A: 15 of 20 · B: 16 of 20 · DECISION Keep A. Gap is under the bar",
+      "voiceover": "Illustrative example. The rule: switch only if the new tool passes three or more extra tasks. Result: fifteen versus sixteen of twenty. Decision: keep A, the gap is under the bar.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE · ILLUSTRATIVE",
+      "headline": [
+        {
+          "text": "The rule"
+        },
+        {
+          "text": "decides, not you.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Switch only if 3+ more passes",
+          "status": "unknown",
+          "tag": "RULE"
+        },
+        {
+          "text": "A: 15 of 20 · B: 16 of 20",
+          "status": "unknown",
+          "tag": "RESULT"
+        },
+        {
+          "text": "Keep A. Gap is under the bar",
+          "status": "pass",
+          "tag": "DECISION"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Set the bar before you see the scores. / Save this for your next tool trial",
+      "voiceover": "Set the bar before you see the scores. Save this for your next tool trial.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Set the bar"
+        },
+        {
+          "text": "before you see"
+        },
+        {
+          "text": "the scores.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next tool trial",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI TOOL TRIALS",
+    "headline": [
+      {
+        "text": "Score AI tools"
+      },
+      {
+        "text": "fairly",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If you decide how to judge after seeing the results, the best demo wins, not the best tool.",
+    "body": [
+      "A fair bake-off:\n→ The same set of your real tasks for both tools\n→ Blind scoring: hide which tool answered\n→ Cost and wait time logged per task\n→ The winning rule written down before you start",
+      "Illustrative example: rule = switch only with 3+ more passes. Result 15 vs 16 of 20. Keep the current tool."
+    ],
+    "cta": "Save this for your next tool trial.",
+    "hashtags": [
+      "#AITools",
+      "#AIProductManager",
+      "#LLMEvaluation",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next tool trial"
+  },
+  "claims": [
+    {
+      "text": "AI tool comparisons are fairer with identical real tasks, blind scoring, logged cost and latency, and a decision rule set in advance.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Rule of 3+ extra passes; result 15 of 20 vs 16 of 20.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Write the scorecard before the demo",
+      "2/ Same real tasks",
+      "3/ Blind scoring",
+      "4/ Cost + wait time",
+      "5/ Rule set in advance",
+      "6/ Worked example (illustrative)",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Format 7 (Build with me): a blind scoring sheet for two tools.",
+    "linkedin": "Post: a four-rule template for AI tool bake-offs, and why the decision rule must be written first."
+  }
+}

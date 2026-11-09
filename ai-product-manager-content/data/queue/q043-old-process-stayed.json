@@ -1,0 +1,323 @@
+{
+  "brief": {
+    "topic": "Rolling out an AI tool without changing the workflow around it",
+    "audience": "PMs and ops leads running internal AI rollouts",
+    "pillar": "D: Enterprise AI",
+    "objective": "shares",
+    "format": "mistake",
+    "technicalDepth": "beginner",
+    "constraints": [],
+    "backlogId": "t032",
+    "targetDurationSec": 18,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "AI adoption stalls when the old process still has to be done in parallel; for each step the AI takes on, remove or merge an old one.",
+  "hooks": [
+    {
+      "text": "The AI tool launched. The old process stayed.",
+      "angle": "Story",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Recognisable situation; sets up the redesign."
+    },
+    {
+      "text": "Your team is doing the work twice.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Vague about why."
+    },
+    {
+      "text": "AI rollouts fail in the workflow, not the model.",
+      "angle": "Thesis",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Abstract; harder to picture."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): a concrete before/after story, and the reel flips each surviving step into a redesigned one.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "The AI tool launched. The old process stayed. / So people did both.",
+      "voiceover": "The AI tool launched. The old process stayed. So people did both.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "ENTERPRISE AI",
+      "lines": [
+        {
+          "text": "The AI tool"
+        },
+        {
+          "text": "launched."
+        },
+        {
+          "text": "The old"
+        },
+        {
+          "text": "process"
+        },
+        {
+          "text": "stayed.",
+          "highlight": true
+        }
+      ],
+      "sub": "So people did both.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "still-there",
+      "type": "cards",
+      "durationInFrames": 110,
+      "purpose": "Show the old steps that survive an AI rollout.",
+      "onScreen": "WHAT STAYED / Same steps, plus AI. / STILL THERE Manual summary still required · STILL THERE Old approval form unchanged · STILL THERE Report built the old way",
+      "voiceover": "What stayed: the manual summary is still required. The old approval form is unchanged. The report is built the old way.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 14 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT STAYED",
+      "headline": [
+        {
+          "text": "Same steps,"
+        },
+        {
+          "text": "plus AI.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 14,
+      "cards": [
+        {
+          "text": "Manual summary still required",
+          "status": "warn",
+          "tag": "STILL THERE"
+        },
+        {
+          "text": "Old approval form unchanged",
+          "status": "warn",
+          "tag": "STILL THERE"
+        },
+        {
+          "text": "Report built the old way",
+          "status": "warn",
+          "tag": "STILL THERE"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 30,
+          "kind": "low"
+        },
+        {
+          "at": 44,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "redesign",
+      "type": "cards",
+      "durationInFrames": 190,
+      "purpose": "Show the redesigned workflow.",
+      "onScreen": "REDESIGN THE WORK / Remove a step for each AI step. / REPLACED AI draft is the record · MERGED Approve on the AI draft itself · REPLACED Report fed from AI output",
+      "voiceover": "Redesign the work: the AI draft becomes the summary of record. Approval happens on the draft itself. The report is fed from AI output.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2.5s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "REDESIGN THE WORK",
+      "headline": [
+        {
+          "text": "Remove a step"
+        },
+        {
+          "text": "for each AI step.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "Manual summary still required",
+          "status": "warn",
+          "tag": "STILL THERE",
+          "swap": {
+            "text": "AI draft is the record",
+            "tag": "REPLACED",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Old approval form unchanged",
+          "status": "warn",
+          "tag": "STILL THERE",
+          "swap": {
+            "text": "Approve on the AI draft itself",
+            "tag": "MERGED",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Report built the old way",
+          "status": "warn",
+          "tag": "STILL THERE",
+          "swap": {
+            "text": "Report fed from AI output",
+            "tag": "REPLACED",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "If no step goes away, AI is extra work. / Share with whoever runs the rollout",
+      "voiceover": "If no step goes away, AI is extra work. Share with whoever runs the rollout.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "If no step"
+        },
+        {
+          "text": "goes away, AI"
+        },
+        {
+          "text": "is extra work.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share with whoever runs the rollout",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI ROLLOUTS",
+    "headline": [
+      {
+        "text": "Remove a step"
+      },
+      {
+        "text": "for each"
+      },
+      {
+        "text": "AI step",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If the old process still has to be done, the AI tool isn’t saving time. It’s adding a step.",
+    "body": [
+      "Common leftovers:\n→ A manual summary that’s still required\n→ The old approval form, unchanged\n→ Reports built the old way",
+      "For each step the AI takes on, remove or merge an old one: make the AI draft the record, approve on the draft, feed the report from it."
+    ],
+    "cta": "Share with whoever runs the rollout.",
+    "hashtags": [
+      "#EnterpriseAI",
+      "#AIAdoption",
+      "#ChangeManagement",
+      "#AIProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share with whoever runs the rollout"
+  },
+  "claims": [
+    {
+      "text": "AI tool adoption stalls when the previous process still has to be done in parallel; workflows should be redesigned so AI steps replace old ones.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ The AI tool launched. The old process stayed",
+      "2/ What stayed",
+      "3/ Replace the manual summary",
+      "4/ Approve on the draft",
+      "5/ Feed the report from AI",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 1 (Mistake): measuring adoption without measuring removed steps.",
+    "linkedin": "Post: three leftover steps that kill AI rollouts, and how to redesign each."
+  }
+}

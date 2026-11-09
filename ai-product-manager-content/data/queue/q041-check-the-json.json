@@ -1,0 +1,325 @@
+{
+  "brief": {
+    "topic": "The model returned JSON. Validate it anyway",
+    "audience": "PMs and engineers wiring LLM output into product logic",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "architecture",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t045",
+    "targetDurationSec": 24,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Treat model output as untrusted input: validate shape and meaning, retry once with the error, fall back safely, and only then let code act on it.",
+  "hooks": [
+    {
+      "text": "The model returned JSON. Check it anyway.",
+      "angle": "Practical warning",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Concrete and actionable."
+    },
+    {
+      "text": "Valid JSON, wrong refund amount.",
+      "angle": "Failure example",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Vivid but needs context to parse."
+    },
+    {
+      "text": "Don’t let model output touch your database.",
+      "angle": "Rule",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Too absolute."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names a moment every builder hits, and the reel shows exactly where the check goes.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "The model returned JSON. Check it anyway. / Valid format isn’t valid data.",
+      "voiceover": "The model returned JSON. Check it anyway.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "GENAI DELIVERY",
+      "lines": [
+        {
+          "text": "The model"
+        },
+        {
+          "text": "returned"
+        },
+        {
+          "text": "JSON. Check"
+        },
+        {
+          "text": "it anyway.",
+          "highlight": true
+        }
+      ],
+      "sub": "Valid format isn’t valid data.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show where validation sits between the model and the app.",
+      "onScreen": "STRUCTURED OUTPUT / Where the check sits. / Model output → Schema check → Retry with error → Safe fallback → App acts on it / Never pass unchecked output to code.",
+      "voiceover": "The model returns JSON text. Your code checks it against a schema. If it fails, retry once with the error. Still invalid? Use a safe fallback. Only then does your app act on it.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 2.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "STRUCTURED OUTPUT",
+      "headline": [
+        {
+          "text": "Where the"
+        },
+        {
+          "text": "check sits.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "Model output",
+          "detail": "JSON text"
+        },
+        {
+          "label": "Schema check",
+          "detail": "fields + types",
+          "tone": "warning"
+        },
+        {
+          "label": "Retry with error",
+          "detail": "once"
+        },
+        {
+          "label": "Safe fallback",
+          "detail": "still invalid?"
+        },
+        {
+          "label": "App acts on it",
+          "detail": "then acts",
+          "tone": "success"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 1,
+        "text": "Never pass unchecked output to code.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "beyond-shape",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "What to validate beyond the schema.",
+      "onScreen": "CHECK MORE THAN SHAPE / Valid JSON can still be wrong. / Required fields present and typed · Values inside allowed ranges · IDs exist in your system · Log every failure and retry / Strict output modes fix the shape. Your code checks the meaning.",
+      "voiceover": "Valid JSON can still be wrong. Check required fields are present and typed, values are in allowed ranges, and IDs exist in your system. Log every failure and retry. Strict output modes fix the shape; your code checks the meaning.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "CHECK MORE THAN SHAPE",
+      "headline": [
+        {
+          "text": "Valid JSON can"
+        },
+        {
+          "text": "still be wrong.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Required fields present and typed",
+        "Values inside allowed ranges",
+        "IDs exist in your system",
+        "Log every failure and retry"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Strict output modes fix the shape. Your code checks the meaning.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Trust the check, not the model. / Send this to your backend lead",
+      "voiceover": "Trust the check, not the model. Send this to your backend lead.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Trust the"
+        },
+        {
+          "text": "check,"
+        },
+        {
+          "text": "not the model.",
+          "highlight": true
+        }
+      ],
+      "cta": "Send this to your backend lead",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "STRUCTURED OUTPUT",
+    "headline": [
+      {
+        "text": "Check the"
+      },
+      {
+        "text": "model’s JSON",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Model output is untrusted input, even when it’s perfectly formatted JSON.",
+    "body": [
+      "Put a check between the model and your code:\n→ Schema check: fields and types\n→ Retry once, passing the error back\n→ Safe fallback if it’s still invalid\n→ Only then let the app act",
+      "Shape isn’t meaning. Also check value ranges, that IDs exist in your system, and log every failure so you can see what breaks."
+    ],
+    "cta": "Send this to your backend lead.",
+    "hashtags": [
+      "#GenerativeAI",
+      "#LLM",
+      "#AIEngineering",
+      "#AIProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Send this to your backend lead"
+  },
+  "claims": [
+    {
+      "text": "LLM structured output should be validated for schema and semantic correctness before application code acts on it, with retry and fallback paths.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ The model returned JSON. Check it anyway",
+      "2/ Where the check sits",
+      "3/ Retry with the error, then fallback",
+      "4/ Check meaning, not just shape",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 3 (Mistake): letting an agent act on unvalidated tool arguments.",
+    "linkedin": "Post: a simple validation layer for LLM output, and the semantic checks strict output modes don't cover."
+  }
+}

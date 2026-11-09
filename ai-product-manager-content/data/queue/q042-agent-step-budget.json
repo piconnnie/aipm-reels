@@ -1,0 +1,324 @@
+{
+  "brief": {
+    "topic": "What stops your agent at step 40?",
+    "audience": "PMs taking an agent from demo to production",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "poc-to-production",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t046",
+    "targetDurationSec": 24,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Production agents need explicit stop conditions — step budget, time and cost ceilings, a repeated-failure stop and a human handoff — because demos never exercise them.",
+  "hooks": [
+    {
+      "text": "What stops your agent at step 40?",
+      "angle": "Pointed question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Specific and slightly uncomfortable."
+    },
+    {
+      "text": "Your agent demo never had to stop.",
+      "angle": "Observation",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good but less concrete."
+    },
+    {
+      "text": "Agents need a budget, not just a goal.",
+      "angle": "Rule",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Abstract."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a concrete question with no comfortable answer, and the reel shows the four limits.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "What stops your agent at step 40? / Demos end. Loops don’t.",
+      "voiceover": "What stops your agent at step forty? Demos end. Loops don't.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "What stops"
+        },
+        {
+          "text": "your agent"
+        },
+        {
+          "text": "at step 40?",
+          "highlight": true
+        }
+      ],
+      "sub": "Demos end. Loops don’t.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "the-loop",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show how a missing stop condition becomes a runaway loop.",
+      "onScreen": "THE DEMO NEVER HIT THIS / How it runs away. / Agent plans → Calls a tool → Tool times out → Retries same call → Cost grows / Nothing told it when to stop.",
+      "voiceover": "The agent plans, calls a tool, the tool times out, and it retries the same call. Again. Cost grows and the user waits. Nothing told it when to stop.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 4.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE DEMO NEVER HIT THIS",
+      "headline": [
+        {
+          "text": "How it"
+        },
+        {
+          "text": "runs away.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "Agent plans",
+          "detail": "step 1"
+        },
+        {
+          "label": "Calls a tool",
+          "detail": "search"
+        },
+        {
+          "label": "Tool times out",
+          "detail": "error",
+          "tone": "warning"
+        },
+        {
+          "label": "Retries same call",
+          "detail": "again",
+          "tone": "warning"
+        },
+        {
+          "label": "Cost grows",
+          "detail": "user waits",
+          "tone": "warning"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 3,
+        "text": "Nothing told it when to stop.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "limits",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The production requirements.",
+      "onScreen": "PRODUCTION NEEDS / Limits the demo never hit. / A step budget per task · A time and cost ceiling · Stop after repeated failed calls · Hand off to a human, with context / Design what the user sees when it stops.",
+      "voiceover": "Production needs limits the demo never hit: a step budget per task, a time and cost ceiling, a stop after repeated failed calls, and a handoff to a human, with context. Design what the user sees when it stops.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "PRODUCTION NEEDS",
+      "headline": [
+        {
+          "text": "Limits the"
+        },
+        {
+          "text": "demo never hit.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "A step budget per task",
+        "A time and cost ceiling",
+        "Stop after repeated failed calls",
+        "Hand off to a human, with context"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Design what the user sees when it stops.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Budget steps before you ship the agent. / Save this for your agent launch review",
+      "voiceover": "Budget the steps before you ship the agent. Save this for your agent launch review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Budget steps"
+        },
+        {
+          "text": "before you"
+        },
+        {
+          "text": "ship the agent.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your agent launch review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT RELIABILITY",
+    "headline": [
+      {
+        "text": "Give agents"
+      },
+      {
+        "text": "a stop rule",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A demo agent runs a few steps and ends. A production agent hits a timeout and retries the same call until someone notices.",
+    "body": [
+      "Limits the demo never tested:\n→ A step budget per task\n→ A time and cost ceiling\n→ Stop after repeated failed calls\n→ Hand off to a human, with context",
+      "Then design what the user sees when it stops. A clear handoff beats a spinner that never ends."
+    ],
+    "cta": "Save this for your agent launch review.",
+    "hashtags": [
+      "#AIAgents",
+      "#AgenticAI",
+      "#AIProductManager",
+      "#LLMOps"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your agent launch review"
+  },
+  "claims": [
+    {
+      "text": "Production AI agents need explicit stop conditions such as step budgets, time and cost ceilings, repeated-failure limits and human handoff.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ What stops your agent at step 40?",
+      "2/ How a loop runs away",
+      "3/ Step budget",
+      "4/ Time and cost ceiling",
+      "5/ Failure stop + handoff",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 9 (Teardown): what a good agent handoff message contains.",
+    "linkedin": "Post: four stop conditions every production agent needs, and why demos never reveal them."
+  }
+}

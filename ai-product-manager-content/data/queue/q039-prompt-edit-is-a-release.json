@@ -1,0 +1,307 @@
+{
+  "brief": {
+    "topic": "Myth: a prompt tweak is a small change",
+    "audience": "PMs and engineers who edit production prompts",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "myth-vs-reality",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Example is illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t044",
+    "targetDurationSec": 21,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A prompt edit changes behaviour across every case, not just the one you looked at, so version it, re-run the eval set and roll it out like a release.",
+  "hooks": [
+    {
+      "text": "That one-line prompt edit is a release.",
+      "angle": "Reframe",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Short, surprising, and the reel backs it up."
+    },
+    {
+      "text": "Your prompt tweak broke something you didn’t test.",
+      "angle": "Warning",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Assumes a failure the viewer may not have."
+    },
+    {
+      "text": "Why “just tweak the prompt” goes wrong.",
+      "angle": "Explainer",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Weaker promise."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): reframes a casual habit in five words, and the reel gives the release routine.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "That one-line prompt edit is a release. / Treat it like one.",
+      "voiceover": "That one-line prompt edit is a release. Treat it like one.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT MANAGEMENT",
+      "lines": [
+        {
+          "text": "That one-line"
+        },
+        {
+          "text": "prompt edit"
+        },
+        {
+          "text": "is a release.",
+          "highlight": true
+        }
+      ],
+      "sub": "Treat it like one.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "what-happens",
+      "type": "cards",
+      "durationInFrames": 130,
+      "purpose": "Show how a small prompt edit can fix one case and break another (illustrative).",
+      "onScreen": "EXAMPLE · ILLUSTRATIVE / Fix one case, break others. / EDIT Added “keep answers short” · FIXED Long-answer complaints fixed · BROKE How-tos lost safety steps",
+      "voiceover": "An illustrative example. The edit: keep answers short. Fixed: the long-answer complaints. Broke: how-tos lost their safety steps.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 22 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE · ILLUSTRATIVE",
+      "headline": [
+        {
+          "text": "Fix one case,"
+        },
+        {
+          "text": "break others.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 22,
+      "cards": [
+        {
+          "text": "Added “keep answers short”",
+          "status": "unknown",
+          "tag": "EDIT"
+        },
+        {
+          "text": "Long-answer complaints fixed",
+          "status": "pass",
+          "tag": "FIXED"
+        },
+        {
+          "text": "How-tos lost safety steps",
+          "status": "warn",
+          "tag": "BROKE"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 38,
+          "kind": "tick"
+        },
+        {
+          "at": 60,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "ship-like-code",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The release routine for prompt changes.",
+      "onScreen": "SHIP PROMPTS LIKE CODE / Before a prompt change ships: / Version it, with a note on why · Re-run the full eval set · Compare with the last version · Roll out to a slice; keep rollback / No eval run, no prompt change in production.",
+      "voiceover": "Before a prompt change ships: version it, with a note on why. Re-run the full eval set. Compare with the last version. Roll out to a slice, and keep a rollback. No eval run, no prompt change in production.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SHIP PROMPTS LIKE CODE",
+      "headline": [
+        {
+          "text": "Before a prompt"
+        },
+        {
+          "text": "change ships:",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Version it, with a note on why",
+        "Re-run the full eval set",
+        "Compare with the last version",
+        "Roll out to a slice; keep rollback"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "No eval run, no prompt change in production.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Prompt edits are product changes. / Share with whoever owns the prompt",
+      "voiceover": "Prompt edits are product changes. Share with whoever owns the prompt.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Prompt edits"
+        },
+        {
+          "text": "are product"
+        },
+        {
+          "text": "changes.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share with whoever owns the prompt",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "PROMPT CHANGES",
+    "headline": [
+      {
+        "text": "Prompt edits"
+      },
+      {
+        "text": "are releases",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Just tweak the prompt” is how a fix for one complaint quietly breaks three other kinds of answer.",
+    "body": [
+      "In the illustrative example, “keep answers short” fixed long answers and also cut safety steps from how-to answers.",
+      "Before a prompt change ships:\n→ Version it, with a note on why\n→ Re-run the full eval set\n→ Compare with the last version\n→ Roll out to a slice and keep a rollback"
+    ],
+    "cta": "Share with whoever owns the prompt.",
+    "hashtags": [
+      "#AIProductManager",
+      "#PromptEngineering",
+      "#LLMEvaluation",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share with whoever owns the prompt"
+  },
+  "claims": [
+    {
+      "text": "Prompt changes can affect behaviour beyond the case they target, so they should be versioned, evaluated against the full eval set and rolled out gradually.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Example: adding 'keep answers short' fixed long answers but removed safety steps from how-to answers.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ That one-line prompt edit is a release",
+      "2/ Fix one case, break others (illustrative)",
+      "3/ Version + note why",
+      "4/ Re-run the eval set",
+      "5/ Compare, slice rollout, rollback",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 7 (Build with me): a prompt changelog and eval diff in a spreadsheet.",
+    "linkedin": "Post: why prompt edits need the same release discipline as code, with a four-step routine."
+  }
+}

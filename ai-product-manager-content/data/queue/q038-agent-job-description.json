@@ -1,0 +1,318 @@
+{
+  "brief": {
+    "topic": "Four questions before you build an AI agent",
+    "audience": "PMs scoping their first agent",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "technicalDepth": "beginner",
+    "constraints": [],
+    "backlogId": "t020",
+    "targetDurationSec": 23,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Before building an agent, write its job description: the steps it owns, the tools it can touch, the actions that need human sign-off, and how its work is scored.",
+  "hooks": [
+    {
+      "text": "Could you write this agent’s job description?",
+      "angle": "Reframe as hiring",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Familiar frame; the reel fills in the four lines."
+    },
+    {
+      "text": "Four questions before you build an agent.",
+      "angle": "Plain list",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Clear but generic."
+    },
+    {
+      "text": "Your agent idea is too vague to build.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Presumes the viewer's idea is vague."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): the hiring frame makes four dry questions memorable, and the reel shows a vague job made specific.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Could you write this agent’s job description? / If not, don’t build it yet.",
+      "voiceover": "Could you write this agent's job description? If not, don't build it yet.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "Could you"
+        },
+        {
+          "text": "write this"
+        },
+        {
+          "text": "agent’s job"
+        },
+        {
+          "text": "description?",
+          "highlight": true
+        }
+      ],
+      "sub": "If not, don’t build it yet.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "job-description",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The four questions, framed as a job description.",
+      "onScreen": "THE JOB DESCRIPTION / Four lines before any code. / Tasks: which steps does it own? · Tools: what can it read or change? · Sign-off: which actions need a human? · Review: how will you score its work? / Can’t fill a line? Narrow the job or build a workflow.",
+      "voiceover": "Four lines before any code. Tasks: which steps does it own? Tools: what can it read or change? Sign-off: which actions need a human? Review: how will you score its work? Can't fill a line? Narrow the job, or build a workflow.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE JOB DESCRIPTION",
+      "headline": [
+        {
+          "text": "Four lines"
+        },
+        {
+          "text": "before any code.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Tasks: which steps does it own?",
+        "Tools: what can it read or change?",
+        "Sign-off: which actions need a human?",
+        "Review: how will you score its work?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Can’t fill a line? Narrow the job or build a workflow.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "vague-to-specific",
+      "type": "cards",
+      "durationInFrames": 190,
+      "purpose": "Turn a vague agent idea into a specific one.",
+      "onScreen": "VAGUE VS HIREABLE / Vague job, vague agent. / TASKS Drafts refund replies to check · TOOLS Reads orders; can’t refund · REVIEW Scored weekly on past tickets",
+      "voiceover": "Vague job, vague agent. Handles support becomes: drafts refund replies for a human to check. Uses our systems becomes: reads orders, can't refund. Gets it right becomes: scored weekly on past tickets.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2.5s hold."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "VAGUE VS HIREABLE",
+      "headline": [
+        {
+          "text": "Vague job,"
+        },
+        {
+          "text": "vague agent.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "“Handles support”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "Drafts refund replies to check",
+            "tag": "TASKS",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "“Uses our systems”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "Reads orders; can’t refund",
+            "tag": "TOOLS",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "“Gets it right”",
+          "status": "unknown",
+          "tag": "VAGUE",
+          "swap": {
+            "text": "Scored weekly on past tickets",
+            "tag": "REVIEW",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Can’t describe the job? Don’t hire the agent. / Save this for your next agent idea",
+      "voiceover": "If you can't describe the job, don't hire the agent. Save this for your next agent idea.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Can’t describe"
+        },
+        {
+          "text": "the job? Don’t"
+        },
+        {
+          "text": "hire the agent.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next agent idea",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT DESIGN",
+    "headline": [
+      {
+        "text": "Write the"
+      },
+      {
+        "text": "agent’s job"
+      },
+      {
+        "text": "description",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If you can’t write an agent’s job description, you’re not ready to build the agent.",
+    "body": [
+      "Four lines before any code:\n→ Tasks: which steps does it own?\n→ Tools: what can it read or change?\n→ Sign-off: which actions need a human?\n→ Review: how will you score its work?",
+      "“Handles support” isn’t a job. “Drafts refund replies for review, reads orders but can’t issue refunds, scored weekly on past tickets” is. If you can’t fill a line, narrow the job or build a plain workflow."
+    ],
+    "cta": "Save this for your next agent idea.",
+    "hashtags": [
+      "#AIAgents",
+      "#AgenticAI",
+      "#AIProductManager",
+      "#ProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next agent idea"
+  },
+  "claims": [
+    {
+      "text": "Scoping an agent by its owned tasks, tool access, approval points and review method before building reduces risk and vague requirements.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Could you write this agent’s job description?",
+      "2/ Tasks",
+      "3/ Tools",
+      "4/ Sign-off",
+      "5/ Review",
+      "6/ Vague vs specific example",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Format 10 (Decision checklist): which agent actions need human sign-off.",
+    "linkedin": "Post: the four-line agent job description, with a support-agent example rewritten from vague to specific."
+  }
+}

@@ -50,6 +50,9 @@
     {"id": "t041", "pillar": "F", "format": "build-with-me", "status": "open", "topic": "A prompt that turns meeting notes into a decision log", "angle": "Show the prompt structure and the failure it still has", "research": false},
 
     {"id": "t042", "pillar": "A", "format": "teardown", "status": "open", "topic": "Teardown: what one AI chat session tells you without a rating", "angle": "Ratings are rare; regenerations, heavy edits, copy-outs and abandonment show where answers failed, so log them from day one", "research": false},
-    {"id": "t043", "pillar": "A", "format": "a-vs-b", "status": "open", "topic": "Launch an AI feature as opt-in or on by default?", "angle": "Opt-in only hears from enthusiasts and hides failures; go default-on when wrong answers are cheap, reversible and have a fallback", "research": false}
+    {"id": "t043", "pillar": "A", "format": "a-vs-b", "status": "open", "topic": "Launch an AI feature as opt-in or on by default?", "angle": "Opt-in only hears from enthusiasts and hides failures; go default-on when wrong answers are cheap, reversible and have a fallback", "research": false},
+    {"id": "t044", "pillar": "A", "format": "myth-vs-reality", "status": "open", "topic": "Myth: a prompt tweak is a small change", "angle": "One edited line can fix the case you looked at and break others; version prompts, re-run the eval set and roll out like a release", "research": false},
+    {"id": "t045", "pillar": "B", "format": "architecture", "status": "open", "topic": "The model returned JSON. Validate it anyway", "angle": "Schema check, retry with the error, safe fallback; valid format still needs value, range and ID checks before your code acts on it", "research": false},
+    {"id": "t046", "pillar": "C", "format": "poc-to-production", "status": "open", "topic": "What stops your agent at step 40?", "angle": "Demos end on their own; production agents need a step budget, time and cost ceilings, a repeated-failure stop and a handoff to a human", "research": false}
   ]
 }
