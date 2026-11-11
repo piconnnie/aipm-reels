@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Turn meeting notes into a decision log. One prompt. Copy it.
+
+2
+00:00:03,130 --> 00:00:11,600
+Paste your notes, then: from these notes, list only decisions actually made. For each, the decision, owner, due date and open question. If there’s no owner, write UNASSIGNED. Don’t invent anything.
+
+3
+00:00:11,800 --> 00:00:20,260
+One row per decision, with an owner and an open question. The UNASSIGNED rows are the useful part. Paste the log back into the meeting doc.
+
+4
+00:00:20,460 --> 00:00:25,260
+Decisions need owners. Save this prompt for Monday.

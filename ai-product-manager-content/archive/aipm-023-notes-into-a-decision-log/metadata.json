@@ -1,0 +1,206 @@
+{
+  "contentId": "aipm-023-notes-into-a-decision-log",
+  "version": 1,
+  "generatedAt": "2026-11-07T06:25:58.092Z",
+  "pillar": "F: AI Tools and Experiments",
+  "format": "build-with-me",
+  "objective": "saves",
+  "targetAudience": "PMs and team leads who run lots of meetings",
+  "topic": "A prompt that turns meeting notes into a decision log",
+  "coreInsight": "Ask the model for decisions only — each with an owner, due date and open question, marking missing owners as UNASSIGNED and forbidding invention — and the gaps become the useful output.",
+  "hookVariants": [
+    {
+      "text": "Turn meeting notes into a decision log.",
+      "angle": "Utility",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your meeting notes are missing the only part that matters.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 19
+    },
+    {
+      "text": "One prompt that finds decisions nobody owns.",
+      "angle": "Benefit",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    }
+  ],
+  "selectedHook": "Turn meeting notes into a decision log.",
+  "selectionRationale": "Highest total (23/25): a practical promise the viewer can use today; the UNASSIGNED angle becomes the payoff.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Turn notes into a decision log. / One prompt. Copy it.",
+      "voiceover": "Turn meeting notes into a decision log. One prompt. Copy it."
+    },
+    {
+      "scene": "prompt",
+      "onScreen": "THE PROMPT / Paste notes, then this. / From these notes, list only · decisions actually made. · For each: decision, owner, · due date, open question. · If no owner: UNASSIGNED. · Don’t invent anything.",
+      "voiceover": "Paste your notes, then: from these notes, list only decisions actually made. For each, the decision, owner, due date and open question. If there’s no owner, write UNASSIGNED. Don’t invent anything."
+    },
+    {
+      "scene": "output",
+      "onScreen": "EXAMPLE OUTPUT / One row per decision. / DECISION → OWNER → OPEN QUESTION / Pause the pricing test → Owner: Priya → Restart date? · Ship search beta to 10% → Owner: UNASSIGNED → Who signs off? · Drop the PDF export → Owner: Sam → Tell support? / UNASSIGNED is the useful part · Paste the log back into the doc",
+      "voiceover": "One row per decision, with an owner and an open question. The UNASSIGNED rows are the useful part. Paste the log back into the meeting doc."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Decisions need owners. / Save this prompt for Monday",
+      "voiceover": "Decisions need owners. Save this prompt for Monday."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "prompt",
+      "type": "terminal",
+      "startFrame": 90,
+      "endFrame": 350,
+      "startSec": 3,
+      "endSec": 11.67
+    },
+    {
+      "id": "output",
+      "type": "table",
+      "startFrame": 350,
+      "endFrame": 610,
+      "startSec": 11.67,
+      "endSec": 20.33
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 610,
+      "endFrame": 760,
+      "startSec": 20.33,
+      "endSec": 25.33
+    }
+  ],
+  "caption": "Most meeting notes record what was said. The decisions are buried in the middle, often without an owner.\n\nThe prompt (paste your notes first):\n“From these notes, list only decisions actually made. For each: decision, owner, due date, open question. If no owner: write UNASSIGNED. Don’t invent anything.”\n\nWhy it works:\n→ “only decisions” filters out discussion\n→ UNASSIGNED makes missing owners visible instead of guessed\n→ “don’t invent anything” keeps it to what the notes say\n\nCheck the output against the notes before you send it. The example in the reel is made up.\n\nSave this prompt for Monday.\n\n#AITools #PromptEngineering #ProductivityTips #ProductManagement #GenAI",
+  "hashtags": [
+    "#AITools",
+    "#PromptEngineering",
+    "#ProductivityTips",
+    "#ProductManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this prompt for Monday"
+  },
+  "coverHeadline": "Notes into a decision log",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Constraining a model to list only decisions, with explicit placeholders for missing owners and an instruction not to invent, produces a more useful and safer meeting summary than a general summary request.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.33,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-023-notes-into-a-decision-log-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-023-notes-into-a-decision-log.mp4",
+    "cover": "output/covers/aipm-023-notes-into-a-decision-log.png",
+    "caption": "output/captions/aipm-023-notes-into-a-decision-log.txt",
+    "storyboard": "output/storyboards/aipm-023-notes-into-a-decision-log.md",
+    "subtitles": "output/storyboards/aipm-023-notes-into-a-decision-log.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-07T06:26:05.825Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-023-notes-into-a-decision-log/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen. Example rows are fictional.",
+  "repurposing": {
+    "carousel": [
+      "1/ Turn notes into a decision log",
+      "2/ The prompt",
+      "3/ Example output",
+      "4/ Why UNASSIGNED matters",
+      "5/ Check before you send",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to compare two AI tools fairly.",
+    "linkedin": "Post sharing the prompt and the habit of pasting the decision log back into the meeting doc."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

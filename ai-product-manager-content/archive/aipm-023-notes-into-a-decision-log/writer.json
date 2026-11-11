@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-07",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t041",
+    "pillar": "F",
+    "pillarName": "F: AI Tools and Experiments",
+    "format": "build-with-me",
+    "research": false
+  },
+  "reelId": "aipm-023-notes-into-a-decision-log",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
