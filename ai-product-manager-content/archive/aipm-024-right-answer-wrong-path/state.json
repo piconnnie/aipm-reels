@@ -1,0 +1,36 @@
+{
+  "id": "aipm-024-right-answer-wrong-path",
+  "createdAt": "2026-11-08T06:33:20.440Z",
+  "release": {
+    "tag": "reel-aipm-024-right-answer-wrong-path",
+    "video": "aipm-024-right-answer-wrong-path.mp4",
+    "cover": "aipm-024-right-answer-wrong-path.jpg",
+    "contactSheet": "aipm-024-right-answer-wrong-path-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "0f70a9b1e050eb08881db4a40eefdf94e1d0683c1d02f8740f16b65acf4d0dfa",
+    "cover": "8df2c38b8d654430c2553aaf89e8fdb662e3e210f672e0586f84287021e77d77"
+  },
+  "durationSec": 25,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
