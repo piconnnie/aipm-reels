@@ -21,9 +21,10 @@
   "critic": null,
   "needsAttention": false,
   "approval": {
-    "status": "pending",
-    "approvedBy": null,
-    "approvedAt": null
+    "status": "approved",
+    "approvedBy": "piconnnie",
+    "approvedAt": "2026-11-11T15:28:33Z",
+    "pr": 24
   },
   "publish": {
     "status": "pending",
