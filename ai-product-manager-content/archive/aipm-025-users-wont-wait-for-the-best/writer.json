@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-09",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t016",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "a-vs-b",
+    "research": false
+  },
+  "reelId": "aipm-025-users-wont-wait-for-the-best",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
