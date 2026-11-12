@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Finance won’t fund a demo. Bring them this one page.
+
+2
+00:00:03,130 --> 00:00:13,260
+Baseline today. The one number AI should move. Run cost at full volume. What happens when it’s wrong. A date to stop or scale. If you can’t fill the baseline, you’re not ready to ask.
+
+3
+00:00:13,460 --> 00:00:20,600
+An illustrative example: invoice triage takes six minutes today, the target is under two, run cost is capped per invoice, wrong codes go to a human queue, and day sixty decides stop or scale.
+
+4
+00:00:20,800 --> 00:00:25,600
+No baseline, no business case. Save this before you pitch finance.
