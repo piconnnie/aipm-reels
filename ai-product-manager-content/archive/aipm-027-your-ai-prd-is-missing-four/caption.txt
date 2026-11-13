@@ -1,0 +1,13 @@
+A normal PRD template quietly assumes the software does what it’s told. AI features don’t.
+
+Four sections to add to every AI PRD:
+→ Failure modes: what a wrong answer looks like, and the fallback
+→ Eval plan: the test set, the metric, the pass bar
+→ Data: what it reads, who owns it, how fresh it must be
+→ Cost envelope: maximum cost and latency per task
+
+Write them before the build starts. A blank section is a question the team will answer by accident later.
+
+Save this before your next AI PRD.
+
+#AIProductManagement #ProductManagement #PRD #GenAI #AIProducts
