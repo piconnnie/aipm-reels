@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Your PRD template assumes the code is right. AI features need four more sections.
+
+2
+00:00:03,130 --> 00:00:11,400
+The usual template has requirements, acceptance criteria, dependencies and cost. For AI you also need how it can be wrong, an eval plan, the data it reads, and cost per task.
+
+3
+00:00:11,600 --> 00:00:21,400
+Add four sections. Failure modes and the fallback. An eval plan with a test set and a pass bar. The data it reads, who owns it and how fresh it is. And a maximum cost and latency per task. If a section is blank, it isn’t ready to build.
+
+4
+00:00:21,600 --> 00:00:26,400
+A PRD for AI says how it can be wrong. Save this before your next AI PRD.

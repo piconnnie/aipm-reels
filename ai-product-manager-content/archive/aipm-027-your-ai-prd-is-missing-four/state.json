@@ -1,0 +1,36 @@
+{
+  "id": "aipm-027-your-ai-prd-is-missing-four",
+  "createdAt": "2026-11-13T07:06:11.586Z",
+  "release": {
+    "tag": "reel-aipm-027-your-ai-prd-is-missing-four",
+    "video": "aipm-027-your-ai-prd-is-missing-four.mp4",
+    "cover": "aipm-027-your-ai-prd-is-missing-four.jpg",
+    "contactSheet": "aipm-027-your-ai-prd-is-missing-four-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "f20df3293d25a9260128598ed5474b8abb30399d295c27a826656fee63c66fc8",
+    "cover": "542f1ef7142a67fff7691063923ccd085b473d1a76565d080f5039382c7a4141"
+  },
+  "durationSec": 26.47,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
