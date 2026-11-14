@@ -1,0 +1,36 @@
+{
+  "id": "aipm-028-approve-the-action-not-the-agent",
+  "createdAt": "2026-11-14T06:55:03.330Z",
+  "release": {
+    "tag": "reel-aipm-028-approve-the-action-not-the-agent",
+    "video": "aipm-028-approve-the-action-not-the-agent.mp4",
+    "cover": "aipm-028-approve-the-action-not-the-agent.jpg",
+    "contactSheet": "aipm-028-approve-the-action-not-the-agent-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "d47af67e38a26c42a47e6f783a9537ada630ee511db14865beff1f6aef8df980",
+    "cover": "899dfcd6ee4ed647b5fa1e62db810e93555b71ffd3bb34009bcb4501cb489425"
+  },
+  "durationSec": 24.8,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
