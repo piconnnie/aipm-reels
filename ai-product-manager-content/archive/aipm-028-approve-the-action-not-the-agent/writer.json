@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-14",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t023",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "framework",
+    "research": false
+  },
+  "reelId": "aipm-028-approve-the-action-not-the-agent",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

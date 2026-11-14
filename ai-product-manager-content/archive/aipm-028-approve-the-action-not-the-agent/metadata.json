@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-028-approve-the-action-not-the-agent",
+  "version": 1,
+  "generatedAt": "2026-11-14T06:54:55.482Z",
+  "pillar": "C: Agentic AI",
+  "format": "framework",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers designing agent workflows",
+  "topic": "Where to put human approval gates in an agent",
+  "coreInsight": "Put approval gates on actions, not on the whole agent: the harder an action is to undo, the earlier a human approves it.",
+  "hookVariants": [
+    {
+      "text": "Don’t approve the agent. Approve the action.",
+      "angle": "Reframe",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your agent needs four gate levels, not one.",
+      "angle": "Number promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    },
+    {
+      "text": "Approving every agent step defeats the point.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Don’t approve the agent. Approve the action.",
+  "selectionRationale": "Highest total (23/25): a crisp reframe that the gate map makes concrete and the refund example proves.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Don’t approve the agent. Approve the action. / Where the gates go, by risk.",
+      "voiceover": "Don’t approve the agent. Approve the action. Here’s where the gates go."
+    },
+    {
+      "scene": "map",
+      "onScreen": "THE GATE MAP / Gate by action, not by agent. / Read-only lookups: no gate, just log them · Drafts and internal notes: spot-check later · Messages to customers: approve before sending · Money, deletes, permissions: always approve / The harder an action is to undo, the earlier a human steps in.",
+      "voiceover": "Read-only lookups: no gate, just log them. Drafts and internal notes: spot-check later. Messages to customers: approve before sending. Money, deletes and permissions: always approve. The harder an action is to undo, the earlier a human steps in."
+    },
+    {
+      "scene": "example",
+      "onScreen": "EXAMPLE: REFUND AGENT / One agent, four gate levels. / NO GATE Look up the order · SPOT-CHECK Draft the reply · APPROVE FIRST Send it to the customer · ALWAYS APPROVE Issue the refund",
+      "voiceover": "In a refund agent: looking up the order needs no gate. Drafting the reply gets spot-checked. Sending it needs approval first. Issuing the refund is always approved."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Gate what you can’t undo. / Save this for your agent design review",
+      "voiceover": "Gate what you can’t undo. Save this for your agent design review."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "map",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 390,
+      "startSec": 3,
+      "endSec": 13
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "startFrame": 390,
+      "endFrame": 594,
+      "startSec": 13,
+      "endSec": 19.8
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 594,
+      "endFrame": 744,
+      "startSec": 19.8,
+      "endSec": 24.8
+    }
+  ],
+  "caption": "“Human in the loop” for an agent shouldn’t mean approving every step. Gate the actions instead.\n\nA simple gate map:\n→ Read-only lookups: no gate, just log them\n→ Drafts and internal notes: spot-check later\n→ Messages to customers: approve before sending\n→ Money, deletes, permissions: always approve\n\nThe rule: the harder an action is to undo, the earlier a human steps in. List every tool your agent can call and give each one a gate level before launch.\n\nSave this for your agent design review.\n\n#AgenticAI #AIAgents #HumanInTheLoop #AIProductManagement #GenAI",
+  "hashtags": [
+    "#AgenticAI",
+    "#AIAgents",
+    "#HumanInTheLoop",
+    "#AIProductManagement",
+    "#GenAI"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your agent design review"
+  },
+  "coverHeadline": "Approve the action, not the agent",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Approval gates in an agent work best per action, set by how reversible and high-impact the action is.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 24.8,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-028-approve-the-action-not-the-agent-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-028-approve-the-action-not-the-agent.mp4",
+    "cover": "output/covers/aipm-028-approve-the-action-not-the-agent.png",
+    "caption": "output/captions/aipm-028-approve-the-action-not-the-agent.txt",
+    "storyboard": "output/storyboards/aipm-028-approve-the-action-not-the-agent.md",
+    "subtitles": "output/storyboards/aipm-028-approve-the-action-not-the-agent.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-14T06:55:03.289Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-028-approve-the-action-not-the-agent/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Approve the action, not the agent",
+      "2/ Read-only: no gate",
+      "3/ Drafts: spot-check",
+      "4/ Customer messages: approve first",
+      "5/ Money and deletes: always approve",
+      "6/ Refund agent example",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: how to measure real autonomy instead of marketing autonomy.",
+    "linkedin": "Post on mapping every agent tool to a gate level, with the refund agent as the worked example."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

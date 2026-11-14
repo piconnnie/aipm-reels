@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Don’t approve the agent. Approve the action. Here’s where the gates go.
+
+2
+00:00:03,130 --> 00:00:12,930
+Read-only lookups: no gate, just log them. Drafts and internal notes: spot-check later. Messages to customers: approve before sending. Money, deletes and permissions: always approve. The harder an action is to undo, the earlier a human steps in.
+
+3
+00:00:13,130 --> 00:00:19,730
+In a refund agent: looking up the order needs no gate. Drafting the reply gets spot-checked. Sending it needs approval first. Issuing the refund is always approved.
+
+4
+00:00:19,930 --> 00:00:24,730
+Gate what you can’t undo. Save this for your agent design review.
