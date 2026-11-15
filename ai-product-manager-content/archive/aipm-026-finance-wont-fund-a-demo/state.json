@@ -1,0 +1,36 @@
+{
+  "id": "aipm-026-finance-wont-fund-a-demo",
+  "createdAt": "2026-11-12T07:34:18.629Z",
+  "release": {
+    "tag": "reel-aipm-026-finance-wont-fund-a-demo",
+    "video": "aipm-026-finance-wont-fund-a-demo.mp4",
+    "cover": "aipm-026-finance-wont-fund-a-demo.jpg",
+    "contactSheet": "aipm-026-finance-wont-fund-a-demo-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "7f39e17b16a00e27cf91f0ddf268dc41f25f593cae73e1cf869c7609ef4432c5",
+    "cover": "f3f589ecc659bdb91475834f3cf829853d999c29b56b6f61c73e374ab4e262ff"
+  },
+  "durationSec": 25.67,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

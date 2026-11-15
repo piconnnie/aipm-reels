@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-12",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t029",
+    "pillar": "D",
+    "pillarName": "D: Enterprise AI",
+    "format": "framework",
+    "research": false
+  },
+  "reelId": "aipm-026-finance-wont-fund-a-demo",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

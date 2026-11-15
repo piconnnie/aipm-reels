@@ -1,0 +1,16 @@
+A great demo answers “can it work?” Finance is asking “what changes, at what cost, and when do we know?”
+
+Five boxes on one page:
+→ Baseline: how the task performs today, measured
+→ Change: the one number AI should move
+→ Cost envelope: run cost at full volume, not PoC volume
+→ Risk: what happens when it’s wrong, and who catches it
+→ Decision date: when you stop or scale
+
+Start with the baseline. If nobody has measured the task today, measure that first.
+
+(The invoice-triage numbers in the reel are an illustrative example.)
+
+Save this before you pitch finance.
+
+#EnterpriseAI #AIStrategy #BusinessCase #AIProductManagement #ProductManagement

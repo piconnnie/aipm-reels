@@ -1,0 +1,213 @@
+{
+  "contentId": "aipm-026-finance-wont-fund-a-demo",
+  "version": 1,
+  "generatedAt": "2026-11-12T07:34:11.908Z",
+  "pillar": "D: Enterprise AI",
+  "format": "framework",
+  "objective": "saves",
+  "targetAudience": "PMs and leaders pitching AI investments",
+  "topic": "A one-page AI business case that finance will accept",
+  "coreInsight": "A fundable AI business case fits on one page with five boxes — baseline, the one number AI should move, cost at full volume, what happens when it’s wrong, and a decision date — and without a baseline you’re not ready to ask.",
+  "hookVariants": [
+    {
+      "text": "Finance won’t fund a demo.",
+      "angle": "Hard truth",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "The AI business case that fits on one page.",
+      "angle": "Promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Why your AI pitch keeps getting “not yet”.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "Finance won’t fund a demo.",
+  "selectionRationale": "Highest total (23/25): a hard truth practitioners recognise, answered by a concrete one-page template and worked example.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Finance won’t fund a demo. / Bring them this one page.",
+      "voiceover": "Finance won’t fund a demo. Bring them this one page."
+    },
+    {
+      "scene": "boxes",
+      "onScreen": "ONE-PAGE BUSINESS CASE / Five boxes, one page. / Baseline: how the task performs today · Change: the one number AI should move · Cost envelope: run cost at full volume · Risk: what happens when it’s wrong · Decision date: when you stop or scale / If you can’t fill the baseline, you’re not ready to ask.",
+      "voiceover": "Baseline today. The one number AI should move. Run cost at full volume. What happens when it’s wrong. A date to stop or scale. If you can’t fill the baseline, you’re not ready to ask."
+    },
+    {
+      "scene": "example",
+      "onScreen": "EXAMPLE (ILLUSTRATIVE) / Invoice triage, on one page. / BASELINE Today: 6 min per invoice · CHANGE Target: under 2 min · COST Run cost capped per invoice · RISK Wrong code → human queue · DECISION Stop or scale on day 60",
+      "voiceover": "An illustrative example: invoice triage takes six minutes today, the target is under two, run cost is capped per invoice, wrong codes go to a human queue, and day sixty decides stop or scale."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "No baseline, no business case. / Save this before you pitch finance",
+      "voiceover": "No baseline, no business case. Save this before you pitch finance."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "boxes",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 400,
+      "startSec": 3,
+      "endSec": 13.33
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "startFrame": 400,
+      "endFrame": 620,
+      "startSec": 13.33,
+      "endSec": 20.67
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 620,
+      "endFrame": 770,
+      "startSec": 20.67,
+      "endSec": 25.67
+    }
+  ],
+  "caption": "A great demo answers “can it work?” Finance is asking “what changes, at what cost, and when do we know?”\n\nFive boxes on one page:\n→ Baseline: how the task performs today, measured\n→ Change: the one number AI should move\n→ Cost envelope: run cost at full volume, not PoC volume\n→ Risk: what happens when it’s wrong, and who catches it\n→ Decision date: when you stop or scale\n\nStart with the baseline. If nobody has measured the task today, measure that first.\n\n(The invoice-triage numbers in the reel are an illustrative example.)\n\nSave this before you pitch finance.\n\n#EnterpriseAI #AIStrategy #BusinessCase #AIProductManagement #ProductManagement",
+  "hashtags": [
+    "#EnterpriseAI",
+    "#AIStrategy",
+    "#BusinessCase",
+    "#AIProductManagement",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this before you pitch finance"
+  },
+  "coverHeadline": "Finance won’t fund a demo",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "An AI business case is more likely to be funded when it states a measured baseline, one target metric, full-volume run cost, failure handling and a decision date.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Invoice triage at 6 minutes per invoice today with a target under 2 minutes and a day-60 decision.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.67,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-026-finance-wont-fund-a-demo-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-026-finance-wont-fund-a-demo.mp4",
+    "cover": "output/covers/aipm-026-finance-wont-fund-a-demo.png",
+    "caption": "output/captions/aipm-026-finance-wont-fund-a-demo.txt",
+    "storyboard": "output/storyboards/aipm-026-finance-wont-fund-a-demo.md",
+    "subtitles": "output/storyboards/aipm-026-finance-wont-fund-a-demo.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-12T07:34:18.589Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-026-finance-wont-fund-a-demo/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Finance won’t fund a demo",
+      "2/ Baseline",
+      "3/ Change",
+      "4/ Cost envelope",
+      "5/ Risk",
+      "6/ Decision date",
+      "7/ Worked example (illustrative)",
+      "8/ Save CTA"
+    ],
+    "followUpReel": "Mistake: rolling out an AI tool without changing the workflow around it.",
+    "linkedin": "Post with the one-page template as a fill-in-the-blanks image."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
