@@ -1,0 +1,309 @@
+{
+  "brief": {
+    "topic": "Show users a confidence score or show them the sources?",
+    "audience": "PMs and designers shipping AI answers to users",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "a-vs-b",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Illustrative numbers labelled on screen and in caption"
+    ],
+    "backlogId": "t047",
+    "targetDurationSec": 23,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A confidence percentage asks users to trust the answer; sources and a plain 'check this' state let them verify it, so they catch more wrong answers.",
+  "hooks": [
+    {
+      "text": "“92% sure” doesn’t tell users what to check.",
+      "angle": "Concrete UI moment",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Names a familiar badge and the gap in it."
+    },
+    {
+      "text": "Stop putting percentages on AI answers.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Too absolute; calibrated scores can help."
+    },
+    {
+      "text": "Your confidence badge isn’t helping anyone.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Vague about what to do instead."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): a specific UI element everyone has seen, and the reel answers what to show instead.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "“92% sure” doesn’t tell users what to check. / Show the sources instead.",
+      "voiceover": "“92% sure” doesn’t tell users what to check. Show the sources instead.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "TRUST UX",
+      "lines": [
+        {
+          "text": "“92% sure”"
+        },
+        {
+          "text": "doesn’t tell"
+        },
+        {
+          "text": "users what"
+        },
+        {
+          "text": "to check.",
+          "highlight": true
+        }
+      ],
+      "sub": "Show the sources instead.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "caught",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show the difference in caught errors with a labelled illustration.",
+      "onScreen": "SAME WRONG ANSWER [ILLUSTRATIVE] / SCORE BADGE ONLY 1 in 5 / SOURCES + “CHECK THIS” 3 in 5 / Users verify what they can see.",
+      "voiceover": "Illustrative: with only a score badge, one in five users spot the wrong answer. With sources and a check-this note, three in five do. Users verify what they can see.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; warning bar vs success bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME WRONG ANSWER",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "SCORE BADGE ONLY",
+        "value": "1 in 5",
+        "ratio": 0.2,
+        "tone": "warning",
+        "caption": "Users who spot the error"
+      },
+      "right": {
+        "label": "SOURCES + “CHECK THIS”",
+        "value": "3 in 5",
+        "ratio": 0.6,
+        "tone": "success",
+        "caption": "Users who spot the error"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Users verify"
+        },
+        {
+          "text": "what they can see.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "chime"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "what-to-show",
+      "type": "checklist",
+      "durationInFrames": 290,
+      "purpose": "What to show instead of, or alongside, a score.",
+      "onScreen": "WHAT TO SHOW / Help users check the answer. / Factual answer? Link each claim to its source · Weak support? Say “check this” in plain words · Show a % only if you’ve tested it’s calibrated · Make checking one click, not a new search / A number asks for trust. A source lets users check.",
+      "voiceover": "Link each claim to its source. When support is weak, say check this in plain words. Show a percentage only if you’ve tested it’s calibrated. Make checking one click. A number asks for trust; a source lets users check.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT TO SHOW",
+      "headline": [
+        {
+          "text": "Help users"
+        },
+        {
+          "text": "check the answer.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Factual answer? Link each claim to its source",
+        "Weak support? Say “check this” in plain words",
+        "Show a % only if you’ve tested it’s calibrated",
+        "Make checking one click, not a new search"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "A number asks for trust. A source lets users check.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Show how to check, not how sure. / Save this for your next AI UX review",
+      "voiceover": "Show how to check, not how sure. Save this for your next AI UX review.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Show how"
+        },
+        {
+          "text": "to check, not"
+        },
+        {
+          "text": "how sure.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next AI UX review",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "TRUST UX",
+    "headline": [
+      {
+        "text": "Sources beat"
+      },
+      {
+        "text": "a % score",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A “92% confident” badge looks helpful, but it doesn’t tell users what to check, and raw model scores often aren’t well calibrated.",
+    "body": [
+      "What helps users judge an AI answer:\n→ Each claim linked to the source it came from\n→ A plain “check this” note when support is weak\n→ A percentage only if you’ve tested that it’s calibrated\n→ Checking that takes one click, not a new search",
+      "Design for verification, not just trust.",
+      "(The 1 in 5 vs 3 in 5 in the reel is illustrative, not study data.)"
+    ],
+    "cta": "Save this for your next AI UX review.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#AIUX",
+      "#ProductDesign",
+      "#GenAI",
+      "#ResponsibleAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next AI UX review"
+  },
+  "claims": [
+    {
+      "text": "Showing sources and a plain 'check this' state usually helps users judge AI answers better than an untested confidence percentage.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "1 in 5 users spot a wrong answer with a score badge only vs 3 in 5 with sources and a check-this note.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ “92% sure” doesn’t tell users what to check",
+      "2/ 1 in 5 vs 3 in 5 (illustrative)",
+      "3/ Link claims to sources",
+      "4/ Say “check this” plainly",
+      "5/ Only show calibrated %",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 1 (Mistake): citing sources that don’t actually support the claim.",
+    "linkedin": "Post: why confidence badges rarely help users, and the verification UX to build instead."
+  }
+}

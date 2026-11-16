@@ -1,0 +1,338 @@
+{
+  "brief": {
+    "topic": "Log one LLM call so you can debug it next month",
+    "audience": "PMs and engineers running LLM features in production",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "build-with-me",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Log values are fictional; time comparison is illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t048",
+    "targetDurationSec": 23,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "To explain or reproduce a bad AI answer you need the prompt version, model, input, retrieved documents, exact output, latency/tokens and the user's next action logged for every call.",
+  "hooks": [
+    {
+      "text": "You can’t fix an answer you didn’t log.",
+      "angle": "Rule",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Memorable and true; sets up the field list."
+    },
+    {
+      "text": "A user says the AI was wrong. Now what?",
+      "angle": "Scenario",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Relatable, but the answer is less clear."
+    },
+    {
+      "text": "Seven fields every LLM call should log.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Useful but flat."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): a crisp rule that the log template and the illustrative comparison then make concrete.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "You can’t fix an answer you didn’t log. / Log these 7 fields per call.",
+      "voiceover": "You can’t fix an answer you didn’t log. Log these seven fields per call.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "BUILD WITH ME",
+      "lines": [
+        {
+          "text": "You can’t fix"
+        },
+        {
+          "text": "an answer"
+        },
+        {
+          "text": "you didn’t"
+        },
+        {
+          "text": "log.",
+          "highlight": true
+        }
+      ],
+      "sub": "Log these 7 fields per call.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "log",
+      "type": "terminal",
+      "durationInFrames": 270,
+      "purpose": "Show the fields of one logged LLM call (fictional values).",
+      "onScreen": "ONE CALL, LOGGED / Seven fields, every call. / prompt_version: v14 · model: small-v2 · input: user msg + context · retrieved: doc_118, doc_402 · output: exactly what was shown · latency 2.1 s · 3.1k tokens · user_next: edited, then copied",
+      "voiceover": "Seven fields, every call: prompt version, model, the input, which documents were retrieved, the exact output, latency and tokens, and what the user did next. Example values only.",
+      "storyboard": {
+        "visual": "Terminal window 'llm_call.log' with deterministic typing.",
+        "animation": "Lines type in at their cue frames."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ONE CALL, LOGGED",
+      "headline": [
+        {
+          "text": "Seven fields,"
+        },
+        {
+          "text": "every call.",
+          "highlight": true
+        }
+      ],
+      "title": "llm_call.log",
+      "lines": [
+        {
+          "text": "prompt_version: v14",
+          "at": 10
+        },
+        {
+          "text": "model: small-v2",
+          "at": 40
+        },
+        {
+          "text": "input: user msg + context",
+          "at": 70
+        },
+        {
+          "text": "retrieved: doc_118, doc_402",
+          "at": 100,
+          "tone": "warning"
+        },
+        {
+          "text": "output: exactly what was shown",
+          "at": 130
+        },
+        {
+          "text": "latency 2.1 s · 3.1k tokens",
+          "at": 160
+        },
+        {
+          "text": "user_next: edited, then copied",
+          "at": 190,
+          "tone": "success"
+        }
+      ],
+      "charsPerFrame": 1.2,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 40,
+          "kind": "tick"
+        },
+        {
+          "at": 70,
+          "kind": "tick"
+        },
+        {
+          "at": 100,
+          "kind": "tick"
+        },
+        {
+          "at": 130,
+          "kind": "tick"
+        },
+        {
+          "at": 160,
+          "kind": "tick"
+        },
+        {
+          "at": 190,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "debug",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show how much faster a logged failure is to explain (illustrative).",
+      "onScreen": "SAME BAD ANSWER [ILLUSTRATIVE] / NO CALL LOG ~2 days / WITH CALL LOG ~20 min / Log it before you need it.",
+      "voiceover": "Illustrative: about two days to find the cause without a call log, about twenty minutes with one. The wrong document was retrieved. Log it before you need it.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; warning bar vs success bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME BAD ANSWER",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "NO CALL LOG",
+        "value": "~2 days",
+        "ratio": 1,
+        "tone": "warning",
+        "caption": "To find the cause"
+      },
+      "right": {
+        "label": "WITH CALL LOG",
+        "value": "~20 min",
+        "ratio": 0.15,
+        "tone": "success",
+        "caption": "Wrong doc was retrieved"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Log it before"
+        },
+        {
+          "text": "you need it.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "chime"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Log the call before the complaint. / Send this to whoever owns your logs",
+      "voiceover": "Log the call before the complaint. Send this to whoever owns your logs.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Log the call"
+        },
+        {
+          "text": "before the"
+        },
+        {
+          "text": "complaint.",
+          "highlight": true
+        }
+      ],
+      "cta": "Send this to whoever owns your logs",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "BUILD WITH ME",
+    "headline": [
+      {
+        "text": "Log 7 fields"
+      },
+      {
+        "text": "per LLM call",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "When a user reports a bad answer, you need to see exactly what the model saw and said. Without a log, you’re guessing.",
+    "body": [
+      "Log these for every call:\n→ Prompt version\n→ Model\n→ Input: the user message and context sent\n→ Retrieved document IDs\n→ The exact output shown\n→ Latency and tokens\n→ What the user did next (edited, copied, retried, left)",
+      "Handle user inputs with care: redact sensitive data and set a retention limit.",
+      "(Log values in the reel are made up; 2 days vs 20 minutes is illustrative.)"
+    ],
+    "cta": "Send this to whoever owns your logs.",
+    "hashtags": [
+      "#GenAI",
+      "#LLMOps",
+      "#AIEngineering",
+      "#AIProductManagement",
+      "#Observability"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Send this to whoever owns your logs"
+  },
+  "claims": [
+    {
+      "text": "Logging prompt version, model, input, retrieved documents, exact output, latency/tokens and the user's next action per LLM call makes bad answers reproducible and explainable.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "About 2 days to find the cause of a bad answer without a call log vs about 20 minutes with one.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ You can’t fix an answer you didn’t log",
+      "2/ The seven fields",
+      "3/ Why retrieved doc IDs matter",
+      "4/ What the user did next",
+      "5/ ~2 days vs ~20 min (illustrative)",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 7 (Teardown): one bad answer, traced through its call log.",
+    "linkedin": "Post: a minimal LLM call log schema, plus privacy and retention notes."
+  }
+}

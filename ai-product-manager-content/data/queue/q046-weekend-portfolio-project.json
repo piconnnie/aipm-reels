@@ -1,0 +1,322 @@
+{
+  "brief": {
+    "topic": "A portfolio project that proves AI PM skill in one weekend",
+    "audience": "Aspiring and early-career AI PMs",
+    "pillar": "E: AI Product Career",
+    "objective": "saves",
+    "format": "framework",
+    "technicalDepth": "beginner",
+    "constraints": [
+      "Example scores are illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t037",
+    "targetDurationSec": 22,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A small project that defines a task, builds a 30-case eval set, compares two approaches and ends in a written decision shows AI PM judgment better than a polished demo.",
+  "hooks": [
+    {
+      "text": "Prove AI PM skill in one weekend.",
+      "angle": "Promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear payoff for the target audience."
+    },
+    {
+      "text": "Your AI side project needs a memo, not a demo.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Good twist, slightly longer to parse."
+    },
+    {
+      "text": "Thirty test cases beat a slick prototype.",
+      "angle": "Thesis",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Interesting but needs context."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (22/25): a concrete, achievable promise that the four steps and example keep.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Prove AI PM skill in one weekend. / With a memo, not a demo.",
+      "voiceover": "Prove AI PM skill in one weekend. With a memo, not a demo.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PM CAREER",
+      "lines": [
+        {
+          "text": "Prove AI PM"
+        },
+        {
+          "text": "skill in"
+        },
+        {
+          "text": "one weekend.",
+          "highlight": true
+        }
+      ],
+      "sub": "With a memo, not a demo.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "steps",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The four weekend steps.",
+      "onScreen": "WEEKEND PROJECT / Four steps, one memo. / Pick one narrow task you know well · Write 30 test cases with pass rules · Run two approaches on all 30 · Write a one-page memo: what you’d ship and why / The memo shows your judgment. That’s the portfolio.",
+      "voiceover": "Pick one narrow task you know well. Write thirty test cases with pass rules. Run two approaches on all thirty. Write a one-page memo on what you’d ship and why. The memo shows your judgment; that’s the portfolio.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WEEKEND PROJECT",
+      "headline": [
+        {
+          "text": "Four steps,"
+        },
+        {
+          "text": "one memo.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Pick one narrow task you know well",
+        "Write 30 test cases with pass rules",
+        "Run two approaches on all 30",
+        "Write a one-page memo: what you’d ship and why"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "The memo shows your judgment. That’s the portfolio.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "example",
+      "type": "cards",
+      "durationInFrames": 150,
+      "purpose": "Worked example of the project (illustrative).",
+      "onScreen": "EXAMPLE · ILLUSTRATIVE / Small task, clear call. / TASK Sort support emails by urgency · RESULT A A: prompt only → 21 of 30 · RESULT B B: with examples → 26 of 30 · DECISION Ship B. Misses go to a human",
+      "voiceover": "Illustrative example. Task: sort support emails by urgency. Prompt only passes twenty-one of thirty; with examples, twenty-six. Decision: ship B, and send misses to a human.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 22 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "EXAMPLE · ILLUSTRATIVE",
+      "headline": [
+        {
+          "text": "Small task,"
+        },
+        {
+          "text": "clear call.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 22,
+      "cards": [
+        {
+          "text": "Sort support emails by urgency",
+          "status": "unknown",
+          "tag": "TASK"
+        },
+        {
+          "text": "A: prompt only → 21 of 30",
+          "status": "unknown",
+          "tag": "RESULT A"
+        },
+        {
+          "text": "B: with examples → 26 of 30",
+          "status": "unknown",
+          "tag": "RESULT B"
+        },
+        {
+          "text": "Ship B. Misses go to a human",
+          "status": "pass",
+          "tag": "DECISION"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 38,
+          "kind": "tick"
+        },
+        {
+          "at": 60,
+          "kind": "tick"
+        },
+        {
+          "at": 82,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Show how you decide, not what you built. / Save this for your next free weekend",
+      "voiceover": "Show how you decide, not what you built. Save this for your next free weekend.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Show how you"
+        },
+        {
+          "text": "decide, not"
+        },
+        {
+          "text": "what you built.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next free weekend",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM CAREER",
+    "headline": [
+      {
+        "text": "A weekend"
+      },
+      {
+        "text": "AI PM"
+      },
+      {
+        "text": "portfolio",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A slick demo shows you can use a tool. A small eval and a written decision show you can do the job.",
+    "body": [
+      "The weekend project:\n→ Pick one narrow task you know well\n→ Write 30 test cases with clear pass rules\n→ Run two approaches on all 30\n→ Write a one-page memo: what you’d ship, the risks, and why",
+      "Illustrative example: sorting support emails by urgency. Prompt only: 21 of 30. With examples: 26 of 30. Ship the second, route misses to a human.",
+      "Link the test cases and the memo, not just a screenshot."
+    ],
+    "cta": "Save this for your next free weekend.",
+    "hashtags": [
+      "#AIProductManager",
+      "#ProductManagement",
+      "#CareerGrowth",
+      "#AIPM",
+      "#Portfolio"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next free weekend"
+  },
+  "claims": [
+    {
+      "text": "A small project with a defined task, an eval set, a comparison of two approaches and a written decision demonstrates AI PM judgment better than a demo alone.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Prompt only 21 of 30 vs with examples 26 of 30 on an email-urgency task.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Prove AI PM skill in one weekend",
+      "2/ Pick a narrow task",
+      "3/ 30 test cases",
+      "4/ Compare two approaches",
+      "5/ Write the memo",
+      "6/ Example (illustrative)",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Format 6 (Interview): walking an interviewer through your weekend eval project.",
+    "linkedin": "Post: a weekend AI PM portfolio template, with a memo outline."
+  }
+}

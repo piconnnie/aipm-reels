@@ -1,0 +1,329 @@
+{
+  "brief": {
+    "topic": "Give your agent the smallest tools that do the job",
+    "audience": "PMs and engineers designing tools for AI agents",
+    "pillar": "C: Agentic AI",
+    "objective": "shares",
+    "format": "architecture",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t049",
+    "targetDurationSec": 24,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Agents will sometimes make the wrong call, so design each tool with the least privilege it needs: split read from write, scope credentials, and enforce caps in code so a wrong call can only do small damage.",
+  "hooks": [
+    {
+      "text": "Why does your agent have admin keys?",
+      "angle": "Pointed question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Uncomfortable and concrete."
+    },
+    {
+      "text": "Your agent can do anything its tools can.",
+      "angle": "Thesis",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "True but abstract."
+    },
+    {
+      "text": "One bad tool call shouldn’t cost you much.",
+      "angle": "Outcome",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Clear, low curiosity."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a specific, slightly uncomfortable question, and the reel shows where the limits should live instead.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Why does your agent have admin keys? / Smaller tools, smaller mistakes.",
+      "voiceover": "Why does your agent have admin keys? Smaller tools, smaller mistakes.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "Why does"
+        },
+        {
+          "text": "your agent"
+        },
+        {
+          "text": "have admin"
+        },
+        {
+          "text": "keys?",
+          "highlight": true
+        }
+      ],
+      "sub": "Smaller tools, smaller mistakes.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "flow",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show where an agent's permissions are actually enforced.",
+      "onScreen": "TOOL PERMISSIONS / Where the limits live. / Agent asks → Read or write? → Scoped key → Limit check → Runs or escalates / Caps on amount and target live in code, not in the prompt.",
+      "voiceover": "The agent asks for a tool call. Is it a read or a write? Use a key scoped to this user only. Your code checks the limits. Then it runs, or goes to a human.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 4.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "TOOL PERMISSIONS",
+      "headline": [
+        {
+          "text": "Where the"
+        },
+        {
+          "text": "limits live.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "Agent asks",
+          "detail": "a tool call"
+        },
+        {
+          "label": "Read or write?",
+          "detail": "split tools"
+        },
+        {
+          "label": "Scoped key",
+          "detail": "this user only"
+        },
+        {
+          "label": "Limit check",
+          "detail": "in your code",
+          "tone": "warning"
+        },
+        {
+          "label": "Runs or escalates",
+          "detail": "human if over",
+          "tone": "success"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 3,
+        "text": "Caps on amount and target live in code, not in the prompt.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "shrink",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "How to shrink each tool's blast radius.",
+      "onScreen": "SHRINK EACH TOOL / A wrong call does small damage. / Separate read tools from write tools · Scope each key to this user and this task · Cap amounts and targets in code · Log every call with its arguments / A prompt asks nicely. A permission enforces.",
+      "voiceover": "Separate read tools from write tools. Scope each key to this user and this task. Cap amounts and targets in code. Log every call with its arguments. A prompt asks nicely; a permission enforces.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SHRINK EACH TOOL",
+      "headline": [
+        {
+          "text": "A wrong call does"
+        },
+        {
+          "text": "small damage.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Separate read tools from write tools",
+        "Scope each key to this user and this task",
+        "Cap amounts and targets in code",
+        "Log every call with its arguments"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "A prompt asks nicely. A permission enforces.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Size each tool for its worst call. / Send this to whoever wires your tools",
+      "voiceover": "Size each tool for its worst call. Send this to whoever wires your tools.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Size each"
+        },
+        {
+          "text": "tool for its"
+        },
+        {
+          "text": "worst call.",
+          "highlight": true
+        }
+      ],
+      "cta": "Send this to whoever wires your tools",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT TOOLS",
+    "headline": [
+      {
+        "text": "Smallest"
+      },
+      {
+        "text": "tool that"
+      },
+      {
+        "text": "does the job",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Your agent can do anything its tools and keys allow, including on the run where it gets things wrong.",
+    "body": [
+      "Design tools for least privilege:\n→ Separate read tools from write tools\n→ Scope each key to this user and this task\n→ Cap amounts and targets in code, not in the prompt\n→ Log every call with its arguments",
+      "Instructions in a prompt are requests. Permissions and limits in code are guarantees. Size each tool for its worst possible call."
+    ],
+    "cta": "Send this to whoever wires your tools.",
+    "hashtags": [
+      "#AgenticAI",
+      "#AIAgents",
+      "#AISecurity",
+      "#AIProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Send this to whoever wires your tools"
+  },
+  "claims": [
+    {
+      "text": "Agent tools should follow least privilege: separate read and write tools, task-scoped credentials, and limits enforced in code rather than in prompts.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Why does your agent have admin keys?",
+      "2/ Where the limits live",
+      "3/ Split read from write",
+      "4/ Scope the key",
+      "5/ Caps in code, not the prompt",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 7 (Teardown): one agent tool list, rewritten for least privilege.",
+    "linkedin": "Post: a least-privilege checklist for agent tools, with a refund-tool example."
+  }
+}
