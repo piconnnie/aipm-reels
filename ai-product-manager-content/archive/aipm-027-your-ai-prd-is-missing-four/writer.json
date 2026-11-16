@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-13",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t008",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-027-your-ai-prd-is-missing-four",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
