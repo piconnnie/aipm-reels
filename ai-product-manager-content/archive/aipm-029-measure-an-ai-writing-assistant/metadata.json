@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-029-measure-an-ai-writing-assistant",
+  "version": 1,
+  "generatedAt": "2026-11-16T07:05:53.019Z",
+  "pillar": "E: AI Product Career",
+  "format": "interview",
+  "objective": "saves",
+  "targetAudience": "Aspiring and junior AI PMs preparing for interviews",
+  "topic": "AI PM interview: “How would you measure the quality of an AI writing assistant?”",
+  "coreInsight": "A strong answer to “measure an AI writing assistant” starts by splitting it into tasks, builds an eval set per task, pairs offline rubric scores with online usage signals, and plans for failure.",
+  "hookVariants": [
+    {
+      "text": "Measure an AI writing assistant. Go.",
+      "angle": "Interview prompt",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "“How would you measure an AI writing assistant?”",
+      "angle": "Quoted question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Thumbs-up rate is the wrong answer here.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "total": 18
+    }
+  ],
+  "selectedHook": "Measure an AI writing assistant. Go.",
+  "selectionRationale": "Highest total (23/25): puts the viewer in the hot seat, then the checklist gives the structure and the cards show what interviewers reward.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Measure an AI writing assistant. Go. / Start with tasks, not metrics.",
+      "voiceover": "Measure an AI writing assistant. Go. Start with tasks, not metrics."
+    },
+    {
+      "scene": "answer",
+      "onScreen": "A STRONG ANSWER / Tasks first, metrics second. / Define the tasks: emails, summaries, rewrites · Build an eval set from real drafts per task · Offline: rubric scores for accuracy and tone · Online: text kept, edits made, retries · Plan for failure: made-up facts, wrong tone / Close with the one metric you’d watch every release.",
+      "voiceover": "Define the tasks: emails, summaries, rewrites. Build an eval set from real drafts for each. Offline, score accuracy and tone with a rubric. Online, track how much text users keep, edit or retry. Plan for made-up facts and wrong tone. Close with the one metric you’d watch every release."
+    },
+    {
+      "scene": "signals",
+      "onScreen": "WHAT THEY LISTEN FOR / What earns the follow-up. / STRONG Splits quality by task · STRONG Tracks how much text is kept · STRONG Names made-up facts as a risk · RED FLAG Only says “thumbs-up rate”",
+      "voiceover": "Interviewers listen for quality split by task, tracking how much text users keep, and naming made-up facts as a risk. The red flag: only saying thumbs-up rate."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Tasks first. Then the metrics. / Save this for your AI PM interview",
+      "voiceover": "Tasks first. Then the metrics. Save this for your AI PM interview."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "answer",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 420,
+      "startSec": 3,
+      "endSec": 14
+    },
+    {
+      "id": "signals",
+      "type": "cards",
+      "startFrame": 420,
+      "endFrame": 624,
+      "startSec": 14,
+      "endSec": 20.8
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 624,
+      "endFrame": 774,
+      "startSec": 20.8,
+      "endSec": 25.8
+    }
+  ],
+  "caption": "A classic AI PM interview question: how would you measure the quality of an AI writing assistant?\n\nA structure that works:\n→ Define the tasks first: emails, summaries, rewrites\n→ Build an eval set from real drafts for each task\n→ Offline: rubric scores for accuracy and tone\n→ Online: how much text users keep, edit or retry\n→ Plan for failure: made-up facts, wrong tone\n\nWhat interviewers listen for: quality split by task, a usage signal beyond ratings, and failure named as a risk. “Thumbs-up rate” alone is a red flag.\n\nSave this for your AI PM interview.\n\n#AIProductManager #PMInterview #ProductManagement #LLMEvaluation #AICareers",
+  "hashtags": [
+    "#AIProductManager",
+    "#PMInterview",
+    "#ProductManagement",
+    "#LLMEvaluation",
+    "#AICareers"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your AI PM interview"
+  },
+  "coverHeadline": "Measure an AI writing assistant",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "A strong answer defines tasks, builds per-task eval sets, combines offline rubric scoring with online usage signals, and plans for failure modes.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.8,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-029-measure-an-ai-writing-assistant-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-029-measure-an-ai-writing-assistant.mp4",
+    "cover": "output/covers/aipm-029-measure-an-ai-writing-assistant.png",
+    "caption": "output/captions/aipm-029-measure-an-ai-writing-assistant.txt",
+    "storyboard": "output/storyboards/aipm-029-measure-an-ai-writing-assistant.md",
+    "subtitles": "output/storyboards/aipm-029-measure-an-ai-writing-assistant.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-16T07:05:58.345Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-029-measure-an-ai-writing-assistant/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Measure an AI writing assistant. Go.",
+      "2/ Define the tasks",
+      "3/ Build an eval set",
+      "4/ Offline vs online metrics",
+      "5/ Plan for failure",
+      "6/ What interviewers listen for",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Framework: three layers of LLM evaluation every team needs.",
+    "linkedin": "Post walking through a full answer to the writing-assistant interview question, with example metrics per task."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
