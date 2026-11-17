@@ -1,0 +1,13 @@
+“Human in the loop” for an agent shouldn’t mean approving every step. Gate the actions instead.
+
+A simple gate map:
+→ Read-only lookups: no gate, just log them
+→ Drafts and internal notes: spot-check later
+→ Messages to customers: approve before sending
+→ Money, deletes, permissions: always approve
+
+The rule: the harder an action is to undo, the earlier a human steps in. List every tool your agent can call and give each one a gate level before launch.
+
+Save this for your agent design review.
+
+#AgenticAI #AIAgents #HumanInTheLoop #AIProductManagement #GenAI
