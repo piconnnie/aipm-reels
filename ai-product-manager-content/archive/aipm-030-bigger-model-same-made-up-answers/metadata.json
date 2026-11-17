@@ -1,0 +1,212 @@
+{
+  "contentId": "aipm-030-bigger-model-same-made-up-answers",
+  "version": 1,
+  "generatedAt": "2026-11-17T08:20:29.077Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "myth-vs-reality",
+  "objective": "shares",
+  "targetAudience": "PMs and engineers shipping RAG and chat features",
+  "topic": "Myth: a bigger model will fix our hallucinations",
+  "coreInsight": "Many product hallucinations come from missing or stale sources, prompts that never allow “I don’t know”, or missing tools — a bigger model can’t supply facts it never saw, so check inputs first.",
+  "hookVariants": [
+    {
+      "text": "A bigger model won’t fix missing facts.",
+      "angle": "Direct rebuttal",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Upgrading the model didn’t stop the made-up answers.",
+      "angle": "Scenario",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Hallucinations are usually an input problem.",
+      "angle": "Claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "A bigger model won’t fix missing facts.",
+  "selectionRationale": "Highest total (23/25): a short rebuttal that is readable at once, with cards that flip each symptom to its real cause.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "A bigger model won’t fix missing facts. / Find the real cause first.",
+      "voiceover": "A bigger model won’t fix missing facts. Find the real cause first."
+    },
+    {
+      "scene": "causes",
+      "onScreen": "EXAMPLES (ILLUSTRATIVE) / Blamed on the model. Caused upstream. / BLAMED: MODEL Quotes last year’s price → STALE DATA Index never refreshed · BLAMED: MODEL Invents a policy rule → RETRIEVAL Right doc never retrieved · BLAMED: MODEL Guesses an order status → MISSING TOOL No tool to check orders · BLAMED: MODEL Answers out of scope → PROMPT Prompt bans “I don’t know”",
+      "voiceover": "Quoting last year’s price: the index was never refreshed. Inventing a policy: the right document was never retrieved. Guessing an order status: there’s no tool to check. Answering out of scope: the prompt never allows “I don’t know.”"
+    },
+    {
+      "scene": "order",
+      "onScreen": "CHECK IN THIS ORDER / Cheapest fix first. / Was the right source retrieved? · Is that source current and correct? · Does the prompt allow “I don’t know”? · Is there a tool for live data? · Only then: test a bigger model on your eval set / A bigger model can reason better. It can’t know what it never saw.",
+      "voiceover": "Check in this order: was the right source retrieved, is it current, does the prompt allow I don’t know, is there a tool for live data. Only then test a bigger model on your eval set."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Fix the inputs before the model. / Share this with your AI team",
+      "voiceover": "Fix the inputs before the model. Share this with your AI team."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "causes",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 344,
+      "startSec": 3,
+      "endSec": 11.47
+    },
+    {
+      "id": "order",
+      "type": "checklist",
+      "startFrame": 344,
+      "endFrame": 674,
+      "startSec": 11.47,
+      "endSec": 22.47
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 674,
+      "endFrame": 824,
+      "startSec": 22.47,
+      "endSec": 27.47
+    }
+  ],
+  "caption": "“Let’s just use a bigger model” is the most expensive way to not fix a hallucination.\n\nTypical causes that look like model errors:\n→ Stale data: the index was never refreshed\n→ Retrieval: the right document never reached the prompt\n→ Missing tool: no way to check live facts like order status\n→ Prompt: nothing allows “I don’t know”\n\nCheck those in order, cheapest first. Then, if answers are still wrong, test a bigger model on your own eval set and compare.\n\n(The cases in the reel are illustrative examples, not measured data.)\n\nShare this with your AI team.\n\n#GenAI #LLM #RAG #AIProductManagement #Hallucinations",
+  "hashtags": [
+    "#GenAI",
+    "#LLM",
+    "#RAG",
+    "#AIProductManagement",
+    "#Hallucinations"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your AI team"
+  },
+  "coverHeadline": "Bigger model, same made-up answers",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Many hallucinations in products come from retrieval gaps, stale data, missing tools or prompts that forbid uncertainty; a larger model cannot supply facts it never received.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Four example symptoms and their causes.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 27.47,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-030-bigger-model-same-made-up-answers-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-030-bigger-model-same-made-up-answers.mp4",
+    "cover": "output/covers/aipm-030-bigger-model-same-made-up-answers.png",
+    "caption": "output/captions/aipm-030-bigger-model-same-made-up-answers.txt",
+    "storyboard": "output/storyboards/aipm-030-bigger-model-same-made-up-answers.md",
+    "subtitles": "output/storyboards/aipm-030-bigger-model-same-made-up-answers.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-17T08:20:35.806Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-030-bigger-model-same-made-up-answers/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ A bigger model won’t fix missing facts",
+      "2/ Stale data",
+      "3/ Retrieval misses",
+      "4/ Missing tools",
+      "5/ Prompts that ban “I don’t know”",
+      "6/ Check in this order",
+      "7/ Share CTA"
+    ],
+    "followUpReel": "Mistake: chunking documents by fixed size.",
+    "linkedin": "Post with a hallucination triage order for RAG features, cheapest check first."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

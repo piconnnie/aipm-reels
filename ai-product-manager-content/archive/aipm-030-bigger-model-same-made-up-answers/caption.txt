@@ -1,0 +1,15 @@
+“Let’s just use a bigger model” is the most expensive way to not fix a hallucination.
+
+Typical causes that look like model errors:
+→ Stale data: the index was never refreshed
+→ Retrieval: the right document never reached the prompt
+→ Missing tool: no way to check live facts like order status
+→ Prompt: nothing allows “I don’t know”
+
+Check those in order, cheapest first. Then, if answers are still wrong, test a bigger model on your own eval set and compare.
+
+(The cases in the reel are illustrative examples, not measured data.)
+
+Share this with your AI team.
+
+#GenAI #LLM #RAG #AIProductManagement #Hallucinations

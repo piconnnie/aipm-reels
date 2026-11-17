@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-17",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t015",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "myth-vs-reality",
+    "research": false
+  },
+  "reelId": "aipm-030-bigger-model-same-made-up-answers",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
