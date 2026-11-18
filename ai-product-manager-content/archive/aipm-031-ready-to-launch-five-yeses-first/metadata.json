@@ -1,0 +1,207 @@
+{
+  "contentId": "aipm-031-ready-to-launch-five-yeses-first",
+  "version": 1,
+  "generatedAt": "2026-11-18T07:51:58.873Z",
+  "pillar": "A: AI Product Management",
+  "format": "decision-checklist",
+  "objective": "saves",
+  "targetAudience": "PMs preparing to launch AI features",
+  "topic": "Is your AI feature ready to launch?",
+  "coreInsight": "An AI feature is ready to launch only when its eval passes a bar set in advance, red-team cases are handled, a fallback works, monitoring is live and rollback is tested; any “no” shrinks the launch.",
+  "hookVariants": [
+    {
+      "text": "Can you turn it off in 5 minutes?",
+      "angle": "Pointed question",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Five yeses before an AI feature ships.",
+      "angle": "List promise",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 21
+    },
+    {
+      "text": "“The demo works” is not a launch criterion.",
+      "angle": "Contrarian",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "Can you turn it off in 5 minutes?",
+  "selectionRationale": "Highest total (23/25): a specific, uncomfortable question that leads straight into the five-part launch gate.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Can you turn it off in 5 minutes? / If not, it isn’t ready to ship.",
+      "voiceover": "Can you turn it off in five minutes? If not, it isn’t ready to ship."
+    },
+    {
+      "scene": "gate",
+      "onScreen": "THE LAUNCH GATE / Ship only if all five are yes. / Eval set passes a bar set before testing · Red-team prompts tried, worst ones fixed · Fallback works when the model fails or times out · Dashboards and alerts live on day one · Kill switch tested, with a named owner / One “no” means a smaller rollout, not a full launch.",
+      "voiceover": "Ship only if all five are yes. The eval passes a bar you set before testing. Red-team prompts are tried and the worst fixed. The fallback works. Dashboards and alerts are live on day one. The kill switch is tested, with an owner. One no means a smaller rollout."
+    },
+    {
+      "scene": "no",
+      "onScreen": "IF ONE IS “NO” / Shrink the launch, don’t skip the gate. / INTERNAL No red-team yet → staff only · LIMITED No fallback → opt-in beta · BLOCKED No kill switch → don’t ship",
+      "voiceover": "No red-team yet? Staff only. No fallback? An opt-in beta. No kill switch? Don’t ship."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Can’t undo it? Don’t ship it. / Save this for your launch review",
+      "voiceover": "Can’t undo it? Don’t ship it. Save this for your launch review."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "gate",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 420,
+      "startSec": 3,
+      "endSec": 14
+    },
+    {
+      "id": "no",
+      "type": "cards",
+      "startFrame": 420,
+      "endFrame": 620,
+      "startSec": 14,
+      "endSec": 20.67
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 620,
+      "endFrame": 770,
+      "startSec": 20.67,
+      "endSec": 25.67
+    }
+  ],
+  "caption": "If you can’t turn your AI feature off in five minutes, it isn’t ready to launch.\n\nThe launch gate: ship only if all five are yes.\n→ Eval set passes a bar you set before testing\n→ Red-team prompts tried, worst ones fixed\n→ Fallback works when the model fails or times out\n→ Dashboards and alerts live on day one\n→ Kill switch tested, with a named owner\n\nOne “no” doesn’t cancel the launch. It shrinks it: staff only, an opt-in beta, or blocked until the kill switch exists.\n\nSave this for your launch review.\n\n#AIProductManagement #ProductLaunch #ResponsibleAI #GenAI #ProductManagement",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductLaunch",
+    "#ResponsibleAI",
+    "#GenAI",
+    "#ProductManagement"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your launch review"
+  },
+  "coverHeadline": "Ready to launch? Five yeses first",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "AI features should pass an eval bar, red-team testing, a working fallback, live monitoring and a tested rollback before full launch; gaps call for a limited rollout.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.67,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-031-ready-to-launch-five-yeses-first-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-031-ready-to-launch-five-yeses-first.mp4",
+    "cover": "output/covers/aipm-031-ready-to-launch-five-yeses-first.png",
+    "caption": "output/captions/aipm-031-ready-to-launch-five-yeses-first.txt",
+    "storyboard": "output/storyboards/aipm-031-ready-to-launch-five-yeses-first.md",
+    "subtitles": "output/storyboards/aipm-031-ready-to-launch-five-yeses-first.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-18T07:52:06.724Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-031-ready-to-launch-five-yeses-first/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Can you turn it off in 5 minutes?",
+      "2/ Eval bar set in advance",
+      "3/ Red-team prompts",
+      "4/ Fallback path",
+      "5/ Monitoring on day one",
+      "6/ Kill switch + owner",
+      "7/ Save CTA"
+    ],
+    "followUpReel": "Mistake: writing a PRD for an AI feature exactly like a normal PRD.",
+    "linkedin": "Post sharing the five-question launch gate and how each “no” maps to a smaller rollout."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

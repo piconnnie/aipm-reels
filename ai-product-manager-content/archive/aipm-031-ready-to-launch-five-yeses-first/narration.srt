@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Can you turn it off in five minutes? If not, it isn’t ready to ship.
+
+2
+00:00:03,130 --> 00:00:13,930
+Ship only if all five are yes. The eval passes a bar you set before testing. Red-team prompts are tried and the worst fixed. The fallback works. Dashboards and alerts are live on day one. The kill switch is tested, with an owner. One no means a smaller rollout.
+
+3
+00:00:14,130 --> 00:00:20,600
+No red-team yet? Staff only. No fallback? An opt-in beta. No kill switch? Don’t ship.
+
+4
+00:00:20,800 --> 00:00:25,600
+Can’t undo it? Don’t ship it. Save this for your launch review.

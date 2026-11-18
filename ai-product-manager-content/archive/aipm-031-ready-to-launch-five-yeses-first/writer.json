@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-18",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t009",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "decision-checklist",
+    "research": false
+  },
+  "reelId": "aipm-031-ready-to-launch-five-yeses-first",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

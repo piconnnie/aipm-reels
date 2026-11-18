@@ -1,0 +1,14 @@
+If you can’t turn your AI feature off in five minutes, it isn’t ready to launch.
+
+The launch gate: ship only if all five are yes.
+→ Eval set passes a bar you set before testing
+→ Red-team prompts tried, worst ones fixed
+→ Fallback works when the model fails or times out
+→ Dashboards and alerts live on day one
+→ Kill switch tested, with a named owner
+
+One “no” doesn’t cancel the launch. It shrinks it: staff only, an opt-in beta, or blocked until the kill switch exists.
+
+Save this for your launch review.
+
+#AIProductManagement #ProductLaunch #ResponsibleAI #GenAI #ProductManagement
