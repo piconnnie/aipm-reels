@@ -1,0 +1,36 @@
+{
+  "id": "aipm-029-measure-an-ai-writing-assistant",
+  "createdAt": "2026-11-16T07:05:58.379Z",
+  "release": {
+    "tag": "reel-aipm-029-measure-an-ai-writing-assistant",
+    "video": "aipm-029-measure-an-ai-writing-assistant.mp4",
+    "cover": "aipm-029-measure-an-ai-writing-assistant.jpg",
+    "contactSheet": "aipm-029-measure-an-ai-writing-assistant-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "142cfce784b298580cdef7f54a1ddd78878ddcfa00e4336f2b325a1771ac624a",
+    "cover": "02ae228c947f92b93c5a21e95d5299be69ab06ffdfe6d56e303b969da4ffb35f"
+  },
+  "durationSec": 25.8,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

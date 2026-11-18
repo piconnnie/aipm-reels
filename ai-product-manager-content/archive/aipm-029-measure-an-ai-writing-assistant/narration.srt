@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Measure an AI writing assistant. Go. Start with tasks, not metrics.
+
+2
+00:00:03,130 --> 00:00:13,930
+Define the tasks: emails, summaries, rewrites. Build an eval set from real drafts for each. Offline, score accuracy and tone with a rubric. Online, track how much text users keep, edit or retry. Plan for made-up facts and wrong tone. Close with the one metric you’d watch every release.
+
+3
+00:00:14,130 --> 00:00:20,730
+Interviewers listen for quality split by task, tracking how much text users keep, and naming made-up facts as a risk. The red flag: only saying thumbs-up rate.
+
+4
+00:00:20,930 --> 00:00:25,730
+Tasks first. Then the metrics. Save this for your AI PM interview.

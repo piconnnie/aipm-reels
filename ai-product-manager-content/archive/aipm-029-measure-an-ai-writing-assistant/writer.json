@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-16",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t034",
+    "pillar": "E",
+    "pillarName": "E: AI Product Career",
+    "format": "interview",
+    "research": false
+  },
+  "reelId": "aipm-029-measure-an-ai-writing-assistant",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

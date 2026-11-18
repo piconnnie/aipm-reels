@@ -1,0 +1,14 @@
+A classic AI PM interview question: how would you measure the quality of an AI writing assistant?
+
+A structure that works:
+→ Define the tasks first: emails, summaries, rewrites
+→ Build an eval set from real drafts for each task
+→ Offline: rubric scores for accuracy and tone
+→ Online: how much text users keep, edit or retry
+→ Plan for failure: made-up facts, wrong tone
+
+What interviewers listen for: quality split by task, a usage signal beyond ratings, and failure named as a risk. “Thumbs-up rate” alone is a red flag.
+
+Save this for your AI PM interview.
+
+#AIProductManager #PMInterview #ProductManagement #LLMEvaluation #AICareers
