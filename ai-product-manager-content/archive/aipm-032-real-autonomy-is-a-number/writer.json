@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-19",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t026",
+    "pillar": "C",
+    "pillarName": "C: Agentic AI",
+    "format": "framework",
+    "research": false
+  },
+  "reelId": "aipm-032-real-autonomy-is-a-number",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

@@ -1,0 +1,15 @@
+“Autonomous” is a label. Interventions per task is a measurement.
+
+Log this for every agent task:
+→ Interventions: approvals, fixes, restarts
+→ Minutes of human time per intervention
+→ Share of tasks finished with zero help
+→ Split by task type, trend it weekly
+
+Real autonomy is the share of tasks done with no human help, plus what the remaining help costs. Ask vendors for the same numbers.
+
+(The 1.8 interventions, 6 minutes and 1-in-5 figures in the reel are illustrative, not from a real product.)
+
+Save this for your next agent review.
+
+#AgenticAI #AIAgents #AIProductManagement #GenAI #ProductMetrics

@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Count the times a human steps in. That’s your agent’s real autonomy.
+
+2
+00:00:03,130 --> 00:00:12,930
+For every task, log interventions: approvals, fixes and restarts. Log the minutes each one costs. Track the share of tasks finished with zero help. Split by task type and trend it weekly.
+
+3
+00:00:13,130 --> 00:00:19,730
+Illustrative example: sold as fully autonomous. The log says 1.8 interventions per task, six minutes each, and only one in five tasks done with no help.
+
+4
+00:00:19,930 --> 00:00:24,730
+Measure the help it still needs. Save this for your next agent review.
