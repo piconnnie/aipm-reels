@@ -1,0 +1,36 @@
+{
+  "id": "aipm-030-bigger-model-same-made-up-answers",
+  "createdAt": "2026-11-17T08:20:35.845Z",
+  "release": {
+    "tag": "reel-aipm-030-bigger-model-same-made-up-answers",
+    "video": "aipm-030-bigger-model-same-made-up-answers.mp4",
+    "cover": "aipm-030-bigger-model-same-made-up-answers.jpg",
+    "contactSheet": "aipm-030-bigger-model-same-made-up-answers-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "5c05c19b9f8d41da0e0c9943c7e5cbf26b324dfdb4ea3d9eeb626fe2a7236d61",
+    "cover": "fb69060ecbad241393a23ee1a225abb32456467f50dd4a03b28dde8ccfdca08a"
+  },
+  "durationSec": 27.47,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

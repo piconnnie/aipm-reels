@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+A bigger model won’t fix missing facts. Find the real cause first.
+
+2
+00:00:03,130 --> 00:00:11,400
+Quoting last year’s price: the index was never refreshed. Inventing a policy: the right document was never retrieved. Guessing an order status: there’s no tool to check. Answering out of scope: the prompt never allows “I don’t know.”
+
+3
+00:00:11,600 --> 00:00:22,400
+Check in this order: was the right source retrieved, is it current, does the prompt allow I don’t know, is there a tool for live data. Only then test a bigger model on your eval set.
+
+4
+00:00:22,600 --> 00:00:27,400
+Fix the inputs before the model. Share this with your AI team.
