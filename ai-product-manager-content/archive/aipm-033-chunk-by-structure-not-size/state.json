@@ -1,0 +1,36 @@
+{
+  "id": "aipm-033-chunk-by-structure-not-size",
+  "createdAt": "2026-11-20T07:40:33.150Z",
+  "release": {
+    "tag": "reel-aipm-033-chunk-by-structure-not-size",
+    "video": "aipm-033-chunk-by-structure-not-size.mp4",
+    "cover": "aipm-033-chunk-by-structure-not-size.jpg",
+    "contactSheet": "aipm-033-chunk-by-structure-not-size-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "fcf95a1d17d4157f28bafc0f824597f272bef215c7b78d37c38340f414b444fd",
+    "cover": "0d0cdc267be8edf8d24b760970d7a89d7ef17da5742e189339ba7e6eb198f86c"
+  },
+  "durationSec": 22.33,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

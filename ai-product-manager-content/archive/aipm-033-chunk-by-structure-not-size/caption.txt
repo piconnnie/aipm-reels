@@ -1,0 +1,17 @@
+If your RAG answers feel half-right, look at where your chunks end.
+
+Fixed-size chunking (say, every 500 tokens) cuts documents wherever the counter runs out:
+→ table headers split from their rows
+→ a rule in one chunk, its exception in the next
+→ step 7 retrieved without steps 1–6
+
+Chunk by structure instead:
+→ split on headings and sections
+→ keep tables and numbered steps whole
+→ prefix each chunk with its document title
+
+Then re-run your retrieval checks on the questions that failed. (The document examples in the reel are illustrative.)
+
+Save this for your next RAG build.
+
+#RAG #GenAI #AIProductManagement #LLM #AIEngineering

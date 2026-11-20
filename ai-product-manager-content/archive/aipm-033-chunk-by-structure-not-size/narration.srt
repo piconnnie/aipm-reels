@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Fixed-size chunks break your RAG answers.
+
+2
+00:00:03,130 --> 00:00:07,600
+Split every five hundred tokens and the table header lands in one chunk, the rule and its exception in two, and the steps lose their order.
+
+3
+00:00:07,800 --> 00:00:17,260
+Illustrative examples. Chunk the refund policy by section and the exception stays with the rule. Keep tables whole. Keep each setup section together. Split on headings, and prefix each chunk with its document title.
+
+4
+00:00:17,460 --> 00:00:22,260
+Chunk by meaning, not by length. Save this for your next RAG build.

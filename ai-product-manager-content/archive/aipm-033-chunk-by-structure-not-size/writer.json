@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-20",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t012",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "mistake",
+    "research": false
+  },
+  "reelId": "aipm-033-chunk-by-structure-not-size",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}
