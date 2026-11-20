@@ -27,11 +27,11 @@
     "pr": 30
   },
   "publish": {
-    "status": "pending",
-    "mediaId": null,
-    "permalink": null,
-    "publishedAt": null,
-    "attempts": 0,
+    "status": "published",
+    "mediaId": "18044746499839490",
+    "permalink": "https://www.instagram.com/reel/Df-NrSpincQ/",
+    "publishedAt": "2026-11-20T17:41:48.520Z",
+    "attempts": 1,
     "lastError": null
   }
 }
