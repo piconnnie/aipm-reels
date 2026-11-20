@@ -1,0 +1,36 @@
+{
+  "id": "aipm-031-ready-to-launch-five-yeses-first",
+  "createdAt": "2026-11-18T07:52:06.763Z",
+  "release": {
+    "tag": "reel-aipm-031-ready-to-launch-five-yeses-first",
+    "video": "aipm-031-ready-to-launch-five-yeses-first.mp4",
+    "cover": "aipm-031-ready-to-launch-five-yeses-first.jpg",
+    "contactSheet": "aipm-031-ready-to-launch-five-yeses-first-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "01c6c85afcfac0964c5ffb6286a00502c5f5ae8f5f0d8a07fdd45acc2e375576",
+    "cover": "e4db3fe7e5c1df2076a765e50604e6b4ea80bbb347fcfe78d543b2bdf244488d"
+  },
+  "durationSec": 25.67,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
