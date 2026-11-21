@@ -1,0 +1,36 @@
+{
+  "id": "aipm-032-real-autonomy-is-a-number",
+  "createdAt": "2026-11-19T07:53:32.391Z",
+  "release": {
+    "tag": "reel-aipm-032-real-autonomy-is-a-number",
+    "video": "aipm-032-real-autonomy-is-a-number.mp4",
+    "cover": "aipm-032-real-autonomy-is-a-number.jpg",
+    "contactSheet": "aipm-032-real-autonomy-is-a-number-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "acc1543dcb88e9455ccb251fc046310444968207bdd09e1eea89fc60c3f64fa2",
+    "cover": "bb6e6c95771a2cb77f7d600b03b60bfa7e3afde7d3d9adbdadc0c8bbd6188371"
+  },
+  "durationSec": 24.8,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
