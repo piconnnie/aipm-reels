@@ -1,0 +1,15 @@
+Opt-in feels like the safe way to launch an AI feature. It’s also the best way to miss its failures.
+
+Opt-in users are self-selected enthusiasts. Their feedback flatters you, and the edge cases never show up. (The 4% in the reel is illustrative.)
+
+Go on by default only if:
+→ a wrong answer is cheap to spot and undo
+→ users can switch back in one click
+→ your eval set looks like real traffic
+→ unsure answers fall back to the old flow
+
+Miss one? Start opt-in, then deliberately test with users who didn’t choose it.
+
+Share this with your launch team.
+
+#AIProductManagement #ProductLaunch #GenAI #ProductStrategy

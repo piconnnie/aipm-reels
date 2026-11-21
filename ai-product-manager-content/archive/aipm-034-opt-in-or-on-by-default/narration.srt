@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Opt-in AI hides its own failures.
+
+2
+00:00:03,130 --> 00:00:08,430
+Illustrative: if four percent opt in, you only hear from fans. On by default, everyone sees it, edge cases included. Opt-in data flatters you.
+
+3
+00:00:08,630 --> 00:00:16,760
+Go default-on only if a wrong answer is cheap to spot and undo, users can switch back in one click, your eval set looks like real traffic, and unsure answers fall back to the old flow. Miss one? Start opt-in, then test with users who didn't choose it.
+
+4
+00:00:16,960 --> 00:00:21,760
+Opt-in tests your fans, not your users. Share this with your launch team.
