@@ -1,0 +1,210 @@
+{
+  "contentId": "aipm-033-chunk-by-structure-not-size",
+  "version": 1,
+  "generatedAt": "2026-11-20T07:40:27.386Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "mistake",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers building RAG features",
+  "topic": "Chunking documents by fixed size",
+  "coreInsight": "Fixed-size chunks split tables, steps and rules from their exceptions, so chunk by document structure (headings, sections, whole tables) instead.",
+  "hookVariants": [
+    {
+      "text": "Fixed-size chunks break your RAG answers.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 24
+    },
+    {
+      "text": "Your chunker split the rule from its exception.",
+      "angle": "Curiosity gap",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 22
+    },
+    {
+      "text": "Stop chunking every 500 tokens.",
+      "angle": "Direct instruction",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 20
+    }
+  ],
+  "selectedHook": "Fixed-size chunks break your RAG answers.",
+  "selectionRationale": "Highest total (24/25): names a concrete default, readable instantly, and the reel shows the fix side by side.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Fixed-size chunks break your RAG answers. / Chunk by structure instead.",
+      "voiceover": "Fixed-size chunks break your RAG answers."
+    },
+    {
+      "scene": "mistake",
+      "onScreen": "THE MISTAKE / Split every 500 tokens. / SPLIT Table header in one chunk · SPLIT Rule here, exception there · SPLIT Steps lose their numbering",
+      "voiceover": "Split every five hundred tokens and the table header lands in one chunk, the rule and its exception in two, and the steps lose their order."
+    },
+    {
+      "scene": "fix",
+      "onScreen": "ILLUSTRATIVE EXAMPLES / Chunk by structure. / DOCUMENT → FIXED SIZE → BY STRUCTURE / Refund policy + exceptions → Exception dropped ✗ → Rule + exception ✓ · Pricing table → Rows lose headers ✗ → Whole table ✓ · Setup guide → Later steps missing ✗ → One section ✓ / Split on headings, not token counts · Prefix each chunk with its doc title",
+      "voiceover": "Illustrative examples. Chunk the refund policy by section and the exception stays with the rule. Keep tables whole. Keep each setup section together. Split on headings, and prefix each chunk with its document title."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Chunk by meaning, not by length. / Save this for your next RAG build",
+      "voiceover": "Chunk by meaning, not by length. Save this for your next RAG build."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "mistake",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 230,
+      "startSec": 3,
+      "endSec": 7.67
+    },
+    {
+      "id": "fix",
+      "type": "table",
+      "startFrame": 230,
+      "endFrame": 520,
+      "startSec": 7.67,
+      "endSec": 17.33
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 520,
+      "endFrame": 670,
+      "startSec": 17.33,
+      "endSec": 22.33
+    }
+  ],
+  "caption": "If your RAG answers feel half-right, look at where your chunks end.\n\nFixed-size chunking (say, every 500 tokens) cuts documents wherever the counter runs out:\n→ table headers split from their rows\n→ a rule in one chunk, its exception in the next\n→ step 7 retrieved without steps 1–6\n\nChunk by structure instead:\n→ split on headings and sections\n→ keep tables and numbered steps whole\n→ prefix each chunk with its document title\n\nThen re-run your retrieval checks on the questions that failed. (The document examples in the reel are illustrative.)\n\nSave this for your next RAG build.\n\n#RAG #GenAI #AIProductManagement #LLM #AIEngineering",
+  "hashtags": [
+    "#RAG",
+    "#GenAI",
+    "#AIProductManagement",
+    "#LLM",
+    "#AIEngineering"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next RAG build"
+  },
+  "coverHeadline": "Chunk by structure, not size",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Structure-aware chunking (by headings, sections and whole tables) usually retrieves more complete context than fixed-size chunking.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "The refund policy, pricing table and setup guide examples are illustrative.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 22.33,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-033-chunk-by-structure-not-size-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-033-chunk-by-structure-not-size.mp4",
+    "cover": "output/covers/aipm-033-chunk-by-structure-not-size.png",
+    "caption": "output/captions/aipm-033-chunk-by-structure-not-size.txt",
+    "storyboard": "output/storyboards/aipm-033-chunk-by-structure-not-size.md",
+    "subtitles": "output/storyboards/aipm-033-chunk-by-structure-not-size.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-20T07:40:33.114Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-033-chunk-by-structure-not-size/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Fixed-size chunks break your RAG answers",
+      "2/ What gets split",
+      "3/ Same docs, chunked by structure",
+      "4/ Two rules: split on headings, prefix the title",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture): what a retrieval pipeline does between the question and the prompt.",
+    "linkedin": "Post: before/after chunk boundaries for one policy document, and the three chunking rules."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
