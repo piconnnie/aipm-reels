@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-22",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t014",
+    "pillar": "B",
+    "pillarName": "B: GenAI Product Delivery",
+    "format": "framework",
+    "research": false
+  },
+  "reelId": "aipm-035-three-layers-of-evals",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

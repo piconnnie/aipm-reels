@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Which eval catches a rude answer?
+
+2
+00:00:03,130 --> 00:00:10,600
+Three layers. Code checks for format, length, banned words and links. Rubric grading: is it correct, grounded and on tone? Human review of a weekly sample of real chats. Run layer one on every change, two before release, three every week.
+
+3
+00:00:10,800 --> 00:00:20,260
+Broken JSON? Layer one: the rule is exact. Wrong policy? Layer two: it needs judgement. Correct but rude? Layer three: people notice. Each layer costs more, so turn repeat human findings into checks.
+
+4
+00:00:20,460 --> 00:00:25,260
+Check cheap, grade smart, review real. Save this for your eval plan.

@@ -1,0 +1,205 @@
+{
+  "contentId": "aipm-035-three-layers-of-evals",
+  "version": 1,
+  "generatedAt": "2026-11-22T07:19:47.603Z",
+  "pillar": "B: GenAI Product Delivery",
+  "format": "framework",
+  "objective": "saves",
+  "targetAudience": "PMs and engineers setting up LLM evaluation",
+  "topic": "Three layers of LLM evaluation every team needs",
+  "coreInsight": "Use three evaluation layers (code checks for exact rules, rubric grading for judgement calls, human review of real samples) because each catches failures the others miss.",
+  "hookVariants": [
+    {
+      "text": "Which eval would catch a rude answer?",
+      "angle": "Question that exposes a gap",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Code checks won’t catch a wrong policy.",
+      "angle": "Specific limitation",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 22
+    },
+    {
+      "text": "One eval layer isn’t enough.",
+      "angle": "Direct claim",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Which eval would catch a rude answer?",
+  "selectionRationale": "Highest total (23/25): a concrete failure the viewer can picture, and the reel answers it with three named layers.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Which eval catches a rude answer? / You need three layers to know.",
+      "voiceover": "Which eval catches a rude answer?"
+    },
+    {
+      "scene": "layers",
+      "onScreen": "THE THREE LAYERS / Check, grade, then review. / Code checks: format, length, banned words, links · Rubric grading: correct, grounded, on tone? · Human review: a weekly sample of real chats / Run layer 1 on every change, 2 before release, 3 every week.",
+      "voiceover": "Three layers. Code checks for format, length, banned words and links. Rubric grading: is it correct, grounded and on tone? Human review of a weekly sample of real chats. Run layer one on every change, two before release, three every week."
+    },
+    {
+      "scene": "catches",
+      "onScreen": "WHAT EACH CATCHES / One bug list, three filters. / FAILURE → CAUGHT BY → WHY THERE / Broken JSON output → Layer 1: code → Rule is exact · Cites the wrong policy → Layer 2: rubric → Needs judgement · Correct but rude → Layer 3: humans → People notice it / Each layer costs more than the last · Turn repeat human finds into checks",
+      "voiceover": "Broken JSON? Layer one: the rule is exact. Wrong policy? Layer two: it needs judgement. Correct but rude? Layer three: people notice. Each layer costs more, so turn repeat human findings into checks."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Check cheap, grade smart, review real. / Save this for your eval plan",
+      "voiceover": "Check cheap, grade smart, review real. Save this for your eval plan."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "layers",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 320,
+      "startSec": 3,
+      "endSec": 10.67
+    },
+    {
+      "id": "catches",
+      "type": "table",
+      "startFrame": 320,
+      "endFrame": 610,
+      "startSec": 10.67,
+      "endSec": 20.33
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 610,
+      "endFrame": 760,
+      "startSec": 20.33,
+      "endSec": 25.33
+    }
+  ],
+  "caption": "A test suite that only checks format will happily pass a correct, rude, made-up answer.\n\nThree layers of evaluation:\n→ Code checks: format, length, banned words, broken links. Run on every change.\n→ Rubric grading: correct, grounded, on tone? Run before every release.\n→ Human review: a weekly sample of real conversations.\n\nEach layer is more expensive than the last. When humans keep finding the same problem, turn it into a check or a rubric line.\n\nSave this for your eval plan.\n\n#LLMEvaluation #AIProductManagement #GenAI #AIQuality",
+  "hashtags": [
+    "#LLMEvaluation",
+    "#AIProductManagement",
+    "#GenAI",
+    "#AIQuality"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your eval plan"
+  },
+  "coverHeadline": "Three layers of evals",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Effective LLM evaluation combines deterministic checks, rubric-based grading and human review of real samples, because each catches different failures.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 25.33,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-035-three-layers-of-evals-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-035-three-layers-of-evals.mp4",
+    "cover": "output/covers/aipm-035-three-layers-of-evals.png",
+    "caption": "output/captions/aipm-035-three-layers-of-evals.txt",
+    "storyboard": "output/storyboards/aipm-035-three-layers-of-evals.md",
+    "subtitles": "output/storyboards/aipm-035-three-layers-of-evals.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-22T07:19:53.094Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-035-three-layers-of-evals/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Which eval catches a rude answer?",
+      "2/ Layer 1: code checks",
+      "3/ Layer 2: rubric grading",
+      "4/ Layer 3: human review",
+      "5/ What each catches",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 1 (Mistake): using an LLM judge without checking it against humans (already queued as q012; follow with rubric design).",
+    "linkedin": "Post: one real failure from each layer (hypothetical), and the cadence for running each."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

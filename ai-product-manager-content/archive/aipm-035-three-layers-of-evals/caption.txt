@@ -1,0 +1,12 @@
+A test suite that only checks format will happily pass a correct, rude, made-up answer.
+
+Three layers of evaluation:
+→ Code checks: format, length, banned words, broken links. Run on every change.
+→ Rubric grading: correct, grounded, on tone? Run before every release.
+→ Human review: a weekly sample of real conversations.
+
+Each layer is more expensive than the last. When humans keep finding the same problem, turn it into a check or a rubric line.
+
+Save this for your eval plan.
+
+#LLMEvaluation #AIProductManagement #GenAI #AIQuality
