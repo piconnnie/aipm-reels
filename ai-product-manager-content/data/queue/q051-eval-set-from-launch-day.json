@@ -1,0 +1,382 @@
+{
+  "brief": {
+    "topic": "Keeping the launch-day eval set forever",
+    "audience": "PMs and engineers who own LLM evaluation",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "shares",
+    "format": "mistake",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Pass rates are illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t053",
+    "targetDurationSec": 26,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "An eval set built at launch slowly stops describing what users actually ask, so keep feeding it from production (sampled traffic, new features, every bug report) and expect the honest score to drop.",
+  "hooks": [
+    {
+      "text": "Your eval set is from launch day.",
+      "angle": "Quiet staleness",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Specific, and most teams recognise it immediately."
+    },
+    {
+      "text": "Green evals, angry users.",
+      "angle": "Contrast",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Too close to earlier ‘happy users, failed tasks’ pattern."
+    },
+    {
+      "text": "When did you last add an eval case?",
+      "angle": "Question",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good, but weaker on frame 0."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): names a silent failure most teams have, and the reel shows how to fix it.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your eval set is from launch day. / Your users moved on.",
+      "voiceover": "Your eval set is from launch day. Your users moved on.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "LLM EVALS",
+      "lines": [
+        {
+          "text": "Your eval set"
+        },
+        {
+          "text": "is from"
+        },
+        {
+          "text": "launch day.",
+          "highlight": true
+        }
+      ],
+      "sub": "Your users moved on.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "stale",
+      "type": "cards",
+      "durationInFrames": 174,
+      "purpose": "Show what a frozen eval set misses.",
+      "onScreen": "WHAT IT MISSES / Scores stay green anyway. / NOT IN IT New question types · NOT IN IT Features shipped since · NOT IN IT Last month’s bug reports",
+      "voiceover": "What it misses: new question types, features shipped since launch, and last month’s bug reports. Scores stay green anyway.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 18 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT IT MISSES",
+      "headline": [
+        {
+          "text": "Scores stay"
+        },
+        {
+          "text": "green anyway.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 18,
+      "cards": [
+        {
+          "text": "New question types",
+          "status": "warn",
+          "tag": "NOT IN IT"
+        },
+        {
+          "text": "Features shipped since",
+          "status": "warn",
+          "tag": "NOT IN IT"
+        },
+        {
+          "text": "Last month’s bug reports",
+          "status": "warn",
+          "tag": "NOT IN IT"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 34,
+          "kind": "low"
+        },
+        {
+          "at": 52,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "refresh",
+      "type": "cards",
+      "durationInFrames": 190,
+      "purpose": "Show how to keep the set current.",
+      "onScreen": "KEEP IT CURRENT / Feed it from production. / ADDED Sample real traffic monthly · ADDED Add cases with every launch · ADDED Each bug becomes a case",
+      "voiceover": "Feed it from production: sample real traffic every month, add cases with every launch, and turn each bug report into a test case.",
+      "storyboard": {
+        "visual": "Same card stack (hard cut), new headline; each card flips to its counterpart.",
+        "animation": "Flips every 30 frames from 24; ~2.5s hold."
+      },
+      "transitionIn": "cut",
+      "kicker": "KEEP IT CURRENT",
+      "headline": [
+        {
+          "text": "Feed it from"
+        },
+        {
+          "text": "production.",
+          "highlight": true
+        }
+      ],
+      "enter": "static",
+      "swapStart": 24,
+      "swapStagger": 30,
+      "cards": [
+        {
+          "text": "New question types",
+          "status": "warn",
+          "tag": "NOT IN IT",
+          "swap": {
+            "text": "Sample real traffic monthly",
+            "tag": "ADDED",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Features shipped since",
+          "status": "warn",
+          "tag": "NOT IN IT",
+          "swap": {
+            "text": "Add cases with every launch",
+            "tag": "ADDED",
+            "status": "pass"
+          }
+        },
+        {
+          "text": "Last month’s bug reports",
+          "status": "warn",
+          "tag": "NOT IN IT",
+          "swap": {
+            "text": "Each bug becomes a case",
+            "tag": "ADDED",
+            "status": "pass"
+          }
+        }
+      ],
+      "sfx": [
+        {
+          "at": 31,
+          "kind": "tick"
+        },
+        {
+          "at": 61,
+          "kind": "tick"
+        },
+        {
+          "at": 91,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "honest",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show that the refreshed score is lower but truer (illustrative).",
+      "onScreen": "SAME MONTH [ILLUSTRATIVE] / LAUNCH-DAY SET 94% pass / REFRESHED SET 78% pass / An honest score beats a stale one.",
+      "voiceover": "Illustrative: the launch-day set says ninety-four percent pass. The refreshed set says seventy-eight, and shows you the real gaps. An honest score beats a stale one.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; warning bar vs success bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME MONTH",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "LAUNCH-DAY SET",
+        "value": "94% pass",
+        "ratio": 0.94,
+        "tone": "warning",
+        "caption": "Looks fine"
+      },
+      "right": {
+        "label": "REFRESHED SET",
+        "value": "78% pass",
+        "ratio": 0.78,
+        "tone": "success",
+        "caption": "Shows the real gaps"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "An honest score"
+        },
+        {
+          "text": "beats a stale one.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "chime"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Refresh the eval set every month. / Share with whoever owns your evals",
+      "voiceover": "Refresh the eval set every month. Share with whoever owns your evals.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Refresh the"
+        },
+        {
+          "text": "eval set"
+        },
+        {
+          "text": "every month.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share with whoever owns your evals",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "LLM EVALS",
+    "headline": [
+      {
+        "text": "Your eval set"
+      },
+      {
+        "text": "is stale",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "If your eval set hasn’t changed since launch, it’s measuring the product you shipped, not the one people use today.",
+    "body": [
+      "What a frozen set misses:\n→ New kinds of questions users ask\n→ Features you shipped since\n→ Last month’s bug reports",
+      "Keep it current:\n→ Sample real traffic every month\n→ Add cases with every feature launch\n→ Turn every bug report into a test case",
+      "Expect the score to drop when you do. That’s the point.",
+      "(94% vs 78% in the reel is illustrative, not real data.)"
+    ],
+    "cta": "Share with whoever owns your evals.",
+    "hashtags": [
+      "#LLMEvals",
+      "#GenAI",
+      "#AIProductManagement",
+      "#LLMOps",
+      "#AIEngineering"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share with whoever owns your evals"
+  },
+  "claims": [
+    {
+      "text": "Eval sets drift out of date after launch; refreshing them from sampled production traffic, new features and bug reports keeps evaluation representative.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Launch-day eval set shows 94% pass while a refreshed set shows 78% pass in the same month.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your eval set is from launch day",
+      "2/ What it misses",
+      "3/ Sample traffic monthly",
+      "4/ Add cases per launch + per bug",
+      "5/ 94% vs 78% (illustrative)",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 9 (Build with me): turn one week of bug reports into eval cases.",
+    "linkedin": "Post: why a launch-day eval set quietly goes stale, and a monthly routine to refresh it."
+  }
+}

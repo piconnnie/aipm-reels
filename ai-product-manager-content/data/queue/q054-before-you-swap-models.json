@@ -1,0 +1,248 @@
+{
+  "brief": {
+    "topic": "Five checks before you switch to a new model version",
+    "audience": "PMs and engineers running LLM features in production",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "decision-checklist",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t056",
+    "targetDurationSec": 19,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A newer model that scores higher on public benchmarks can still be worse on your tasks, so run your own eval set, check format, cost, latency and refusals, and keep a way back.",
+  "hooks": [
+    {
+      "text": "New model? Don’t just swap it in.",
+      "angle": "Timely instruction",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Fits every model release; the reel gives the checks."
+    },
+    {
+      "text": "Benchmarks aren’t your users.",
+      "angle": "Aphorism",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Good line; used as the rule instead."
+    },
+    {
+      "text": "The upgrade that made your product worse.",
+      "angle": "Story tease",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Teases a story the reel doesn’t tell."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): lands every time a new model ships, and the reel delivers five checks.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "New model? Don’t just swap it in. / Five checks first.",
+      "voiceover": "New model? Don’t just swap it in. Five checks first.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "MODEL UPGRADES",
+      "lines": [
+        {
+          "text": "New model?"
+        },
+        {
+          "text": "Don’t just"
+        },
+        {
+          "text": "swap it in.",
+          "highlight": true
+        }
+      ],
+      "sub": "Five checks first.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "checks",
+      "type": "checklist",
+      "durationInFrames": 328,
+      "purpose": "The five checks before switching.",
+      "onScreen": "BEFORE YOU SWITCH / Five checks on your tasks. / Run your eval set: old vs new · Check the output still parses · Compare cost and latency per task · Watch refusals and answer length · Keep the old version for rollback / Better on benchmarks isn’t better on your tasks.",
+      "voiceover": "Before you switch: run your eval set, old versus new. Check the output still parses. Compare cost and latency per task. Watch refusals and answer length. Keep the old version for rollback. Better on benchmarks isn’t better on your tasks.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 240."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "BEFORE YOU SWITCH",
+      "headline": [
+        {
+          "text": "Five checks"
+        },
+        {
+          "text": "on your tasks.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Run your eval set: old vs new",
+        "Check the output still parses",
+        "Compare cost and latency per task",
+        "Watch refusals and answer length",
+        "Keep the old version for rollback"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Better on benchmarks isn’t better on your tasks.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 195,
+          "kind": "tick"
+        },
+        {
+          "at": 242,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Your tasks decide. Not leaderboards. / Save this for your next model upgrade",
+      "voiceover": "Your tasks decide. Not leaderboards. Save this for your next model upgrade.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Your tasks"
+        },
+        {
+          "text": "decide. Not"
+        },
+        {
+          "text": "leaderboards.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next model upgrade",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "MODEL UPGRADES",
+    "headline": [
+      {
+        "text": "Five checks"
+      },
+      {
+        "text": "before you"
+      },
+      {
+        "text": "upgrade",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "A new model version scores higher on public benchmarks. That doesn’t mean it’s better at what your product does.",
+    "body": [
+      "Before you switch:\n→ Run your eval set, old vs new, side by side\n→ Check the output format still parses\n→ Compare cost and latency per task, not per token\n→ Watch for new refusals and changes in answer length\n→ Keep the old version available for rollback",
+      "Then roll it out like any release: a small share of traffic first."
+    ],
+    "cta": "Save this for your next model upgrade.",
+    "hashtags": [
+      "#GenAI",
+      "#LLMOps",
+      "#LLMEvals",
+      "#AIProductManagement",
+      "#AIEngineering"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next model upgrade"
+  },
+  "claims": [
+    {
+      "text": "Before switching to a new model version, teams should compare it with the current one on their own eval set and check format adherence, cost, latency, refusals and answer length, and keep a rollback path.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ New model out? Don’t just swap it in",
+      "2/ Eval set: old vs new",
+      "3/ Format still parses",
+      "4/ Cost + latency per task",
+      "5/ Refusals, length, rollback",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 3 (PoC to production): rolling a model upgrade out to 5% of traffic first.",
+    "linkedin": "Post: five checks before switching model versions, and why benchmark gains don’t transfer automatically."
+  }
+}

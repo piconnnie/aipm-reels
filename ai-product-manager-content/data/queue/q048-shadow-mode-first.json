@@ -1,0 +1,323 @@
+{
+  "brief": {
+    "topic": "Shadow mode or a small rollout: how to launch an AI feature",
+    "audience": "PMs planning the launch of an AI feature",
+    "pillar": "A: AI Product Management",
+    "objective": "saves",
+    "format": "a-vs-b",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t050",
+    "targetDurationSec": 27,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Shadow mode measures how accurate the AI is on real inputs without anyone seeing it, while a small rollout shows how people use it, so pick the launch step by what you need to learn next.",
+  "hooks": [
+    {
+      "text": "Your AI can run live before anyone sees it.",
+      "angle": "Counter-intuitive fact",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "notes": "Introduces shadow mode as a concrete, surprising option."
+    },
+    {
+      "text": "Don’t launch your AI feature to 5% first.",
+      "angle": "Contrarian instruction",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Too absolute; a small rollout is often right."
+    },
+    {
+      "text": "Shadow mode vs canary: which first?",
+      "angle": "Jargon comparison",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Jargon loses beginners on frame 0."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): names a launch option many PMs haven’t used, and the reel says exactly when to pick it.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your AI can run live before anyone sees it. / Shadow mode vs a small rollout.",
+      "voiceover": "Your AI can run live before anyone sees it. Shadow mode versus a small rollout.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI LAUNCH PLAN",
+      "lines": [
+        {
+          "text": "Your AI"
+        },
+        {
+          "text": "can run live"
+        },
+        {
+          "text": "before anyone"
+        },
+        {
+          "text": "sees it.",
+          "highlight": true
+        }
+      ],
+      "sub": "Shadow mode vs a small rollout.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "type": "table",
+      "durationInFrames": 300,
+      "purpose": "Side-by-side on what each launch step shows you.",
+      "onScreen": "SIDE BY SIDE / What each one shows you. / QUESTION → SHADOW → SMALL ROLLOUT / Do users see the output? → No → Yes, a few · Accuracy vs humans? → Yes, real inputs → Only if labelled · How people use it? → No → Yes / Shadow still costs inference · Neither replaces an eval set",
+      "voiceover": "In shadow mode the AI runs on real inputs, users never see the output, and you compare it with what humans did. A small rollout shows a few users, so you learn how people use it. Shadow still costs inference, and neither replaces an eval set.",
+      "storyboard": {
+        "visual": "Legend QUESTION → SHADOW → SMALL ROLLOUT; 3 rows; 2 notes.",
+        "animation": "Rows every 45 frames from 30; notes from 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SIDE BY SIDE",
+      "headline": [
+        {
+          "text": "What each"
+        },
+        {
+          "text": "one shows you.",
+          "highlight": true
+        }
+      ],
+      "columns": [
+        "QUESTION",
+        "SHADOW",
+        "SMALL ROLLOUT"
+      ],
+      "rows": [
+        {
+          "input": "Do users see the output?",
+          "expected": "No",
+          "passIf": "Yes, a few"
+        },
+        {
+          "input": "Accuracy vs humans?",
+          "expected": "Yes, real inputs",
+          "passIf": "Only if labelled"
+        },
+        {
+          "input": "How people use it?",
+          "expected": "No",
+          "passIf": "Yes"
+        }
+      ],
+      "rowStart": 30,
+      "rowStagger": 45,
+      "notes": [
+        "Shadow still costs inference",
+        "Neither replaces an eval set"
+      ],
+      "notesStart": 180,
+      "notesStagger": 30,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 32,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 122,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "tick"
+        },
+        {
+          "at": 212,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "choose",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "Choose shadow when… / choose rollout when…",
+      "onScreen": "HOW TO CHOOSE / Pick by what you must learn. / Shadow: one wrong answer is costly · Shadow: humans already do this task · Rollout: you need real usage signal · Rollout: mistakes are easy to undo / Often both: shadow first, then a few users.",
+      "voiceover": "Pick shadow when one wrong answer is costly, or when humans already do the task so you can compare. Pick a small rollout when you need real usage signal and mistakes are easy to undo. Often it’s both: shadow first, then a few users.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "HOW TO CHOOSE",
+      "headline": [
+        {
+          "text": "Pick by what"
+        },
+        {
+          "text": "you must learn.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "Shadow: one wrong answer is costly",
+        "Shadow: humans already do this task",
+        "Rollout: you need real usage signal",
+        "Rollout: mistakes are easy to undo"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Often both: shadow first, then a few users.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Learn accuracy in the dark, then usage. / Save this for your next AI launch plan",
+      "voiceover": "Learn accuracy in the dark, then usage. Save this for your next AI launch plan.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Learn accuracy"
+        },
+        {
+          "text": "in the dark,"
+        },
+        {
+          "text": "then usage.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next AI launch plan",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI LAUNCH PLAN",
+    "headline": [
+      {
+        "text": "Shadow mode"
+      },
+      {
+        "text": "or rollout?",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Before real users see your AI feature, you can run it on real inputs with the output hidden, and compare it with what your team actually did. That’s shadow mode.",
+    "body": [
+      "Shadow mode tells you: how accurate it is on real traffic, with zero user risk.\nA small rollout tells you: how people actually use it, and what they do when it’s wrong.",
+      "Choose shadow when:\n→ One wrong answer is costly\n→ Humans already do the task, so you have a baseline\n\nChoose a small rollout when:\n→ You need real usage signal\n→ Mistakes are easy to undo",
+      "Often the answer is both: shadow first, then a few users. Shadow mode still costs inference, and neither replaces an eval set."
+    ],
+    "cta": "Save this for your next AI launch plan.",
+    "hashtags": [
+      "#AIProductManagement",
+      "#ProductLaunch",
+      "#GenAI",
+      "#ProductManagement",
+      "#AIPM"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next AI launch plan"
+  },
+  "claims": [
+    {
+      "text": "Shadow mode (running the AI on real inputs with hidden output and comparing it with human decisions) measures accuracy without user risk, while a small rollout reveals real usage; teams often use shadow mode first when errors are costly.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your AI can run live before anyone sees it",
+      "2/ Shadow vs small rollout, side by side",
+      "3/ Shadow: costly errors, human baseline",
+      "4/ Rollout: usage signal, undoable mistakes",
+      "5/ Often both, in that order",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 9 (Build with me): set up a shadow-mode comparison sheet: AI output vs human decision, by case.",
+    "linkedin": "Post: shadow mode as an underused launch step for AI features, and how to pick it vs a small rollout."
+  }
+}

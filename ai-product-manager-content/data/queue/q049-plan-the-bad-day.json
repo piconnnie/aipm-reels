@@ -1,0 +1,327 @@
+{
+  "brief": {
+    "topic": "Your model API will have a bad day. Plan for it",
+    "audience": "PMs and engineers shipping features on hosted model APIs",
+    "pillar": "B: GenAI Product Delivery",
+    "objective": "saves",
+    "format": "poc-to-production",
+    "technicalDepth": "intermediate",
+    "constraints": [],
+    "backlogId": "t051",
+    "targetDurationSec": 24,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A demo assumes the model API always answers fast, but in production it will sometimes be slow, rate-limited or down, so the feature needs a designed bad-day path: a timeout, one retry, a tested fallback and an honest message.",
+  "hooks": [
+    {
+      "text": "Your model API will go down. Then what?",
+      "angle": "Inevitable scenario",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "notes": "Certain to happen; the question invites the plan."
+    },
+    {
+      "text": "Your AI feature has a single point of failure.",
+      "angle": "Architecture call-out",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 3
+      },
+      "notes": "Accurate but abstract."
+    },
+    {
+      "text": "What happens when the AI says nothing?",
+      "angle": "Mystery",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Unclear it’s about outages."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (24/25): a scenario every team will hit, framed as a question the reel answers with a concrete path.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your model API will go down. Then what? / The demo never planned for it.",
+      "voiceover": "Your model API will go down. Then what? The demo never planned for it.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "FROM DEMO TO PRODUCTION",
+      "lines": [
+        {
+          "text": "Your model"
+        },
+        {
+          "text": "API will"
+        },
+        {
+          "text": "go down."
+        },
+        {
+          "text": "Then what?",
+          "highlight": true
+        }
+      ],
+      "sub": "The demo never planned for it.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "bad-day-path",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show the request path when the primary model is slow or down.",
+      "onScreen": "THE BAD-DAY PATH / Plan it before you need it. / User asks → Primary model → Retry once → Fallback model → Honest answer / Run your eval set on the fallback too.",
+      "voiceover": "The user asks. The primary model is slow or down. Retry once, then stop. Switch to a smaller fallback model, and tell the user the answer may be limited. Run your eval set on the fallback too.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 4.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "THE BAD-DAY PATH",
+      "headline": [
+        {
+          "text": "Plan it before"
+        },
+        {
+          "text": "you need it.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "User asks",
+          "detail": "request"
+        },
+        {
+          "label": "Primary model",
+          "detail": "slow or down",
+          "tone": "warning"
+        },
+        {
+          "label": "Retry once",
+          "detail": "then stop"
+        },
+        {
+          "label": "Fallback model",
+          "detail": "small, tested"
+        },
+        {
+          "label": "Honest answer",
+          "detail": "flags limits",
+          "tone": "success"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 3,
+        "text": "Run your eval set on the fallback too.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "decide-now",
+      "type": "checklist",
+      "durationInFrames": 260,
+      "purpose": "The production requirements.",
+      "onScreen": "DECIDE BEFORE LAUNCH / Not during the outage. / A timeout users can live with · One retry, then stop · A fallback you’ve evaluated · A plain message when all fails / Practise the outage before it’s real.",
+      "voiceover": "Decide before launch, not during the outage: a timeout users can live with, one retry then stop, a fallback you’ve evaluated, and a plain message when everything fails. Practise the outage before it’s real.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 198."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "DECIDE BEFORE LAUNCH",
+      "headline": [
+        {
+          "text": "Not during"
+        },
+        {
+          "text": "the outage.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "A timeout users can live with",
+        "One retry, then stop",
+        "A fallback you’ve evaluated",
+        "A plain message when all fails"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Practise the outage before it’s real.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 200,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Every AI feature needs a bad-day mode. / Save this for your launch checklist",
+      "voiceover": "Every AI feature needs a bad-day mode. Save this for your launch checklist.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Every AI"
+        },
+        {
+          "text": "feature needs a"
+        },
+        {
+          "text": "bad-day mode.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your launch checklist",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI RELIABILITY",
+    "headline": [
+      {
+        "text": "Plan the"
+      },
+      {
+        "text": "bad day",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Your demo assumed the model API always answers, and answers fast. In production it will sometimes be slow, rate-limited or down.",
+    "body": [
+      "Design the bad-day path before launch:\n→ A timeout users can live with\n→ One retry, then stop (retry storms make outages worse)\n→ A fallback model you’ve run your eval set on\n→ A plain message when everything fails",
+      "An honest “this answer may be limited right now” beats a spinner that never ends."
+    ],
+    "cta": "Save this for your launch checklist.",
+    "hashtags": [
+      "#GenAI",
+      "#LLMOps",
+      "#AIEngineering",
+      "#AIProductManagement",
+      "#Reliability"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your launch checklist"
+  },
+  "claims": [
+    {
+      "text": "Production LLM features should handle slow, rate-limited or unavailable model APIs with timeouts, bounded retries, an evaluated fallback model and a clear degraded-mode message.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your model API will go down. Then what?",
+      "2/ The bad-day path, step by step",
+      "3/ Timeout + one retry",
+      "4/ An evaluated fallback",
+      "5/ A plain message",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 6 (A vs B): one big model vs a router with a small model for easy requests.",
+    "linkedin": "Post: the four decisions to make before your LLM provider’s next outage."
+  }
+}

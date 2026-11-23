@@ -1,0 +1,315 @@
+{
+  "brief": {
+    "topic": "AI PM interview: “Three AI ideas, one quarter. Which do you build first?”",
+    "audience": "Aspiring and junior AI PMs preparing for interviews",
+    "pillar": "E: AI Product Career",
+    "objective": "saves",
+    "format": "interview",
+    "technicalDepth": "beginner",
+    "constraints": [],
+    "backlogId": "t052",
+    "targetDurationSec": 26,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A strong prioritisation answer scores each AI idea out loud on how often the pain happens, what a wrong answer costs, whether the data exists, how fast success can be measured, and whether a non-AI fix would do.",
+  "hooks": [
+    {
+      "text": "Three ideas. One quarter. Pick one.",
+      "angle": "Interview prompt",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Instantly recognisable interview setup."
+    },
+    {
+      "text": "How to answer AI prioritisation questions.",
+      "angle": "How-to",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Generic and flat."
+    },
+    {
+      "text": "Interviewers don’t want the coolest idea.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Curious but vague."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a real interview prompt viewers can rehearse with; the reel gives the scoring they can say out loud.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Three ideas. One quarter. Pick one. / Score them out loud.",
+      "voiceover": "Three AI ideas. One quarter. Pick one. Score them out loud.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PM INTERVIEW",
+      "lines": [
+        {
+          "text": "Three ideas."
+        },
+        {
+          "text": "One quarter."
+        },
+        {
+          "text": "Pick one.",
+          "highlight": true
+        }
+      ],
+      "sub": "Score them out loud.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "answer",
+      "type": "checklist",
+      "durationInFrames": 328,
+      "purpose": "The structured answer.",
+      "onScreen": "A STRONG ANSWER / Five questions per idea. / How often does the pain happen? · What does a wrong answer cost? · Do we have data to ground it? · Can we measure success in weeks? · Would a non-AI fix do? / Close with what you’d learn in the first month.",
+      "voiceover": "Ask five questions per idea. How often does the pain happen? What does a wrong answer cost? Do we have the data to ground it? Can we measure success in weeks? Would a non-AI fix do? Close with what you’d learn in the first month.",
+      "storyboard": {
+        "visual": "5 numbered items; cyan rule box.",
+        "animation": "Items every 42 frames from 24; rule at 240."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "A STRONG ANSWER",
+      "headline": [
+        {
+          "text": "Five questions"
+        },
+        {
+          "text": "per idea.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "How often does the pain happen?",
+        "What does a wrong answer cost?",
+        "Do we have data to ground it?",
+        "Can we measure success in weeks?",
+        "Would a non-AI fix do?"
+      ],
+      "itemStart": 24,
+      "itemStagger": 42,
+      "rule": "Close with what you’d learn in the first month.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 69,
+          "kind": "tick"
+        },
+        {
+          "at": 111,
+          "kind": "tick"
+        },
+        {
+          "at": 153,
+          "kind": "tick"
+        },
+        {
+          "at": 195,
+          "kind": "tick"
+        },
+        {
+          "at": 242,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "signals",
+      "type": "cards",
+      "durationInFrames": 224,
+      "purpose": "What interviewers listen for.",
+      "onScreen": "WHAT THEY LISTEN FOR / What earns the follow-up. / STRONG Starts from the user’s pain · STRONG Weighs the cost of errors · STRONG Names a success metric · RED FLAG Picks the flashiest demo",
+      "voiceover": "Interviewers listen for starting from the user’s pain, weighing the cost of errors, and naming a success metric. The red flag: picking the flashiest demo.",
+      "storyboard": {
+        "visual": "Kicker + headline; 4 tagged cards.",
+        "animation": "Cards pop every 26 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT THEY LISTEN FOR",
+      "headline": [
+        {
+          "text": "What earns"
+        },
+        {
+          "text": "the follow-up.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 26,
+      "cards": [
+        {
+          "text": "Starts from the user’s pain",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Weighs the cost of errors",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Names a success metric",
+          "status": "pass",
+          "tag": "STRONG"
+        },
+        {
+          "text": "Picks the flashiest demo",
+          "status": "warn",
+          "tag": "RED FLAG"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "tick"
+        },
+        {
+          "at": 42,
+          "kind": "tick"
+        },
+        {
+          "at": 68,
+          "kind": "tick"
+        },
+        {
+          "at": 94,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Frequent pain, cheap mistakes: start there. / Save this for your AI PM interview",
+      "voiceover": "Frequent pain, cheap mistakes: start there. Save this for your AI PM interview.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Frequent pain,"
+        },
+        {
+          "text": "cheap mistakes:"
+        },
+        {
+          "text": "start there.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your AI PM interview",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI PM INTERVIEW",
+    "headline": [
+      {
+        "text": "Three ideas."
+      },
+      {
+        "text": "Pick one.",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“You have three AI feature ideas and one quarter. Which do you build first?” The interviewer is testing how you reason, not which idea you pick.",
+    "body": [
+      "Score each idea out loud:\n→ How often does the pain happen?\n→ What does a wrong answer cost?\n→ Do we have the data to ground it?\n→ Can we measure success in weeks?\n→ Would a non-AI fix do?",
+      "Then pick the frequent, low-risk, measurable one and say what you’d learn in the first month. Red flag: choosing the idea with the flashiest demo."
+    ],
+    "cta": "Save this for your AI PM interview.",
+    "hashtags": [
+      "#AIPM",
+      "#ProductManagerInterview",
+      "#AIProductManagement",
+      "#PMInterview",
+      "#CareerInAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your AI PM interview"
+  },
+  "claims": [
+    {
+      "text": "A strong answer to an AI prioritisation interview question scores each idea on pain frequency, cost of errors, data availability, time to measurable success and whether a non-AI solution suffices.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Three AI ideas. One quarter. Pick one.",
+      "2/ Pain frequency",
+      "3/ Cost of a wrong answer",
+      "4/ Data + measurable in weeks",
+      "5/ Non-AI fix?",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 5 (Interview): “Your AI feature’s usage dropped after a model update. What do you do?”",
+    "linkedin": "Post: a five-question scoring frame for AI prioritisation interview questions, with red flags."
+  }
+}

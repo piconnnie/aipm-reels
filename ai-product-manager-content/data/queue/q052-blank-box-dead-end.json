@@ -1,0 +1,386 @@
+{
+  "brief": {
+    "topic": "Teardown: the empty state of an AI feature",
+    "audience": "PMs and designers shipping AI features to users",
+    "pillar": "A: AI Product Management",
+    "objective": "shares",
+    "format": "teardown",
+    "technicalDepth": "beginner",
+    "constraints": [],
+    "backlogId": "t054",
+    "targetDurationSec": 30,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "A blank ‘Ask me anything’ box gets vague asks and vague answers that users judge the feature on, so show starter tasks, an example of a good result and the limits up front.",
+  "hooks": [
+    {
+      "text": "A blank prompt box is a dead end.",
+      "angle": "Teardown verdict",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Concrete UI everyone has seen, with a clear verdict."
+    },
+    {
+      "text": "“Ask me anything” is bad UX.",
+      "angle": "Hot take",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "notes": "Close, but sounds like a rant."
+    },
+    {
+      "text": "Why nobody uses your AI feature twice.",
+      "angle": "Pain",
+      "scores": {
+        "specificity": 3,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "notes": "Overpromises a single cause."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a familiar screen with a clear verdict, and the reel shows the fix.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "A blank prompt box is a dead end. / Teardown: an AI first screen.",
+      "voiceover": "A blank prompt box is a dead end. Let’s tear down an AI first screen.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AI PRODUCT TEARDOWN",
+      "lines": [
+        {
+          "text": "A blank"
+        },
+        {
+          "text": "prompt box is"
+        },
+        {
+          "text": "a dead end.",
+          "highlight": true
+        }
+      ],
+      "sub": "Teardown: an AI first screen.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "as-shipped",
+      "type": "cards",
+      "durationInFrames": 180,
+      "purpose": "Show the first screen as typically shipped.",
+      "onScreen": "FIRST SCREEN, AS SHIPPED / What users see first. / BLANK “Ask me anything…” · UNCLEAR No hint of what it does well · MISSING No example of a good result",
+      "voiceover": "What users see first: Ask me anything. No hint of what it does well. No example of a good result.",
+      "storyboard": {
+        "visual": "Kicker + headline; 3 tagged cards.",
+        "animation": "Cards pop every 20 frames from 10."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "FIRST SCREEN, AS SHIPPED",
+      "headline": [
+        {
+          "text": "What users"
+        },
+        {
+          "text": "see first.",
+          "highlight": true
+        }
+      ],
+      "enter": "pop",
+      "popStart": 10,
+      "popStagger": 20,
+      "cards": [
+        {
+          "text": "“Ask me anything…”",
+          "status": "warn",
+          "tag": "BLANK"
+        },
+        {
+          "text": "No hint of what it does well",
+          "status": "warn",
+          "tag": "UNCLEAR"
+        },
+        {
+          "text": "No example of a good result",
+          "status": "warn",
+          "tag": "MISSING"
+        }
+      ],
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 16,
+          "kind": "low"
+        },
+        {
+          "at": 36,
+          "kind": "low"
+        },
+        {
+          "at": 56,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "drop-off",
+      "type": "diagram",
+      "durationInFrames": 230,
+      "purpose": "Show where users drop after a blank first screen.",
+      "onScreen": "WHAT HAPPENS NEXT / Where users drop off. / Opens the feature → Sees a blank box → Types a vague ask → Vague answer back → Doesn’t come back / Users judge it on this answer.",
+      "voiceover": "They open the feature, see a blank box, type a vague ask, get a vague answer, and don’t come back. Users judge it on that first answer.",
+      "storyboard": {
+        "visual": "Vertical pipeline of 5 nodes with flow pulse; amber callout on node 4.",
+        "animation": "Nodes every 18 frames from 20; callout at 140."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "WHAT HAPPENS NEXT",
+      "headline": [
+        {
+          "text": "Where users"
+        },
+        {
+          "text": "drop off.",
+          "highlight": true
+        }
+      ],
+      "nodes": [
+        {
+          "label": "Opens the feature",
+          "detail": "first visit"
+        },
+        {
+          "label": "Sees a blank box",
+          "detail": "no hints",
+          "tone": "warning"
+        },
+        {
+          "label": "Types a vague ask",
+          "detail": "“help me”"
+        },
+        {
+          "label": "Vague answer back",
+          "detail": "generic",
+          "tone": "warning"
+        },
+        {
+          "label": "Doesn’t come back",
+          "detail": "verdict made",
+          "tone": "warning"
+        }
+      ],
+      "nodeStart": 20,
+      "nodeStagger": 18,
+      "callout": {
+        "nodeIndex": 3,
+        "text": "Users judge it on this answer.",
+        "at": 140
+      },
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 23,
+          "kind": "tick"
+        },
+        {
+          "at": 41,
+          "kind": "tick"
+        },
+        {
+          "at": 59,
+          "kind": "tick"
+        },
+        {
+          "at": 77,
+          "kind": "tick"
+        },
+        {
+          "at": 95,
+          "kind": "tick"
+        },
+        {
+          "at": 142,
+          "kind": "low"
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "type": "checklist",
+      "durationInFrames": 242,
+      "purpose": "How to fix the first screen.",
+      "onScreen": "FIX THE FIRST SCREEN / Show the job, not a box. / 3 starter tasks from their data · One example of a good result · Say what it can’t do yet · Track which starters get used / The first answer is the onboarding.",
+      "voiceover": "Show the job, not a box: three starter tasks from their own data, one example of a good result, say what it can’t do yet, and track which starters get used. The first answer is the onboarding.",
+      "storyboard": {
+        "visual": "4 numbered items; cyan rule box.",
+        "animation": "Items every 36 frames from 24; rule at 180."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "FIX THE FIRST SCREEN",
+      "headline": [
+        {
+          "text": "Show the job,"
+        },
+        {
+          "text": "not a box.",
+          "highlight": true
+        }
+      ],
+      "items": [
+        "3 starter tasks from their data",
+        "One example of a good result",
+        "Say what it can’t do yet",
+        "Track which starters get used"
+      ],
+      "itemStart": 24,
+      "itemStagger": 36,
+      "rule": "The first answer is the onboarding.",
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 27,
+          "kind": "tick"
+        },
+        {
+          "at": 63,
+          "kind": "tick"
+        },
+        {
+          "at": 99,
+          "kind": "tick"
+        },
+        {
+          "at": 135,
+          "kind": "tick"
+        },
+        {
+          "at": 182,
+          "kind": "chime"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Replace the blank box with a first task. / Share this with your designer",
+      "voiceover": "Replace the blank box with a first task. Share this with your designer.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Replace the"
+        },
+        {
+          "text": "blank box with"
+        },
+        {
+          "text": "a first task.",
+          "highlight": true
+        }
+      ],
+      "cta": "Share this with your designer",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AI UX TEARDOWN",
+    "headline": [
+      {
+        "text": "Don’t ship"
+      },
+      {
+        "text": "a blank box",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "“Ask me anything” sounds open. In practice users type something vague, get something vague back, and decide the feature isn’t for them.",
+    "body": [
+      "What a good AI first screen shows:\n→ Three starter tasks built from the user’s own data\n→ One example of a good result\n→ What it can’t do yet, in plain words\n→ (Behind the scenes) which starters people actually use",
+      "The first answer is the onboarding. Design it."
+    ],
+    "cta": "Share this with your designer.",
+    "hashtags": [
+      "#AIUX",
+      "#ProductDesign",
+      "#AIProductManagement",
+      "#Onboarding",
+      "#GenAI"
+    ]
+  },
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with your designer"
+  },
+  "claims": [
+    {
+      "text": "Blank, open-ended AI input boxes tend to produce vague requests and weak first answers; starter tasks, an example result and stated limits improve first-use outcomes.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ A blank prompt box is a dead end",
+      "2/ What users see first",
+      "3/ Vague ask → vague answer → gone",
+      "4/ Starter tasks from their data",
+      "5/ Example result + limits",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 6 (A vs B): chat box vs a button in the workflow: when each is the right AI interface.",
+    "linkedin": "Post: a teardown of the typical AI empty state and four fixes for the first screen."
+  }
+}

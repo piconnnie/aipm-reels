@@ -1,0 +1,337 @@
+{
+  "brief": {
+    "topic": "Write a tool description your agent can't misread",
+    "audience": "PMs and engineers building tool-using agents",
+    "pillar": "C: Agentic AI",
+    "objective": "saves",
+    "format": "build-with-me",
+    "technicalDepth": "intermediate",
+    "constraints": [
+      "Tool spec is a fictional example; error counts are illustrative and labelled on screen and in caption"
+    ],
+    "backlogId": "t055",
+    "targetDurationSec": 22,
+    "voiceover": false,
+    "research": "not-required"
+  },
+  "coreInsight": "Agents choose tools from the descriptions you write, so spell out what each tool does, when to use it, when not to and what to use instead, its required arguments, limits and what it returns.",
+  "hooks": [
+    {
+      "text": "Your agent picked the wrong tool. Read its description.",
+      "angle": "Diagnosis",
+      "scores": {
+        "specificity": 5,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "notes": "Points at the fix most teams overlook."
+    },
+    {
+      "text": "Agents can’t read your mind. Write it down.",
+      "angle": "Instruction",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "notes": "Generic."
+    },
+    {
+      "text": "One missing line made the agent refund the wrong order.",
+      "angle": "Story",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "notes": "Too long for frame 0, and the story is invented."
+    }
+  ],
+  "selectedHook": 0,
+  "selectionRationale": "Highest total (23/25): a common failure with a fix viewers can apply today; the reel walks through the description line by line.",
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "durationInFrames": 90,
+      "purpose": "State the idea so it is clear from frame 0.",
+      "onScreen": "Your agent picked the wrong tool. / Read the description you wrote.",
+      "voiceover": "Your agent picked the wrong tool. Read the description you wrote.",
+      "storyboard": {
+        "visual": "Display headline with highlighted phrase; slate sub-line.",
+        "animation": "Readable on frame 0; underline sweep at 6; sub rises at 18."
+      },
+      "kicker": "AGENTIC AI",
+      "lines": [
+        {
+          "text": "Your agent"
+        },
+        {
+          "text": "picked the"
+        },
+        {
+          "text": "wrong tool.",
+          "highlight": true
+        }
+      ],
+      "sub": "Read the description you wrote.",
+      "sfx": [
+        {
+          "at": 6,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "spec",
+      "type": "terminal",
+      "durationInFrames": 246,
+      "purpose": "Walk through a well-specified tool description (fictional example).",
+      "onScreen": "ONE TOOL, DESCRIBED / Write it like a new hire’s brief. / name: issue_refund · does: refunds ONE order · use_when: item arrived damaged · not_for: cancel → cancel_order · order_id: required, from lookup · amount: max = order total · returns: refund_id or reason",
+      "voiceover": "Write it like a new hire’s brief: what it does, when to use it, when not to and what to use instead, required arguments, limits, and what it returns. Example spec only.",
+      "storyboard": {
+        "visual": "Terminal window 'refund_tool.yaml' with deterministic typing.",
+        "animation": "Lines type in at their cue frames."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "ONE TOOL, DESCRIBED",
+      "headline": [
+        {
+          "text": "Write it like"
+        },
+        {
+          "text": "a new hire’s brief.",
+          "highlight": true
+        }
+      ],
+      "title": "refund_tool.yaml",
+      "lines": [
+        {
+          "text": "name: issue_refund",
+          "at": 10
+        },
+        {
+          "text": "does: refunds ONE order",
+          "at": 36
+        },
+        {
+          "text": "use_when: item arrived damaged",
+          "at": 62,
+          "tone": "success"
+        },
+        {
+          "text": "not_for: cancel → cancel_order",
+          "at": 88,
+          "tone": "warning"
+        },
+        {
+          "text": "order_id: required, from lookup",
+          "at": 114
+        },
+        {
+          "text": "amount: max = order total",
+          "at": 140,
+          "tone": "warning"
+        },
+        {
+          "text": "returns: refund_id or reason",
+          "at": 166
+        }
+      ],
+      "charsPerFrame": 1.2,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 36,
+          "kind": "tick"
+        },
+        {
+          "at": 62,
+          "kind": "tick"
+        },
+        {
+          "at": 88,
+          "kind": "tick"
+        },
+        {
+          "at": 114,
+          "kind": "tick"
+        },
+        {
+          "at": 140,
+          "kind": "tick"
+        },
+        {
+          "at": 166,
+          "kind": "tick"
+        }
+      ]
+    },
+    {
+      "id": "wrong-calls",
+      "type": "comparison",
+      "durationInFrames": 165,
+      "purpose": "Show fewer wrong calls with a full description (illustrative).",
+      "onScreen": "SAME 50 TEST REQUESTS [ILLUSTRATIVE] / ONE-LINE DESCRIPTION 9 of 50 / FULL DESCRIPTION 2 of 50 / Say when not to use it.",
+      "voiceover": "Illustrative: on the same fifty test requests, nine wrong calls with a one-line description, two with the full one. Say when not to use it.",
+      "storyboard": {
+        "visual": "ILLUSTRATIVE badge; warning bar vs success bar; conclusion.",
+        "animation": "Left at 4, right at 30 with count-up; conclusion at 84."
+      },
+      "transitionIn": "fade-up",
+      "kicker": "SAME 50 TEST REQUESTS",
+      "illustrativeLabel": "ILLUSTRATIVE",
+      "left": {
+        "label": "ONE-LINE DESCRIPTION",
+        "value": "9 of 50",
+        "ratio": 0.9,
+        "tone": "warning",
+        "caption": "Wrong tool or bad arguments"
+      },
+      "right": {
+        "label": "FULL DESCRIPTION",
+        "value": "2 of 50",
+        "ratio": 0.2,
+        "tone": "success",
+        "caption": "Wrong tool or bad arguments"
+      },
+      "rightAt": 30,
+      "conclusion": [
+        {
+          "text": "Say when"
+        },
+        {
+          "text": "not to use it.",
+          "highlight": true
+        }
+      ],
+      "conclusionAt": 84,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 10,
+          "kind": "tick"
+        },
+        {
+          "at": 36,
+          "kind": "chime"
+        },
+        {
+          "at": 86,
+          "kind": "impact"
+        }
+      ]
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "durationInFrames": 150,
+      "purpose": "Memorable rule + one CTA.",
+      "onScreen": "Tell the agent when not to use the tool. / Save this for your next agent build",
+      "voiceover": "Tell the agent when not to use the tool. Save this for your next agent build.",
+      "storyboard": {
+        "visual": "Takeaway lines, last highlighted; CTA pill; end card.",
+        "animation": "Lines rise; CTA at 40; end card at 70."
+      },
+      "transitionIn": "fade-up",
+      "lines": [
+        {
+          "text": "Tell the agent"
+        },
+        {
+          "text": "when not to"
+        },
+        {
+          "text": "use the tool.",
+          "highlight": true
+        }
+      ],
+      "cta": "Save this for your next agent build",
+      "ctaAt": 40,
+      "endCardAt": 70,
+      "sfx": [
+        {
+          "at": 0,
+          "kind": "whoosh"
+        },
+        {
+          "at": 72,
+          "kind": "chime"
+        }
+      ]
+    }
+  ],
+  "cover": {
+    "kicker": "AGENT TOOLS",
+    "headline": [
+      {
+        "text": "Describe tools"
+      },
+      {
+        "text": "like a brief",
+        "highlight": true
+      }
+    ]
+  },
+  "caption": {
+    "opening": "Agents pick tools and fill in arguments from the descriptions you write. A one-line description leaves the model guessing.",
+    "body": [
+      "For every tool, write:\n→ What it does (and its scope: one order, not many)\n→ When to use it\n→ When NOT to, and which tool to use instead\n→ Required arguments and where they come from\n→ Limits, like a maximum amount\n→ What it returns, including errors",
+      "Then test it: run your agent test cases and count wrong tool calls before and after.",
+      "Still enforce limits in code. A description guides the model; it doesn’t stop it.",
+      "(The tool spec is a made-up example; 9 vs 2 wrong calls is illustrative.)"
+    ],
+    "cta": "Save this for your next agent build.",
+    "hashtags": [
+      "#AIAgents",
+      "#AgenticAI",
+      "#ToolCalling",
+      "#AIEngineering",
+      "#AIProductManagement"
+    ]
+  },
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next agent build"
+  },
+  "claims": [
+    {
+      "text": "Detailed tool descriptions that state purpose, when to use and not use the tool, argument requirements, limits and return values reduce wrong tool selection and bad arguments in agents.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "9 wrong calls out of 50 test requests with a one-line description vs 2 with a full description.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "publish": {
+    "suggestedDate": "",
+    "notes": "Evergreen."
+  },
+  "repurposing": {
+    "carousel": [
+      "1/ Your agent picked the wrong tool",
+      "2/ What it does + when to use it",
+      "3/ When NOT to use it",
+      "4/ Arguments, limits, returns",
+      "5/ 9 vs 2 wrong calls (illustrative)",
+      "6/ Save CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture): how an agent chooses between tools, in 30 seconds.",
+    "linkedin": "Post: a template for writing agent tool descriptions, with the ‘when not to use’ line most teams skip."
+  }
+}
