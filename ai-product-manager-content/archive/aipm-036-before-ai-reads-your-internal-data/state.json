@@ -1,0 +1,36 @@
+{
+  "id": "aipm-036-before-ai-reads-your-internal-data",
+  "createdAt": "2026-11-23T08:01:56.023Z",
+  "release": {
+    "tag": "reel-aipm-036-before-ai-reads-your-internal-data",
+    "video": "aipm-036-before-ai-reads-your-internal-data.mp4",
+    "cover": "aipm-036-before-ai-reads-your-internal-data.jpg",
+    "contactSheet": "aipm-036-before-ai-reads-your-internal-data-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "810f54aeaddbb69445b4350da79a8d1dd596956af4e71d76286f355945b1420d",
+    "cover": "0447cd51c656581d7818dc2057d4bebf3b6eeeba184eeb6ba9c9798810f25c50"
+  },
+  "durationSec": 21,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

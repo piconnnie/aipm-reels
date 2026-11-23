@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-23",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t033",
+    "pillar": "D",
+    "pillarName": "D: Enterprise AI",
+    "format": "decision-checklist",
+    "research": false
+  },
+  "reelId": "aipm-036-before-ai-reads-your-internal-data",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Before your AI reads the company wiki, ask these four questions.
+
+2
+00:00:03,130 --> 00:00:11,600
+Who can see each document today? Is that checked at retrieval, for each user? What gets logged: prompts, answers, sources? How long is it kept, and who can read the logs? If retrieval ignores user permissions, don't connect it yet.
+
+3
+00:00:11,800 --> 00:00:15,930
+Red flags: we index everything once. The bot has admin access. Logs? The vendor has them.
+
+4
+00:00:16,130 --> 00:00:20,930
+The bot should know only what the user can. Send this to your security lead.
