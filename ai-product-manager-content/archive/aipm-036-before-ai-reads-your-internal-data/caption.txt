@@ -1,0 +1,13 @@
+Connecting an assistant to internal documents is a permissions project before it’s an AI project.
+
+Ask, in this order:
+→ Who can see each document today?
+→ Is that enforced at retrieval time, for each user?
+→ What gets logged: prompts, answers, sources?
+→ How long is it kept, and who can read the logs?
+
+Red flags: “we index everything once”, “the bot has admin access”, “the vendor keeps the logs”. If retrieval ignores user permissions, don’t connect it yet.
+
+Send this to your security lead.
+
+#EnterpriseAI #AIGovernance #RAG #AIProductManagement

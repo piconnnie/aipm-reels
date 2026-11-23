@@ -1,0 +1,205 @@
+{
+  "contentId": "aipm-036-before-ai-reads-your-internal-data",
+  "version": 1,
+  "generatedAt": "2026-11-23T08:01:48.421Z",
+  "pillar": "D: Enterprise AI",
+  "format": "decision-checklist",
+  "objective": "shares",
+  "targetAudience": "PMs and IT leads rolling out internal AI assistants",
+  "topic": "Questions to ask before connecting an LLM to internal data",
+  "coreInsight": "Don't connect an LLM to internal data until retrieval enforces each user's existing permissions and you've decided what gets logged and kept.",
+  "hookVariants": [
+    {
+      "text": "Before your AI reads the company wiki…",
+      "angle": "Timely setup",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Your chatbot can see what the intern can’t.",
+      "angle": "Risk framing",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "Permissions don’t survive the vector database.",
+      "angle": "Technical claim",
+      "scores": {
+        "specificity": 4,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "total": 18
+    }
+  ],
+  "selectedHook": "Before your AI reads the company wiki…",
+  "selectionRationale": "Highest total (23/25): names the moment of decision, and the reel gives four questions in order.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Before your AI reads the company wiki… / Ask these four questions first.",
+      "voiceover": "Before your AI reads the company wiki, ask these four questions."
+    },
+    {
+      "scene": "questions",
+      "onScreen": "ASK BEFORE YOU CONNECT / Four questions, in this order. / Who can see each document today? · Is that checked at retrieval, per user? · What gets logged: prompts, answers, sources? · How long is it kept, and who reads the logs? / If retrieval ignores user permissions, don’t connect it yet.",
+      "voiceover": "Who can see each document today? Is that checked at retrieval, for each user? What gets logged: prompts, answers, sources? How long is it kept, and who can read the logs? If retrieval ignores user permissions, don't connect it yet."
+    },
+    {
+      "scene": "flags",
+      "onScreen": "RED FLAGS / Stop if you hear this. / RED FLAG “We index everything once” · RED FLAG “The bot has admin access” · RED FLAG “Logs? The vendor has them”",
+      "voiceover": "Red flags: we index everything once. The bot has admin access. Logs? The vendor has them."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "The bot should know only what the user can. / Send this to your security lead",
+      "voiceover": "The bot should know only what the user can. Send this to your security lead."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "questions",
+      "type": "checklist",
+      "startFrame": 90,
+      "endFrame": 350,
+      "startSec": 3,
+      "endSec": 11.67
+    },
+    {
+      "id": "flags",
+      "type": "cards",
+      "startFrame": 350,
+      "endFrame": 480,
+      "startSec": 11.67,
+      "endSec": 16
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 480,
+      "endFrame": 630,
+      "startSec": 16,
+      "endSec": 21
+    }
+  ],
+  "caption": "Connecting an assistant to internal documents is a permissions project before it’s an AI project.\n\nAsk, in this order:\n→ Who can see each document today?\n→ Is that enforced at retrieval time, for each user?\n→ What gets logged: prompts, answers, sources?\n→ How long is it kept, and who can read the logs?\n\nRed flags: “we index everything once”, “the bot has admin access”, “the vendor keeps the logs”. If retrieval ignores user permissions, don’t connect it yet.\n\nSend this to your security lead.\n\n#EnterpriseAI #AIGovernance #RAG #AIProductManagement",
+  "hashtags": [
+    "#EnterpriseAI",
+    "#AIGovernance",
+    "#RAG",
+    "#AIProductManagement"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Send this to your security lead"
+  },
+  "coverHeadline": "Before AI reads your internal data",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Internal AI assistants should enforce each user's existing document permissions at retrieval time, and logging and retention should be decided before connecting internal data.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 21,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-036-before-ai-reads-your-internal-data-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-036-before-ai-reads-your-internal-data.mp4",
+    "cover": "output/covers/aipm-036-before-ai-reads-your-internal-data.png",
+    "caption": "output/captions/aipm-036-before-ai-reads-your-internal-data.txt",
+    "storyboard": "output/storyboards/aipm-036-before-ai-reads-your-internal-data.md",
+    "subtitles": "output/storyboards/aipm-036-before-ai-reads-your-internal-data.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-23T08:01:55.977Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-036-before-ai-reads-your-internal-data/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Before your AI reads the company wiki",
+      "2/ Who can see what today?",
+      "3/ Enforced at retrieval, per user?",
+      "4/ Logging and retention",
+      "5/ Red flags",
+      "6/ Share CTA"
+    ],
+    "followUpReel": "Format 4 (Architecture): where permission checks sit in a RAG pipeline.",
+    "linkedin": "Post: the four questions as a pre-launch checklist for internal assistants, with the red-flag phrases."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
