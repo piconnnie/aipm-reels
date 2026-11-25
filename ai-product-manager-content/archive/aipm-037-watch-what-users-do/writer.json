@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-25",
+  "writer": "queue",
+  "plan": {
+    "from": "draft",
+    "backlogId": "t042",
+    "pillar": "A",
+    "pillarName": "A: AI Product Management",
+    "format": "teardown",
+    "research": false
+  },
+  "reelId": "aipm-037-watch-what-users-do",
+  "rounds": [],
+  "finalCritic": null,
+  "needsAttention": false,
+  "estimatedCostUsd": 0
+}

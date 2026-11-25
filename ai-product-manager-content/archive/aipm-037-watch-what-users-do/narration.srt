@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Nobody clicks thumbs-down. Read what they do.
+
+2
+00:00:03,130 --> 00:00:10,260
+Illustrative session: answer shown, regenerated twice, seventy percent edited, then copied out. No rating at all, but lots of signal.
+
+3
+00:00:10,460 --> 00:00:18,600
+Log from day one. Regenerate: the first answer missed. Heavy edits: right idea, wrong words. Copy or send: the answer got used. Abandon mid-task: it failed or was too slow. Ratings tell you why; behaviour tells you where to look.
+
+4
+00:00:18,800 --> 00:00:23,600
+Watch the edits, not the thumbs. Save this for your next metrics review.

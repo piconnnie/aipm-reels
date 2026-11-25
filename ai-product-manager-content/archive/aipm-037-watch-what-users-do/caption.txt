@@ -1,0 +1,15 @@
+Most AI answers never get a rating. They still leave a trail.
+
+In the (illustrative) session in this reel: regenerated twice, 70% of the text edited, then copied out. No thumbs either way.
+
+Log these from day one:
+→ Regenerate: the first answer missed
+→ Heavy edits: right idea, wrong words
+→ Copy or send: the answer got used
+→ Abandon mid-task: it failed or was too slow
+
+Ratings tell you why. Behaviour tells you where to look.
+
+Save this for your next metrics review.
+
+#AIProductManagement #ProductMetrics #GenAI #AIUX
