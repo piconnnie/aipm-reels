@@ -1,0 +1,209 @@
+{
+  "contentId": "aipm-037-watch-what-users-do",
+  "version": 1,
+  "generatedAt": "2026-11-25T09:00:28.686Z",
+  "pillar": "A: AI Product Management",
+  "format": "teardown",
+  "objective": "saves",
+  "targetAudience": "PMs choosing feedback metrics for AI features",
+  "topic": "Teardown: what one AI chat session tells you without a rating",
+  "coreInsight": "Ratings are rare, but regenerations, heavy edits, copy-outs and abandonment show where AI answers worked or failed, so log them from day one.",
+  "hookVariants": [
+    {
+      "text": "Nobody clicks thumbs-down. Read what they do.",
+      "angle": "Behaviour over ratings",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 4
+      },
+      "total": 22
+    },
+    {
+      "text": "The user rewrote 70% of the answer. Rating: none.",
+      "angle": "Story fragment",
+      "scores": {
+        "specificity": 5,
+        "relevance": 4,
+        "curiosity": 5,
+        "credibility": 3,
+        "comprehension": 3
+      },
+      "total": 20
+    },
+    {
+      "text": "Your feedback button is mostly silent.",
+      "angle": "Observation",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 3,
+        "credibility": 4,
+        "comprehension": 5
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Nobody clicks thumbs-down. Read what they do.",
+  "selectionRationale": "Highest total (22/25): relatable, credible, and the reel shows exactly which behaviours to log.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Nobody clicks thumbs-down. Read what they do. / Behaviour is your real rating.",
+      "voiceover": "Nobody clicks thumbs-down. Read what they do."
+    },
+    {
+      "scene": "session",
+      "onScreen": "ONE SESSION, LOGGED / No rating. Lots of signal. / $ replay session · answer shown ....... 1.8s · regenerate ......... x2 · user edited ........ 70% · copied out ......... yes · thumbs ............. none · (illustrative output)",
+      "voiceover": "Illustrative session: answer shown, regenerated twice, seventy percent edited, then copied out. No rating at all, but lots of signal."
+    },
+    {
+      "scene": "signals",
+      "onScreen": "LOG FROM DAY ONE / Track what users do. / Regenerate: the first answer missed · Heavy edits: right idea, wrong words · Copy or send: the answer got used · Abandon mid-task: it failed or was too slow / Ratings tell you why. Behaviour tells you where to look.",
+      "voiceover": "Log from day one. Regenerate: the first answer missed. Heavy edits: right idea, wrong words. Copy or send: the answer got used. Abandon mid-task: it failed or was too slow. Ratings tell you why; behaviour tells you where to look."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Watch the edits, not the thumbs. / Save this for your next metrics review",
+      "voiceover": "Watch the edits, not the thumbs. Save this for your next metrics review."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "session",
+      "type": "terminal",
+      "startFrame": 90,
+      "endFrame": 310,
+      "startSec": 3,
+      "endSec": 10.33
+    },
+    {
+      "id": "signals",
+      "type": "checklist",
+      "startFrame": 310,
+      "endFrame": 560,
+      "startSec": 10.33,
+      "endSec": 18.67
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 560,
+      "endFrame": 710,
+      "startSec": 18.67,
+      "endSec": 23.67
+    }
+  ],
+  "caption": "Most AI answers never get a rating. They still leave a trail.\n\nIn the (illustrative) session in this reel: regenerated twice, 70% of the text edited, then copied out. No thumbs either way.\n\nLog these from day one:\n→ Regenerate: the first answer missed\n→ Heavy edits: right idea, wrong words\n→ Copy or send: the answer got used\n→ Abandon mid-task: it failed or was too slow\n\nRatings tell you why. Behaviour tells you where to look.\n\nSave this for your next metrics review.\n\n#AIProductManagement #ProductMetrics #GenAI #AIUX",
+  "hashtags": [
+    "#AIProductManagement",
+    "#ProductMetrics",
+    "#GenAI",
+    "#AIUX"
+  ],
+  "primaryCta": {
+    "type": "save",
+    "text": "Save this for your next metrics review"
+  },
+  "coverHeadline": "Watch what users do",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "Implicit behavioural signals (regenerations, edits, copy-outs, abandonment) are more plentiful than explicit ratings and help locate AI answer failures.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "Session log: 2 regenerations, 70% edited, copied out, no rating.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 23.67,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-037-watch-what-users-do-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-037-watch-what-users-do.mp4",
+    "cover": "output/covers/aipm-037-watch-what-users-do.png",
+    "caption": "output/captions/aipm-037-watch-what-users-do.txt",
+    "storyboard": "output/storyboards/aipm-037-watch-what-users-do.md",
+    "subtitles": "output/storyboards/aipm-037-watch-what-users-do.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-25T09:00:37.451Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-037-watch-what-users-do/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Nobody clicks thumbs-down",
+      "2/ One session, logged (illustrative)",
+      "3/ Four behaviours to log",
+      "4/ Ratings = why, behaviour = where",
+      "5/ Save CTA"
+    ],
+    "followUpReel": "Format 3 (A vs B): thumbs-up rate vs task success (already queued as q020; follow with edit-distance as a metric).",
+    "linkedin": "Post: the four implicit signals as an event-tracking spec for an AI feature, with what each one means."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}

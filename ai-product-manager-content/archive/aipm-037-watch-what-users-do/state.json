@@ -1,0 +1,36 @@
+{
+  "id": "aipm-037-watch-what-users-do",
+  "createdAt": "2026-11-25T09:00:37.499Z",
+  "release": {
+    "tag": "reel-aipm-037-watch-what-users-do",
+    "video": "aipm-037-watch-what-users-do.mp4",
+    "cover": "aipm-037-watch-what-users-do.jpg",
+    "contactSheet": "aipm-037-watch-what-users-do-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "e45eb85b143a8cd4e71713bab96cb9263b37d0bd6953ff35995a796eee4d9bd3",
+    "cover": "e61665441a8cac8b1f92191e9dbd03d034f3a8e38466f105b34e8eafce642265"
+  },
+  "durationSec": 23.67,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
