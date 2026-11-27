@@ -1,0 +1,36 @@
+{
+  "id": "aipm-035-three-layers-of-evals",
+  "createdAt": "2026-11-22T07:19:53.127Z",
+  "release": {
+    "tag": "reel-aipm-035-three-layers-of-evals",
+    "video": "aipm-035-three-layers-of-evals.mp4",
+    "cover": "aipm-035-three-layers-of-evals.jpg",
+    "contactSheet": "aipm-035-three-layers-of-evals-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "b42a6a7991687440c0ecc1a21e52bb77a240ea457ea0652c09578735ab389722",
+    "cover": "f2b1e3e742587912885dd3d110bf02eaadaaca39ab60e2f7f5ee6be83cff73ca"
+  },
+  "durationSec": 25.33,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 39
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}
