@@ -1,0 +1,36 @@
+{
+  "id": "aipm-038-say-it-in-numbers",
+  "createdAt": "2026-11-28T08:19:02.043Z",
+  "release": {
+    "tag": "reel-aipm-038-say-it-in-numbers",
+    "video": "aipm-038-say-it-in-numbers.mp4",
+    "cover": "aipm-038-say-it-in-numbers.jpg",
+    "contactSheet": "aipm-038-say-it-in-numbers-contact-sheet.png"
+  },
+  "sha256": {
+    "video": "d2a92f0dc6fa29303ef1ec65a628f3ba5a82b58f37da3e6ba6e566ab9f2423b4",
+    "cover": "55499f6fef09e1bb7d4d6254bcf57272761fb9da01921c9b0643c1bc40387e0b"
+  },
+  "durationSec": 18,
+  "qa": {
+    "status": "automated-passed",
+    "errors": 0,
+    "warnings": 0,
+    "checks": 41
+  },
+  "critic": null,
+  "needsAttention": false,
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "publish": {
+    "status": "pending",
+    "mediaId": null,
+    "permalink": null,
+    "publishedAt": null,
+    "attempts": 0,
+    "lastError": null
+  }
+}

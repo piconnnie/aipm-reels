@@ -1,0 +1,15 @@
+1
+00:00:00,130 --> 00:00:02,930
+Engineers don't trust adjectives.
+
+2
+00:00:03,130 --> 00:00:06,600
+What PMs say: it feels smarter. Quality is way better. It’s worth the cost.
+
+3
+00:00:06,800 --> 00:00:12,930
+What to say instead, illustrative numbers: six more passes on our fifty-case set. Wins thirty-one of fifty blind comparisons. And the price: twice the cost per task and almost a second more wait.
+
+4
+00:00:13,130 --> 00:00:17,930
+Name the gain and the price, in numbers. Share this with a PM pitching models.
