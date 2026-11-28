@@ -1,0 +1,12 @@
+“It feels smarter” starts an argument. “+6 passes on our eval set, at 2x the cost” starts a decision.
+
+Swap adjectives for evidence engineers can check:
+→ eval pass rate on a fixed set
+→ blind side-by-side wins
+→ cost per task and added latency
+
+Always say both sides: the gain and the price. (The numbers in the reel are illustrative.)
+
+Share this with a PM pitching models.
+
+#AIProductManager #ProductManagement #AICareers #LLMEvaluation

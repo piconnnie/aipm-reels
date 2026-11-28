@@ -1,0 +1,209 @@
+{
+  "contentId": "aipm-038-say-it-in-numbers",
+  "version": 1,
+  "generatedAt": "2026-11-28T08:18:56.550Z",
+  "pillar": "E: AI Product Career",
+  "format": "mistake",
+  "objective": "shares",
+  "targetAudience": "Aspiring and new AI PMs",
+  "topic": "AI PMs who can't explain a trade-off to engineers",
+  "coreInsight": "Describe model and prompt trade-offs with eval results, cost and latency instead of adjectives, because engineers can check a number.",
+  "hookVariants": [
+    {
+      "text": "Engineers don’t trust adjectives.",
+      "angle": "Specific professional mistake",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 5,
+        "comprehension": 5
+      },
+      "total": 23
+    },
+    {
+      "text": "Stop saying the new model ‘feels smarter’.",
+      "angle": "Call-out",
+      "scores": {
+        "specificity": 4,
+        "relevance": 5,
+        "curiosity": 4,
+        "credibility": 4,
+        "comprehension": 4
+      },
+      "total": 21
+    },
+    {
+      "text": "How to win a model debate with engineers.",
+      "angle": "How-to",
+      "scores": {
+        "specificity": 3,
+        "relevance": 4,
+        "curiosity": 4,
+        "credibility": 3,
+        "comprehension": 5
+      },
+      "total": 19
+    }
+  ],
+  "selectedHook": "Engineers don’t trust adjectives.",
+  "selectionRationale": "Highest total (23/25): readable at a glance, and the reel flips each vague claim into a checkable one.",
+  "script": [
+    {
+      "scene": "hook",
+      "onScreen": "Engineers don’t trust adjectives. / Bring numbers they can check.",
+      "voiceover": "Engineers don't trust adjectives."
+    },
+    {
+      "scene": "vague",
+      "onScreen": "WHAT PMS SAY / Adjectives, not evidence. / VAGUE “It feels smarter” · VAGUE “Quality is way better” · VAGUE “It’s worth the cost”",
+      "voiceover": "What PMs say: it feels smarter. Quality is way better. It’s worth the cost."
+    },
+    {
+      "scene": "evidence",
+      "onScreen": "WHAT TO SAY · ILLUSTRATIVE / Numbers they can check. / EVAL +6 passes on our 50-case set · EVAL Wins 31 of 50 blind pairs · PRICE 2x cost per task, +0.8s wait",
+      "voiceover": "What to say instead, illustrative numbers: six more passes on our fifty-case set. Wins thirty-one of fifty blind comparisons. And the price: twice the cost per task and almost a second more wait."
+    },
+    {
+      "scene": "takeaway",
+      "onScreen": "Name the gain and the price in numbers. / Share this with a PM pitching models",
+      "voiceover": "Name the gain and the price, in numbers. Share this with a PM pitching models."
+    }
+  ],
+  "sceneTimings": [
+    {
+      "id": "hook",
+      "type": "hook",
+      "startFrame": 0,
+      "endFrame": 90,
+      "startSec": 0,
+      "endSec": 3
+    },
+    {
+      "id": "vague",
+      "type": "cards",
+      "startFrame": 90,
+      "endFrame": 200,
+      "startSec": 3,
+      "endSec": 6.67
+    },
+    {
+      "id": "evidence",
+      "type": "cards",
+      "startFrame": 200,
+      "endFrame": 390,
+      "startSec": 6.67,
+      "endSec": 13
+    },
+    {
+      "id": "takeaway",
+      "type": "takeaway",
+      "startFrame": 390,
+      "endFrame": 540,
+      "startSec": 13,
+      "endSec": 18
+    }
+  ],
+  "caption": "“It feels smarter” starts an argument. “+6 passes on our eval set, at 2x the cost” starts a decision.\n\nSwap adjectives for evidence engineers can check:\n→ eval pass rate on a fixed set\n→ blind side-by-side wins\n→ cost per task and added latency\n\nAlways say both sides: the gain and the price. (The numbers in the reel are illustrative.)\n\nShare this with a PM pitching models.\n\n#AIProductManager #ProductManagement #AICareers #LLMEvaluation",
+  "hashtags": [
+    "#AIProductManager",
+    "#ProductManagement",
+    "#AICareers",
+    "#LLMEvaluation"
+  ],
+  "primaryCta": {
+    "type": "share",
+    "text": "Share this with a PM pitching models"
+  },
+  "coverHeadline": "Say it in numbers",
+  "sources": [],
+  "sourcesNote": "No time-sensitive or third-party factual claims; practitioner opinion and labelled illustrative numbers only.",
+  "claims": [
+    {
+      "text": "PMs communicate AI trade-offs more effectively with eval results, cost and latency than with qualitative descriptions.",
+      "kind": "practitioner-opinion",
+      "sources": []
+    },
+    {
+      "text": "+6 passes on a 50-case set; 31 of 50 blind wins; 2x cost per task; +0.8s latency.",
+      "kind": "illustrative",
+      "sources": []
+    }
+  ],
+  "estimatedDurationSec": 18,
+  "dimensions": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "dependencies": {
+    "fonts": [
+      "public/fonts/InterDisplay-Bold.otf",
+      "public/fonts/InterDisplay-SemiBold.otf",
+      "public/fonts/Inter-Regular.otf",
+      "public/fonts/Inter-Medium.otf",
+      "public/fonts/Inter-SemiBold.otf",
+      "public/fonts/DejaVuSansMono.ttf",
+      "public/fonts/DejaVuSansMono-Bold.ttf"
+    ],
+    "audio": [
+      "public/audio/aipm-038-say-it-in-numbers-bed.wav"
+    ],
+    "externalServices": []
+  },
+  "files": {
+    "reel": "output/reels/aipm-038-say-it-in-numbers.mp4",
+    "cover": "output/covers/aipm-038-say-it-in-numbers.png",
+    "caption": "output/captions/aipm-038-say-it-in-numbers.txt",
+    "storyboard": "output/storyboards/aipm-038-say-it-in-numbers.md",
+    "subtitles": "output/storyboards/aipm-038-say-it-in-numbers.srt"
+  },
+  "qa": {
+    "status": "automated-passed",
+    "ranAt": "2026-11-28T08:19:02.002Z",
+    "errors": 0,
+    "warnings": 0,
+    "report": "output/qa/aipm-038-say-it-in-numbers/report.md",
+    "manualChecks": {
+      "status": "pending",
+      "items": [
+        "Watch the full MP4 at normal speed on a phone (pacing, readability, transitions).",
+        "Listen to the final audio on headphones and a phone speaker (mix, no harshness).",
+        "Read the caption once more in Instagram's composer before posting."
+      ]
+    }
+  },
+  "approval": {
+    "status": "pending",
+    "approvedBy": null,
+    "approvedAt": null
+  },
+  "suggestedPublicationDate": "",
+  "publishNotes": "Evergreen.",
+  "repurposing": {
+    "carousel": [
+      "1/ Engineers don’t trust adjectives",
+      "2/ What PMs say",
+      "3/ What to say instead (illustrative)",
+      "4/ Always name the price",
+      "5/ Share CTA"
+    ],
+    "followUpReel": "Format 6 (Interview): 'Walk me through a model trade-off you made.'",
+    "linkedin": "Post: three vague product claims rewritten as checkable ones, and why naming the cost builds trust with engineers."
+  },
+  "metricsToCapture": [
+    "reach",
+    "non_follower_reach",
+    "plays",
+    "avg_watch_time_sec",
+    "avg_watch_time_pct_of_duration",
+    "skip_rate (if shown)",
+    "shares",
+    "saves",
+    "comments_meaningful (manually counted)",
+    "profile_visits",
+    "follows",
+    "production_time_min"
+  ],
+  "performance": null
+}
